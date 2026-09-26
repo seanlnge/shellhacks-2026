@@ -3,8 +3,8 @@ from typing import Any
 
 import httpx
 
-from kalorie.domain.models import DocumentChunk, EarningsEvent, SourceDocument
-from kalorie.io.documents import chunk_text, content_hash, normalize_text
+from .document_utils import chunk_text, content_hash, normalize_text
+from .models import DocumentChunk, EarningsEvent, SourceDocument
 
 
 class VendorError(RuntimeError):

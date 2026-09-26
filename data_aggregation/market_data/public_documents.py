@@ -5,31 +5,10 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse, urlunparse
 
 import httpx
-from pydantic import AnyHttpUrl, Field, field_validator
+from pydantic import AnyHttpUrl
 
-from kalorie.domain.models import KalorieModel
-from kalorie.io.documents import content_hash
-
-
-class PublicDocumentManifest(KalorieModel):
-    source_url: str
-    company_symbol: str
-    fiscal_year: int
-    fiscal_quarter: int = Field(ge=1, le=4)
-    source_type: str
-    published_at: datetime
-    fetched_at: datetime
-    raw_path: str
-    raw_original_path: str | None = None
-    raw_original_content_hash: str | None = None
-    extracted_text_path: str | None = None
-    content_hash: str
-    extraction_method: str
-
-    @field_validator("company_symbol")
-    @classmethod
-    def normalize_company_symbol(cls, value: str) -> str:
-        return value.upper()
+from .document_utils import content_hash
+from .models import PublicDocumentManifest
 
 
 class _VisibleTextParser(HTMLParser):

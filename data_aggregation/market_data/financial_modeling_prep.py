@@ -6,7 +6,7 @@ from typing import Any
 import httpx
 from pydantic import BaseModel, ConfigDict, Field
 
-from kalorie.io.documents import normalize_text
+from .document_utils import normalize_text
 
 
 class FmpApiError(RuntimeError):

@@ -1,6 +1,6 @@
 from datetime import UTC, datetime
 
-from kalorie.market_data.tiingo import TiingoArticle
+from .tiingo import TiingoArticle
 
 
 def collect_yfinance_news(
