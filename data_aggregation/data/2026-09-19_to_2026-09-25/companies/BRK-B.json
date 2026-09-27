@@ -1,0 +1,429 @@
+{
+  "company": "Berkshire Hathaway",
+  "symbol": "BRK-B",
+  "date_range_utc": {
+    "start": "2026-09-19",
+    "end": "2026-09-25"
+  },
+  "retrieved_at_utc": "2026-09-26T23:29:50.739427+00:00",
+  "news_source": "Google News RSS (headline metadata, not full article text)",
+  "news": [
+    {
+      "title": "Berkshire (BRK-B) Enters a New Era with Billions Still on the Sidelines - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONUwxRWZCZHptRVV6SGt2bU5oamo0Qm9WTU5SWUttZ052bDN4MDUydW0wYjdMRmxGLWlfWE1sWGV1dmRqa2NlYXVmc1R4NGJveHJJUHpSYkp0MngtRG1wU2daTHVkbk1CN1Y2UHlETjNXRzBfb2wxUkwxMmRNaTJSSE1oREVTcThuTFdyUmlselZxNF9fQlE?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T23:42:54+00:00"
+    },
+    {
+      "title": "Warren Buffett Steps Down as Berkshire Hathaway Chairman After Warning U.S. Dollar Is \u2018Going to Hell\u2019 - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNSDVlT3hnOEdWVF95NWx5VEZqb29KV012NjdrS0NBdWU5SDhwaWtfSDBjQWlRR0VkcEZYNjFnLWRPeWVFTkYtMzlWV3phVndnUTY2Um1hbnNwQWNuaDdZMVpZT3NHVGh3djMwQlJ5Tk8wS0dYa25aeURTTzh3QlBEaV9KamFuTGpJVkdYYjlaVVBTdEpCNDd2ZE85b1JiejZhYWc?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T20:01:40+00:00"
+    },
+    {
+      "title": "Lennar Shares Jumped After Berkshire Hathaway Increased Its Position. How Investors Should View the Move. - Barchart.com",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRjBNR3lHNEdleElqamdmRDZ0QTVTckZQdV9adUVCOUFjS3BaM3NMS2VGZEtTY2pUeG9oUGt4ZHZ5QndHZ1c0Q3ZISUNqNWdVNUxCYjJWNnIxQWhvTG00TEJUQzBrb0p1Tm01MF9yUExkcDRKNXRTaUZHWFlra1N4WERqRU52dlNrYTVJSVBUdjVJSWRkczdFTDlrMm1XUzJFSjUyYWplV21pRlFsc3paaEIwWVhCelBxVlpBVG95MTZGdmRCMDE4MzBEZHJFSUIwc25RY1Rya0Uxc0FoSDI5bg?oc=5",
+      "publisher": "Barchart.com",
+      "published_at_utc": "2026-09-25T19:10:18+00:00"
+    },
+    {
+      "title": "Warren Buffett turned a 'death march' into $1 trillion Berkshire Hathaway; at 96, he is handing the chairman's seat to his son - thestreet.com",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORVB4T2x6SVg0T09leFhGR2I1TGhEcTdEYklneWx3MFdhdG9jdFBrMG1fbGI1eWJCZjR0aFpNR0FPVldDaC14bzdUWTlSdnpaR1BTaTB2WWtlWUxmTmhnQTY2bEpDdVZBZ0w2MEozY3I4ZkpQU252VWhPUnE2dWNxQlF2WXhaYmdpWVpfTklfMHlMdGY5SjVtQzk1Z3g?oc=5",
+      "publisher": "thestreet.com",
+      "published_at_utc": "2026-09-25T18:09:12+00:00"
+    },
+    {
+      "title": "Is Berkshire Hathaway Stock a Buy, Hold, or Sell Above $500? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV0RuTWRaRjhWX3ByWTBNb2JvUzRaNE50OF8zdEJiUkZXOVhYU1h3SXpnaTJWSk04eVZoOV9fWmw3MHZkaW9lMVZEZmtVZGppRllkNy1oOE5TYURNQWkzVGZacGg0YThJRm1qRXdJVDF6SVpYc0l4WDlMU1ZRSmtud3doSXlmeTdFNDM5RzBJT2ZaMEtaMldoTTB5UXlFMkU?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T14:15:22+00:00"
+    },
+    {
+      "title": "Is Berkshire Hathaway Stock a Buy, Hold, or Sell Above $500? - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTHQ3SjByZ1B3bWw1OUlMdG9WWG9DUTAtMXNiSDVNNThNbmdQS3M3VGdtT1hRUFhub0JRTmUtQWV3djJGaU43WTV2bXUwaUVTVFloNUVoUUtUdm1TaFhNaTFCbUZsLS1VRk55dDZzQ2tka0toYlFoNTZSVTZMdGFlajV2S0xTdTNPVW50Z0hhQ3pLTlQ1U1ZaVXpWOG9pbWNRekE?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-25T14:15:00+00:00"
+    },
+    {
+      "title": "Warren Buffett Helps Berkshire Hathaway Make $848M From Coca-Cola Stock Each Year, Even if the Price Does - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOa29KNDNCLWRRV1M5R3ZqNl9nWXhnaE02VC14TXpJRnIyRkpKVEVDMURJWV80YnRtVnNjTkVzajVoWDdsMU9uMVAyWVNjQmc3VnJUdU9NR0Y0V0xTYTNmcmh4U3Q0bTVncWVHUGxyLXRjdWZVWXhxYlphNkZLZ2YyVDNlV1c1MUg4dmlnSU9qT1hhclg1WVdDcWR4OWNkNVpzZWRPckZGV0R4QXhqYjFsZUVhYUs2cW13WEp6OHowNnhWR0FBMl9oMHhCVmlWVGMwMUxMQVNlc3EtaVRXeHJmQmhPS01jZ0lzbDktTzJFZFVsQzM3OUhkQnUxM1dCNEZIX3VnRWUzTQ?oc=5",
+      "publisher": "Benzinga",
+      "published_at_utc": "2026-09-25T13:56:53+00:00"
+    },
+    {
+      "title": "Can AI Upstart Lemonade Topple Berkshire Hathaway? - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZDJHQU1SWUJGRHJSRnZvdHB6cVpwbW1BcUlnblYyNmRzcUNDbDJBa05PSFl3amRRSm5TSWViR0tNUnBkYnNIbUNva0VJTlB3SXFUQWVTVUY1aVZEdFdVOEVkZWlEMloyWlY3TzNwczd5WUVCMzluTlVlb1hVUDhTcjBwX3JzSEFEcTBRUFJuWnUtU25sRVc4RnNJWV9Nd01MOHAyVA?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-25T13:12:00+00:00"
+    },
+    {
+      "title": "Buffett's Succession Plan Shows What Makes Berkshire Hathaway Unique (NYSE:BRK.A) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWEEwZTJETVBRM3FYVThEYXo4WFQ0U09TczRqWXkyUEVMOVJwQ0Z1LVdPX1A5ZHpNeFl3R180cWRSaXlfeUZhSjFWTmU4Mjl6bkE1SWl6Z3RhZlEyUUxEcUJLMnRLN0k0UFp1Nmh5Smh0bWxycGtmMFFteEpuV0FDZTlBWEx2Slh0RFZrLWNLVHZTRURlX3JJeDk5UVlaT3VaZXljY2NBbkdHaXBZRDRBeDlTMVU?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-25T12:15:36+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Just Bought $212 Million of This Beaten Down Stock in 3 Days, and Its Stake Has Increased 81% This Quarter - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONVltb3R3NTBScjA0QWJMZjNtTnVDdmZLMlphaTBFWWphbldoaEhQTFFJM0I5eGQyYUdid1VKWFd0aXZoYnRwM1hSeF9EUkxic0QyT2RKXzBOMWVOYWtVejVPTnp5YUhNRGpadTZ1M0ZrbTY0WGhNT1MwWmF1ZTNRQi1GUWdmSGwyU0JpeE5n?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-25T11:10:00+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Just Bought $212 Million of This Beaten Down Stock in 3 Days, and Its Stake Has Increased 81% This Quarter - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaEpEOEc1NUQwVEY3NC1IRktoRjJPX2J5eHFCam5xSGNRTG56aGZkeW15OTUtRDlfMWs1S0t5cC1FR2YzWllZT3lkZmEyZ2t2X3UzcFdFUk1mLWpyM2p1N1ZhMDJqYXB3aEZEWUxFN3BPUVJZYkZRRzRrSDB2ZzV4R28yMW02RzhoY1ctQWpkUTU4d1NPcmFoakxwV0diX2Vu?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T10:30:00+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Just Bought $212 Million of This Beaten Down Stock in 3 Days, and Its Stake Has Increased 81% This Quarter - aol.com",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOLU1sWDl5RG53djYyOElWV1Y2ZXZ5WnRXNExpeGhtYThDRENWemNscjFvQXJhbG1TZ01CcmJIZTBTV0JOeFlCWEYyQTJfbm1TdFQxdC1MQURTWlBrNXpFWnd2RXNsOTRERXBkX293SmQ2QkhuWS0wdXRBMnRoMXVNQWtwaEE?oc=5",
+      "publisher": "aol.com",
+      "published_at_utc": "2026-09-25T10:30:00+00:00"
+    },
+    {
+      "title": "Warren Buffett's Successor, Greg Abel, Has 55% of Berkshire Hathaway's $360 Billion Portfolio Invested in 4 Standout Stocks - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOZzdGVldlNTMzNVJZWEJmM3VhNzdRejMyNUEya24wY1pDYzVjdWxQQWNBMld2U2RMRFNXWVdZaUNvTXF0eVBfVVFHb0RDZ3hvd0ZVZWMxclBJRm0tWEZlRldUUDJocTZpeG5hY1lkUl9Ma1dKNUsyZmhLaDhYcGJ4LVNGRms0U2xJWWsxVkp3aTVqbnA1VzN5N19NYmJvY0tWQW9icHBDLUdrXzhLb3dHRVFYRDJiWWUtM04ydElKMHdpZXRFNHk2bzAydzBrdzVlb2JQN3ByMzZQZw?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-25T10:06:00+00:00"
+    },
+    {
+      "title": "Jim Cramer Defended Berkshire Hathaway Inc. (NYSE:BRK.B)\u2019s Succession Plan - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYUN0bXRid0l5eW9PdTIwZnA3NGxIMk0yc2hHbnFBYjVDRXQ4OXFJTGhwYUFUMEhHV1I3enBZOFU3bkxwbVZqV0cxTGIySW5fbnpaM2tyWjE3XzU2b3V2Smg0b2RabWlCUVczdEVXNndyV0dNMjZKa0IzU24yQms4cmNMcjdzSWlfamVHTjI1ai16d2VJWFhDYzAwT2lXX0JBcnhSSzRR?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T10:04:08+00:00"
+    },
+    {
+      "title": "Warren Buffett's Successor, Greg Abel, Has 55% of Berkshire Hathaway's $360 Billion Portfolio Invested in 4 Standout Stocks - Currently.com",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZTRuUEQ0QkR4TWhGRnp4WXJ1VG1pSE80YU5ha2JQUzJIMUdFM0hac0dqbWMtRmNaZXV5MEtxQUUxcVdhXzJQVE5SOFRjTTZYRzNZM2FXWHJKaTFxYUo5RFFBTVdlek0yTFd4c08ySkxaSVNuc0hMSGhnTFduRzMtdHY3MmEyZGU2TkVaYWM0cw?oc=5",
+      "publisher": "Currently.com",
+      "published_at_utc": "2026-09-25T09:26:02+00:00"
+    },
+    {
+      "title": "Warren Buffett Is Saying Farewell With a Sobering 4-Word Message for Investors - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdXM0NC02ejM0TFJZUHYwYTRsUmtaOTk0WFlhS0R6dF9sQmczRnNzSUliS2lQdEJTTUh3aFIwRnEwY3pRbHBSd3NrNTJEczRUdUw2VU83b2RkaXJQSGprX0MzWEpLUGo3ZVgwUjN3b1RqVl92NW82c3FYS1N1RXlhMGV5UU5keVlKTGpwUDhhZ1lrRTV2bEZiclM5bGlUTFctVXdUQUhoVQ?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T09:05:00+00:00"
+    },
+    {
+      "title": "Buffett's Berkshire Aggressively Buys Real Estate Stocks Against the Trend: What Signal Does It Send? - TradingKey",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOck1iNjRpSjJMTkVaN1ItMldPMmswWUtmMnFDT2NrUE5ZX2FSQTI3b3RWZGhwcDJGdkJpQzluMlZDejh0WHNXMnFDajE3anJ6WGMtamZKZGpIZUlFcVJoSEM2aGRiOS1zbVA0ZGZHeDlMbXBwUTlzWGdnZWpWTC1iT1dtcXBEa0l6Sy1yR3NGUUhuUWNZZklKZDI3ZE1ZY1dwVm1pZFVGVC1SemR1WEV2Nk9Nd213am5SZEZHZTd2YzZjblcyY1E?oc=5",
+      "publisher": "TradingKey",
+      "published_at_utc": "2026-09-25T02:06:11+00:00"
+    },
+    {
+      "title": "Will Berkshire Hathaway Ever Pay a Dividend? Why Buybacks Look Far More Likely for the Next 5 Years - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZmg4cVpEWkZnamFhYWptTWJXM0R6c1RkUGd0Qm1KYkJyUWZ2YzBIcWx4Nm42Q2NvbHdrY3dIdW1hQnFiYU5CQXVjc3g4bTU1YnFNZGhZSDF6Qy1oTXFOQTRvWEpJSkdmckVuTU9MaUltSHBaTExOMXVRempSNG5YekxqMWdGQUM4SDhlQS1yTlBucnFMYUtPNg?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-24T22:13:00+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway: The Next Move, Hyperscaler Symbiosis, And Hard-Asset Arbitrage - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORllsMGoxUjdCNFdQQV8wa3NjeEhyNlJoYVkyMTUwRHlTX0tsSDVxeHdRYVRETk9abllVdXRkc1FtRzdwTkdaU19mWjM2dkdHOTFRWjE2MzFNa2NfdU4ybzRiLWg4eERVWlRuX29qNTJvODd5c2U2Q3dDUWtDLWthemdqNURzYXFPNTRIbmxBYzJLZV9jMUxFRW1CSmhwLUxPZzJUSF9WQXJxYUN5VG1xZlNrNG9sXzVreE9SOA?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-24T21:37:22+00:00"
+    },
+    {
+      "title": "Berkshire Stays Flat as Lennar Stake Crosses 10% - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZlowOXFkUHVVTDM4bXJCclNHRlpaWlBZT214NmhtLWJYT0RJZ3R2b0g3VlQzNGlNNGVqWk1MNnU2YVFzaGpBZWhndlVzWXRGTGk1bmd1Z3VKRTlVcFZLSXJ5TUJZWmI1WEFzWmxBX29wNTh6MkFncVBrLXQ2VVljNGJGT1FLbElnN3pEeHRaV2hoRzhleU84TFhLTm5wME0?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T20:00:46+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway CEO Greg Abel Calls AI Data Center Demand a Significant Opportunity for Berkshire Energy. Here's What That Means for the Stock. - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZ3dIajVFY1VGMFhZWlNndG9KN0dFbk8tWFlPTm5vSDhpSzYxb3pyT1VXNGFVcFNHS2Jod29uMTZ1SldSeWRsSDRpVzZJV3RxdHo4dmgyNWxUaUt3T2x1aEtDZ05ZOXprWnY0Ny1KT3E1Nk9mSEZ5N1QzSXRZQVBBbmc3ZFVuZFllSUpTNWdEUHRUdmZfYkF3OA?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-24T20:00:00+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway CEO Greg Abel Calls AI Data Center Demand a Significant Opportunity for Berkshire Energy. Here's What That Means for the Stock. - aol.com",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOR2lQYTRoek1iS0FOdWg5NFZKSkpvNzlhRGs3Wi1JZ2MtMHpvakFxcEllOVpOYjZtTVA3a1hZX3dBQzZjUUsyYnRTamdvLWxMb2tBNUdZN3dpdlZKakE5ckczMWpyejJYQlBqMngxLWF3NUIwNVdNTEt2SFVvWWQ3aEpR?oc=5",
+      "publisher": "aol.com",
+      "published_at_utc": "2026-09-24T19:20:00+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Owns 400 Million Shares of Coca-Cola. Here Is What That Dividend Is Worth Now. - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNYzliREkyQVc4V1dBSUpBUEVVakU0d1BtWEtTcGpRd2xOeW1IdVMwWVpibVZzTS04NGNwX1g4anJfQjhrdHJ4ZEwxbnhzVVlYNDk5LTVibWxkbHB5VXBPelZKMDhGXy1UNzByWU1XamZ4QzBwRzBFclV5OV9kZHlCNmJPbkZ2MDNLT3Bub1FqeTJhUXpPVTJGZGVKTWhkVTRQdXFFVW8wTkFQSkd1bnpBXzJ6VW5fTmNnUkJOaUdsUWJmY0JuUlJOZTlfMHZsQ2ZNS2dTQnp3?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-24T15:34:00+00:00"
+    },
+    {
+      "title": "Warren Buffett has stepped down as Berkshire Hathaway\u2019s chairman, closing a remarkable chapter for the company. - Moomoo",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOOVJpdnpkb2pDV0EwVk1aRFM1cThTQjNIdlJRdEpqT1VkbVF6WGJ3YnlKMGxmNl8wZW94R1JlZENkMkpVMU1LaTFjVkNkbU5fOGZBRWJqdXJLRE50cEhBQjhuVTM0d09BeVllUDRmeHBrMjBLSlJRbXY0dlBLR0NtNWxvQl9qdmlhU1Z6TU9lTVlwWE1neU55eHZIUzVVN3NnTEQwb2NtbHZuSkx2QWVkUkE1dFVhZlU0N1E?oc=5",
+      "publisher": "Moomoo",
+      "published_at_utc": "2026-09-24T15:31:14+00:00"
+    },
+    {
+      "title": "Warren Buffett and the Loss of Capitalism\u2019s Character Witness - observer.com",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxONUJpaWNrc3RQNGRXQ1B3bW5mS3pDSk41dEJhTXFSWVpxdGFBZmNOWlZzczBnNlZLaWowU2NQQ2VlU0wwY3Zab001cnFod3FtYmJtbkgxNnhmSUVnanNkc3kwQWp5T2l3RFlvMS1ZQVZnQ3I3UXYzeUJWYm0xQkV2ZmFR?oc=5",
+      "publisher": "observer.com",
+      "published_at_utc": "2026-09-24T14:05:46+00:00"
+    },
+    {
+      "title": "$Lennar Corp (LEN.US)$ $Berkshire Hathaway-B (BRK.B.US)$ - Moomoo",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVEpHc3l6b2VGZXc0R24yMjlrVUkzV2hyQTc4aF9RcDJ6WnV5dDhsR2g0Ml9kLV9KNjc1VVJZa1lmaGVwMGNZRmU5WFlOVGVIQ2F3Rk5zd2tBcDZqRXdoOE5zVHRLRXJQeHc1UE1vYUtQSzJDOWdkN2dVRW91MUtMeFlrbkdxRTV0Unp2UzExcEZmd0xSYThnT0U1eUtiaU1zSzZZUw?oc=5",
+      "publisher": "Moomoo",
+      "published_at_utc": "2026-09-24T13:33:00+00:00"
+    },
+    {
+      "title": "Warren Buffett\u2019s final words of warning as Berkshire chairman: US dollar \u2018going to hell.\u2019 Shockproof your nest egg now - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNN2xuUmhnb25VNWdBVEtrbnd3Ylo2RFRXRTBNdzVXTW9FMTJlbGUyVmhGMVRpQ0RnS3FHTExsTExGUVhibUtsVE9XM0FtMF90UUlqMGFPNFZNbmpvUVFtZWNoTlJfU1FndUNfWGJWdFVwcUlMVTRmTVhYTGtnSzRrdDRPUnJDaE0yN1lQU0Y3azlQYTlNSTM5RF9vVWV2Z01s?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T12:05:00+00:00"
+    },
+    {
+      "title": "Warren Buffett Has Officially Left Berkshire Hathaway After 61 Years. But 3 of His Favorite Stocks Will Likely Live on in Berkshire's Portfolio for Decades to Come. - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNbm1YTHRLSF9DdlFOSjZWZnRUY3dsUVJ6cTlWVzJGX0NSbWtnSHdEZDRKVm1uVk0wM2IwSVZlUDNoTGNxOGR5ZUhIUEtrSy1HZ0JMS3dxdndkVlhya1k0SUtibmlRWUVfZi1OYWhZUlhuOGRCRHI4dFZHQlJ0VjgyWXVzTzJYV0RTM0dKbTMtbWFQUlVtcUJqRw?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-24T11:00:00+00:00"
+    },
+    {
+      "title": "Warren Buffett Has Officially Left Berkshire Hathaway After 61 Years. But 3 of His Favorite Stocks Will Likely Live on in Berkshire's Portfolio for Decades to Come. - theglobeandmail.com",
+      "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxPVzlzbm4yQ2RVVEV0aE1TZE1nQ3lsNUlkYjV6MHNreVRtM0pPX1F1QkRVWWpVY001Ny0wUHBFT0tHNVd0ZnlDWmZTOTJBRkJXcmdPQmdNWGl1XzZaMjlLZzBUNE54UTI4MDJWdnpzRzhoc2YyNDllQnlnRkptY3N6RnY2Z2VyUV9MYkdJdjBfVU5adDBKNEJ0ejlTT3ZzTXZBR2dZN3RqU2xlN3RHYmdjazZITUp0SW1sTGdpWHZmSmtfTURZSDhuc29nT0t1S0NpOUJhemcyR0p4UDcySHo0MVRzOUdOUWtoRXhvc0R4Tm8taC1WbGFaUXQtWVlSaEc0UlpjS3ZBdW1GV2N0QzVDeFJjc3VjM1VUN0RSUFB2NVRfQWNCdnpiWXpMY1p2X0Y0dm5FSkFYcU1FZzk3ZEl2UDR4SmVZaVh1SmpwVVdLYkx4RzVBTy0xRjl1ZjlmeFhFQW9xQmd3?oc=5",
+      "publisher": "theglobeandmail.com",
+      "published_at_utc": "2026-09-24T10:20:10+00:00"
+    },
+    {
+      "title": "Warren Buffett Has Officially Left Berkshire Hathaway After 61 Years. But 3 of His Favorite Stocks Will Likely Live on in Berkshire's Portfolio for Decades to Come. - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPakJCVHNITFVFU1hVMjA5WmgwOVNsNVhqbEZfanZhS05weDJITGRHc3JyX3JBcHptdzhOTDU5MmU3ZFJqbnMxNlRjb281WG9NeGRfdTJJRkVrb0lrNlFoRS1PcnZIX3ZRc0RhcHJGX3NrT201am14ZDlSVUhNcVNKLWcwbzFZY0s1Zm13SERFb1BTZHo4Y252X1ZCM3RfZ0M2ck85R09SZFM?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T10:20:00+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway (BRK.B) Trades Below Fair Value, Is It A Bargain? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPa0ZzMjdKd0ItUTd2dXdIOHpkLW0xVm9FS1RoNUxvdmkzVDdCV0NJTE8zVzBRUXRGclAtc20zMVU0OURnNlFTU254SHkxaVEwa21BQUpaOVJtTXlzaGJPck1aNEsyWnB0YmlLMjRVeVNSenE4c0daTnhDQ0htNGExOWp5ZFpOdjdSNno5OE9VR1M3elZtYWJqcmFZZk4?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T05:15:57+00:00"
+    },
+    {
+      "title": "How Chairman Change Will Impact Berkshire Hathaway Stock Investors - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPS2k0T055MkhwTkxibkdNZ3k4WU0yLVlsdURid0J1S1YydGJ2WnN4Nno2Tl9xSy1xVU1XVHBBUTRzRi1UczJWeHZrUEN2SllPVlBfQlJGQzdKaVJpeE5QOWRPcW9IY1prVThWNTQ0ZlJhbWN3VWdvTkJmVnpGMHZUeTNJSXUzMS1QNXNNY0JmQmNuVjB4V3Z5Q2hBRGpXRmRQSHBFU29MTk9iYkdXd3R6eTJMRGctWE1iYXEta1MwUEhwWDJ3U28wWmRQUWk5WmVKWTdENzVxVFBfcGJkeEk1NjJBbmpYWDJ0dFHSAeoBQVVfeXFMT0tpNE9OeTJIcE5MYm5HTWd5OFlNMi1ZbHVEYndCdUtWMnRidlpzeDZ6Nk5fcUstcVVNV1RwQVE0c0YtVHMyVnh2a1BDdkpZT1ZQX0JSRkM3SmlSaXhOUDlkT3FvSGNaa1U4VjU0NGZSYW1jd1Vnb05CZlZ6RjB2VHkzSUl1MzEtUDVzTWNCZkJjblYweFd2eUNoQURqV0ZkUEhwRVNvTE5PYmJHV3d0enkyTERnLVhNYmFxLWtTMFBIcFgyd1NvMFpkUFFpOVplSlk3RDc1cVRQX3BiZHhJNTYyQW5qWFgydHRR?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-24T02:39:18+00:00"
+    },
+    {
+      "title": "BERKSHIRE HATHAWAY INC. (BRKBCL1.SN) Company Profile & Facts - Yahoo Finance - Yahoo! Finance Canada",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5qX0dGYm85T0VhdDhfbDB5TTFSNUlzb3RnWkRvQXhfUlFlZEhjeTJRMlQyd3hWVm9Db1RxXzBNWjNhdjc0VENyVnpNWVUtRzhXUkJNdk84VW91OFV1ZlowN3NZbWw?oc=5",
+      "publisher": "Yahoo! Finance Canada",
+      "published_at_utc": "2026-09-24T00:35:41+00:00"
+    },
+    {
+      "title": "Berkshire buys $212 million of tumbling housing stock - thestreet.com",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSWZ5YUJtU09fd0dRa3lnWmJQckY1cmZCWmJlaFVkOHJWbVZWZWE0by01b1JZSEg5WkU4QkRVdEdZWVY1X0ZnZFNqc0k5R1JVUElMS3N4M1hobnlMR0J5VFVTdmc3U2dGSXh2b2xYTFBESkJEMGVqbE5KeGFvOGVFLVppaWdkYmgzWWpFUFVSTXRXWkZQZExVMnNmQQ?oc=5",
+      "publisher": "thestreet.com",
+      "published_at_utc": "2026-09-23T20:36:52+00:00"
+    },
+    {
+      "title": "What Greg Abel\u2019s First Nine Months Reveal About Succeeding Warren Buffett - observer.com",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOdHNuNmRLVGlnYWxGMjZaeHJ3dnBOYjV2V2tSSlMzc1dJdmJleU9CRFVKLVdVSGNmT1lqVXlGYzZfbXZKQW1wTVJIdnZ0WVRBOWU5Z19lS3BmaUxYV3FSU09IXzRRaUN6RGVOTm5oQzhUbkxzQUZzVG5DWFNka2NkZnJlRkV2cHdLb0tFS1NTdXRGeDdpN2R6bHNNRQ?oc=5",
+      "publisher": "observer.com",
+      "published_at_utc": "2026-09-23T20:31:12+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Now Owns Over 10% of This Beaten-Down Homebuilder - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPa012c0w4OHlTNUw4S3VxYUVvOFhwSnMtS3l3MVpkTk44dWdCLUNYbm5wclBhdzZWUkdKV1NRYURPeVpGdjRCME5NNmJfcmxPT1RucGJCVTRGcDN1bjU1aE5SOGNXUlFwMlA2bWhzaEdHODhZZVJqVXhmUUlQSUljZE1mS3BRdUpTNzA4VDJGemxlbEUyemFyNGNn?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T20:00:13+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Now Owns Over 10% of This Beaten-Down Homebuilder - aol.com",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdFFQSWJOaUtpb3VOYmluei1DMXBGMVZqMk01M3hHWDBKYjAyNk5DQlhqMGc3M3h5b1JLVWVyY3FlUTBnSzdseUk3djkwQXJYajZyM3BPTkdNNFRCelBPOTQtLVlwU1R6aXBXV2lEb2tvXzI4dnpoQThQaHVQZkFxTU93?oc=5",
+      "publisher": "aol.com",
+      "published_at_utc": "2026-09-23T20:00:13+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Now Owns Over 10% of This Beaten-Down Homebuilder - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPUGZ3enZjUGxrUm9fTzNuYko2MDhqN2hJYUUySEVBRnlFVjFESGZPOGVtTUUwSFhJXzBVZC1oUmcyZzQ5OG5wQ2J2dGZUWUFZTFRKUFd3clpES3NGT0JhUGJObk4wY1pRYUJFV2paclBrWHFNMnJsOEtydXYtdlg4UTMyS21wdFJJeTUxeGFzS0xDNFB3WFpoeng4djJwNzVjRXVTLVk0SG1KNVY3U2k3Qw?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-23T20:00:00+00:00"
+    },
+    {
+      "title": "Warren Buffett stepping down as chairman of Berkshire Hathaway - cbs8.com",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNUkI0Mnl3WkJMUk9OeUI3SXdWeXQ2QW03YWRNaklZUHpoamsyRjVLd3N0UHI1U3BlZFVzRENnaEFoRWFoR1MzZzZGZFJHOE40dFZPbEMwdy1udlNKMnIwX0dUbG5wRXllV3NTaURiUEl6NEZzckM0dkFhOXlnWmF4QzBoSHk3cTFQYW1DaklXQjkwZWVvcUJvSkJHQWRMZ0ZfMWNkZUZOaHZSWF85RWd3Rm1TU2x4aUlTLXRfZVoyU25YdFB6dVd6R00yUzF2dHRrMWc3RVhYUmZKcGNF?oc=5",
+      "publisher": "cbs8.com",
+      "published_at_utc": "2026-09-23T18:45:00+00:00"
+    },
+    {
+      "title": "Warren Buffett steps down as chairman of Berkshire Hathaway - thv11.com",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQWTZ1MW5wUTBSWUJCb2RDUkJTdlBlOG5zMUMyNWFxbi1oMWpwb2ZLQkZrZUI0czg5M25hRjBNOUxvV2tIZ3RIWGtFS2NkTWRRR2FKbGozYUE0bU52WHN1akJDaWU2ZTZnQ0RmVHcwMmRtQ09PYnV2RWJxd01mTTg4NWw0TEdndGc4Z3JlN2JQZ3hkbEJPdlFxV25xYlYzNDR0NlB3V18wTlg0SWhmOENSeGtRdzRqR00tREd1dDRTNXJIVlVhdVUydUUwTmJjMWFJZ0pF?oc=5",
+      "publisher": "thv11.com",
+      "published_at_utc": "2026-09-23T17:56:00+00:00"
+    },
+    {
+      "title": "Warren Buffet Steps Down From Berkshire Hathaway - WBOC TV",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLWFjajlIeG9ZV2VmZlUzU3FsWTJ0YkR3ZTRpREFtWGlFaEl6bWlQM0V5YUdxbnVyMHR3WGc5dW15TVdIZ2Zxa0JGeFV2VTN4b3J1UWdFeW1wU1RfcnFBQXd3ZjRmNXlVcVV2c1AwNkNVSmFIZ0hyTjg3Y0pYeFdSY1R3b1JqNnhrcm15SkNsQjJocFBRU0RPX0d4b2VhOGRmZUw3RmpuS0dtaXF6ZGJBTm1lTzhhT1lyenBibG9DMA?oc=5",
+      "publisher": "WBOC TV",
+      "published_at_utc": "2026-09-23T17:29:00+00:00"
+    },
+    {
+      "title": "Why Gabelli Holds Berkshire Hathaway Inc. (BRK.B) - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOVnlITmtTZk5rTHZ1ci1ZRUo1cEIxeW85Si0yYlA4Z0kxMzlrZXMwS21mTjJmMXRLUHY1a2V4ckF5aU9WdWljZzZBeGdjaGlOV0xNeE50WWx3LWhBZGc1bGZPcjJtVnBEUlN2NEk2Y19sYzJyRnoyYUg3Q0E2QzdiY011eDJoWDVhekZXRkdwaVkwckxUb3lVQ1FRekpfc1hjM19J?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T14:06:09+00:00"
+    },
+    {
+      "title": "Does Berkshire Hathaway (BRK.B) Trade At A Premium After The Chairman Change? - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNNVlXN1c3UFY1NnB4Q2Q4bHdOZGpnX3R4cTgyVzRjTkNrV3l0SlpaeDdSX3NodHpMcFkxaTAtYlpNSjUtTWlRLXZtOWlla1FkVUl2Z2lHUnYxMTVYeGdMbTAwUG5XVmhvVUJwUVBqRVJ5Z0EyWjViY21pX0VMeGFXS1JTUlBaVkl1TDhEVkNwYUdzSXpFS0ZFdWh2by1oMkF0WFBMSWFZc1ZRZGNXU1F3bkc0bkNpcEU0V2pYbFgtcHpFQ3FDMzhoNjRqazFhMlB1ckpyck50ajRWd3E2LWhzUi1IVTPSAeoBQVVfeXFMUEU2Z3RRRURVTVdLbnZsejV4YmI1ejUxWmxOX1Nzbjh1RzhHUGF6MC1YZV9ueFBmeEduTVZ3Z3JwMlQ5YTBJb0hoSjJ1WHpuSm9VLUpjajVId1VLSW5Da085TnMtWE9TUk1YY0dlZUh0SHVaOFhqLWRIN0FMWWROQ0Vpd3JWTFNvZHFoQXMwZGVRYXQyMUlrdGt6a2pLNU9HTFdwRndBYy1YbW95N05GZnZBb3EyZVpFWkYzZkFzSWM2ODUtV1p1OFVLQng2UlpsTXlDN3lvd3FGVEdHb2pPdHM0bjRUbWtTU2Z3?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-23T13:54:10+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Buys $212 Million of Lennar Stock as Housing Slumps - Startup Fortune",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNbFR2Wnd4QkpLRUNmN2NKaE5rMUJIMm9lRG9RbmdBTERzbjdxUWRZVTUwY0J6SlltcFdmY19QczRBMUhvNEhheTVRWkd1MjVSa2xhR3BrNEVoS1pRbjdPTzU5MjBQS2dEemMyM1Y0Y2lObWplT2dpQmZJOER6QUVYVW9CcVNkRVpuRXRBbVl4VDhMUEZEbll2RXljbXdvZw?oc=5",
+      "publisher": "Startup Fortune",
+      "published_at_utc": "2026-09-23T13:23:41+00:00"
+    },
+    {
+      "title": "Berkshire Hathaway Inc. (BRK.B) Is a Trending Stock: Facts to Know Before Betting on It - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNjF6ZUlmYXU1amZmT1NiYlI1RXR4dFpFZ3lJWFRENUI0b1BsTUlQb19fbERXcm81OWVsWU8xd0pWQWFndmg3aGs2c2M1LTZ2Z3Z5Y2h5QktyMjRpM1Y4Q05WZmVDb212ODFSVjJ6VWtnMmFNeFlXbE1iVmZzSXlXUUJKTloxQWx4dVI3Tko5dk1pLUtQbHdEZw?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T13:00:10+00:00"
+    },
+    {
+      "title": "5 of Warren Buffett\u2019s Largest Berkshire Hathaway Stocks Are Raising Their Dividends Every Year - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQWEd6ME4xVzRRYmQ2U0dvRWFDUzM5TWtUWjE5SV81cHNjbmk4ZVR3VS1mRnhQVGkzTk9UeHpUcEtqeGI3clhsNUJPMjcweVVobGVwd2V5elBYcjkxSzgzRElEZGpaYnROT0lRcnVGc3V0TGc0VXBjc0J1ZkRMcFlpbTRwdHhWRkU3MTMwS1pwNWlicGwwSEh5SFVvbGpvMWlx?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T12:50:30+00:00"
+    },
+    {
+      "title": "5 of Warren Buffett's Largest Berkshire Hathaway Stocks Are Raising Their Dividends Every Year - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQRzl3OHk1YVRDNDI0aGtLZ2tMZXdIVG93UWhTMUlNekN6Vl83UWxDOUNIU2xndlN2cnpLelMwUEhzcUg5ejFZZXV1RXpvS2FVanNFR09ZZGM5cWhHR0tobGZydW1YeUg4UVFybW9fYXBORHZHNHF2NGt5RS10a3RzUVdOOWNGVDNCcVBVRmNKSzdMa1FfelVqdmJEWnVCdmJobWJLZ3R4NmVGOE9LXzhOalB6TzNpQkZFRHVYV29R?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-23T12:50:00+00:00"
+    },
+    {
+      "title": "The Zacks Analyst Blog Highlights NVIDIA, Berkshire Hathaway and GE Aerospace - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVmswNWxUQXc5MnVUVzdRMDFERXk4T0k1UDNvTVRkRmZseFZvY0Z4SS01R1RiQkQ2U2tQWm1mZks0c0gycVBsUjhRQzFEVzhSS3JrNDhtMzlMU2E0dzFGQVBnVnEyUnNZcFlYNkxZWDBiZDA3MkFLUHYzSXBzQ3ZWREUwYms3UV95aFFSQU14R180TVVQc3V3NUt6d18xMFlva3Vr?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T12:43:00+00:00"
+    },
+    {
+      "title": "Move Over, Alphabet! Warren Buffett's Successor, Greg Abel, Has Nearly $47 Billion Devoted to This Top Investment Idea - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPSzI5ZWliWTNEOHJ3ZFBQVTlNZGtkSVpzSmY5WnZCTlJGTjFtbXdsa3RfTVBLVVYzWFR0VVhrTC1pRnRPbFp3QS1pUWpYTm9uNWN6dUI3aHVtTmltaGxPOTdnajUzS3VlZVpDZ1pJa0ZfeUhPM29Fa2V1T19rd2lqR0pCT3JZM05zRlZ4bXl6QTA4THhiRi1RY09KVjMyZHV5?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T09:26:01+00:00"
+    },
+    {
+      "title": "Warren Buffett\u2019s son worked on a farm instead of going to college - Fortune",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPcFFfMUhKWVg2MU1KSUhyai14bTExS1dqY2JpZHBkMFN3QlFiYm5iaVFudE9CbFJsLW52cVNkZlY3dDRRazlWVWhyYndaSENmWmF6WUUtcW54ak9EYV84YTBjakw1VktwdmpJWkRjVElzaHNkWVduOVJaQU5iN1p4emNaMHpNUS1RSndnQnVjeTNqRmZGVkx2eU1OaEpHQkpwVG92c3N1eVplSWRCYWlRVF9WbWNNblo1OWNCT2s4WUxsMDVwWDNHMVhvd3l5eWxTUENUUHA2alY4WUF2bTQ2bXJ0MHVkZE9xVkxRMA?oc=5",
+      "publisher": "Fortune",
+      "published_at_utc": "2026-09-23T07:01:00+00:00"
+    }
+  ],
+  "sec_filings_in_window": [
+    {
+      "form": "4",
+      "filed_at": "2026-09-25",
+      "report_date": "2026-09-23",
+      "accession_number": "0001193125-26-403089",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526403089/xslF345X06/ownership.xml"
+    },
+    {
+      "form": "SD",
+      "filed_at": "2026-09-25",
+      "report_date": "",
+      "accession_number": "0001193125-26-402798",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526402798/d44118dsd.htm"
+    },
+    {
+      "form": "4",
+      "filed_at": "2026-09-21",
+      "report_date": "2026-09-17",
+      "accession_number": "0001193125-26-397059",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526397059/xslF345X06/ownership.xml"
+    },
+    {
+      "form": "3",
+      "filed_at": "2026-09-21",
+      "report_date": "2026-09-17",
+      "accession_number": "0001193125-26-397052",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526397052/xslF345X06/ownership.xml"
+    }
+  ],
+  "latest_sec_reports": [
+    {
+      "form": "10-Q",
+      "filed_at": "2026-08-10",
+      "report_date": "2026-06-30",
+      "accession_number": "0001193125-26-341032",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm"
+    },
+    {
+      "form": "10-Q",
+      "filed_at": "2026-05-04",
+      "report_date": "2026-03-31",
+      "accession_number": "0001193125-26-202243",
+      "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526202243/brka-20260331.htm"
+    }
+  ],
+  "financials": {
+    "cik": 1067983,
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001067983.json",
+    "latest_reported_facts": {
+      "Revenues": {
+        "val": 101808000000,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "form": "10-Q",
+        "accn": "0001193125-26-341032",
+        "unit": "USD"
+      },
+      "RevenueFromContractWithCustomerExcludingAssessedTax": {
+        "val": 70115000000,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "form": "10-Q",
+        "accn": "0001193125-26-341032",
+        "unit": "USD"
+      },
+      "NetIncomeLoss": {
+        "val": 25667000000,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "form": "10-Q",
+        "accn": "0001193125-26-341032",
+        "unit": "USD"
+      },
+      "Assets": {
+        "val": 1263071000000,
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "form": "10-Q",
+        "accn": "0001193125-26-341032",
+        "unit": "USD"
+      },
+      "Liabilities": {
+        "val": 512894000000,
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "form": "10-Q",
+        "accn": "0001193125-26-341032",
+        "unit": "USD"
+      },
+      "StockholdersEquity": {
+        "val": 747910000000,
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "form": "10-Q",
+        "accn": "0001193125-26-341032",
+        "unit": "USD"
+      },
+      "NetCashProvidedByUsedInOperatingActivities": {
+        "val": 21653000000,
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "form": "10-Q",
+        "accn": "0001193125-26-341032",
+        "unit": "USD"
+      }
+    }
+  },
+  "latest_earnings_transcript": null,
+  "unavailable": {
+    "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+  },
+  "cik": 1067983
+}

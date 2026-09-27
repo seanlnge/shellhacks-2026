@@ -1,1 +1,4 @@
 .kilo
+kalorie/*
+data_aggregation/.env
+__pycache__/
