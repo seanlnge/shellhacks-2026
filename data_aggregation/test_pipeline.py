@@ -2,7 +2,9 @@ import tempfile
 import unittest
 from datetime import UTC, date, datetime
 from pathlib import Path
+from unittest.mock import patch
 
+from data_aggregation.aggregate_companies import news
 from data_aggregation.pipeline import cluster, event, load, normalize, parse_snapshot, save, stories
 from data_aggregation.portfolio_db import connect, portfolio, set_holding
 from data_aggregation.cache_sec_documents import chunks, extract
@@ -11,6 +13,20 @@ from data_aggregation.aggregate_weekly import event_window
 
 
 class PipelineTests(unittest.TestCase):
+    def test_news_search_slices_and_retains_full_window(self):
+        def rss(url, _agent):
+            day = "2026-08-28" if "after%3A2026-08-28" in url else "2026-08-31"
+            published = "Fri, 28 Aug 2026 12:00:00 GMT" if day.endswith("28") else "Mon, 31 Aug 2026 12:00:00 GMT"
+            return f"<rss><channel><item><title>{day}</title><link>https://example.com/{day}</link><pubDate>{published}</pubDate></item></channel></rss>".encode()
+
+        with patch("data_aggregation.aggregate_companies.fetch", side_effect=rss) as request:
+            rows = news("Example", datetime(2026, 8, 28).date(), datetime(2026, 9, 2).date(), window_days=3)
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(len(rows), 2)
+        with patch("data_aggregation.aggregate_companies.fetch", side_effect=rss) as daily_requests:
+            news("Example", datetime(2026, 8, 28).date(), datetime(2026, 9, 2).date(), window_days=1)
+        self.assertEqual(daily_requests.call_count, 6)
+
     def test_cluster_same_holding_similar_news_within_48_hours(self):
         rows = [
             event("AAPL", "news", "2026-09-25T12:00:00+00:00", "https://a", "Apple announces major new iPhone launch"),
@@ -49,6 +65,18 @@ class PipelineTests(unittest.TestCase):
         self.assertTrue(all("period_end" in fact and "source_url" in fact for fact in parsed["financial_facts"]))
         self.assertTrue(any(fact["older_than_two_years"] for fact in parsed["financial_facts"]))
         self.assertTrue(all(item["document_path"] for item in parsed["events"] if item["type"] == "filing"))
+
+    def test_month_snapshot_covers_entire_window(self):
+        snapshot = Path(__file__).resolve().parent / "data" / "2026-08-28_to_2026-09-26"
+        if not snapshot.exists():
+            self.skipTest("Month snapshot not available")
+        parsed = parse_snapshot(snapshot)
+        self.assertEqual(parsed["date_range_utc"], {"start": "2026-08-28", "end": "2026-09-26"})
+        self.assertEqual(parsed["counts"]["price"], 360)
+        self.assertGreater(parsed["counts"]["news"], 321)
+        self.assertGreater(parsed["counts"]["filing"], 14)
+        self.assertEqual(parsed["counts"]["sec_documents_cached"], 73)
+        self.assertTrue(all("2026-08-28" <= item["ts"][:10] <= "2026-09-26" for item in parsed["events"]))
 
     def test_filing_text_extraction_and_chunks(self):
         text = extract(b"<html><style>hide</style><p>Revenue rose</p><script>ignore</script><p>$20</p></html>")

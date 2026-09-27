@@ -59,6 +59,11 @@ def main() -> None:
     snapshot = Path(__file__).resolve().parent / "data" / args.snapshot
     output = snapshot / "sec_documents"
     output.mkdir(parents=True, exist_ok=True)
+    previous_manifest = output / "manifest.json"
+    previous = {
+        row["source_url"]: row
+        for row in json.loads(previous_manifest.read_text(encoding="utf-8"))["documents"]
+    } if previous_manifest.exists() else {}
     records = []
     seen = set()
     for path in sorted((snapshot / "companies").glob("*.json")):
@@ -75,8 +80,19 @@ def main() -> None:
             record = {"holding": company["symbol"], "form": filing["form"],
                       "filed_at": filing["filed_at"], "source_url": url,
                       "accession_number": filing["accession_number"]}
+            cached = previous.get(url, {})
+            if cached.get("path") and (snapshot / cached["path"]).is_file():
+                records.append(cached)
+                continue
             try:
-                payload = fetch(url, agent)
+                for attempt in range(3):
+                    try:
+                        payload = fetch(url, agent)
+                        break
+                    except (URLError, TimeoutError):
+                        if attempt == 2:
+                            raise
+                        time.sleep(1)
                 if len(payload) > 8_000_000:
                     raise ValueError("Document exceeds 8 MB extraction limit")
                 text = extract(payload)

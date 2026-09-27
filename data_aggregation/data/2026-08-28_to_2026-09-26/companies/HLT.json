@@ -1,0 +1,824 @@
+{
+  "company": "Hilton Worldwide",
+  "symbol": "HLT",
+  "date_range_utc": {
+    "start": "2026-08-28",
+    "end": "2026-09-26"
+  },
+  "retrieved_at_utc": "2026-09-27T13:32:00.596169+00:00",
+  "news_source": "Google News RSS (daily sliced headline metadata; not full article text)",
+  "news": [
+    {
+      "title": "Hyatt Hotels Corporation (H) stock price, news, quote and history - Yahoo Finance Australia",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE44c29KOVk1aGhjTktKV0Q1TG9qMWpXQnQtQlpoR0lJLWhVQWp5MndJLVROczBCY2tGeDdKZFBhc0lDTWUwaGNTQnViN1loQQ?oc=5",
+      "publisher": "Yahoo Finance Australia",
+      "published_at_utc": "2026-09-26T22:40:23+00:00"
+    },
+    {
+      "title": "Hilton (HLT) Stock Looks Fully Priced After A 130% Run - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNZ0lySFhXWmtHWFhZZENncVFJUmNYeXJpWm5pQ05tQUE4V3JUbGJBRV9NWG9zcEJSd0RzUF9BaHZ4dHRkV1NXekEwWG9oSS1IR3V6TmFPSjdaODdqY0VZOFphWUdyZ0Q2UnllZXdMM05wZVhHUGpBbDdXX3M2bjRvclltbTZzalVaLTlFMjgzNUliYXEzVW5Ddnp1eWZSU3lPVGVaY1FsRENWX0sxSERsZld6R2k3akF6SEYxZWlpVkJEbDlJZzJaTkZoYl96N0V1WUtTTmpTejY1WjlDYUHSAd4BQVVfeXFMTWdJckhYV1prR1hYWWRDZ3FRSVJjWHlyaVpuaUNObUFBOFdyVGxiQUVfTVhvc3BCUndEc1BfQWh2eHR0ZFdTV3pBMFhvaEktSEd1ek5hT0o3Wjg3amNFWThaYVlHcmdENlJ5ZWV3TDNOcGVYR1BqQWw3V19zNm40b3JZbW02c2pVWi05RTI4MzVJYmFxM1VuQ3Z6dXlmUlN5T1RlWmNRbERDVl9LMUhEbGZXekdpN2pBekhGMWVpaVZCRGw5SWcyWk5GaGJfejdFdVlLU05qU3o2NVo5Q2FB?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-26T22:22:51+00:00"
+    },
+    {
+      "title": "Hyatt Hotels (H) Could Be 20% Undervalued As Asset Light Plans Stay In Focus - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQYndXc3ZuUzB5VkZkY25sZ2ttdWJENk5xa292NjdFUjlXVGZXaXlTT2tQVjFuQWxoMG1VUExXY0RiSWNBTkY0SVUzdURicHNqN0JlU1dET0MwbWpZNUVIS3ZBS0ZDczZ1c2YzUjNpakdnTEp2emVKTVNyTEFabFZvcU0tZHFndDVXX04tUW5mMmw5QQ?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-26T22:08:26+00:00"
+    },
+    {
+      "title": "InterContinental Hotels Group PLC (IHG) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1ZVFREOFNLMlIwWHVjU1B2QjJlSnZPWEc3NktWMTFldlN1QUlMbURLZWV3b0hxQjUyM3JaSmd0ZGNualB1cmQydTBHSG9JSktH?oc=5",
+      "publisher": "Yahoo! Finance Canada",
+      "published_at_utc": "2026-09-26T11:56:42+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. (HLT) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5vWVE1NEhoVk5BWk9zWTlKRDZFX0ljd3ozekE4ZzVod0RNT1lPaGJqek5XVkxsZ0xXRzBZRG10anhKckdMS2RTME1oTWlkRTVq?oc=5",
+      "publisher": "Yahoo! Finance Canada",
+      "published_at_utc": "2026-09-26T11:10:15+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. (HLT) stock price, news, quote and history - Yahoo Finance UK",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBiNEx6MG1oTnhGekVQZnBMNDhYWVl0d1NGYmNLV0tOUXQ3ZWJ0dkZ3QzBMd2tuZU9jSllyN3FHN3JqUlM2VGFhQVAtcWtQNVBG?oc=5",
+      "publisher": "Yahoo Finance UK",
+      "published_at_utc": "2026-09-26T02:07:28+00:00"
+    },
+    {
+      "title": "Football Suite Debut Just Shift Hilton Stock Narrative? - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNVFl4TlpuWlU1YTFiZ3pzUmFFbl9NbG54czRSUXJfVHdJZ2Z3X25RMl9sWkhVOXViSTFWWTdpZVoxb0RKbndsTVd6dFd6aElGY0ZDZGJFMEFYclBrN2x2VlVlZ1VEN2d5VG9BNi1iSXQ5UGFIYkdOMi0xdElLY0JDdlJvX2JJODN0TWJCd0dPNGhIYWJxeGNyQUpRTlBfMVMycUlXRjlWRW5RTnNVVmZkcUZ0dG5nTFdET2syMk5YVERpSWFTODRxLUtaa3phSXpXU1hrU0ZWX0Y0TkJR0gHiAUFVX3lxTE5yREQxR3FZTVN1bEFHVl8zclE1cnlKbHFCN184SXA3NGdMUkZyZlY4bU53TU55ZlFSelVZZER0S29PLXBzZmFmRy1fV2l5cVRSUWJGcFFqNExaTV9aSFV4eHdfUmpjV3RpWVdfcFQza1R2ZTBPYjRZdTg3Uk5lZU1Gd0toMDNEVTI2UVkwaUJDd3FwYk85ampoYWI1bjJTUkt5Z1pGbnMybTJjbEFPNF9VcTZ2cS1FOVFWYi1Za0JhLTA1ZV9uZS1QbzczWWhiWnlpamZMemlFX1lUTHZnX3RwQmc?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-25T16:32:49+00:00"
+    },
+    {
+      "title": "3 Consumer Stocks That Concern Us - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeVV5NjdsSFpLVkZrZ01fdnEwQWNBUUx0ZWZIUWRGczlkVXdzSGl0THdFSnZHVmlVY3k4cHlST2MtLW5mODVQSVhLR09hZFFCaHJMbHdMXzNkTlMwM0xxRnctdmJMak16V3paSm1wTUtGUEhOWkV4TV9UM211UkpwZHUyUXlMRVlaUExCUHA2ZHZLMlZPM3lYZQ?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T13:44:37+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock slips 1.2 percent ahead of the open - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQS1B1ZU8tUW02VEJqSC12Rkpqbk54NEpmLW1GdVZVMDVrbEFsalppTDlpaGluaXc4YVNwOTBBMUFQUHg3Y3NfQUYwLWlLRUNBUU52V1loeUEyRkl0eXVpMnBiUkFVYmFuQ0xFcEVoV1hHOXJ4SXVHY0hXS1VzbUktWE1Dd3I4LUFDQlc1UzFHMFBKTW9nRy1yR2I4Q2h1ODk1R25OS0ZzdHNUM25jTkVxREptb1VIckk?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-25T03:25:03+00:00"
+    },
+    {
+      "title": "Marriott (MAR) vs Hilton (HLT): Which is a Better Stock to Buy - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQRnJrVC02WHBZMDUyQUZkZFJmWDNMQWJPQXlRal9UdjFLdGxta0JHY1NqNVdRemFva19zLWh1M2JaWjdrTERPZy0yVEM3UGlPdHpWTUZlQk8tdHlXazJESzN6d085VzYxaWJ1VTNjQ3I5SVpDdlNNQ2xrekROT1Fxclg2ZjM0VDVNbDZzOTNHSjBpczVZT0E?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T22:26:03+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. stock outperforms competitors on strong trading day - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPaVFQbHJTWENmLVVueXNmS0oxQ01FdF8xQ3hMYVlYaGo0dlJIUExHcHJnd1NsRWVFSlZMTmI3SGxxV1h6YTh4SEJhRjB2SXRscHVIdGk2SHN0T29QUXBfbllMMFFZa0FmaHNScXh4d1QxOEVKR1FtZzItWFUtTVZtVXg2SlM5M21jUHphczRqTDJVTVhDRGNfZXJmdU94Tl9NY1ItU2ItQVFOVDZpLVBubWRWU3FwYlQwX3VjRU55VUpncGtZODF0aEQ3aElFNVlrX1ZaZ1NweTc?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-24T20:44:00+00:00"
+    },
+    {
+      "title": "Analysts Offer Insights on Consumer Cyclical Companies: Royal Caribbean (RCL), KB Home (KBH) and Ross Stores (ROST) - The Globe and Mail",
+      "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPaGtsSGxSZ2ZadFNsMmlQZlZhckZicmIzUlk3SWlLOEMtdGZkdzZxVGtyTVVnLUhkYlZlUE9aZEhDQ2JKTGxqMU1LTVExXzZZNEdQXzF5ZlA2UVRYYTNvemhtUUlBRG5NczNKaktkcUxZaV9GeFlFOGhVLWtaWDdfNXNIVFRJX0ViY2EyVlJjQXZ3ZDQxMWNzUnJheGRBNUJRT3dqbGVUS0hpeEFhSHItdFhFYVB0RTFvYXZ0X291SkR6d1Y4UXpCcEUwWnhnZV9tNTV1czRURFNvWDdyZEFXVjVlOFJfSDRoY0VSR1o2ZjJnbFZFeFlVcExzLWdQazZhLWVuQzJWUEdtUU1oQUdDTDNRRDBDdnRibmFvdg?oc=5",
+      "publisher": "The Globe and Mail",
+      "published_at_utc": "2026-09-24T11:29:31+00:00"
+    },
+    {
+      "title": "Hyatt Hotels Corporation (H) stock price, news, quote and history - Yahoo Finance UK",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5WMzBDVVpyWlNIeTRmblZoTkhpNmo0QUswMWU0QW10SlY4MDEtem81ajVxcWtsV0RDdDg5VUFVSkVDODFxWm9yT25QekJhdw?oc=5",
+      "publisher": "Yahoo Finance UK",
+      "published_at_utc": "2026-09-23T21:24:01+00:00"
+    },
+    {
+      "title": "Marriott International Inc. stock outperforms competitors on strong trading day - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPVVpRdDVQakM0OWZDZzltVlE5VGREamNPbDdXUjhJcTZMYWFYczR0eWxaTGh0YXpSeHBMalc5dk9mb0lzaDFYY0dtdVVpUkRaTURWeGNGSXExQUZ0a3kwWlpEd2NLcmJlVmkxbHlwemlzMldHcFlkb056S1BEaE9ZRkJsUnVYUzJfYkpjWXhXN1pEb0g4Rk5XRm9iWFNpM242bkFSOHVmMkJGc0Fwb2ZlMXlBNnVweHpkbDFaUjk3aU5CejQ1YWVJUTRvQ2ZmcVNJMXVURWZjX2ZrUWlDeTk5VWY1NjlEa1AySUxyXw?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-23T20:41:00+00:00"
+    },
+    {
+      "title": "Marriott vs. Hilton: MAR leads on value, margin, and momentum - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSDZ4SEN2bEp4cG1oODJZbm80WnczSlJFek55U2dCYU1jVXJRZm85RG8yUE5RZFVEV1pxNklnOTdKSWh3MGJNWVB0MmZuTzZ6OFhXWHJPZ0duZU9fS3lmMHd4UXh4RElOdGE4WDZtcXZfWnRDeUhPU3BaMmctUllfWFVZSHpUTGh6OFlSeUtkZ19Ib09qQkxPaG9PNmx2Wl9aSVEyMGZpT3VHb2EyakxuUndyS1M2RnAyaUpj?oc=5",
+      "publisher": "Investing.com",
+      "published_at_utc": "2026-09-23T17:20:46+00:00"
+    },
+    {
+      "title": "Shell's CEO discusses adding energy sources alongside traditional ones as demand rises - Stock Titan",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOYVlNOHVJZG1IaW9MTnRxdmxRLS1TMVhjTk1XaUYzMjB4UUtTaG9hRUF4Q3FQRVg4bWFFQnVsdlpQLUMwdUlEU1JENG5DOEIyd3Y3Ym1OOHlhcmhxZ3NIVXJGOGNqVGVDd21McktMbUZyQmU0bVpUaVVkZ2lfdHUwVk5WaVFWWndIOXRWZGRXZjE3eXBZUU12djlucXlLd3VITmsxanNLbXVJU19rbTAxaVhyN0lvbkx1bU9PX3VVcGk?oc=5",
+      "publisher": "Stock Titan",
+      "published_at_utc": "2026-09-23T14:10:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock trades near USD 309 before results - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQTHhxV21WaXF0dmRYeVctSEZEcjByNWNfWDFvRkV3RXI1Tmk2bUVucW9KTWxtVzFiOEttMkd1aE5UM2MyRmZ1UzFBZVRUdHZhbFRsUk5hb2dCanp6OTdGM1NQRmxreUtJS0h3bXg2MjJUbGx2OTdJMEw1RFpZOHJHVG9INTB5bmFxMS1hckFnX1F1U0pDZnFsazVPTE1nR0RLbUFoQ2RHY0F3WV9pVXdRMlJ1TElPMzdoRUxHZA?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T08:08:14+00:00"
+    },
+    {
+      "title": "Is Hilton Worldwide Holdings (HLT) Fully Valued On Its New Football Themed Hotel Push? - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOLTBiSFF5M2hwX05vSXdxa1QweVV5NlVoOWhvbWJmV256M2VoSE5fX1lUMzJoNlI1MXc4b3R0RHlvNk1FREh5c3pnRzZ2NEo3ajlMMnk4amZYM3EyYWJWWEJPZjdDclJHSnNwbGRWcThHc0tqeVBZWmhMZWdqOGFWN1dJMzNMMGtNd3JlY1YwRHBpaUZQS1RHQnZKY2lFaDZ5ZTAwVFdaTkJrcUtLTFBrLXJ3M3JUVk9WMDRmSzlac0FzRUNnS0VpMFJvR0dDaG1EWjVxSk1RWHVnZnMwUVhSTXhPWjbSAeoBQVVfeXFMTUs0emVqOXMyR2duSDlMQklncFJ4WHUzanQ4eGdIdW5kS2pUTDNWR1F6LUFlSEpYLWtZcXRhcTZaZHF0bGQxZEFUb1Y5WDQxXzk4YjdJdFNWdjlqcExSNTNWd0F6eGVVRS0zMDlRalF2SWhWU3ZoVzk0ZUFKdGFKWkl3eWtrbm9IeGNrS0RYRGVEMVhTYzRYYV9VOVU0SDMwZFFuLWotMlNjcTlpaGpjaFh4TWRYbzdfVFAxaVJUQmVGelN2QTV5WXZ2eGVRaGFRY0pRM2tQdGsySGtFOEttQXI1WFdjSE0tUkhR?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-23T07:39:34+00:00"
+    },
+    {
+      "title": "Andra AP fonden Has $10.74 Million Stock Holdings in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNaDN3LV9INmJNOTVyekFsdTBNM09lZDFMRGZRbXdMbEJBclUxUDFFVUJLaHpVYy1qVW96MXFHVEI3ODVDUThua0IzUDBVMERBZnc1UzhDdXhFVExVVlFPdEJGNERzTjZpNzdDdDlyMFZKZm5LY2U1dnFfc0dfeHJTMWphYW1rN3lIZ1dOTzdkUTA0V2RmVDF6WHBPQjZUa1JlMUk2SXlTN1MyM2xxTExVR3RUQlF0MjlCNGhBZ2tPNXB3MS1kcWRXYlR1OG5wcmJGZWtMRUJ5R2VsaFo0b2c?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-23T07:35:35+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock gains as market value reaches USD 69.19 billion - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSzh1TmpWMElwU1A3N2pMRHF5dk5vUHg3ZEduVWgyT3E3RmV2ODJNbUpQeFBqOWk3Yk41dTBjblEySGVOYUxBYVJPN0YtQ1Awd0Y3LWJUbENjSmZ5Mi1Zc3pneFpIWWJYZEFhVEd3bjdLd182OUZ3NkpBRWhNWm16cFpycGFlQ0txNFBCQzhGYjRpTF9PRDhsZTV5LWRXYUpIaUFQcy16VEs3YkhPOGxSR3RCYlV4emZjcUFpNUhBbWswZVZvNEh6OQ?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T05:18:54+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock rises 0.44 percent ahead of the open - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPLVdFWWZTU1dkdENjdExqZlJEM09kUFZsSHdZQ1E0VFpoVExYWFB2LUJsS2JCWEczTmZKYmFmcmhHcXg5YlRYU3VLZDVxSXlVMmlMbXlfTDBLY295d2ZpbVctRnhkQjRGbFZDazdpbFZYZHdWTnFEbF92SUExcUtHbExUY1JHbkNOc2tHcm50c2NsaHBkemlLLUZSV2ltLWIxY3ZaM3ZVYngxd044S054ODJVNEtDTTBPS0hodjBxTQ?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T00:20:35+00:00"
+    },
+    {
+      "title": "Marriott International Inc. stock outperforms competitors on strong trading day - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdmxTQW1uZEpVa0JlMFV4TVMyNUtsOHZzSUhDZ2FCRV9pdDdqNUFmR1JnWXlmWDRJWVQxZXh3RkgycWlCQzhPT2lMTk82WWltSzJyVUVuemZ1bDhrT1VzOC1KdV9HM1ptMzhxbjgxSTZGY0pNaGV6ek9CYjNBcnVsVnJUT0FDOEdLUFRuX1JIM2pRbGRzaHplaGRkN1llRml6ZHdpMG10UUtJN1pDZ1dGWTVRcjVLRWN3X2lNS3N4czlaa0tEbWxxVTVsLUFVcm9DSGNJNw?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-22T20:40:00+00:00"
+    },
+    {
+      "title": "Bernstein Maintains Hilton Worldwide(HLT.US) With Hold Rating, Announces Target Price $320 - Moomoo",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbU16cDcwYUpEb3ZiaWJReUlFRUhLdjVvMXowTVBtRkhtall4RTEwTzFuZnYyM1JpNHg2VTNNN1cycWF0OGVBUjhQMUJKQ3F3VmM1YWxYV1VKaFM4LVgzaHV5WEZJSEc5OElqMmEzTkpkSjI3X1VJb3ZqWHEzZ1BuVVhhN2xkdkJKUVg0Nnc3S2RfMmJ0cWlvQVgwVHFMRWdQLS1iQ2ZiNVpEc1ZhZkNoNHVZdF9PaTRIa1hFUg?oc=5",
+      "publisher": "Moomoo",
+      "published_at_utc": "2026-09-22T19:01:29+00:00"
+    },
+    {
+      "title": "Analysts Offer Insights on Technology Companies: IonQ (IONQ), Sportradar Group AG (SRAD) and SAP SE (SAP) - The Globe and Mail",
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPREhzTThqUXlvZ3pINi1iNVViWnR2OGx2M2I2dXd2TEczZ08xVHQxR0RHMlNKalFDRGxwNmxaRm54ZlIxTmNnODdRWVgtOHRfWUhaZmdxbUU1VS1SS3FZQlNkOGJUdmtqak43RUlfTmVEUFd3R08tV0Vqbkk3TmRzY3JJMTgwWXNNaWRXV0xXSEtHUlkwTE5Eazl6SkVGSllQMFFWLXRWcHdOd1pKcE9rSjF2RWp6UFNTMHFFUWhPR3FDbkh3OGtfaHZJSGx3R2J6bWVVWUNWSkRGSDlTbklYUWJiRFR4ak8yMFNmLTRsOTBzUDlvQ2tHRjFlSDNQNF85RGIyM3FHWXBzSUt0b2dwVl93?oc=5",
+      "publisher": "The Globe and Mail",
+      "published_at_utc": "2026-09-22T15:02:09+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock gains 0.44 percent as valuation stays high - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxObDdyQy10ZGVRM0I5ekdBZ09wWEtrNmo1VWM1TFVFbTVKNkp6UE04aFloTzZ3OFZaRFl2WEdzNjdTbGhranNVNWlKQXJKVDYyQUxKQkxtZ1VadDZfNWtpSU5YYW5nNkhJVXMxakx6clVjZzdpR05CZG80UmYxUEhQNVZfSWI5dGljcjFOS2k3VzJkZkZFUUplSTFnM3pmallLNWlPT0hoT01KY2tLZDJmVUlzVTJZRDNfZVJWUzc5V2lJYUQ2SjNv?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-22T10:51:30+00:00"
+    },
+    {
+      "title": "3 Stocks Under $50 We Steer Clear Of - StockStory",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNURadW1uR3BCeFZqZ1lYMFhBYnkybXhoaEJXWmVjQzNrdWJxa2xLTURQaVdWekJGVDVmQlhUdURMU0g3WTZ6Tzg1WXVFLTVILWtkcTFpc2wwRy1KOElXRzNtbW0tQ1A5aDhyMkc0bGdhOVVMbzZFelV1MGRNWHNMa1BJM1BpMHNfMHZteWZSdU5CanRueEMtRDlZRk11Zm5BMnE1TzIteEw?oc=5",
+      "publisher": "StockStory",
+      "published_at_utc": "2026-09-22T08:52:44+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. (NYSE:HLT) Receives Consensus Recommendation of \"Moderate Buy\" from Brokerages - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQWUJLaGg2Q0hXOTF5NGs1R1dQX2JPcXNaT3N4SHI5MEwwNFBMa2JOdHhFUWdVZlNiLXVxVkprZUNrZFprdEhOam5kZGJzX0VJTHcyMEx6bFJCdWhTUFVncUdSTHlPWkRUNHJiVVpxSm9sN3gwejZaN3VPR2MzaE5DNENLZWFMVlpzRW5ta2R3RnFmeEVmQ2QzN3VaZ0NzenZ0Um9mVjlZT1hoVnkwV2hwa0FWT0l4Z1R2U2RvV253UzBvN0hXLXdCbUNYYk5QY2FuZGhDNlFScVVhc1Q3OFpSSnVkelFSb3NxOFZRYi1wdHFRek5kSGd6WENDT1g?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-22T06:31:32+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock heads into the open after a 0.44% gain - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQOEZ1YkRHS2hpcmt5akJSNHhzTHl6bjdkb3hubndnNnRkT3lmVjYwWTI4TXJySFJtZm0wajJtZUdnM3BGTWpXVnlIMXAxNHEwYWVGLThRTENqbDdPQWZhaWlIU3Q1Q3RvbG40TmpEY2hyd3hRakM3TXdDTk5ZSVNncF80SE1TWTB4R0JZLWRUemN2SWw1WWVUSndRUTA5UUZibkNMZ3FjZi1pLVY4Wk9tZ3FXZHg1RWJEbG5MYlVLVEt0YzVRX19WTHRGcw?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-22T00:04:50+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock edges higher as Q2 2026 earnings support valuation - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQYnlKOHBoT2tmRldpRGhpWVVBaWExcmhRd1JMTlpVaGdIbE1CczlMd080TGJXbDh3YWJpLTE2aWZob2RVeU8ydURPOGhzSnBvcUQyWXhEQUdjQnlGYUJCak10Nk5mM0NNV2RZeW4zQWdZRXJlVFY0OG16LXplUDVfQVpud0N3Uk9LYmN3R2s2cW5HdHg3SFM3aV9nbGMzdVpVbnNZQllGLTc3RWpIZXpaeVpTMHF5bHplb2dGd2dxT2xhRDBULXQyMHVLUVQ?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-21T21:08:23+00:00"
+    },
+    {
+      "title": "Marriott International Inc. stock rises Monday, still underperforms market - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPaXdEXzRKUUpOTWJQWl9EWm9hODYzSkxHMVhKQlFQUHhPdjNQYUJpbjJNM3dPeUJnV0dBbDRnX2Zmc0ZBOUsyZDBRTXlQTjlxdmVGSXBtR2h5Ulp6SFg3Sng2U2NoZ1c5engxd3RLWlZIMTdMVkVCSHBsWVR5VmNhT2w3WHJPcl9JbDczUWJIejdsLTZPM0lxc0prZEQ3dlZJYnZkOXRPUzFsLXAxT2RFU002cS1CMUtGS0s4THBkTm5maFRSbzFSTHZ0cEZVQVJJV1Y0NGZ1R1R5aGEtUXBSN1BPOTQ?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-21T20:40:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock holds firm as investors weigh recent earnings strength - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNendIdTdGUXFvVEVVb2dBTHlyaWk2ZzZzSURockRkN1FIS1lGbk5tTFpka3RjTlRUZ3ZpN01ucUVRT0g3UWZEcTVYUWpyZll4ckwxV0NPbjBQTzdNajBTUDhYTGhDQWNmQ1RDWWxfWFVYbmhjNW1hQVc1cXJoeS16dzU4dG91eWhMTTlqM0ZnVVRlMUpWZzdXQVcyMmF0dDlTSmNPZFA0bWIzNFVHMnNBbW11b0pRQUFLUkFMZG4xc3lZdy1acXNZRS1pOA?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-21T18:24:11+00:00"
+    },
+    {
+      "title": "3 Cash-Producing Stocks with Open Questions - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQT3hlemlFZVREcGhiZTFvM05fV3FqeW1JOWJkYVBjMTcxelpaQksxRExzTEJ3TXRBa1Bsb0NESHNBamZlRXBSRzVFQ1J2MWpwcVNWMHdxeTlJR3dReW5RczIyeEdOeWJzTWNuRnVSNmJtQVdMT0Z2OF9pQTJXcFpmSEdQcFZ1MHRBSTduRVQxV2VCNG81S3ZmNg?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-21T14:30:25+00:00"
+    },
+    {
+      "title": "Hilton Gets 15,000 Applications for Early-Career Jobs as AI Fuels Hiring Frenzy: \u2018Double-Edged Sword\u2019 - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNMURpODZHNTd4cGNIQzI4VmdhSUJ4ZzFod2ZBeEJNdTVXME9TdGdpSEpjN0RXWjRkTFVfdFROWURieW81Y2hTb0kxOXFiUWZfQlBObjYtT2g0ZkNYLWdrYkYwdnlnWGRoT2JCOGswRmhKNU5rM2xtbDQxb01YNHRtNGJLdFhvcUg3bnhmOHBEUmJtSG5kUVREWHJpUms4aEI1SmR0NHNQZVRvbGw3OWlMZ2ZGM0thenR2ajNRRDJWNmJXUTZPS0VIZVRiRTQ0cldneWY2N2FmUzhXSGZJN2pOb0p1NEg?oc=5",
+      "publisher": "Benzinga",
+      "published_at_utc": "2026-09-21T07:51:26+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock gains as expansion plans support valuation - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNVc2UldVMmxhRVlzNmJGeVlPZFJ4Nl9XZElTTjJFWm02QlR5Ym9Vdi1SZW9uR0ZOWDJxVVFhM1JyMUc1c0prUG1NZWppcEpUYXdWNmpCbUg5NnBQM1duMlk5MHRGcFRrUThtaGFwZlNvLUdVdWtucmNBU1MwSWVnV2l1LU91eVlRUmk5azNGdElkYVNHaUVLdGRvYW9QTE5EQzhtNnZ3b1FyNkZCMmVPX0VXS3UxVXJpZC1KRGRfSjMxdw?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-20T19:58:46+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock holds steady as investors eye recent earnings and travel demand - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPd2h4MFBNQkdISHRnQnFVcGRKS2praE02RmNLbmN6QUJUMEF2RTA2ZExDYW10RWowQ3B4Wjl3cHJJUDdfLVJhcjhma1VQNWVyZ2E1aHZtLUc1ckxiOGZCZm9mMnp4aFUzTmJNOVBGQjZrbUx2em1QOVNiMHFLN1F2WDNYNTBmaE1vWURfdWRZRHFRT2lBLTNJWGRRN2FfTFR2MkpGLVdESVNwdm5Na0diZ09jQ1ZWZmhqVnF3WW9nZjdjRElaUnJTbU5aVzJLVnd6?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-20T18:55:04+00:00"
+    },
+    {
+      "title": "Hilton received 12,000 applications from Gen Zers for just 72 internship spots - Fortune",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMmVTbmYteXpESUN6UjJmNkFzRjNCdllWdGtCZ0xCRWxEYmxERk5EcWc2OWpVOHh5WG1ZeXlZVEZUZ2JIS0hiRmxUNzBMNHpkaWZ2dFVHZTdDakliUl9OUG9jcDQxaWVzS3VEWGMxb0l6STM1S0d6YzJ1MnBRMU1vT0xsYWNHQ1JSS3F5MVR0RjJUUkdENGlId25aVnlnN0ZTN0VDc002dHFfdXV4Q0dtYUZEVk9SbUlNZmc?oc=5",
+      "publisher": "Fortune",
+      "published_at_utc": "2026-09-20T11:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock edges higher as Q2 2026 profit grows - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPMXVEcWp6eGRpb0gzaDhqWWljYnl2WkEzWUFfTVFaZmJqOXlvNWxoTWp1QVB6a2ZtV3lpUW9ld3NBaFphSDBtbzBhY2JRMGk1MkxLZ0hZS1VNMzNfSE13a3RtUkVrSkdEQUtfS0k4TGYwTkZUSlpRZEQ0V3FvQW5jbWVSQTh3dUpOV3RCc0pnRkNMWmlMV0VHUXkzNDRvdHpBMUE5d1FnOUE0bzF4YUg1ajNvY0NiYVplN2Q4Z19DTQ?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-19T15:36:18+00:00"
+    },
+    {
+      "title": "Nykredit A S Makes New $41.28 Million Investment in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOZzNhVkhYYmRTbjEzUHA4clFESDZWSlZnWlZTZGdfZDZMcS1OZHU5Mk93Yy1wdUhjVkRQV3NyWGYyREhlVVJnamItcHlSV3ZKSEUyS2Fqb0JQUnMyM3o0bi1sM0l5TTlSdjVnX0lFVGRva29OeVRQV3pOS21kUHV3MXp6UE05TUQwSTgtaVJ4U09MakZnUnBDZ2FBTmREdTNOVEYwaTJveC0tTWgwSUxhdkZYUVJGSFQ5Zl9hVER2ZHZDN1VmUlI3QkVxYVNwQkVtaTROOTNoU2g5Qm1T?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-19T07:42:22+00:00"
+    },
+    {
+      "title": "Bill Ackman Said \u2018Hell Is Coming\u2019 in 2020 \u2014 How a $27 Million Hedge Turned Into $2.6 Billion as He Bought the Crash - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQRUNrd1Q0ajFSTGJFY3lKaDJMUEE0VXhTZUhjRTdJR1lzM0FwZGd3U19yaFVnOHExUzBITkV0YTR5bjM4YzBQallJQkNiTVprYW1wcnN1Q1czQlJFZW8zZW1VMTIxZXRBcW1QMXkwZXkxM1VhSEVyU0tZX0ExT256VmUtazNmVmRwQVFBX2NUU19naUQ2cUFYQ01GY2tkbFNMTU10QUhfZ0p6UEJnVUlYRzkyY09NcFh5eTN5N3hvTXRUckQzUmxqaUUzbjJncUcyVHZ6bmxxRVRtMmlRRjJjTkZ0YnVuOGVVbnRvRV9TQ2tKbHk4SE1qenFR?oc=5",
+      "publisher": "Benzinga",
+      "published_at_utc": "2026-09-19T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. stock outperforms competitors on strong trading day - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOLTJwaWhoRFYyeUZ3MGRRMHJXOFlMTDhYak91UUNJcThZLVV4dXpiZ3dMWG9HQWhuQ3VpR2hjNTZteXFTQnd6Zm80dFpUVlpKWkNTakFDTi1CTEppRTdlcWlQRGw3ZjdFb0JRbk5mZ0d2Y3RkR21lS196dnM2VWQxN29DUWp1UzdBak51NkJOOWRWVTNNTWFSdDZXZ0NHMmlWWmY3cTNtRGVudFJ3LTRmR0U1V2NlRFJWb280MjZieC1HZ2thQnRZcEU1Q01zcGFmQlR5Vk50em0?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-18T20:43:00+00:00"
+    },
+    {
+      "title": "Marriott International Inc. stock outperforms competitors on strong trading day - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUkc2ZFJRVXVKUXdidFlDS2MtUFh5d2lJVkR1SEw1anlDSkhzdU9XWUZZanhEZGNlOXUtTWttQzAwN2FPdFV0TjBFeVo4R3JuNXpId3JvaEZ3WHZ1aHo5R2c3b0hVNnAzS1ZVTFE1cWVQWXBwVUNCTEpXd0h2aUVPQUpZYUFYVjVDbUN0S0dtQ1ljNmxGTnhoNXRHOHduM3pZSzFNOElJY2poQWxZSE9MRzF4b2pvU0tMb2tzVWwwRXhGY1NPcVNhLTNxdXhLX2liVkRCOA?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-18T20:40:00+00:00"
+    },
+    {
+      "title": "Hilton Stock And Hotel Peers Facing The New Services Inflation Test - webull.com",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83OHNzWG1WTTE3eUJtVWw4ZGlDZTZLT1AycHdOQ1hSRHNSWjh2Y0huU1k0VndqNV9tM3JBNGd0Z2FBbVZQWHd6ZjRsSVI3aGpOX3NjaERQT0I?oc=5",
+      "publisher": "webull.com",
+      "published_at_utc": "2026-09-18T14:16:22+00:00"
+    },
+    {
+      "title": "1 High-Flying Stock to Target This Week and 2 Facing Headwinds - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUlp5RWRRdVh3QzFzSVRXNGVWZzNyMkNQN1hrMlJqMTN3MTdvTGdqc092Si0xSzB4MDlzcl84TDVIMElLNmlDdmh2LUdxaHVKamNwZkg1NlF5VjZicGN6aWU2cEVhX1BscjNmZXBSZWlfdFZ1d0ZFX29oOXNqTGRqd3FsLWliXzRaaVFta3k1TlpoX09kUlE?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-18T07:00:00+00:00"
+    },
+    {
+      "title": "Bill Ackman Portfolio: Pershing Square Top Holdings (Q2 2026) - Hedge Fund Alpha",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5fTWFYeVM4VEl1LUd2ZHhUNVlGSjA3aFVURlVSMlRpRmlTaUN2MTdCeDlRZktwZWVfWlVabHhfMFp4UUJDVWFqS1JFUjY2di1SWThiX21uS1EtdmticzhJaTZMaDV4cHkyYWNaaA?oc=5",
+      "publisher": "Hedge Fund Alpha",
+      "published_at_utc": "2026-09-17T16:00:20+00:00"
+    },
+    {
+      "title": "Hilton Director Chris Carr Sells 439 Shares - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOenNNRUJUMWx6UkhKUnA3MC10TUw0aHlJd2hGTmhFaURRcXN3RzdFc3JLRlJmSmdhMENHd1BJQ0Rjb1l2UmRhcThsT3hRVHJldFlyQWRHellRVEpZVDdmTU5jb3BsRTd5NkVYaE02UGN1WGFmUnpPOUJ1M0FydGpRU21EWkIwTnVsQ085ajdtUkdWWmZvbjV1alFoT2dwUQ?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-17T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. stock underperforms Thursday when compared to competitors - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxORVYxVFZJR2FldndRSlBra3JMQXVyYVdYMzhLNEcxdzdZdjNCZS1ZbEtWLUJsS1M2VndEaWVzbEx3V1VZMXFwNlIwQ3JVTXJhQzh0aExPTUZfWFBSOHdYenRad1ZHbDFpR3Y2SmZlcUNvRzV2aWl5TGxXa1lXM19YVGJMQjFhb2E2ZERreUVQc0VkNUdpbTZBeU41UlpKZDljdFMxRXl4SjhlcnFqWFN1aUZpRkhMYW1saVV4eWlXQktfSlJVeEZCX01pWktRaGMwanhGbEUtdFhkWXlucXRDXw?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-17T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock gains on solid Q2 results - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMTNpcXlPMmI0U0R2Zk1BMHhSOS1RbUw2bXJBeG02aEpURjNqQzdIbDNzbnN3X2hIcG5HeHgtY0E4VG9fQVVGbkdIa0JJNG9xUHFiODh1T1I5V0Y5Tzk2YkNEWUZUTDJCMS1kSFl4eC1Wc19RSjVOWW8xZHJCLXpaNVNnamNicUtrdHRyNnUzY1FJWVhJVXlhdDZndHpJa3ZQcXVFWGVPZkZwMHBOdzlwMw?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-17T07:00:00+00:00"
+    },
+    {
+      "title": "1 High-Flying Stock to Target This Week and 2 Facing Headwinds - StockStory",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQX1VtVDV2anlFZGlXWm1QY2VrZnk4YlZSWEwzeS1GXy1CTU1JUXZaZkZESXczSFIwNm9EXzkxNVRMazZWbHc3dUVpUjVqMkpBdUhUajcyT0Q3SWdsM0JEX1dRMlZWaktTN0hXRmFHUE9tOTJpaUZ1RFJtQ0pKODVKMzBqc0h2Vy1ndEJ0VDdjVVMyWnlpQlAwV1puOTY1bjAtWjEzaGczeEdESmdpaXl2RndjVzNNT05pWnpVSFlR?oc=5",
+      "publisher": "StockStory",
+      "published_at_utc": "2026-09-17T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Stock And Hotel Peers Facing The New Services Inflation Test - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPM0ROa29GRENlNHRiOFZRT3NqVnBmOHAxYlBDSFZ2d1E0eHhRazU4THZYOGtOcXdkUmNFX1B5QkRNSE5BZjRfN19Nc1BDX1E5ZlpwYTFtT0wtZGpoMnNtSEUtWkx2RWo2Zk5vbWdfVXJCLXM2MGFHNE81OUZwcVlUUEJtcjhvSjV6LWdJVW0xdUpjNGFSeDlLaFQ1UmFvanNjZnVfVmtBQW8zWUxUYWZOWDNvTjJncGNTLXAwRmNYTFRwSFFvSHJlWmU3WndZUjBNX0M4VjI3RmNORFB0MXNSOFdNMDDSAeoBQVVfeXFMTmN3R2pFdGQwbEhITmtDMFhuQ2poQ0VWVWJyMUtCVGl0MVlTdVpKai1uSGZYNUpRTXptblNwOVNqTmQtMFlFRkFrSVBlN1BYdFpYankwMWd5YnlKdHUwMXc5eDdGRDdmdmZRcHJYQldRZXhZSF83YkdCQTBaOWNYbl9rZjlobURLRzZUc09OQmtsOWFHSnIyVWF0Um5DU1RCMmZjZmo0RjBGNzRFUERzVW1NdHpSaDV5TVk0VkZlLWRnaGxwdHlXWFVSQUJYZjFscjBfc1RCc0FWclg4cmdjUGdydFBHaTVLTl93?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-17T02:27:11+00:00"
+    },
+    {
+      "title": "Insider at Legendary Travel Stock Waves Goodbye to $2.3 Million Worth of Shares - The Globe and Mail",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQVkpVWkF2d2g2WXNUVHRiN3lQMkZrU1MyNEVXZnlXd08tWUN2MnVaalROMVJYVVlTbWNIdWViaWVucmhjZlB5X1pNVjlMLTVFOGRiNnhtZTRfLWFrWWx2WWNwTXZhdXhtbWNVd0VPTXVCbFEtdHNHVk82VFlrMnJ2NUdMeVoyT2NlMjJVOGNDeEFCWFkwZEtzU0pFalBkOHNITHJ4WlB0SkZwYm5IVkxlTk9SUXZjTGZOVFJuN1pCMklIa09FdktXVGdaeURRdHF2MWZJS2kxX2RiM3JDV2p4VGVfRE5ZemtiY2s2MUU2VGFGVm8?oc=5",
+      "publisher": "The Globe and Mail",
+      "published_at_utc": "2026-09-16T13:35:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide : Outset Collection by Hilton Set for EMEA Debut - marketscreener.com",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQN2VoWWpPMkJpUWIxaHZWNXd0aVpIMmRDOElfbi1KTEhJaW9wLVRZWXhMUy1ra05vTVFJdnlSM0ZRV1FrUk9rMm5sUGgtbmE3N2tEQUc1WnBSZG9NYXc5aUF3RWtudHBJZ29qbDBfd3NBR2hRSTVqbWUyN245LVE3ZTJIako5b2VzYXg5NS1wVGhaOVRCMk9jOFRuT2VvTlFKT29nbDRVNVRUeXpyTW03UWkzZVJrdVk?oc=5",
+      "publisher": "marketscreener.com",
+      "published_at_utc": "2026-09-16T12:43:09+00:00"
+    },
+    {
+      "title": "NewEdge Advisors LLC Buys 4,848 Shares of Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMmh0dlVud2VhS3dnUlJoSmhBSWNJMF9FUEM5WlprLW43Y2JCRjVDZEVsbUwwQlRyZF91TWFsR2UxMEF5TzJrYjJLOENMS2h0WWxUSm5KeXYwMG9wcTZsZkdtckJPU2lQQ0IxM3dTNFViY1c3RGFCNFFKUTM2MVR5d2RtRXJjdmVPRFZHdnhqVWoyNWNrZG1hcjFITUZFUzZHN1lGMmFpYkpTOU1lVDZVUlY3TzhGc29YdGlpWWNnSjdrSTM2UW91THZvbmthb25H?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-16T07:57:30+00:00"
+    },
+    {
+      "title": "Insider at Legendary Travel Stock Waves Goodbye to $2.3 Million Worth of Shares - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOaEQ2QkxuVVNnZmQ2ZmFxTGNLcUZPVWxFRFFHSlU2M3FiWEUxX3M2Z2JhU3lYMml5c21rY3lBSFFOVHpVeS1ReEk1UGdMeHdESjJvM1laR05BTEZ2dGswOXpubTQ3T3JtejB5MWNQX1ZCRmlFV3hyWjRYekhnUVBHd0xfMGhDVVVSVnRmQ3VZbUZ4UUYxYk1hazhGT0xWWHktV0RSc3VDZDRsR01QV0FQck9GZXNoU0pJVUxtbUlzcG1hZVQ3VVpSOFV5dw?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-16T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Insider Sold Shares Worth $2,258,218, According to a Recent SEC Filing - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQRVdMSE5uN29DQXFKeGxNNFU1U0NIcFdxNVM1Qy1qWFVVVzhueHZMdFpiNWZlYUpOMjBvSVJWVEdkZTJJdk9hNlJBak9xVG9nVU1leWtzaFY0WmdLbEhtcXdmSjN1NVFEdWFBbnZrUlEyY2x3Nl83RmtFOUd3TlE1WllXTFQtTTcyZTAzQXZOejQ0SDNqYWVweTBfV29QVFdBZVY5ZGVn?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-16T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Officer Sold Shares Worth Over $2.2M - tradingview.com",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQQURPQzVPLXhsSXdtVUZNQkUzMU9yQkxfNnVHb1A0SGhhbFAybkV4YnlaTHhNTGZ0bDNQXy1XU0xrbEFrSUo5aEJwYWdNemVWRU1CN19VMFVYU3c0QjhsRFEyWURYc01NM0l4ak5nN2hpX3kwUl9iYjZ3RnRPU2RuWFRjRktiTnZvblBkYTBwbmkyOHZKT0w3Uml5bWVpdkpiVkN4dWxhaHNBT3o3cE95WVlWajFlY0ZuSlZIQnNjWHo?oc=5",
+      "publisher": "tradingview.com",
+      "published_at_utc": "2026-09-15T23:20:03+00:00"
+    },
+    {
+      "title": "Insider Selling: Hilton Worldwide (NYSE:HLT) Director Sells 439 Shares of Stock - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQOU9ORzIyc1JCVEViNHB1RlYyRWJVa1U1eEF1UTdabVAwbExpUk8wVm5ZNVBSMWRzM1ZoZVU0Z2ZwbGxobHQ0RTVrb1UzM3g3ZWZmTHFCWXI4cjVSUnpQS0d2dVBxWUJTYzFhOU9MZS1XV3hmQlVlaEpLLXJLZGhKbjRaVnVJZkhKRS1oMWRzaGxNTXVTdFB5Y0tfVE0wbXh0ZjZQdmNseDcxYW9UbXJxN1FfTExfTVVkeFlQTU9JQ3d6cy1ZbG5jcm1HUGpIeTNDVHdUQg?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-15T21:27:42+00:00"
+    },
+    {
+      "title": "Hilton (NYSE: HLT) director sells about $136K in shares - Stock Titan",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcHBBOTRZWXRoVXNDbmZqTWFDcUtVc2JCNWkyYVBYSGU0QXQ1RGx0VWJoeWd6Mi12YnN3bkpZdjhqOFc5R04wRTh3Q3NXU0Q5UWpRNVI4cmZNdVlEMTJpeldYZVhBNWRIT0FReVRBaW9CQnR1amJiQnZlZmhyTVVpSkdBR2N6NmxCblpyVjRCMTlzS2lGMmhoM2xSSDM4SHJ0ajljVnpZZmhIbFoyMk81SlFLSGFLVXM3MUxaYlQ4WQ?oc=5",
+      "publisher": "Stock Titan",
+      "published_at_utc": "2026-09-15T20:47:38+00:00"
+    },
+    {
+      "title": "5,246,229 Shares in Hilton Worldwide Holdings Inc. $HLT Acquired by Bank of America Corp DE - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQdGtobDdrU0ppcDVldzE5M2lRMThveHRhaE9fdWFJU3NLaGpNLVJJWkQwSk9BWlZoQXRtWjdKN2xiaDlhMjZzaUxzU21XaTRaX2c2dmFIb29kYkNfNmdxbkFvbEFTTnc4dUxmYU5pRTJDeUhOY0EtS2tjNTA3SmZrOGhyWmJ4cWpPVkNweHBkcDRUWGwtNnJzelFxWXE3akRuVjZzcG5NNVVlZlNaazA4OWE5WTg0OFdlWTkydTVSaHlka2xIYXprQTBhV1RxRTh2c0hyOXZTS3JiZnlyWDNsWjlB?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-15T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton EVP Laura Fuentes sells $2.26m in company stock - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZEFtRFE1M2JjMUFwaE9Hb3ViQTdMcllQZkItRG9ZMFgxODZ1TEhiVkpuZEV1WGlzSGZHM2JtalNkX0Q5eEZtOVVEc2hZakR1M2szWjhHaDNwczJ5c1pXYkZQbXlQa0tvRFRJdjRaNld5WE82WHlPVjNTV0V1UFdYeDRUcDV6Y2RDaEFraXo5LXZOSjZoSF9TRHBSTWNCbDZEMGJBa3FJX2tocU9ILVRVNDVQQkVQQVdI?oc=5",
+      "publisher": "Investing.com",
+      "published_at_utc": "2026-09-15T07:00:00+00:00"
+    },
+    {
+      "title": "Truist Financial Reaffirms Their Hold Rating on Hilton Worldwide Holdings (HLT) - The Globe and Mail",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPYUZjSlZiSU1rR1VFN1N1SzdUT0NfdGpaeFRZaGhNei1fMXJyb184TFYwdWZvd2dqX0wwNDU5N2dvUWwzR2xCUkZ3c3lPeDJtMmkxU2oxZHBnZk9QZzVPZWxreDBGMjJxVkZ1Q2ZTRTF1bFJlcVdseWVQZHoyeEd5NDU1NDViLVllT2J4SlVObnYxQ2d4OWc1dU9vNlVvbGgyNUlDYm05MlZ6SmFvUmQ1T0U2bDBHdzRKTERSSy1ZakdiYWVjNS04MThIaTBpM0FYU0owUnlIVTFJcFU1RjJWLWZraGJtd0x2SUFmemdSZ3JlMTA?oc=5",
+      "publisher": "The Globe and Mail",
+      "published_at_utc": "2026-09-15T07:00:00+00:00"
+    },
+    {
+      "title": "California State Teachers Retirement System Increases Stock Position in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQaTdoOFNmWXJmcWtXRVUyaWRqazNKeFI2YUFpUTRhRmIyWWRnVkNfbnRNXzBPMGNocTE1WkNpTE1vbWw1eHNVRmc2OUxBaXBmdWlSZmx6NUQwTFVwWDc2YmFObnNBXzJXZ3owMXZNM2sxSEl5OWpESXVmdWZXNklsX1pVWG5OMkJPOGlVbXlsTGxUVjZGeGdzVkxkWmg1MUFpLU40ZUliRTk0ZkVlelRZY0xpeElmTEhFSEhYb2xWc3BoeFIxaHNlMGZiVjFiaFl4UkppQ0Fsbk1CdWhUV0p2bDE1RF90cy1ybmpUYmRpbzhXVDFrVlE?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-15T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton (NYSE: HLT) HR chief sells stock near $310 after exercising options - Stock Titan",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcm1iczItMm1jUjQzUE9lSUhCZTBhYzg2OTN2TWFDRllEY3V6ZDZ6UlBUUUNMam9QTHpOWm1CWGItNEt0NlNpakZFLW5ZdUJtWlBhU0xUQlN6TUpFcUhCbTU5dklDT1ZSdDVPakpwZjViRXJMWkYzR29NZVZwTC1jbXBIaXpQSFZNMFdmSFY3QVY2OGF4LTlBRlZydFVCRkpzbk5FbXMzX1lXaFhDQ2lncWtIcmlxYmR5T1JwdlZjRQ?oc=5",
+      "publisher": "Stock Titan",
+      "published_at_utc": "2026-09-15T07:00:00+00:00"
+    },
+    {
+      "title": "Insider Selling: Hilton Worldwide (NYSE:HLT) Insider Sells 7,289 Shares - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSnlaRTcyQVNRcHU5bnc2c0tTNVRONU9ZNDRCekFCTUF6bkhISkFMREIzc1RxN2FCZ1B5WFZkVGlxRmhVUVUyQmlySTJjQmRxaHVSeUtKN3NFVDVVTERCblFvNHV4NVpCeklidUYtalRpUzJMM0ZoRkd0aV8yMWV2UHB6a1c4Z0FsQVJBTm4yWFlkLUZVMGhiNTZZYW1JMHpGYkhuZWt0WmExZ0NLS3RqTzhZYTNZdVBvSWYybC1IRDZzTjZRZjNGYw?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-15T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. stock outperforms competitors on strong trading day - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNYUhCQm5TaHBMX3FGaXBTWjEyejdUNGtRWWFWNGFOWkhibGdaeHBYZUkwbUphQng2OG9hajFBdE1zRkFFMmJ3NVdScl8tV04xcjhnWVc4ZHdsbEFIbERJRjZ4cEdPdk05OWYybTZOajNVWkNDQTN3VnE4MjB2ZTJBTVp4cWdKempTSkN6dVZsZnRJaFBaaUdHbGlhVkN6QWVsb3BscTliM0h4YmNMaEdUaUZCVVQySjZIMWE3c05zYU9CUnBQVkNvc2UwZTQ0REdpNnprSV9aQ2E2bkFpSXYtZWpSMVdQUEdzM3hPS0tVRTM?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-14T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton (NYSE: HLT) executive to sell 7,289 shares in Sept. 2026 - Stock Titan",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUGFCT0huSk42UWtqaUphTWdUMnRkM3hsSGxpckZpcTZSSU8yZlN1NjlmVGJITjYyZVFtSjYyczNzY0QxVVZXTHhTVjVoMHA2SExWY2I4RlVncDMtbDlYZTJwcjRKZ1MyV3lySEN0SUNvdVFKc1ROakFYYXZSZTJHeXY4N0drOWpoZzhzaGFuV3VUeEN0REo4dUdNX0dOcFVsa2thLWozU1Q?oc=5",
+      "publisher": "Stock Titan",
+      "published_at_utc": "2026-09-14T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton (HLT) Hands Caribbean And Latin America Leadership To Kolin Pound - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNR0pNakVSUHVfZnRLZWhoeHYxT3hKYk50OXFvN1BUcjNwTHpSWjRhZU5OOUlDZEVGNy1iV1IxbGczY0hacnBMcDRmSTVTQnBZVC01d3ZneWVvaG40QWNXM2QyVGFIWlM4TzVKYl9ZYWcwWVQwS3Rjbi0yVW4tcDVzanpNb1BkQW92WWs2M2lFRXBJRjI2NUJxUWdzemxfcE5iR3c3aGkyQTlYdjN6dzJ1RUtIejFNMC1OUk03V01xeldGNFpfZGsycnN0bUwyWXdBZmR3dkFybEZUT0Eyb2xXS2RTcFTSAeoBQVVfeXFMTlRBcnozZjBaTDBvMkVJaHBqNjVrRng0cDRwSXBiNHNFNVl3b3BSaHczdUtnUVVBRXBQSEdtQmRvTFB5OUNJaWd1TVFPX0ViWm1QUWFDN0xaSkVreTlWbTNRYXdKbVBNT2RzMjJFMVREMlVCalJmZHJySW5ZNklOc0xCS3M5LTJyMXVEcHBmempjN2ZQMERCeEJMSUU5QVUyamt3RkR2ZU9UYzh3eGc0YUpIdTRGR0xmMGVfdE9CT1IyYmdvQ3Bway1HTVVGSFVPZ2lHQ0lDN3pSV2p5RG41SExDUGVscUthVmRB?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-13T07:00:00+00:00"
+    },
+    {
+      "title": "Leisure Stocks To Consider - September 13th - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSVRjTHZpQl9zZUVqM19mM01QcmpNUjhYdjRTanpOTWR0aktkdEp3Z2w0YzJfMVhZVXptdjNKSHB3ajZzd2E0QXI5NkhIaXQ0QTJNM05NdDUyVUVOcDh3NWE2RGcyV2lFZWllSjJVNmFXTFQyZXItYng3LTNmNk1jbWZXbUVfSWloLWlGVGRDb2xReVVRMTVaYmw3eEhGYlRyeWc?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-13T07:00:00+00:00"
+    },
+    {
+      "title": "Baird Financial Group Inc. Has $18.54 Million Stake in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQOUNuR3RhQVh2MnM2bjNjUG92aEtDd3hjTHJGNVk5T2FCNnhwTFh6b2lnbldFZ2FtZ0tfQVAwTmVqaE02dDRjbDBmT01pMVgwT2E1LVRMeEVJNkwyVGREeVdqbTJkb2lsV0ZiT2ZQSzZOUnpOOFFScWtQNmUwYTQxU3ozcEh3a3JkSVFkTHlCU3R3U3ZscWs3cXVXcnU0dUZndEZNdnlqZnFtcWhWY0JSMWhpTTlyQmhENG8yWWlCXzBDdjV0c2ZEdXZxV0NKRkhEMHJOTUc1ZFZBM2tZeXJV?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-12T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock edges lower as investors weigh Q2 2026 growth and rich valuation - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNY3U1ZFFVQ21tTzZTZ2gwRTQzVlhKUVNfb0g3UGFtVklDSVNiR0JRbURqTnpvLVFWMVZieFdyblR1VTI4OEYzeEVFRWgwLTJwQ01wYXBwUDB3a0tOdVFodjNLaEtqbjNDM1ZQZ0xVMWxlSjlJaS1sMWVEZWJTS1UwVHVuRzRXejhvdUptTl8tdUY4cElWQUVOZHZYRDNGQUlNT2g3WGJUMm1JU1lTN2w2WHZPeHBrLTRiRDZYSWdrOGhJYXNOR0NhTzM5OG9GNDkw?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-11T18:48:43+00:00"
+    },
+    {
+      "title": "Engineers Gate Manager LP Buys 31,804 Shares of Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPQ2w1ekIwMG9ZZWJ5b2hnRkVDWEljNS1fNFdRMVpnRTFFUWF0elJQOWZqenNyWmVLSXJqMzdKTEZ4S0trLTJWU3FfeExhd3UwaUV5WDMzQVVmaGRxUEVYYVdlOGFNXy1Ic25qb1lmRlZMUjZtb3AwdFgtQU9Gc0pJejdrMEp4aUZENDZmdnhTS0dvQ1RRb0JTVXdqRjNKUFhwNUdFTVhwXzNsWnFwLTZ0RGcxbjd3VUhKQXpPc2J1MEIxWmZIbG9HbnlXRDVMS1JpYVNtay1WdW0?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-11T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide (NYSE:HLT) Upgraded to \"Strong-Buy\" at TD Cowen - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQeWVBSG1xZ1hXWlBUczNOTmVnTlBfWFoya25IejhRS0hVNl84LVh5YUxtTEdjS2dYS2NrcjVCdEtaaUtmbXF3UXFRUEw4YUZSSUtVeWlnSEtQcllpaWMyV3ZIUzZCRUxZY0VZOWlKQ1RDaDBOOGd6WllUQTNhQl9ZdkZUVzFjdnJLci13NkRKNmRFanJaeFZNcjN4TnR2c05fclB5eXJwOWtKLTdaYnVLcWdlcFVhRnc5MkpSNHZrNA?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-11T07:00:00+00:00"
+    },
+    {
+      "title": "Truist Financial Maintains Hilton Worldwide(HLT.US) With Hold Rating, Announces Target Price $316 - Moomoo",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNVGdOOFdzajRSSmxlMWdtZVlZZlBhTU9GZy1lQVROdFlUenZlM09VUEg2WnQ3TV9SbnlqamVlWlJwRnFxcUNqbkc3QTNWRERsZnFyNW1oQTlWZjlPM2tSaXZ3RTNoY0ZiUm1tNndxZ0dJd0Y3bmtyRTFhSWxzVWRXc09zUDRwV2txOTdZTXQwSy00QUlmZmRCWGVZUzd6aUNKN0pOV3hBeF9TTUZfNFh5eTRWSHR3NThBRGc?oc=5",
+      "publisher": "Moomoo",
+      "published_at_utc": "2026-09-10T19:09:14+00:00"
+    },
+    {
+      "title": "Truist Securities Adjusts Price Target on Hilton Worldwide to $316 From $312, Keeps Hold Rating - Moomoo",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONXVERC0xanN0UFNyY0djeWo4SzhiTWFoSm1PbHk4bmFTdkhiSUZKd05Bc0Z6bEdETEpBZDFFTkIzd3Zsdm5DWHEwTXVla3pPV2NHRVdVWDhsRmItcmNaOGN1dUtxSDE1VzlKMk5kV2RDTXNqaUZzb2FiVldmMGZURm5PcUh0Zl9wMjJ6MS1rdEJRc19QeXAzd2czVXg0ZjVaU0pwbHVmZ0ZSVzg?oc=5",
+      "publisher": "Moomoo",
+      "published_at_utc": "2026-09-10T12:19:51+00:00"
+    },
+    {
+      "title": "Truist Securities Adjusts Price Target on Hilton Worldwide to $316 From $312, Keeps Hold Rating - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOWC1aYm93WE9rWFYxY3FDOEttcGJULVVlLWlUZ3V6c2xOZlRWY0JqTkpyX1B6V09PMEUzM3V1LUw4NW1tVnBsdUZSNnNtc0FvUFBIY0R5RjRZOE9JX0NSR0p1bmpUZ2lqUk9jSjV3UWlDWlVOalBCN2tPM2J2Nlc2RmFhTUQ4RWllOGJwcjZnOTFXX29MWnI4VWh4LWsxZUtPd0dyTWVn?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-10T07:00:00+00:00"
+    },
+    {
+      "title": "Q2 Earnings Highs And Lows: United Airlines (NASDAQ:UAL) Vs The Rest Of The Consumer Discretionary - Travel and Vacation Providers Stocks - StockStory",
+      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxOZ29abUxKQzFGNElYX2VWbXZDNHZjTU1BMHJZV0kwbWNKR1BPYmxXTy1oQklITDhRMWRDbVh2bnRiazJsTUpveEVCYlp6QjZGZktZUnp0YjBvOTlUdURBVW14VTNScVE4SmlBNGxLdXM1cFJMSDlaQ191eC1OdUI4dnRHTHlwam0tSTNSYmtZTmstSTF6RUJUb1B4THRESUZsZlh5Unp2VXRrOUJKejlkNEVPQVk0amh3cTc0bzlJQkNHQlBnM0lCT2RCd0FOSm1DeVZMNlJITmdaeGFOdkcwRzRhMHNSNFNsM2V1V0FJTVl5QnFEeVN1RGk4WW9MWXJQbWVmQTZCbTBPYVdyV3phTTk5YTBDNEZa?oc=5",
+      "publisher": "StockStory",
+      "published_at_utc": "2026-09-10T07:00:00+00:00"
+    },
+    {
+      "title": "How Investors May Respond To Hilton Stock As Business Travel Returns - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNcWxXXzh5bWZ2T3ZkUzhjYWtESlBleHFzNjVyMDdWcUdWZmxwUThiVTdmWkhEN1ZNNktqSGYxMXNRSW5WcDJsQjJuRkg4QmFWbHZ0Q2dfSWVVSmdpLV9BcElDenkyeUF6UVVobmZMb1lJbjROYjJkWEpubXhYRDVvTlo4WWN4Rk5vM0Fyb0w0V1VmZ0VxVDh5cV9XSElGNFczZ2g4bXRfMjA5eGRQbG4zNlNNZDE3VGViM2U2VmFqVGtrTkxocUxMYWdHanlrVVdfaXl1alNadm5xcE1UYjFTTkh6WU8?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-09T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide stock heads into the open after a 0.8 percent dip - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOanRMWXZsZTQtQmdNdGJxdUZFYkp4d28wcjBQRHVwLWtydURhUzdjUXpGTEtqaWU5VU1wNFRpZEpvUmxydjNiMVRwWjU3dmRfbmdOUENfQzMwd2FrakNodmM5ZThTOEFhQTBaQlluZVFadEN3clIzWEVMblZzcXRWaHdGbENlVkpoWFZnU0tMSjItSkx5dktIX01vS2ZNdzNtbWF5V2ZkMzhzOGc1VG5QbVA4ZUdsY3E1TzFLekt2RmVha0FLZ3pBQw?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-09T07:00:00+00:00"
+    },
+    {
+      "title": "Choice Hotels leads hotel stocks on valuation, but technical signals remain weak - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQeVR5RzJ6YjV0XzZQWFpvSV9Nb2xjbjRoXzhxTmZBUGhDTmVvOUtuMno4SHNxWXFuYWFlSk91LW9vWWVPblFWWmR2Q1l1bEFuUGlGZGRHNkVRMy15YVlRTTF0OFZIZHFRcUhCcWVMbGVfMHpwVGlPOThUeG9TNDNzVGxYLWRtMExIWW1maEs5b1ZHamZ3c3dVSWlGZzhGOGZIVU1hNFBYbkFUeHUteUVySHRSZEpVd1p3X3UxdE9EY0lHZ05EVndnT2JNTUZybDVwNk9kQ0ZmWWg?oc=5",
+      "publisher": "Investing.com",
+      "published_at_utc": "2026-09-09T07:00:00+00:00"
+    },
+    {
+      "title": "3 Profitable Stocks We Approach with Caution - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOMmwzQkNvOVpnNHl2VkVfTVc3QTEtMW9vQUxhUkFGMnRpWnV0WWtyTEk1Q0RxNXhjR3lrMDBnNWhsOGE4TUx1dXltS2tLdHdfRnl4aVMzeTBvcG9mSmw1cGczX2RuQjB1MWNXd0t3RW5VZ1ItRFJKYmlMcTNyVXhNN3JBdk13ZlJJNm5icm1xLWMzSF9sak44WXMyanQ5OWJmckNv?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-09T07:00:00+00:00"
+    },
+    {
+      "title": "Q2 Earnings Highs And Lows: United Airlines (NASDAQ:UAL) Vs The Rest Of The Consumer Discretionary - Travel and Vacation Providers Stocks - The Globe and Mail",
+      "url": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxPdE55Yy12ZUdEN0l6ZkpTcV9kZk5pWnJxdlYxYjNnQk1qNWM0cEhBOFdibHpmcWlweUN4UTN6bjBILU9OWFFqXy1ZcnJ0S3d5VXp4VmhlSjBjcXh0OXVCay1QLXlMSHlFVklZOFpESEl6ZTd0M3lPRkxCamREaWY0Y1kyT194YS05cnA1UE0ybVdGMFU2dHllLW9zNDdqbkxua0NLc1VMeW1nUzdZYU41eEN5Z25HOUdoRGdXa2hFa1ZsQTBfcXVPTkxhR2h0SzFCQWVhd09JSEU4YWJnbG9ZMF9YbkNkUHNrT082ZXU1ME52WTlCTDZSWGxiNDdoM09PYmNBbTg0VWpZeWVKZ3JqTm5TbXhYTlJISTJtTnB5WFlHU1VFdHE3dk50NzctVVZ3ejBscTRObm53V1U?oc=5",
+      "publisher": "The Globe and Mail",
+      "published_at_utc": "2026-09-09T07:00:00+00:00"
+    },
+    {
+      "title": "How Is Hilton Worldwide's Stock Performance Compared to Other Leisure and Entertainment Stocks? - Barchart.com",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPYjZCQzNtMzNEeGZpNG1JcHh5SEpFSWJxaU1nZy1FNlVTcGZXQkdEemdraFYxNVdSRElKY1owR25VZGQ2VGFYZWVqYU9EVDBULUFQU3ZUT0JwRnpIUTNCbEtIU3NDSmdZRlkxU0YtQXFxSVRZWWNqWWQyS0dPSno1WEtRaVh4MGQweEh1QnpHWnN4ZkFWYmp1MFh1V0hud0VBVUROWVBjTFJvUC1LWDdtSU9xS01NeDJpc0VIWm9tTk1HaVNMRXJMTjRoSi1UckRGcXZNag?oc=5",
+      "publisher": "Barchart.com",
+      "published_at_utc": "2026-09-08T07:00:00+00:00"
+    },
+    {
+      "title": "Groupe la Francaise Has $6.06 Million Stock Position in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOVFI3WFgwaTFzTWUtcHpoRHlVZjRSSXRtV2ZkajZydE5uTHMzNE8tbTR1dHlxRWV4Z3FlM3dhVkY2YXM0clZqNUN5cW9tYzhWNWVoaVRzc21sOWEtYUZtRXhrRURXWEFxY0Ria1p4VUhSM1E3N0RRUzJwTHdvOHQzN3FzcXFLWk9wZGFoOW1NcGNROVVjMjdXaGFRYUdyWE5lc2Q5bUJ1aFJBYWZDWHE5X0k3ampFRVZTOUVqQTFGMjdTRm1oM1hFZ3ltQzc3NlFFelkyTEJ5M1RMNFE1WlpHaUZ3?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-08T07:00:00+00:00"
+    },
+    {
+      "title": "HighTower Advisors LLC Sells 23,534 Shares of Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNS0hJSnRYcVo4Z011aXI4RVRzdHBjYTZHZFZ6amxIMVdYSnBXeDBuelQ3WkQwQm1GaUZSUkRkOGI1RElrNERRMFM4ay1IQ0xKSGQxeDlXUG9kWnZxdTEzS2xRVTJEdW9mSk5wdi1IblZxYUJsc2tFRHpSZG4wX1FOaXU3emtnQW9GT2E1WDhoNzlDMkFTSjRuRkFRbmNiY2dXZmg4U1RRVXN1UHZpSjdSM3pHTDNCZU9BSHB2RGFNRzNUZXoxWkthMEJhTmdLenI2RDNqRTFB?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-08T07:00:00+00:00"
+    },
+    {
+      "title": "3 Profitable Stocks We Approach with Caution - StockStory",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYWQ3UGZnTkY0Zm8tRkEwRnZTTC00LXRtSlNOVDg4U2EzZzZYb1MxZjBteXRoUEhMU3pGeDlzYWFsdkVzRmNtQ1pfYzJBbno3ZmVxcXpsMTFPcWhKZVNsMjRqVWxfWGpaUkZTYmJ6SlRpa1c4ZEJaajRYdHdHTkVfUkhCV09SYnE4Z0RjdHp1aEtsTy1RNDhqMWk0SVdud3h0bERRTlU2MA?oc=5",
+      "publisher": "StockStory",
+      "published_at_utc": "2026-09-08T07:00:00+00:00"
+    },
+    {
+      "title": "Consumer Discretionary - Travel and Vacation Providers Stocks Q2 Highlights: Lindblad Expeditions (NASDAQ:LIND) - StockStory",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPWG9FWmdINHJkR1FZaEpmaWJfZFJJRkZ2NFA0OVN4OHRyQlExWlNPQXNmZklmZi1NSERvQnVkV3ZSRGNpb0NuUy13ZXdjMWFIMDRidjZUU3ZmR3R2V0VzT1h5b1hMdW9aRGhwYzB5eVZvVzdGbXE4RXBlem1CVmRZMkxnNG5KY3lZSm90ZUhBcWw4T0dCS1NMLW93SnJWVEZ5XzdZVi1Wa2IzdlhQMXQ3MUFSbnJDUzFRc0V0dFljRjBDekoyYlpuaC04VEc3M0NNRVFsSzVKa0QtR2VwZnpLb29EX2FVdG9iTWRzdUdMVkpoWUJMbFlJ?oc=5",
+      "publisher": "StockStory",
+      "published_at_utc": "2026-09-08T07:00:00+00:00"
+    },
+    {
+      "title": "Formuepleje A S Invests $1.18 Million in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOOXNuS04takZNcG54bTA2NGNkSGNtXzJLbEJSaGpHOXY4VWh0WlJVdk40YTQzbklhazRwMFZBSTBSX3VpQXdwTXhjdzBkdm8yckNTeDRZakpIZjJESk1SaTZQbGtyUnJoRlBnZ2JUXzJWaW1aY05palRxdWlQWWhkeW9zVXNpazFVQ01PRDZLVDBEeG1hV3EwYS1SVTJlOUd2LXJDdEJ6MlA3RFh1V0J1M2ZERTg1bHJDZzFGZHpMbHFza1d5UHhOaTBqeURjUQ?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-07T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings Inc. $HLT Shares Bought by Saudi Central Bank - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQaHR6RXFmMHA5blZCQmd6SEpKb3J2bm9QUE5HX1VZckFEQ0xuaXNRdWdlUnBTUnVsczNIZ0ZiWUhZamp2d3hmNmlURWh1NUFva0NvOVpQdFVpVFFCZm5HVjAxODNOVklaRFZCMV85NWRQSlBVQnRYdFd0TENwS1dlYnptTW53ekxpR3FtV3dxTy1FRVZ4cXNOWXFra1VTeHFvNXBYdTd6VTVoZTV4TUJWY0hJZWJYZ2V0YkJOOFpfS3poYV82R0FNMWFn?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-07T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton (HLT) Stock Looks Above Fair Value With Cash Flow And Earnings Both Rich - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPbHc0Vzg4VjJpQi1qNVNpRmJ6UnNNenF5WGNVVEM2NmJvN2xxZVlNRWtibTgtQmdfdHdYbDhXVjd1VVRMMGNoakxQUFE2MHZ1WXpDNTJWQlFobmFnMWdGWHZWNFZrNmlEdWluYlQ3bUgtNXJCdXZXcDRLd3ZXcXlDU25aUnFFTjRvNE5uQjZSZzBCME1kVTlESFFWSE1UVDhLSnpVN0J1TzZmTHZ6eHk2bms5ZWc2VEVzY2NGUlhLNHdEXzQwU1pCVFIwTnNocG54Z3N6dzVaZW1sT2tSYUx2ckNFdU3SAeoBQVVfeXFMTkRMTDUxMm1KdlZPWlllTlFWVGNXLXllZTQxRnNLc2dVck1EMFN6eFNDVWlJdTh2Vkh6SHJIWDJXV1dPbDNnYWJvRDg5NXNGZWlOY0xIengtYS1ReWU1QTRpcDB4N3VzZ2k1Ujl1bE9KZFpGdWVUNl9IOWtsYk43QjB3anktRGtwRXA4ZEhnRnMtVlJPSWo5cXF1NHFNRWE4MFNQUDVNZ2tLMndUdjBHSkE2ZExWdUxLSWE1ZjVyN2FYV3haMC1ZSTlVUWFnSjAyVG9kYW5IamUyQ0t1cDk3SzJqa1RtMDhlUVdB?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-04T07:00:00+00:00"
+    },
+    {
+      "title": "Breakingviews - COMMENTARY: Fosun's ClubMed spinoff looks a hard sell - reuters.com",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQX0VrMXRHaDRqYlBySktIVlFEcFY4blpIeFFZUEk3MWZEaWRPZnZWQlZtQ0JXRVJES0M0N29uQ2F4RG5OdVNoY3U2Y1VSLUp3eDJRM250LVZxMEM3amlCQ2NMQXo2TDAxanJreUQ3eGZwdVlGUDhYcTdsc1BseVZ1OGh4cHBuOFBMd2p3T2V1OUNtbVpmZW1aRGRTY3FsSUQx?oc=5",
+      "publisher": "reuters.com",
+      "published_at_utc": "2026-09-04T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Vs. Hyatt: Another Buy For Hilton As Portfolio Durability Strengthens In Q2 (HLT) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWDBkeF9HMGY3My00Q3hwT2tvRlhtT212Y2ZQOUdkaUZNb0o1cHJqSVdmSlNTWU9pNG5zRDA5Y1phR1RsQXpVUnhRTEtBclRMUzdNRGVlT0tYaDlaYUF0R3ptTmU4WThPclN3ZEEwZV84UHhqcXNtX21FcjlCUUhpRGIyQ2lrbzJyaG0yb29ZMF9Rb2lYd2l0T0NRVThaM29uSW41MkRxQmI4TEJNU1R3YnhtSzZmZTJ4dmVxQ09n?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-03T07:00:00+00:00"
+    },
+    {
+      "title": "Stock index futures mixed as focus shifts to jobs numbers - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB6Umdhamw2eEdhbjNKZU5sZXlIQmF1eUs2dUN2SGhrRW5rRk11T3RHR185RmJKTEUtcjhrSVBheldYRllId3M3dkx4dFQ2SjBzd3E4ZElUUS0yUFdNTTZsTmVaLUpleXNvZ1JEVmZ3RGIzM1dFdTdDVm03dTVTUQ?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-03T07:00:00+00:00"
+    },
+    {
+      "title": "Wolfe Research Begins Coverage on Hilton Worldwide (NYSE:HLT) - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUnNtbWZvQXN4bnBMaTN5aF9lbFM5XzRieTZSTWp5UC1VLXEtSmIxekJHa2ZhT0VfTWxyMDZGUGh2ampjVnFTQ0NaZVBGZ05XN1k3Qkh4dm5ZMG9CZVBTV0lEZkZmTmltWFRRaF9JT1BXOFIzSUEwQ1M3aXgyTERvVTNJZ2JPNEFzUDVPeExfajRBX29RUHRlVGRBb1pWdFlhY1Z6QVZjSnpzVlNqNjA3UVZkRjF2REZHLXlyUWJR?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-02T07:00:00+00:00"
+    },
+    {
+      "title": "Northwestern Mutual Wealth Management Co. Boosts Stock Position in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQUWc2Z0ZCNnBkU1BDbFkwRkVuWGRXdVRvdEtCWFUtaVRGSjAxRkw3NndneTZkSVloTGN4Qk9LRGNSV2x1UkJjbGRJMVRYN1hxYVJDWXpubVRQZ0V1VVpEbkZLY0UtajhneUNDREt3LUdtaGtMQ1NfTmVjVDlFVHBvbFZOeVFHNVJJYmllc1lGbGNyX1pFdWdrYVYwc2dkXzNjbERTRUNvOVVPbk1MWEdFV0E5aEcwRlNRRVY1djFzaWVMNTFZVUVUcnY5S3NlQXJzRkl0Y3VRNHVmbWlIenZvNzNCSFlXSU1vQ3Y2aUw5d25UZw?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-02T07:00:00+00:00"
+    },
+    {
+      "title": "Hyatt has an edge over Hilton as luxury travel powers lodging segment -- Wolfe (HLT:NYSE) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRm4xNGpDSkpsZG96anpqekRZeWJ2bndZZ1ZVbmdxMnotM0lZZ2FzWTRwdlA3NmZLc0dqdTBVSzhNWmxCZy1lQ2tTUExFU1lSR2RQd1FTc1E0NjduRDRIaWQ0R0xfdnczTVJYX1VQajFBeVNrZzQ2LVVRS3hTTnBhbVgxQWJlRUJaOHFKWUlxcWpaV2ZTZ3VzZ2VsMTJab0o1dTlpUWZRWVVtYkNkUmFSTFZDTWlDQQ?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-02T07:00:00+00:00"
+    },
+    {
+      "title": "Spotting Winners: Hyatt Hotels (NYSE:H) And Consumer Discretionary - Travel and Vacation Providers Stocks In Q2 - The Globe and Mail",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOcTlYS3drZ1A0SVBna1p6YXZQWFZLSlJERFduZ1E0bmVoOWlFSjRfVHlzUTg4aVZLbjhhaUNrS29NdkJzZ2tOODJQdWl5UDVQRmdWM2NRdWRmUFVQbmFEbU11c2xJNmtZdnFqZUxnRFA5ZHA4b2IxZHBYS3czLXJ1UktmRTlsbmJaNnZzUmFMd3BPV3lwZkkycklpdHVrWWpZN2M0MGFRam5KTFlQa0g1bVR6dmJVSGhiM0RlUExuRWtnSlJlYkd6cWxGN2lnMXdqM0xaOHBTbTc1RkFiNnM0UWpINjZoanZSQXp6ZFhSNnNzTE1SNGNkajJLRElfYlBLVmZLRHZOek1oMk1YWE1SNURTUDdqQQ?oc=5",
+      "publisher": "The Globe and Mail",
+      "published_at_utc": "2026-09-02T07:00:00+00:00"
+    },
+    {
+      "title": "Hilton Worldwide Holdings (HLT) As Its Asset Light Growth Story Keeps Fair Value In Focus - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNRWh6UVdkaUNkWVAydC1ReWhFWnhrak9VcTBEVmQtcjd6cm5WNUxoWGVWZWhBdmo0aE9TYmcyTzVQT1lGNzZvLVJNN1BDUF83NDd2bWdVZkFnZlpLSjhtT3JMelI3bTFGa0FGZ0FjS3U0WklOYmRXbU8ydExyRXMtN2ZzbFVNR0FmcEZpZlpPWVBObWdHVWd0ZWIxMGhxd3AxQkE?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-01T07:00:00+00:00"
+    },
+    {
+      "title": "Q2 Rundown: Hilton Grand Vacations (NYSE:HGV) Vs Other Consumer Discretionary - Travel and Vacation Providers Stocks - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQeVl1X1FDXzdHZzVwME5JcDVpcC1pQVNhdDQ4RS1rSmhHUmxiazE2MnBZZWZlNlhVWGg3TTdiU01TSjhBcjhXUFp3NVYyT0RJLW5UanhaTm1sb3laU3dod2U0MFQxRG1IQThYTkw4eW9OeERrdU12MDR2Q05mSU1SVEM0dmhlS2VEWmlNalgwVE9URVo0YVdkX2doSHUyMFk?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-01T07:00:00+00:00"
+    },
+    {
+      "title": "Consumer Discretionary - Travel and Vacation Providers Stocks Q2 Results: Benchmarking Norwegian Cruise Line (NYSE:NCLH) - StockStory",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxORU5SMGlFVEFOMk1RdVNmSEYxVXlrUFVFMUhoSDAwZEdUUGVfUFVHdUR2dmpoR1hSdTZUc1o1NXZKOTAxTGowT2owRldZbldhdDNOdElUWEVpdW13VXIxYVJibjBnRzNGckNtVmtlRmU3ZGRZTUtKdlYwTzF6UU1fZUxFSi1EMWNmZ1NjbHItVURMN2ZWSkdRV1JjYkp4TWtuSTFFdkZ2bWh5Mm9PSzRod3pudXJUNHFJd0lMUWhEblFLRTJMd0FfVzd4N0pxZ0ZPcEtXUUo1eUIyTGpBeThwM1JzbXlZTTVOT3AxbmpKRGlQbVJUMFpfVktOV3RYLXBC?oc=5",
+      "publisher": "StockStory",
+      "published_at_utc": "2026-09-01T07:00:00+00:00"
+    },
+    {
+      "title": "How Hilton Worldwide Holdings Inc. (HLT) Affects Rotational Strategy Timing - news.stocktradersdaily.com",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNVE5IYnJqR2FpZ25OSk1ZbmRRZ3NzSzhSWDYxVHo5YnB5MGY1YkxpMlhyaG5OdHhyQ2p1c0Q1b19ZbFZYMzJDcFU0QTIzWktZOVZ6cUxhMkF4STI2bjZENS1ZQy1idzhsY3ZJOVVBbWRnMXhOOGxyVEY2dGVrdzQzTi1NYnZNX1JEMEo2ZWhGX0dhMU9TRFhqbktUVlMwckxuME5Wb0FwdXRUTGRKTXM1STlwQ1JBY3ZiaUJjZjU0QW9TNUx4ZGxmVExTY1lQSFY5ai1GRk5SY1h1eUZkWWY4bGxoLWV0WWs?oc=5",
+      "publisher": "news.stocktradersdaily.com",
+      "published_at_utc": "2026-09-01T00:40:01+00:00"
+    },
+    {
+      "title": "Hilton (HLT) Stock Looks Fully Valued After a 165% Five Year Run - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTHd5Ql9yd0dwNl9oV1d3TWg4a1N3V0kyZjF0UlQ0Wi1ZV3owZDVGUWZQZ3FfbXhJRFFNaXpLaUc0bTZfQkhKRWRoY2kwdVBGS2lLV0ZmWHItTDNCS3d0enU1SUtxaHdib2hFNnJyOGRhbFI2WDVoZFBoY04xYm1QNXlUWlFRQldWaDF0WWRZX0cxYU9oUmRtMw?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-08-31T07:00:00+00:00"
+    },
+    {
+      "title": "Hennessy Advisors Inc. Makes New $2.60 Million Investment in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOR2hFcV8xT3BzSmEtOTk2Y05HUHFUc3Q2dE9OZE82MWtodl9za1FORDhzZkd0VzdsVkJrX3YwLXFDRXRfbHBMTlRlTmFnbWVJaEtZOTU3NzdNaTZEU2dOZ19YcW9IVFRuRHVrY2dTdmdGMWFmNHdYYXhiY1BsS1A0bWdlekZrMkdXWjBBLXhEQWVHOVE2WHVGa2s4dnZKQUswTVBWVlVaaUtFd0hoSkxMTVpRRXlFQTVvaGZmdndaQzZzdkphSUc0T2ZSbnVjZ1dPVWRmMDVMekJQR0h0VWt5SG1ma09fUlE?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-31T07:00:00+00:00"
+    },
+    {
+      "title": "UBS AM a distinct business unit of UBS ASSET MANAGEMENT AMERICAS LLC Cuts Position in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQYW9jWE1lWmFRQWk0aEZTcFN3RmZaNk9oYXNUMWRXM1hHM3VtLUxsYU9yUWZqdTdKVUZOVG5ic3g4QVEwanprbWtqWVlJcnZwQ0VzVTVaX1UwT3dMTlBickxhZjNRYm8yN3Jld2Uzc1Z6dGdGcnRmaVBXX3JOaTdvQ184S2k0dHBObS1KOENVS0dtMk5lLVpZYWNzWFpKcGkxdFVXVTdxNHY4eVZTZzc0OVRlWTNzVEhuVXFzNGJBUE40YVFLaWp6N0s2MmRUZ1dZS1pnczNSc3JfZUdOWTFfSUNvUHBPOTNaTEp3TkZWVHZsTDNOMXZNdEpkMTdxUks4S1BEVXBLQmVDOFMx?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-31T07:00:00+00:00"
+    },
+    {
+      "title": "Implied Volatility Surging for Hilton Stock Options - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMzJVdWJaMURDTktzR0lqUmpOcFpjQmxFZzlrc19uUWRUejhPbFNzUXZjcXYzUDNRYWxqTjlnZ3E1b0V6clNwZVBJREk0emRia0JZbFhUQTRFOGZPdUtSTmlib0tTRDZzbHctdGxlN3pfV05rWnctM2czWTBNTWFWT3RyUkxuQXFJTWpVMGo0UWVOUHNMa1JadU4tWFJaUENmZWpDbG5iNHY?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-08-31T07:00:00+00:00"
+    },
+    {
+      "title": "14,450 Shares in Hilton Worldwide Holdings Inc. $HLT Purchased by Two Sigma Securities LLC - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPZEhZck4wZ2xGXzVSRmhGb1lPcDVLTHlfSFpmUGxwc1JDemptemxHWkpYMnJvRmx6RENaakpoYTBjOE80R2NMVC1fSDJPT05KVHlaSUk0UVpUN0k4dXA3NG5QV01pVG11anNUSjZoUXU4bm9uTkJxbjdVbm5IaHkxcGltZFBvNms0ejYwS2JWX3dfSDVoaTBsOV9lUG45SXJvQ3YwN2N3UThmUlRVVUVqWl9jQ3RrR2djYVBnZVJRa3BFLXhhaEEtM0UwVUVmbFZwWG1FbUw4Rk5xSnV6YkRVaS1n?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-31T07:00:00+00:00"
+    },
+    {
+      "title": "Jefferies Financial Group Inc. Buys New Stake in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNMWZSTmtXQU1rUHBnSXZPbncycFNzTG5SNG1PQ2ZiZ1hwd0VRWUFVamJ5Qld5dXlReDJTaUV2bk1raE1pbmhHV0ZSaThKTjlabzdQVWdHRTM0VFJuV0hXOVp1OFd0WEljTXdRYjVUMDJ4NnhaQUJRQzYySkpJb0FKSzBQRUFjQUlBRTFBczVJQXRybnUtcHgzVmJqNHQ1MUFBOHhUQ2k5eXltWk5MSGJpclB1V0VzY0pBRFVkeng5TkNEaWZVWXo5NTQwQkJpdFM2WFRtTFY1OC04Zw?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-30T07:00:00+00:00"
+    },
+    {
+      "title": "30,684 Shares in Hilton Worldwide Holdings Inc. $HLT Acquired by Empowered Funds LLC - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYW1EWE5pTzhXX1NLOUJnUTRPaU1HVm9fNW0wenEtV1pBckFCZ2xxbWJqSGwzZ3FFWGdLZHd5ODBWNU1OUFk4Zlh4RFl5cTBqUWJjRnVhdHFjQ2NRZ3ZmNHlkalE0RHhLd0lMYnBCd2tnOUdSalFiZjVRbzdUUnRCRFAwY3hVNG1ubWdkNFhjUEZjVnRETlJ1aGFuckR5UlpaRDFvZ2h2Y3NEUXozR3VSWWIwMmQ4QVk5dFJjSmhIcV9kN3JyRVFJLXVld3NTejl2V3dNb0xlT2hadw?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-30T07:00:00+00:00"
+    },
+    {
+      "title": "Alyeska Investment Group L.P. Cuts Stock Holdings in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPUS1sQ0FYdUg3SEJkQ3lFMWVUTjRFT1JMNzFKT0NQWWxSV09PQ3pKU2FjYTR6TGxKUkxTa0NKVDJicm5DYmtLbHF3ZkNhM09LYkdVMUhQR1UyaW43Y09CVV9kS1BYY1V0d1JFTDhKWDkwWWZiZFRpOFFOUnVNb1ZjWHZudTRlajNqNmtvbXBFY0dic21Ganh4QmxZbHpZNFNOU1ZoaFBEZnRIczRvTzlBd3A1UGRYaG9PS1NUVFRCQXFVbXhZNG42cWFtOXVaWnZnLVNmaFQ4dDd1c2daNnc?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-30T07:00:00+00:00"
+    },
+    {
+      "title": "Winners And Losers Of Q2: Viking (NYSE:VIK) Vs The Rest Of The Consumer Discretionary - Travel and Vacation Providers Stocks - The Globe and Mail",
+      "url": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxNSzk2a1ZFRlVmOFRjZTAwWEZEaFZhRF9DUkc3RnByc1RjNjR5Z21KTHBZQlo1LXo3VjFDVkZkb3RLcnFRcHcxZmFjLTF6b3N4NktYSEdNQnZsY1ExNGdVZjBFWm5PbVFRY1ZEVVY1LV9Ea2x1dkFLVlF5Q0JDaW1XaU5OSF9aNmpaVklBc1pFUENzZlc0OEJfQU1IZXAtYUpTS2loWk5WaC1rblVUcU9KSE80ZmNfYktzc216ZnI4REpfX1pMQlRyeVhyeENOeVFlQThoMWxnbnhYN2dBdlNZX05mOEd2bDAxbVJoM21WdTc5anEwQVMySkNmeEVycVY1aVlSY092c0hFeUdmRDVrWVllX05rckp0Z2FhbWExRkRQQnU2YXN4bDV3?oc=5",
+      "publisher": "The Globe and Mail",
+      "published_at_utc": "2026-08-30T07:00:00+00:00"
+    },
+    {
+      "title": "Rakuten Investment Management Inc. Buys Shares of 37,301 Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPZEZ6WHBkaERhVEVXUEotdFdJQnV1SlEtNTFnWnk3TWV1Z0RxWGxjMHJqRGhzSll0T2YxcWl5Z0JiTzNmOW9TMkN0c0N0NWtkUEwzbUJnZC05Q296dlVBcHAyOXVzLTJBM3p1ejVza2dZNDNWTmVBNXV5SEN4OWltNWVCZktiMlRhV1A0cm5kdGRsZFl4Ukp1SVNvYUJteDNwMW9HbHM4UVpYZGQ0RWhHVzdqU0VhU1pnUEZxMmlQOEc2LW9HbVkxYkRmUzVYT1JoazM3RmpXRm9wZkhINHA4UWdoZw?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-29T07:00:00+00:00"
+    },
+    {
+      "title": "United Capital Financial Advisors LLC Purchases New Shares in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPLXBhRzdtbnd6S01udWRTQkVoeDhfN1VCVkF0dFZ1N1VCbTYtblJFNFJoenJOY1UzdWZ6aVAxT2N4VW9fSHRZYVk4YjBCTzJMVS1uelJDNVNmd0pIaDhIeF9MMjFvOGNVTTdTSVJrTER0djcwOC1fejd0V0hud1Azc1B5Z0JEZ1h3SGpZUXNocFlNWWJkemYtLWxZWElGVjhfc2VDdl94blRVeHFEY2tiTGpZT3FZb2VDZ21FRnYxR3J5a1BIcjd5Q2Y4UkxXbV9pOU5qNlMtWXRRNGJyendrbmpucTM3bk5XR1RldA?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-29T07:00:00+00:00"
+    },
+    {
+      "title": "Canada Pension Plan Investment Board Makes New Investment in Hilton Worldwide Holdings Inc. $HLT - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPcmZvV2FMOURkYmZQbFlDRFNQTEhwYTl5eko3QzkxdzlYS2tpb0lnMUMyUGE5cXg3Nkd6SWxYRnh3VTN6bzRBVFpMWW1RZnVKSEdtdWVaY3BiTWVoMmMtWWg0N29oeHVzRGx2LV80QVdVQ1VGNXVjcnM0RG0wRXdSV3BpdzlkVHdSSWc3M2lhWFV6SVpqOW1pN205V1RNaW9nTlQzMUNkdEdEX0s1ZVZ4VU93V1JoQUUya2NzVUN0UVBBTVU5eHcyd0JaRkR2M3gzTUwtZzFqRVdiNmhpUEVTR2pYUzJmTG9ENVlR?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-08-29T07:00:00+00:00"
+    },
+    {
+      "title": "Can Hyatt Hotels (H) Justify Its Valuation After Its Shelf Registration Filing? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTGNBbW5CckI3NnlnRl9tVUtVc2VkYkFmSUJ6aDFPcDB2Yjd5NzloVGU0MURBekZua0lnc2ZHOUJ6YWc1dkFaSi1MQlVNX3B6clJtVVhJWFJ2TjdtWnd3QWNoS29qTkZRYlZwSEVUWUg2dFkyN2tFTXZMMHJFa1F3T08zbXliRUIxN0pSYk05cDQzNDgwQ0FGN3p4eURZUQ?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-08-29T07:00:00+00:00"
+    },
+    {
+      "title": "LSCC Q2 2026 Earnings: EPS Beats Estimates by 17%, Yet Shares Decline 5% - Peak Earnings Alert - careplusvn.com",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRjBySTRVMWk3WXdpbGwwMGx0bU1aWUo5cFVKbVNjZHIydjlEODViRnR5QmplSzJuRzBLQkdaQ3JUZlNmQmcxRFI1aHA1ZkxEa3hQaHE4bElfR0NXT3NFZDh3SFZUQ294eWJ6dGYyWjlKdS1nWW9nOE9qNzRnenowbjhfaFZsQ1BPODYyM2F2MER1bFhTaUhGUjljVXp0d00ybXlwTGtzVURQM0pIVnZZUy1KV0g?oc=5",
+      "publisher": "careplusvn.com",
+      "published_at_utc": "2026-08-28T07:00:00+00:00"
+    }
+  ],
+  "sec_filings_in_window": [
+    {
+      "form": "4",
+      "filed_at": "2026-09-15",
+      "report_date": "2026-09-14",
+      "accession_number": "0001827369-26-000007",
+      "url": "https://www.sec.gov/Archives/edgar/data/1585689/000182736926000007/xslF345X06/wk-form4_1789514146.xml"
+    },
+    {
+      "form": "4",
+      "filed_at": "2026-09-15",
+      "report_date": "2026-09-14",
+      "accession_number": "0001821096-26-000014",
+      "url": "https://www.sec.gov/Archives/edgar/data/1585689/000182109626000014/xslF345X06/wk-form4_1789505214.xml"
+    },
+    {
+      "form": "144",
+      "filed_at": "2026-09-14",
+      "report_date": "",
+      "accession_number": "0001959173-26-006942",
+      "url": "https://www.sec.gov/Archives/edgar/data/1585689/000195917326006942/xsl144X01/primary_doc.xml"
+    },
+    {
+      "form": "144",
+      "filed_at": "2026-09-14",
+      "report_date": "",
+      "accession_number": "0001959173-26-006937",
+      "url": "https://www.sec.gov/Archives/edgar/data/1585689/000195917326006937/xsl144X01/primary_doc.xml"
+    }
+  ],
+  "latest_sec_reports": [
+    {
+      "form": "10-Q",
+      "filed_at": "2026-07-28",
+      "report_date": "2026-06-30",
+      "accession_number": "0001585689-26-000043",
+      "url": "https://www.sec.gov/Archives/edgar/data/1585689/000158568926000043/hlt-20260630.htm"
+    },
+    {
+      "form": "10-Q",
+      "filed_at": "2026-04-28",
+      "report_date": "2026-03-31",
+      "accession_number": "0001585689-26-000032",
+      "url": "https://www.sec.gov/Archives/edgar/data/1585689/000158568926000032/hlt-20260331.htm"
+    }
+  ],
+  "financials": {
+    "cik": 1585689,
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001585689.json",
+    "latest_reported_facts": {
+      "Revenues": {
+        "val": 12039000000,
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "filed": "2026-02-11",
+        "form": "10-K",
+        "accn": "0001585689-26-000007",
+        "unit": "USD"
+      },
+      "RevenueFromContractWithCustomerExcludingAssessedTax": {
+        "val": 3341000000,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "USD"
+      },
+      "NetIncomeLoss": {
+        "val": 482000000,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "USD"
+      },
+      "Assets": {
+        "val": 16928000000,
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "USD"
+      },
+      "Liabilities": {
+        "val": 23198000000,
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "USD"
+      },
+      "StockholdersEquity": {
+        "val": -6303000000,
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "USD"
+      },
+      "EarningsPerShareDiluted": {
+        "val": 2.1,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "USD/shares"
+      },
+      "CommonStockSharesOutstanding": {
+        "val": 225696464,
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "shares"
+      },
+      "NetCashProvidedByUsedInOperatingActivities": {
+        "val": 1090000000,
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-28",
+        "form": "10-Q",
+        "accn": "0001585689-26-000043",
+        "unit": "USD"
+      }
+    }
+  },
+  "latest_earnings_transcript": null,
+  "unavailable": {
+    "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+  },
+  "cik": 1585689
+}

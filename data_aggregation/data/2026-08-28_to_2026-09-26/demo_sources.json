@@ -1,0 +1,492 @@
+{
+  "date_range_utc": {
+    "start": "2026-08-28",
+    "end": "2026-09-26"
+  },
+  "retrieved_at_utc": "2026-09-27T13:25:10.900994+00:00",
+  "macro": {
+    "DGS10": {
+      "title": "10-year Treasury constant maturity rate",
+      "observations": [
+        {
+          "date": "2026-08-28",
+          "value": 4.73
+        },
+        {
+          "date": "2026-08-31",
+          "value": 4.75
+        },
+        {
+          "date": "2026-09-01",
+          "value": 4.79
+        },
+        {
+          "date": "2026-09-02",
+          "value": 4.79
+        },
+        {
+          "date": "2026-09-03",
+          "value": 4.77
+        },
+        {
+          "date": "2026-09-04",
+          "value": 4.78
+        },
+        {
+          "date": "2026-09-08",
+          "value": 4.8
+        },
+        {
+          "date": "2026-09-09",
+          "value": 4.83
+        },
+        {
+          "date": "2026-09-10",
+          "value": 4.95
+        },
+        {
+          "date": "2026-09-11",
+          "value": 4.96
+        },
+        {
+          "date": "2026-09-14",
+          "value": 4.97
+        },
+        {
+          "date": "2026-09-15",
+          "value": 5.0
+        },
+        {
+          "date": "2026-09-16",
+          "value": 5.01
+        },
+        {
+          "date": "2026-09-17",
+          "value": 4.94
+        },
+        {
+          "date": "2026-09-18",
+          "value": 5.01
+        },
+        {
+          "date": "2026-09-21",
+          "value": 4.96
+        },
+        {
+          "date": "2026-09-22",
+          "value": 4.96
+        },
+        {
+          "date": "2026-09-23",
+          "value": 5.11
+        },
+        {
+          "date": "2026-09-24",
+          "value": 5.18
+        }
+      ],
+      "source_url": "https://fred.stlouisfed.org/series/DGS10",
+      "last_observation": {
+        "date": "2026-09-24",
+        "value": 5.18
+      }
+    },
+    "FEDFUNDS": {
+      "title": "Effective federal funds rate",
+      "observations": [
+        {
+          "date": "2026-05-01",
+          "value": 3.63
+        },
+        {
+          "date": "2026-06-01",
+          "value": 3.63
+        },
+        {
+          "date": "2026-07-01",
+          "value": 3.63
+        },
+        {
+          "date": "2026-08-01",
+          "value": 3.63
+        }
+      ],
+      "source_url": "https://fred.stlouisfed.org/series/FEDFUNDS",
+      "last_observation": {
+        "date": "2026-08-01",
+        "value": 3.63
+      }
+    },
+    "CPIAUCSL": {
+      "title": "Consumer Price Index, all urban consumers",
+      "observations": [
+        {
+          "date": "2026-05-01",
+          "value": 333.979
+        },
+        {
+          "date": "2026-06-01",
+          "value": 332.568
+        },
+        {
+          "date": "2026-07-01",
+          "value": 332.813
+        },
+        {
+          "date": "2026-08-01",
+          "value": 334.131
+        }
+      ],
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "last_observation": {
+        "date": "2026-08-01",
+        "value": 334.131
+      }
+    }
+  },
+  "crypto": {
+    "BTC": {
+      "asset_id": "bitcoin",
+      "daily": [
+        {
+          "date": "2026-08-28",
+          "price_usd": 77738.78291524075,
+          "observed_at_utc": "2026-08-28T23:00:00+00:00"
+        },
+        {
+          "date": "2026-08-29",
+          "price_usd": 78221.78563841502,
+          "observed_at_utc": "2026-08-29T23:00:00+00:00"
+        },
+        {
+          "date": "2026-08-30",
+          "price_usd": 78415.92036320959,
+          "observed_at_utc": "2026-08-30T23:00:00+00:00"
+        },
+        {
+          "date": "2026-08-31",
+          "price_usd": 78557.79779181909,
+          "observed_at_utc": "2026-08-31T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-01",
+          "price_usd": 77240.801579754,
+          "observed_at_utc": "2026-09-01T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-02",
+          "price_usd": 77004.75414720885,
+          "observed_at_utc": "2026-09-02T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-03",
+          "price_usd": 81142.27254272846,
+          "observed_at_utc": "2026-09-03T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-04",
+          "price_usd": 79648.8752251388,
+          "observed_at_utc": "2026-09-04T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-05",
+          "price_usd": 79781.05895269189,
+          "observed_at_utc": "2026-09-05T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-06",
+          "price_usd": 80046.70819196723,
+          "observed_at_utc": "2026-09-06T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-07",
+          "price_usd": 78929.34832981802,
+          "observed_at_utc": "2026-09-07T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-08",
+          "price_usd": 78548.73323714682,
+          "observed_at_utc": "2026-09-08T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-09",
+          "price_usd": 77927.77053945823,
+          "observed_at_utc": "2026-09-09T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-10",
+          "price_usd": 76817.93214328661,
+          "observed_at_utc": "2026-09-10T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-11",
+          "price_usd": 77128.66953731132,
+          "observed_at_utc": "2026-09-11T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-12",
+          "price_usd": 77218.57922842517,
+          "observed_at_utc": "2026-09-12T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-13",
+          "price_usd": 76682.56817293397,
+          "observed_at_utc": "2026-09-13T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-14",
+          "price_usd": 78539.73849882335,
+          "observed_at_utc": "2026-09-14T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-15",
+          "price_usd": 75645.58490916989,
+          "observed_at_utc": "2026-09-15T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-16",
+          "price_usd": 75622.80385532479,
+          "observed_at_utc": "2026-09-16T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-17",
+          "price_usd": 76353.2776230547,
+          "observed_at_utc": "2026-09-17T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-18",
+          "price_usd": 81124.11668162764,
+          "observed_at_utc": "2026-09-18T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-19",
+          "price_usd": 81226.58014364234,
+          "observed_at_utc": "2026-09-19T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-20",
+          "price_usd": 81197.32632288539,
+          "observed_at_utc": "2026-09-20T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-21",
+          "price_usd": 86421.95454677695,
+          "observed_at_utc": "2026-09-21T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-22",
+          "price_usd": 86120.19453430604,
+          "observed_at_utc": "2026-09-22T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-23",
+          "price_usd": 84550.14189817327,
+          "observed_at_utc": "2026-09-23T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-24",
+          "price_usd": 84249.38872205936,
+          "observed_at_utc": "2026-09-24T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-25",
+          "price_usd": 84069.47476206647,
+          "observed_at_utc": "2026-09-25T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-26",
+          "price_usd": 84260.05303177399,
+          "observed_at_utc": "2026-09-26T23:00:00+00:00"
+        }
+      ],
+      "source_url": "https://www.coingecko.com/en/coins/bitcoin"
+    },
+    "ETH": {
+      "asset_id": "ethereum",
+      "daily": [
+        {
+          "date": "2026-08-28",
+          "price_usd": 2441.6155089580407,
+          "observed_at_utc": "2026-08-28T23:00:00+00:00"
+        },
+        {
+          "date": "2026-08-29",
+          "price_usd": 2452.4996773197377,
+          "observed_at_utc": "2026-08-29T23:00:00+00:00"
+        },
+        {
+          "date": "2026-08-30",
+          "price_usd": 2469.5722144659694,
+          "observed_at_utc": "2026-08-30T23:00:00+00:00"
+        },
+        {
+          "date": "2026-08-31",
+          "price_usd": 2468.2377542236177,
+          "observed_at_utc": "2026-08-31T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-01",
+          "price_usd": 2412.006730051392,
+          "observed_at_utc": "2026-09-01T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-02",
+          "price_usd": 2378.8379903819814,
+          "observed_at_utc": "2026-09-02T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-03",
+          "price_usd": 2496.9382604904717,
+          "observed_at_utc": "2026-09-03T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-04",
+          "price_usd": 2451.5592572459245,
+          "observed_at_utc": "2026-09-04T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-05",
+          "price_usd": 2480.989497005367,
+          "observed_at_utc": "2026-09-05T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-06",
+          "price_usd": 2507.8723192118205,
+          "observed_at_utc": "2026-09-06T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-07",
+          "price_usd": 2482.2580407717323,
+          "observed_at_utc": "2026-09-07T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-08",
+          "price_usd": 2488.413117941641,
+          "observed_at_utc": "2026-09-08T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-09",
+          "price_usd": 2450.1755494998274,
+          "observed_at_utc": "2026-09-09T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-10",
+          "price_usd": 2444.535479710121,
+          "observed_at_utc": "2026-09-10T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-11",
+          "price_usd": 2510.82575685818,
+          "observed_at_utc": "2026-09-11T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-12",
+          "price_usd": 2522.3473241745346,
+          "observed_at_utc": "2026-09-12T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-13",
+          "price_usd": 2474.603187509969,
+          "observed_at_utc": "2026-09-13T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-14",
+          "price_usd": 2532.2693231393755,
+          "observed_at_utc": "2026-09-14T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-15",
+          "price_usd": 2396.3566614857773,
+          "observed_at_utc": "2026-09-15T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-16",
+          "price_usd": 2390.6133928734,
+          "observed_at_utc": "2026-09-16T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-17",
+          "price_usd": 2443.6415744847372,
+          "observed_at_utc": "2026-09-17T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-18",
+          "price_usd": 2619.718773506136,
+          "observed_at_utc": "2026-09-18T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-19",
+          "price_usd": 2629.914515862336,
+          "observed_at_utc": "2026-09-19T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-20",
+          "price_usd": 2638.6870809448455,
+          "observed_at_utc": "2026-09-20T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-21",
+          "price_usd": 2778.1857010664044,
+          "observed_at_utc": "2026-09-21T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-22",
+          "price_usd": 2753.1248202113484,
+          "observed_at_utc": "2026-09-22T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-23",
+          "price_usd": 2689.5306019537184,
+          "observed_at_utc": "2026-09-23T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-24",
+          "price_usd": 2684.277838013781,
+          "observed_at_utc": "2026-09-24T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-25",
+          "price_usd": 2691.997733735322,
+          "observed_at_utc": "2026-09-25T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-26",
+          "price_usd": 2688.3570754209213,
+          "observed_at_utc": "2026-09-26T23:00:00+00:00"
+        }
+      ],
+      "source_url": "https://www.coingecko.com/en/coins/ethereum"
+    }
+  },
+  "calendars": {},
+  "private_funds": {
+    "BREIT": {
+      "nav": null,
+      "distribution": null,
+      "as_of": null,
+      "source_url": null,
+      "status": "awaiting verified published or manual source"
+    },
+    "BCRED": {
+      "nav": null,
+      "distribution": null,
+      "as_of": null,
+      "source_url": null,
+      "status": "awaiting verified published or manual source"
+    }
+  },
+  "sources": {
+    "fred_DGS10": "cached",
+    "fred_FEDFUNDS": "cached",
+    "fred_CPIAUCSL": "cached",
+    "coingecko_BTC": "cached",
+    "coingecko_ETH": "cached",
+    "finnhub_ipo": "not configured (FINNHUB_API_KEY)",
+    "finnhub_earnings": "not configured (FINNHUB_API_KEY)",
+    "sec_filings": "cached metadata and 73 document texts/chunks; embeddings not configured",
+    "sec_companyfacts": "cached",
+    "prices": "cached Yahoo Finance daily",
+    "news": "cached Google News RSS; Finnhub news needs FINNHUB_API_KEY",
+    "portfolio": "see local SQLite sample portfolio"
+  }
+}

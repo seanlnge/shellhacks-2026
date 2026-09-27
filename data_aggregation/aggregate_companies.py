@@ -74,31 +74,32 @@ def fetch(url: str, user_agent: str) -> bytes:
         return response.read()
 
 
-def news(query: str, start: date, end: date) -> list[dict]:
-    terms = f"{query} after:{start.isoformat()} before:{(end + timedelta(days=1)).isoformat()}"
-    url = "https://news.google.com/rss/search?" + urlencode(
-        {"q": terms, "hl": "en-US", "gl": "US", "ceid": "US:en"}
-    )
-    root = ET.fromstring(fetch(url, "Mozilla/5.0"))
-    articles = []
-    seen = set()
-    for item in root.findall("./channel/item"):
-        published = parsedate_to_datetime(item.findtext("pubDate", "")).astimezone(UTC)
-        if not start <= published.date() <= end:
-            continue
-        link = item.findtext("link", "")
-        if link in seen:
-            continue
-        seen.add(link)
-        articles.append(
-            {
-                "title": html.unescape(item.findtext("title", "")),
-                "url": link,
-                "publisher": item.findtext("source"),
-                "published_at_utc": published.isoformat(),
-            }
+def news(query: str, start: date, end: date, *, window_days: int = 1) -> list[dict]:
+    if window_days < 1:
+        raise ValueError("window_days must be positive")
+    articles = {}
+    cursor = start
+    while cursor <= end:
+        window_end = min(cursor + timedelta(days=window_days - 1), end)
+        terms = f"{query} after:{cursor.isoformat()} before:{(window_end + timedelta(days=1)).isoformat()}"
+        url = "https://news.google.com/rss/search?" + urlencode(
+            {"q": terms, "hl": "en-US", "gl": "US", "ceid": "US:en"}
         )
-    return sorted(articles, key=lambda article: article["published_at_utc"], reverse=True)[:500]
+        root = ET.fromstring(fetch(url, "Mozilla/5.0"))
+        for item in root.findall("./channel/item"):
+            published = parsedate_to_datetime(item.findtext("pubDate", "")).astimezone(UTC)
+            if not cursor <= published.date() <= window_end:
+                continue
+            link = item.findtext("link", "")
+            if link:
+                articles[link] = {
+                    "title": html.unescape(item.findtext("title", "")),
+                    "url": link,
+                    "publisher": item.findtext("source"),
+                    "published_at_utc": published.isoformat(),
+                }
+        cursor = window_end + timedelta(days=1)
+    return sorted(articles.values(), key=lambda article: article["published_at_utc"], reverse=True)
 
 
 def finnhub_news(symbol: str, token: str, start: date, end: date) -> list[dict]:
