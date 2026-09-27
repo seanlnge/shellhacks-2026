@@ -12,7 +12,10 @@ const globalForDb = globalThis as unknown as {
   conn: postgres.Sql | undefined;
 };
 
-const conn = globalForDb.conn ?? postgres(env.DATABASE_URL);
+const databaseUrl = new URL(env.DATABASE_URL);
+if (databaseUrl.hostname === "localhost") databaseUrl.hostname = "127.0.0.1";
+
+const conn = globalForDb.conn ?? postgres(databaseUrl.toString());
 if (env.NODE_ENV !== "production") globalForDb.conn = conn;
 
 export const db = drizzle(conn, { schema });

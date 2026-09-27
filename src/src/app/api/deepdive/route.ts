@@ -5,12 +5,20 @@ import { catalog } from "~/lib/generative-catalog";
 import { getStoryBundle } from "~/server/data/story-store";
 import { retrieveEvidence } from "~/server/evidence/search";
 import { accessError, authorizedStory } from "~/server/generative/access";
+import {
+  compositionCandidates,
+  compositionStream,
+} from "~/server/generative/compose";
+import { verifySeed } from "~/server/generative/compose-token";
 import { selectEvidence } from "~/server/generative/jev";
 
 const inputSchema = z.object({
   portfolioId: z.number().int().positive(),
   storyId: z.number().int().positive(),
   question: z.string().trim().min(1).max(500),
+  mode: z.enum(["jev", "llm"]).default("jev"),
+  initialSpec: z.unknown().optional(),
+  seedToken: z.string().max(100).optional(),
   scope: z.enum(["story", "portfolio"]).default("story"),
   anchor: z
     .object({
@@ -39,7 +47,10 @@ export async function POST(request: Request) {
     input.data.storyId,
   );
   if ("error" in access && access.error) return accessError(access.error);
-  if (!env.AI_GATEWAY_API_KEY) {
+  if (
+    (input.data.mode === "llm" && !env.AI_GATEWAY_API_KEY) ||
+    (input.data.mode === "jev" && !env.JEV_API_KEY && !env.AI_GATEWAY_API_KEY)
+  ) {
     return Response.json(
       { error: "Deep dive provider not configured" },
       { status: 503 },
@@ -85,6 +96,63 @@ export async function POST(request: Request) {
     };
     if (encodeURIComponent(JSON.stringify(next)).length > 6000) break;
     evidenceSources[item.id] = next[item.id]!;
+  }
+
+  if (input.data.mode === "jev") {
+    const seedScope = `${input.data.portfolioId}:${input.data.storyId}:${input.data.scope}`;
+    const seedSecret =
+      env.AUTH_SECRET ?? env.JEV_API_KEY ?? env.AI_GATEWAY_API_KEY!;
+    const recipes = compositionCandidates({
+      story: access.story,
+      bundle,
+      evidence: selected.filter((item) =>
+        Object.hasOwn(evidenceSources, item.id),
+      ),
+      scope: input.data.scope,
+      assetKeys:
+        input.data.scope === "portfolio"
+          ? access.portfolio.holdings.map(
+              (holding) => `${holding.kind}:${holding.symbol}`,
+            )
+          : [access.story.assetKey],
+    });
+    let initialSpec;
+    try {
+      if (input.data.initialSpec !== undefined)
+        initialSpec = verifySeed(
+          input.data.initialSpec,
+          input.data.seedToken,
+          seedScope,
+          seedSecret,
+        );
+      else if (input.data.seedToken) throw new Error("Invalid initial spec");
+    } catch {
+      return Response.json({ error: "Invalid initial spec" }, { status: 400 });
+    }
+    return new Response(
+      compositionStream({
+        candidates: recipes,
+        question: input.data.anchor?.userPrompt ?? input.data.question,
+        apiKey: env.AI_GATEWAY_API_KEY,
+        directApiKey: env.JEV_API_KEY,
+        signal: request.signal,
+        seedScope,
+        seedSecret,
+        ...(initialSpec ? { initialSpec } : {}),
+      }),
+      {
+        headers: {
+          "Content-Type": "application/x-ndjson; charset=utf-8",
+          "Cache-Control": "no-store",
+          "X-Content-Type-Options": "nosniff",
+          "X-Generation-Mode": "jev",
+          "X-Evidence-Mode": candidates.length ? evidence.mode : "none",
+          "X-Evidence-Sources": encodeURIComponent(
+            JSON.stringify(evidenceSources),
+          ),
+        },
+      },
+    );
   }
 
   const story = access.story;
@@ -178,7 +246,7 @@ export async function POST(request: Request) {
       method: "POST",
       signal: AbortSignal.any([request.signal, timeout]),
       headers: {
-        Authorization: `Bearer ${env.AI_GATEWAY_API_KEY}`,
+        Authorization: `Bearer ${env.AI_GATEWAY_API_KEY!}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -308,6 +376,7 @@ export async function POST(request: Request) {
       "Content-Type": "application/x-ndjson; charset=utf-8",
       "Cache-Control": "no-store",
       "X-Content-Type-Options": "nosniff",
+      "X-Generation-Mode": "llm",
       "X-Evidence-Mode": candidates.length ? evidence.mode : "none",
       "X-Evidence-Sources": encodeURIComponent(JSON.stringify(evidenceSources)),
     },

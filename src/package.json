@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.7.2",
-    "@json-render/core": "^0.21.0",
-    "@json-render/react": "^0.21.0",
+    "@json-render/core": "file:vendor/json-render/json-render-core-c2600d7.tgz",
+    "@json-render/react": "file:vendor/json-render/json-render-react-c2600d7.tgz",
     "@t3-oss/env-nextjs": "^0.13.11",
     "@tanstack/react-query": "^5.69.0",
     "@trpc/client": "^11.0.0",

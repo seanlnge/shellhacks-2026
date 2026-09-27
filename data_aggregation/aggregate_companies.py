@@ -46,12 +46,25 @@ FINANCIAL_TAGS = (
     "Revenues",
     "RevenueFromContractWithCustomerExcludingAssessedTax",
     "NetIncomeLoss",
+    "GrossProfit",
+    "OperatingIncomeLoss",
+    "CostOfRevenue",
     "Assets",
     "Liabilities",
     "StockholdersEquity",
+    "AssetsCurrent",
+    "LiabilitiesCurrent",
+    "CashAndCashEquivalentsAtCarryingValue",
+    "LongTermDebtCurrent",
+    "LongTermDebtNoncurrent",
+    "OperatingExpenses",
+    "ResearchAndDevelopmentExpense",
     "EarningsPerShareDiluted",
+    "EarningsPerShareBasic",
     "CommonStockSharesOutstanding",
     "NetCashProvidedByUsedInOperatingActivities",
+    "NetCashProvidedByUsedInInvestingActivities",
+    "PaymentsToAcquirePropertyPlantAndEquipment",
 )
 
 
@@ -85,7 +98,7 @@ def news(query: str, start: date, end: date) -> list[dict]:
                 "published_at_utc": published.isoformat(),
             }
         )
-    return sorted(articles, key=lambda article: article["published_at_utc"], reverse=True)[:50]
+    return sorted(articles, key=lambda article: article["published_at_utc"], reverse=True)[:500]
 
 
 def finnhub_news(symbol: str, token: str, start: date, end: date) -> list[dict]:
@@ -131,24 +144,36 @@ def sec_submissions(cik: int, agent: str, start: date, end: date) -> tuple[list[
     return filings, latest_reports
 
 
-def sec_financials(cik: int, agent: str, end: date) -> dict:
-    payload = json.loads(fetch(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json", agent))
+def financial_facts(payload: dict, end: date) -> dict:
     facts = payload.get("facts", {}).get("us-gaap", {})
     selected = {}
+    history = {}
+    earliest = (end - timedelta(days=5 * 366)).isoformat()
     for tag in FINANCIAL_TAGS:
         if tag not in facts:
             continue
-        unit, rows = next(iter(facts[tag]["units"].items()))
-        candidates = [
-            row for row in rows
-            if row.get("form") in ("10-K", "10-Q") and row.get("filed", "9999") <= end.isoformat()
-        ]
-        if not candidates:
-            continue
-        row = max(candidates, key=lambda r: (r.get("end", ""), r.get("filed", ""), r.get("start", "")))
-        selected[tag] = {key: row[key] for key in ("val", "start", "end", "filed", "form", "accn") if key in row}
-        selected[tag]["unit"] = unit
-    return {"cik": cik, "source": f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json", "latest_reported_facts": selected}
+        observations = []
+        historical = []
+        for unit, rows in facts[tag].get("units", {}).items():
+            for row in rows:
+                if (row.get("form") in ("10-K", "10-Q") and
+                        row.get("end", "") <= end.isoformat() and
+                        row.get("filed", "9999") <= end.isoformat()):
+                    fact = {**{key: row[key] for key in ("val", "start", "end", "filed", "form", "accn", "fy", "fp", "frame") if key in row}, "unit": unit}
+                    observations.append(fact)
+                    if row.get("end", "") >= earliest:
+                        historical.append(fact)
+        if observations:
+            selected[tag] = max(observations, key=lambda row: (row["end"], row["filed"], row.get("start", "")))
+        if historical:
+            historical.sort(key=lambda row: (row["end"], row["filed"], row.get("start", ""), row.get("accn", "")))
+            history[tag] = list({(row.get("accn"), row.get("start"), row["end"], row["unit"], row["val"]): row for row in historical}.values())
+    return {"latest_reported_facts": selected, "historical_facts": history}
+
+
+def sec_financials(cik: int, agent: str, end: date) -> dict:
+    payload = json.loads(fetch(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json", agent))
+    return {"cik": cik, "source": f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json", **financial_facts(payload, end)}
 
 
 def fmp_transcript(symbol: str, key: str, end: date) -> dict | None:
@@ -175,13 +200,20 @@ def fmp_transcript(symbol: str, key: str, end: date) -> dict | None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--end-date", type=date.fromisoformat, default=datetime.now(UTC).date() - timedelta(days=1))
+    parser.add_argument("--days", type=int, default=30, help="Calendar days of news and filings (default: 30)")
     parser.add_argument("--include-transcripts", action="store_true", help="Request FMP earnings transcripts (requires subscription access)")
+    parser.add_argument("--newsdata-content", action="store_true", help="Request NewsData archive article content; requires NEWSDATA_API_KEY and storage rights")
     args = parser.parse_args()
+    if not 1 <= args.days <= 365:
+        parser.error("--days must be between 1 and 365")
     end = args.end_date
-    start = end - timedelta(days=6)
+    start = end - timedelta(days=args.days - 1)
     sec_agent = credential("SEC_USER_AGENT")
     fmp_key = credential("FMP_API_KEY") if args.include_transcripts else ""
     finnhub_key = credential("FINNHUB_API_KEY")
+    newsdata_key = credential("NEWSDATA_API_KEY") if args.newsdata_content else ""
+    if args.newsdata_content and not newsdata_key:
+        parser.error("--newsdata-content requires NEWSDATA_API_KEY and permission to retain provider content")
     out = Path(__file__).resolve().parent / "data" / f"{start}_to_{end}" / "companies"
     out.mkdir(parents=True, exist_ok=True)
     cik_map = {}
@@ -216,6 +248,30 @@ def main() -> None:
                 record["news"] = news(query, start, end)
         except (OSError, ValueError, ET.ParseError) as exc:
             record["unavailable"]["news"] = str(exc)
+        if newsdata_key:
+            try:
+                import httpx
+                from data_aggregation.market_data.newsdata import NewsDataClient
+
+                with httpx.Client(timeout=25) as http:
+                    articles = NewsDataClient(newsdata_key, http).search_archive(
+                        query=query, from_date=start.isoformat(), to_date=end.isoformat(), max_articles=500,
+                    )
+                existing = {item["url"] for item in record["news"]}
+                for article in articles:
+                    if not article.link or not start <= article.published_at.date() <= end:
+                        continue
+                    item = {"title": article.title, "url": article.link,
+                            "publisher": article.source_name, "published_at_utc": article.published_at.isoformat(),
+                            "summary": article.description, "content": article.content,
+                            "content_scope": "provider article content" if article.content else "headline and optional publisher abstract",
+                            "provider": "NewsData.io", "provider_id": article.article_id}
+                    if article.link in existing:
+                        record["news"] = [row for row in record["news"] if row["url"] != article.link]
+                    record["news"].append(item)
+                    existing.add(article.link)
+            except (ImportError, OSError, ValueError, RuntimeError) as exc:
+                record["unavailable"]["newsdata"] = f"NewsData archive unavailable ({type(exc).__name__}); existing headlines retained"
         if not sec_agent:
             record["unavailable"]["sec_filings_and_financials"] = "Set SEC_USER_AGENT to an identifiable organization and contact email, per SEC fair-access guidance"
         elif sec_mapping_error or symbol not in cik_map:

@@ -1,4 +1,4 @@
-"""Collect the last seven completed UTC dates of daily market prices as JSON."""
+"""Collect a rolling market window and a longer daily price history as JSON."""
 
 import argparse
 import json
@@ -95,25 +95,55 @@ def fetch_asset(name: str, symbol: str, start: date, end: date) -> dict:
     }
 
 
+def event_window(full: dict, start: date) -> dict | None:
+    window = [bar for bar in full["daily"] if bar["date"] >= start.isoformat()]
+    if not window:
+        return None
+    first_open, last_close = window[0]["open"], window[-1]["close"]
+    return {**full, "daily": window, "weekly": {
+        "first_trading_date": window[0]["date"], "last_trading_date": window[-1]["date"],
+        "open": first_open, "high": max(bar["high"] for bar in window if bar["high"] is not None),
+        "low": min(bar["low"] for bar in window if bar["low"] is not None), "close": last_close,
+        "open_to_close_change_percent": round((last_close / first_open - 1) * 100, 4) if first_open else None,
+        "volume": sum(bar["volume"] or 0 for bar in window) if any(bar["volume"] is not None for bar in window) else None,
+        "trading_days": len(window),
+    }}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--end-date", type=date.fromisoformat, default=datetime.now(UTC).date() - timedelta(days=1), help="Last included UTC date (YYYY-MM-DD); defaults to yesterday")
+    parser.add_argument("--days", type=int, default=30, help="Calendar days in the event window (default: 30)")
+    parser.add_argument("--history-days", type=int, default=365, help="Calendar days of price history (default: 365)")
     args = parser.parse_args()
+    if not 1 <= args.days <= args.history_days <= 1825:
+        parser.error("require 1 <= --days <= --history-days <= 1825")
     end = args.end_date
-    start = end - timedelta(days=6)
+    start = end - timedelta(days=args.days - 1)
+    history_start = end - timedelta(days=args.history_days - 1)
     result = {
         "source": "Yahoo Finance public chart endpoint",
         "retrieved_at_utc": datetime.now(UTC).isoformat(),
         "date_range_utc": {"start": start.isoformat(), "end": end.isoformat()},
-        "frequency": "daily trading bars over the last seven completed calendar dates; weekly summary is first open to last close",
+        "frequency": "daily trading bars in the rolling event window; summary is first open to last close",
         "assets": {},
         "errors": [],
     }
+    history = {"source": result["source"], "retrieved_at_utc": result["retrieved_at_utc"],
+               "date_range_utc": {"start": history_start.isoformat(), "end": end.isoformat()},
+               "frequency": "daily trading bars", "assets": {}, "errors": result["errors"]}
     for group, symbols in ASSETS.items():
         result["assets"][group] = []
+        history["assets"][group] = []
         for name, symbol in symbols.items():
             try:
-                result["assets"][group].append(fetch_asset(name, symbol, start, end))
+                full = fetch_asset(name, symbol, history_start, end)
+                window = event_window(full, start)
+                history["assets"][group].append(full)
+                if window:
+                    result["assets"][group].append(window)
+                else:
+                    result["errors"].append({"symbol": symbol, "error": "No bars in event window"})
             except (HTTPError, URLError, TimeoutError, ValueError, KeyError, IndexError) as exc:
                 result["errors"].append({"symbol": symbol, "error": str(exc)})
 
@@ -121,6 +151,7 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     output = output_dir / "weekly_market_data.json"
     output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    (output_dir / "price_history.json").write_text(json.dumps(history, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     print(f"Saved {sum(map(len, result['assets'].values()))} assets to {output}")
     if result["errors"]:
         print(f"Failed symbols: {result['errors']}")

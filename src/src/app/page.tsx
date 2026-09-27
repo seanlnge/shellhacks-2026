@@ -26,7 +26,7 @@ export default async function Home() {
           The developments that matter to your holdings, distilled into a
           considered briefing. Explore the context behind every decision.
         </p>
-        <Link href="/api/auth/signin" className="primary-button">
+        <Link href="/login" className="primary-button">
           Enter your briefing <span aria-hidden="true">↗</span>
         </Link>
       </div>

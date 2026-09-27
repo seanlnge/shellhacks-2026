@@ -68,7 +68,10 @@ def normalize(snapshot: Path, holdings: dict[str, float] | None = None) -> list[
         record = load(path)
         for article in record.get("news", []):
             text = article["title"] + (". " + article["summary"] if article.get("summary") else "")
-            items.append(event(symbol, "news", article["published_at_utc"], article["url"], text, source=record["news_source"], content_scope="headline and optional publisher abstract", publisher=article.get("publisher")))
+            items.append(event(symbol, "news", article["published_at_utc"], article["url"], text,
+                               source=article.get("provider") or record["news_source"],
+                               content_scope="headline and optional publisher abstract" if article.get("summary") else "headline only",
+                               article_content_available=bool(article.get("content")), publisher=article.get("publisher")))
         for filing in record.get("sec_filings_in_window", []):
             document = documents.get(filing["url"], {})
             items.append(event(symbol, "filing", filing["filed_at"] + "T00:00:00+00:00", filing["url"], f"{symbol} filed {filing['form']} (report date {filing['report_date']})", date_precision="day", source="SEC EDGAR submissions", content_scope="filing metadata; extracted body available via document_path" if document.get("path") else "filing metadata only", document_id=document.get("document_id"), document_path=document.get("path"), key_numbers={"form": filing["form"], "report_date": filing["report_date"], "accession_number": filing["accession_number"]}))
@@ -85,12 +88,16 @@ def parse_snapshot(snapshot: Path) -> dict:
     sec_documents = load(sec_manifest)["documents"] if sec_manifest.exists() else []
     metrics_path = snapshot / "financial_metrics.json"
     market_metrics = load(metrics_path)["metrics"] if metrics_path.exists() else {}
+    history_path = snapshot / "price_history.json"
+    price_history = load(history_path) if history_path.exists() else None
     weekly_assets = [
         {"holding": asset["symbol"], "name": asset["name"], "asset_class": group,
          "currency": asset["currency"], "unit": asset["unit"], **asset["weekly"]}
         for group, assets in prices["assets"].items() for asset in assets
     ]
     financials = []
+    financial_history = []
+    news_articles = []
     latest_reports = []
     end = date.fromisoformat(prices["date_range_utc"]["end"])
     for path in sorted((snapshot / "companies").glob("*.json")):
@@ -98,6 +105,14 @@ def parse_snapshot(snapshot: Path) -> dict:
             continue
         company = load(path)
         symbol = company["symbol"]
+        for article in company.get("news", []):
+            news_articles.append({"holding": symbol, "title": article["title"], "source_url": article["url"],
+                                  "published_at_utc": article["published_at_utc"], "publisher": article.get("publisher"),
+                                  "summary": article.get("summary"), "content": article.get("content"),
+                                  "content_scope": article.get("content_scope") or (
+                                      "headline and optional publisher abstract" if article.get("summary") else "headline only"),
+                                  "provider": article.get("provider") or company.get("news_source"),
+                                  "provider_id": article.get("provider_id")})
         for report in company.get("latest_sec_reports", []):
             latest_reports.append({"holding": symbol, **report})
         data = company.get("financials") or {}
@@ -111,19 +126,33 @@ def parse_snapshot(snapshot: Path) -> dict:
                 "accession_number": fact.get("accn"), "source_url": data["source"],
                 "older_than_two_years": (end - period_end).days > 730,
             })
+        for tag, rows in data.get("historical_facts", {}).items():
+            for fact in rows:
+                financial_history.append({"holding": symbol, "cik": data["cik"], "tag": tag,
+                                          "value": fact["val"], "unit": fact["unit"],
+                                          "period_start": fact.get("start"), "period_end": fact["end"],
+                                          "filed_at": fact["filed"], "form": fact["form"],
+                                          "accession_number": fact.get("accn"), "frame": fact.get("frame"),
+                                          "source_url": data["source"]})
     events = normalize(snapshot)
     counts = {kind: sum(item["type"] == kind for item in events) for kind in ("price", "news", "filing")}
     return {
         "date_range_utc": prices["date_range_utc"],
         "parsed_at_utc": datetime.now(UTC).isoformat(),
-        "counts": {**counts, "weekly_assets": len(weekly_assets), "financial_facts": len(financials), "latest_sec_reports": len(latest_reports), "market_metrics": len(market_metrics), "sec_documents_cached": sum(bool(row.get("path")) for row in sec_documents)},
+        "counts": {**counts, "weekly_assets": len(weekly_assets), "financial_facts": len(financials),
+                   "historical_financial_facts": len(financial_history), "news_articles": len(news_articles),
+                   "latest_sec_reports": len(latest_reports), "market_metrics": len(market_metrics),
+                   "sec_documents_cached": sum(bool(row.get("path")) for row in sec_documents)},
         "events": events,
         "weekly_assets": weekly_assets,
         "market_metrics": market_metrics,
+        "price_history": price_history,
+        "news_articles": news_articles,
         "sec_documents": sec_documents,
         "financial_facts": financials,
+        "historical_financial_facts": financial_history,
         "latest_sec_reports": latest_reports,
-        "limitations": ["News is search-result headline metadata, not verified full-text coverage", "SEC filing event text is metadata; downloaded filing bodies and chunks are stored separately and are not embedded", "Financial facts are the latest available per tag, not necessarily reported during the requested week", "Market cap and P/E from FMP are retrieval-time figures, not historical as-of-week values", "Earnings transcripts were skipped"],
+        "limitations": ["News content is present only when a licensed provider supplies it; other entries are headline/abstract only", "SEC filing event text is metadata; downloaded originals, visible text and chunks are stored separately and are not embedded", "Price history is available only when price_history.json was collected", "Historical SEC facts preserve multiple overlapping filing observations; callers must choose periods and restatements explicitly", "Market cap and P/E from FMP are retrieval-time figures, not historical as-of-week values", "Earnings transcripts are optional"],
     }
 
 
