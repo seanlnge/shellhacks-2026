@@ -100,13 +100,19 @@ def main() -> None:
                     raise ValueError("No text extracted")
                 document_id = hashlib.sha256(url.encode("utf-8")).hexdigest()[:16]
                 target = output / f"{company['symbol']}-{document_id}.json"
+                original = output / f"{company['symbol']}-{document_id}.source"
+                original.write_bytes(payload)
                 chunk_rows = chunks(text)
                 target.write_text(json.dumps({"document_id": document_id, "source_url": url,
-                                              "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
-                                              "extraction_method": "HTMLParser visible text", "text": text,
-                                              "chunks": chunk_rows}, ensure_ascii=True) + "\n", encoding="utf-8")
+                                               "original_path": original.relative_to(snapshot).as_posix(),
+                                               "original_sha256": hashlib.sha256(payload).hexdigest(),
+                                               "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
+                                               "extraction_method": "HTMLParser visible text", "text": text,
+                                               "chunks": chunk_rows}, ensure_ascii=True) + "\n", encoding="utf-8")
                 record.update({"status": "text cached; not embedded", "document_id": document_id,
-                               "path": target.relative_to(snapshot).as_posix(), "chunks": len(chunk_rows)})
+                               "path": target.relative_to(snapshot).as_posix(),
+                               "original_path": original.relative_to(snapshot).as_posix(),
+                               "original_sha256": hashlib.sha256(payload).hexdigest(), "chunks": len(chunk_rows)})
             except (HTTPError, URLError, TimeoutError, ValueError, UnicodeError) as exc:
                 record.update({"status": "unavailable", "reason": type(exc).__name__})
             records.append(record)

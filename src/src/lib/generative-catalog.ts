@@ -41,8 +41,20 @@ export const catalog = defineCatalog(schema, {
       props: z.object({
         text: z.string().max(1000),
         expandedText: z.string().max(1800).optional(),
+        sourceIds: z.array(z.string()).max(8).optional(),
       }),
-      description: "Concise sourced explanation. Do not invent figures.",
+      description:
+        "Concise sourced explanation. Use sourceIds for evidence supporting the text; do not invent figures.",
+    },
+    HighlightFact: {
+      props: z.object({
+        text: z.string().max(600),
+        highlight: z.string().max(180),
+        sourceId: z.string(),
+        preview: z.string().trim().min(1).max(350),
+      }),
+      description:
+        "Sourced factual sentence with one exact, meaningful highlighted phrase, a real source ID, and a useful sourced preview. Do not highlight dates or numbers alone. Never invent text or URLs.",
     },
     BigNumber: {
       props: z.object({
@@ -64,6 +76,15 @@ export const catalog = defineCatalog(schema, {
       }),
       description:
         "Line trends from series keys in DATA MANIFEST. Never supply points.",
+    },
+    MarketChart: {
+      props: z.object({
+        assetKey: z.string().regex(/^stock:[A-Z0-9][A-Z0-9.\-]{0,14}$/),
+        range: z.enum(["1w", "1mo", "3mo", "1y"]),
+        title: z.string().max(100).optional(),
+      }),
+      description:
+        "Fetch historical closing prices for an approved stock holding only after this chart is selected. Never supply or infer points.",
     },
     BarChart: {
       props: z.object({
@@ -95,18 +116,25 @@ export const catalog = defineCatalog(schema, {
       description: "Suggested grounded follow-up questions.",
     },
     KeyTakeaways: {
-      props: z.object({ items: z.array(z.string().max(250)).max(5) }),
+      props: z.object({
+        items: z.array(z.string().max(250)).max(5),
+        sourceIds: z.array(z.string()).max(8).optional(),
+      }),
       description: "Short sourced closing observations, no invented numbers.",
     },
     RiskFlag: {
       props: z.object({
         severity: z.enum(["low", "medium", "high"]),
         text: z.string().max(350),
+        sourceIds: z.array(z.string()).max(8).optional(),
       }),
       description: "A risk evidenced by the source material, not a prediction.",
     },
     Callout: {
-      props: z.object({ text: z.string().max(250) }),
+      props: z.object({
+        text: z.string().max(250),
+        sourceIds: z.array(z.string()).max(8).optional(),
+      }),
       description: "Plain-language annotation grounded in the provided story.",
     },
     ExplainTerm: {

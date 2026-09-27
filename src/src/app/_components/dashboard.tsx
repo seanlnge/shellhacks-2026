@@ -8,6 +8,59 @@ import { api, type RouterOutputs } from "~/trpc/react";
 
 type Portfolio = RouterOutputs["portfolio"]["list"][number];
 type Holding = Portfolio["holdings"][number];
+type Story = RouterOutputs["portfolio"]["stories"][number];
+
+function StorySummary({ story }: { story: Story }) {
+  const [expanded, setExpanded] = useState(false);
+  const summary = story.summary.trim();
+  const clipped = summary.length > 240;
+  const preview = clipped
+    ? summary
+        .slice(0, 240)
+        .replace(/\s+\S*$/, "")
+        .trimEnd()
+    : summary;
+  const canExpand =
+    story.content.trim().length > preview.length ||
+    story.summary.trim().length > preview.length;
+
+  return (
+    <p>
+      {expanded ? story.content || story.summary : preview}
+      {!expanded && canExpand && "…"}{" "}
+      {canExpand && (
+        <button
+          type="button"
+          className="story-read-more"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
+      )}
+    </p>
+  );
+}
+
+function StoryExploreButton({
+  story,
+  onExplore,
+}: {
+  story: Story;
+  onExplore: (focus: string) => void;
+}) {
+  return (
+    <button
+      className="deep-button"
+      onClick={() =>
+        onExplore(
+          `Explain ${story.title}. Show the relevant chart if sourced data exists.`,
+        )
+      }
+    >
+      Explore ↗
+    </button>
+  );
+}
 
 export function Dashboard({ userName }: { userName: string }) {
   const utils = api.useUtils();
@@ -32,8 +85,6 @@ export function Dashboard({ userName }: { userName: string }) {
   const [symbol, setSymbol] = useState("");
   const [assetName, setAssetName] = useState("");
   const [formError, setFormError] = useState("");
-  const [expandedStory, setExpandedStory] = useState<number | null>(null);
-  const [question, setQuestion] = useState("");
   const [view, setView] = useState<{
     storyId: number;
     question: string;
@@ -137,7 +188,6 @@ export function Dashboard({ userName }: { userName: string }) {
               className={`portfolio-item ${active?.id === portfolio.id ? "selected" : ""}`}
               onClick={() => {
                 setSelectedId(portfolio.id);
-                setExpandedStory(null);
                 setView(null);
               }}
             >
@@ -251,82 +301,28 @@ export function Dashboard({ userName }: { userName: string }) {
                       <div className="story-meta">
                         <span>STORY {String(index + 1).padStart(2, "0")}</span>
                         <span>
-                          {story.assetKey.split(":")[1]} / {story.sourceName}
+                          {active.holdings.find(
+                            (holding) =>
+                              `${holding.kind}:${holding.symbol}` ===
+                              story.assetKey,
+                          )?.name ?? story.assetKey.split(":")[1]}{" "}
+                          / {story.assetKey.split(":")[1]}
                         </span>
                       </div>
                       <h3>{story.title}</h3>
-                      <p>{story.summary}</p>
-                      {expandedStory === story.id && (
-                        <div className="story-expanded">
-                          <p>{story.content}</p>
-                          {/^https:\/\//i.test(story.sourceUrl) && (
-                            <a
-                              href={story.sourceUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Read original ↗
-                            </a>
-                          )}
-                        </div>
-                      )}
+                      <StorySummary story={story} />
                       <div className="story-actions">
-                        <button
-                          className="text-button"
-                          onClick={() =>
-                            setExpandedStory(
-                              expandedStory === story.id ? null : story.id,
-                            )
-                          }
-                        >
-                          {expandedStory === story.id
-                            ? "Show less −"
-                            : "Read more +"}
-                        </button>
-                        <button
-                          className="deep-button"
-                          onClick={() => {
+                        <StoryExploreButton
+                          story={story}
+                          onExplore={(question) =>
                             setView({
                               storyId: story.id,
-                              question: "What matters most about this story?",
+                              question,
                               scope: "story",
-                            });
-                          }}
-                        >
-                          Explore this story ↗
-                        </button>
+                            })
+                          }
+                        />
                       </div>
-                      {expandedStory === story.id && (
-                        <form
-                          className="question-form"
-                          onSubmit={(event) => {
-                            event.preventDefault();
-                            if (question.trim())
-                              setView({
-                                storyId: story.id,
-                                question: question.trim(),
-                                scope: "story",
-                              });
-                          }}
-                        >
-                          <label htmlFor={`question-${story.id}`}>
-                            GO DEEPER / ASK ANYTHING ABOUT THIS STORY
-                          </label>
-                          <div>
-                            <input
-                              id={`question-${story.id}`}
-                              value={question}
-                              onChange={(event) =>
-                                setQuestion(event.target.value)
-                              }
-                              maxLength={500}
-                              placeholder="What does this mean for the company?"
-                              required
-                            />
-                            <button>Build my deep dive ↗</button>
-                          </div>
-                        </form>
-                      )}
                     </article>
                   ))}
                 </div>
@@ -482,6 +478,10 @@ export function Dashboard({ userName }: { userName: string }) {
           key={`${active.id}:${view.storyId}:${view.question}`}
           portfolioId={active.id}
           storyId={view.storyId}
+          storyTitle={
+            stories.find((story) => story.id === view.storyId)?.title ??
+            "Portfolio briefing"
+          }
           question={view.question}
           scope={view.scope}
           onClose={() => setView(null)}
