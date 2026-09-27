@@ -25,6 +25,8 @@ import {
   BreadcrumbSeparator,
 } from "~/components/ui/breadcrumb";
 import { catalog } from "~/lib/generative-catalog";
+import { Brand } from "~/app/_components/brand";
+import { Skeleton } from "~/components/ui/skeleton";
 
 type Metric = {
   label: string;
@@ -87,10 +89,12 @@ const View = createContext<ViewContext>({
   setPageIndex: () => undefined,
 });
 const DashboardColumns = createContext(2);
-const PageSources = createContext<string[]>([]);
 
 const marketSourceId = (assetKey: string, range: string) =>
   `market:${assetKey}:${range}`;
+
+const formatCents = (value: number) =>
+  (Math.round((value + Number.EPSILON) * 100) / 100).toFixed(2);
 
 function sourceFor(
   id: string,
@@ -159,24 +163,6 @@ function referencedSources(
   }
   visit(id);
   return [...found];
-}
-
-function SourcesFooter({ ids }: { ids: string[] }) {
-  const { bundle, evidenceSources } = useContext(View);
-  const valid = ids.filter((id) => sourceFor(id, bundle, evidenceSources));
-  if (!valid.length) return null;
-  return (
-    <footer className="gen-page-sources">
-      <span className="eyebrow">SOURCES</span>
-      <ol>
-        {valid.map((id) => (
-          <li key={id}>
-            <SourceLink sourceId={id} />
-          </li>
-        ))}
-      </ol>
-    </footer>
-  );
 }
 
 function CitedText({
@@ -255,11 +241,11 @@ function FactPreview({
             <line x1="34" y1="62" x2="204" y2="62" className="gen-axis" />
             <text x="30" y="12" textAnchor="end">
               {series?.unit === "USD" ? "$" : ""}
-              {max.toFixed(2)}
+              {formatCents(max)}
             </text>
             <text x="30" y="62" textAnchor="end">
               {series?.unit === "USD" ? "$" : ""}
-              {min.toFixed(2)}
+              {formatCents(min)}
             </text>
             <text x="34" y="80">
               {points[0]?.date}
@@ -523,12 +509,14 @@ function MarketChart({
   registerSourceRef.current = registerSource;
   const [series, setSeries] = useState<Series | null>(null);
   const [error, setError] = useState("");
+  const [stale, setStale] = useState(false);
   const sourceId = marketSourceId(assetKey, range);
 
   useEffect(() => {
     const controller = new AbortController();
     setSeries(null);
     setError("");
+    setStale(false);
     const query = new URLSearchParams({
       portfolioId: String(portfolioId),
       storyId: String(storyId),
@@ -538,7 +526,11 @@ function MarketChart({
     void fetch(`/api/market-series?${query}`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok)
-          throw new Error("Historical prices are unavailable right now.");
+          throw new Error(
+            response.status === 404
+              ? "No imported daily prices for this holding and range."
+              : "Imported historical prices are unavailable right now.",
+          );
         const payload: unknown = await response.json();
         if (
           !payload ||
@@ -594,6 +586,7 @@ function MarketChart({
           url: source.url,
         });
         setSeries({ label: data.label, unit: data.unit, points, sourceId });
+        setStale("stale" in payload && payload.stale === true);
       })
       .catch((cause: unknown) => {
         if (!controller.signal.aborted)
@@ -614,9 +607,10 @@ function MarketChart({
     );
   if (!series)
     return (
-      <p className="gen-empty" role="status">
-        Loading sourced historical prices…
-      </p>
+      <div className="chart-skeleton" role="status" aria-label="Loading chart">
+        <Skeleton className="skeleton-line skeleton-line-short" />
+        <Skeleton className="skeleton-chart" />
+      </div>
     );
   const values = series.points.map((point) => point.value);
   const min = Math.min(...values);
@@ -629,6 +623,7 @@ function MarketChart({
     <figure className="gen-chart gen-market-chart">
       <figcaption>
         <span className="eyebrow">{title ?? series.label}</span>
+        {stale && <span>Stale imported data; last close {last.date}</span>}
         {change !== null && (
           <strong>
             {change >= 0 ? "+" : ""}
@@ -645,10 +640,10 @@ function MarketChart({
         <line x1="58" y1="30" x2="58" y2="175" className="gen-axis" />
         <line x1="58" y1="175" x2="632" y2="175" className="gen-axis" />
         <text x="52" y="36" textAnchor="end">
-          ${max.toFixed(2)}
+          ${formatCents(max)}
         </text>
         <text x="52" y="175" textAnchor="end">
-          ${min.toFixed(2)}
+          ${formatCents(min)}
         </text>
         <line x1="58" y1="100" x2="632" y2="100" className="gen-gridline" />
         <polyline
@@ -712,7 +707,16 @@ const { registry: baseRegistry } = defineRegistry(catalog, {
             </span>
           </div>
           {slides[current] ?? (
-            <p className="gen-empty">Preparing your briefing…</p>
+            <div
+              className="briefing-skeleton"
+              role="status"
+              aria-label="Preparing briefing"
+            >
+              <Skeleton className="skeleton-line skeleton-line-short" />
+              <Skeleton className="skeleton-title" />
+              <Skeleton className="skeleton-paragraph" />
+              <Skeleton className="skeleton-paragraph skeleton-paragraph-short" />
+            </div>
           )}
           <div className="gen-deck-nav">
             <button
@@ -751,7 +755,6 @@ const { registry: baseRegistry } = defineRegistry(catalog, {
           <p className="eyebrow">PORTFOLIO INTELLIGENCE</p>
           <h2>{props.title}</h2>
           <div className="gen-dashboard-grid">{children}</div>
-          <SourcesFooter ids={useContext(PageSources)} />
         </div>
       </DashboardColumns.Provider>
     ),
@@ -931,7 +934,6 @@ function Anchorable({
   children: ReactNode;
 }) {
   const { ask, explore, spec, bundle, evidenceSources } = useContext(View);
-  const parentSources = useContext(PageSources);
   const [prompting, setPrompting] = useState(false);
   const [question, setQuestion] = useState("");
   const entry = Object.entries(spec?.elements ?? {}).find(
@@ -961,79 +963,90 @@ function Anchorable({
     primaryId ??
     (metricRef ? bundle?.story.metrics[metricRef]?.sourceId : undefined);
   return (
-    <PageSources.Provider value={page ? ids : parentSources}>
-      <div className={`gen-anchor${page ? "gen-page" : ""}`}>
-        {children}
-        {page && <SourcesFooter ids={ids} />}
-        <div className="gen-anchor-actions">
-          <span className="gen-explore-wrap">
-            <button
-              type="button"
-              className="gen-anchor-trigger"
-              onClick={() => explore(anchor)}
-            >
-              Explore ↗
-            </button>
-            {previewId && (
-              <FactPreview sourceId={previewId} seriesRef={seriesRef} />
-            )}
-          </span>
+    <div className={`gen-anchor${page ? "gen-page" : ""}`}>
+      {children}
+      <div className="gen-anchor-actions">
+        <span className="gen-explore-wrap">
           <button
             type="button"
             className="gen-anchor-trigger"
-            onClick={() => setPrompting(!prompting)}
-            aria-expanded={prompting}
+            onClick={() => explore(anchor)}
           >
-            Ask
+            Explore ↗
           </button>
-        </div>
-        {prompting && (
-          <form
-            className="gen-anchor-form"
-            onSubmit={(event) => {
-              event.preventDefault();
-              if (question.trim()) {
-                ask(question.trim(), {
-                  ...anchor,
-                  selectedText:
-                    window.getSelection()?.toString().trim() ?? undefined,
-                  userPrompt: question.trim(),
-                });
-                setPrompting(false);
-                setQuestion("");
-              }
-            }}
-          >
-            <label>
-              ASK ABOUT THIS DETAIL
-              <input
-                value={question}
-                onChange={(event) => setQuestion(event.target.value)}
-                maxLength={500}
-                required
-                placeholder="Why does this matter?"
-                autoFocus
-              />
-            </label>
-            <button type="submit">Ask ↗</button>
-          </form>
-        )}
+          {previewId && (
+            <FactPreview sourceId={previewId} seriesRef={seriesRef} />
+          )}
+        </span>
+        <button
+          type="button"
+          className="gen-anchor-trigger"
+          onClick={() => setPrompting((value) => !value)}
+          aria-expanded={prompting}
+          aria-controls={
+            prompting ? `ask-${entry?.[0] ?? "section"}` : undefined
+          }
+        >
+          Ask
+        </button>
       </div>
-    </PageSources.Provider>
+      {prompting && (
+        <form
+          id={`ask-${entry?.[0] ?? "section"}`}
+          className="gen-anchor-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            if (question.trim()) {
+              ask(question.trim(), {
+                ...anchor,
+                selectedText:
+                  window.getSelection()?.toString().trim() ?? undefined,
+                userPrompt: question.trim(),
+              });
+              setPrompting(false);
+              setQuestion("");
+            }
+          }}
+        >
+          <div className="gen-ask-presets" aria-label="Suggested questions">
+            {[
+              "What does this mean?",
+              "Make me a visual",
+              "Find related information",
+            ].map((preset) => (
+              <button
+                key={preset}
+                type="button"
+                aria-pressed={question === preset}
+                onClick={() => setQuestion(preset)}
+              >
+                {preset}
+              </button>
+            ))}
+          </div>
+          <label className="gen-anchor-question">
+            ASK ABOUT THIS DETAIL
+            <input
+              value={question}
+              onChange={(event) => setQuestion(event.target.value)}
+              maxLength={500}
+              required
+              placeholder="Why does this matter?"
+              autoFocus
+            />
+          </label>
+          <button type="submit">Ask ↗</button>
+        </form>
+      )}
+    </div>
   );
 }
 const registry = Object.fromEntries(
   Object.entries(baseRegistry).map(([name, Component]) => [
     name,
     (props: React.ComponentProps<typeof Component>) =>
-      name === "Deck" || name === "Dashboard" ? (
-        name === "Dashboard" ? (
-          <DashboardSourceScope>
-            <Component {...props} />
-          </DashboardSourceScope>
-        ) : (
-          <Component {...props} />
-        )
+      name === "Deck" ? (
+        <Component {...props} />
       ) : (
         <Anchorable element={props.element}>
           <Component {...props} />
@@ -1041,17 +1054,6 @@ const registry = Object.fromEntries(
       ),
   ]),
 ) as typeof baseRegistry;
-
-function DashboardSourceScope({ children }: { children: ReactNode }) {
-  const { spec, bundle } = useContext(View);
-  return (
-    <PageSources.Provider
-      value={spec ? referencedSources(spec, spec.root, bundle) : []}
-    >
-      {children}
-    </PageSources.Provider>
-  );
-}
 
 export function GenerativeView({
   portfolioId,
@@ -1076,6 +1078,9 @@ export function GenerativeView({
   const [evidenceMode, setEvidenceMode] = useState("");
   const [seedToken, setSeedToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [loadingKind, setLoadingKind] = useState<
+    "initial" | "explore" | "expand" | null
+  >(null);
   const [error, setError] = useState("");
   const [askText, setAskText] = useState("");
   const [retryRequest, setRetryRequest] = useState<{
@@ -1103,7 +1108,7 @@ export function GenerativeView({
     nextQuestion: string,
     anchor?: Anchor,
     kind: "initial" | "explore" | "expand" = "explore",
-    mode: "jev" | "llm" = "jev",
+    mode: "jev" | "llm" = "llm",
   ) {
     abort.current?.abort();
     const controller = new AbortController();
@@ -1127,10 +1132,19 @@ export function GenerativeView({
       setSeedToken(null);
       setHistory([]);
       setPageTitle(kind === "initial" ? storyTitle : nextQuestion);
+    } else if (kind === "explore") {
+      if (previous) setHistory((items) => [...items, previous]);
+      currentPageIndex.current = 0;
+      setSpec(null);
+      setEvidenceSources({});
+      setEvidenceMode("");
+      setSeedToken(null);
+      setPageTitle(nextQuestion);
     }
     setError("");
     setRetryRequest(null);
     setLoading(true);
+    setLoadingKind(kind);
     const query = new URLSearchParams({
       portfolioId: String(portfolioId),
       storyId: String(storyId),
@@ -1216,8 +1230,6 @@ export function GenerativeView({
         received = true;
         if (!committed) {
           committed = true;
-          if (kind === "explore" && previous)
-            setHistory((items) => [...items, previous]);
           if (kind !== "expand") {
             currentPageIndex.current = 0;
             setPageTitle(kind === "initial" ? storyTitle : nextQuestion);
@@ -1290,7 +1302,10 @@ export function GenerativeView({
       }
     } finally {
       await dataRequest;
-      if (!controller.signal.aborted) setLoading(false);
+      if (!controller.signal.aborted) {
+        setLoading(false);
+        setLoadingKind(null);
+      }
     }
   }
 
@@ -1314,6 +1329,7 @@ export function GenerativeView({
     setPageTitle(previous.title);
     setError("");
     setLoading(false);
+    setLoadingKind(null);
   }
   function goTo(index: number) {
     abort.current?.abort();
@@ -1329,6 +1345,7 @@ export function GenerativeView({
     setPageTitle(page.title);
     setError("");
     setLoading(false);
+    setLoadingKind(null);
   }
   for (const id of spec ? referencedSources(spec, spec.root, bundle) : []) {
     if (sourceFor(id, bundle, evidenceSources) && !numberedSources.current[id])
@@ -1390,9 +1407,7 @@ export function GenerativeView({
       }}
     >
       <div className="gen-toolbar">
-        <span className="brand">
-          folio<span className="brand-dot">.</span>fm
-        </span>
+        <Brand />
         <nav aria-label="Briefing navigation">
           <button disabled={!history.length} onClick={goBack}>
             ← Back {history.length ? `(${history.length})` : ""}
@@ -1473,13 +1488,31 @@ export function GenerativeView({
             </JSONUIProvider>
           </View.Provider>
         )}
-        {loading && (
-          <p className="gen-status" role="status">
-            {spec
-              ? "Researching without clearing this page…"
-              : "Preparing your briefing…"}
-          </p>
-        )}
+        {loading &&
+          (spec && loadingKind === "expand" ? (
+            <div
+              className="expansion-skeleton"
+              role="status"
+              aria-label="Expanding briefing"
+            >
+              <Skeleton className="skeleton-line skeleton-line-short" />
+              <Skeleton className="skeleton-line" />
+              <Skeleton className="skeleton-paragraph" />
+              <Skeleton className="skeleton-paragraph skeleton-paragraph-short" />
+            </div>
+          ) : (
+            <div
+              className="briefing-skeleton"
+              role="status"
+              aria-label="Preparing briefing"
+            >
+              <Skeleton className="skeleton-line skeleton-line-short" />
+              <Skeleton className="skeleton-title" />
+              <Skeleton className="skeleton-paragraph" />
+              <Skeleton className="skeleton-paragraph skeleton-paragraph-short" />
+              <Skeleton className="skeleton-card" />
+            </div>
+          ))}
         {error && (
           <div className="gen-status error" role="alert">
             <p>{error}</p>

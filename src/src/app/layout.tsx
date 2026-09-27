@@ -6,7 +6,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
-  title: "folio.fm | Your portfolio briefing",
+  title: "Infinifolio | Your portfolio briefing",
   description: "A personal, interactive briefing for the assets you follow.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };

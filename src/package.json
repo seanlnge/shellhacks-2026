@@ -12,6 +12,7 @@
     "db:studio": "drizzle-kit studio",
     "data:import": "tsx src/server/data/import-fixture.ts",
     "evidence:import": "tsx src/server/evidence/import-snapshot.ts",
+    "ingestion:import": "tsx src/server/ingestion/import-snapshot.ts",
     "dev": "next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
@@ -33,6 +34,7 @@
     "@trpc/server": "^11.0.0",
     "dotenv": "^18.0.4",
     "drizzle-orm": "^0.41.0",
+    "lucide-react": "^0.468.0",
     "next": "^15.2.3",
     "next-auth": "^5.0.0-beta.32",
     "postgres": "^3.4.4",
@@ -56,9 +58,9 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.15",
+    "tsx": "^4.20.5",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.27.0",
-    "tsx": "^4.20.5"
+    "typescript-eslint": "^8.27.0"
   },
   "ct3aMetadata": {
     "initVersion": "7.40.0"

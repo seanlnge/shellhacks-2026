@@ -1,11 +1,10 @@
 import { z } from "zod";
+import { and, asc, eq, gte, lt } from "drizzle-orm";
 
+import { db } from "~/server/db";
+import { priceBars } from "~/server/db/schema";
 import { accessError, authorizedStory } from "~/server/generative/access";
-import {
-  fetchYahooSeries,
-  MarketSeriesError,
-  type MarketRange,
-} from "~/server/market/yahoo-series";
+import { marketWindow, type MarketRange } from "~/server/market/yahoo-series";
 
 export const dynamic = "force-dynamic";
 
@@ -32,9 +31,9 @@ type Payload = {
   };
   assetKey: string;
   range: MarketRange;
+  stale: boolean;
 };
 
-const cache = new Map<string, { expires: number; payload: Payload }>();
 const headers = { "Cache-Control": "private, no-store" };
 
 export async function GET(request: Request) {
@@ -74,42 +73,64 @@ export async function GET(request: Request) {
     );
   }
 
-  const today = new Date().toISOString().slice(0, 10);
-  const cacheKey = `${access.portfolio.userId}:${access.portfolio.id}:${assetKey}:${input.data.range}:${today}`;
-  const cached = cache.get(cacheKey);
-  if (cached && cached.expires > Date.now()) {
-    return Response.json(cached.payload, { headers });
-  }
   try {
-    const fetched = await fetchYahooSeries(holding.symbol, input.data.range);
+    const { start, endExclusive } = marketWindow(input.data.range);
+    const rows = await db
+      .select()
+      .from(priceBars)
+      .where(
+        and(
+          eq(priceBars.assetKey, assetKey),
+          gte(priceBars.date, start.toISOString().slice(0, 10)),
+          lt(priceBars.date, endExclusive.toISOString().slice(0, 10)),
+        ),
+      )
+      .orderBy(asc(priceBars.date));
+    if (!rows.length)
+      return Response.json(
+        {
+          error: "No imported daily prices in the requested range",
+          coverage: "no data",
+        },
+        { status: 404, headers },
+      );
+    // A single provider must supply the full series; never mix adjusted and raw
+    // observations from independent vendors under one citation.
+    const provider = rows[0]!.provider;
+    const bars = rows.filter((bar) => bar.provider === provider);
+    const last = bars.at(-1)!;
+    const asOf = `${last.date}T00:00:00.000Z`;
+    const fetchedAt = bars.reduce(
+      (latest, bar) => (bar.fetchedAt > latest ? bar.fetchedAt : latest),
+      bars[0]!.fetchedAt,
+    );
+    const stale = Date.now() - new Date(asOf).getTime() > 4 * 86_400_000;
     const payload: Payload = {
       series: {
         label: `${holding.name} daily closing price (adjusted when available)`,
-        unit: fetched.currency,
-        points: fetched.points,
+        unit: last.currency ?? "price",
+        points: bars.map((bar) => ({
+          date: bar.date,
+          value: Number(bar.adjustedClose ?? bar.close),
+        })),
         sourceId: `market:${assetKey}:${input.data.range}`,
-        asOf: fetched.lastTimestamp,
+        asOf,
       },
       source: {
-        label: "Yahoo Finance daily chart",
-        url: fetched.url,
-        publishedAt: fetched.lastTimestamp,
-        accessedAt: fetched.accessedAt,
+        label: `${provider} imported daily chart`,
+        url: last.sourceUrl,
+        publishedAt: asOf,
+        accessedAt: fetchedAt.toISOString(),
       },
       assetKey,
       range: input.data.range,
+      stale,
     };
-    if (cache.size >= 128) cache.delete(cache.keys().next().value!);
-    cache.set(cacheKey, { payload, expires: Date.now() + 60_000 });
     return Response.json(payload, { headers });
-  } catch (error) {
-    const failure =
-      error instanceof MarketSeriesError
-        ? error
-        : new MarketSeriesError("Yahoo chart data unavailable", 503);
+  } catch {
     return Response.json(
-      { error: failure.message },
-      { status: failure.status, headers },
+      { error: "Imported daily prices unavailable" },
+      { status: 503, headers },
     );
   }
 }

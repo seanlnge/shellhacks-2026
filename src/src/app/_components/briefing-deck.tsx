@@ -2,6 +2,7 @@
 
 import { defineRegistry, Renderer } from "@json-render/react";
 
+import { Brand } from "~/app/_components/brand";
 import { briefingCatalog } from "~/lib/briefing";
 
 const { registry } = defineRegistry(briefingCatalog, {
@@ -63,9 +64,7 @@ export function BriefingDeck({
       aria-label="Interactive briefing"
     >
       <div className="deck-toolbar">
-        <span className="brand">
-          folio<span className="brand-dot">.</span>fm
-        </span>
+        <Brand />
         <span>YOUR PERSONAL DEEP DIVE</span>
         <button onClick={onClose} aria-label="Close briefing">
           Close ×

@@ -115,6 +115,40 @@ void test("date-only evidence is not offered as a highlighted fact", () => {
   );
 });
 
+void test("question-relevant metrics and series outrank bundle insertion order", () => {
+  const metrics = Object.fromEntries(
+    Array.from({ length: 14 }, (_, i) => [
+      `metric_${i}`,
+      {
+        label: `Unrelated ${i}`,
+        display: "$1",
+        value: 1,
+        asOf: "2026-01-01T00:00:00Z",
+        sourceId: "filing",
+      },
+    ]),
+  );
+  metrics.revenue = {
+    label: "Revenue",
+    display: "$10",
+    value: 10,
+    asOf: "2026-01-01T00:00:00Z",
+    sourceId: "filing",
+  };
+  const candidates = compositionCandidates({
+    story,
+    bundle: { story: { ...bundle.story, metrics } },
+    evidence: [],
+    scope: "story",
+    question: "How did revenue change?",
+  });
+  assert.equal(
+    candidates.find((candidate) => candidate.id === "metric_0")?.element.props
+      .metricRef,
+    "revenue",
+  );
+});
+
 void test("numeric highlights include their immediate sentence context", () => {
   const candidates = compositionCandidates({
     story,

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { auth, signIn } from "~/server/auth";
+import { Brand } from "~/app/_components/brand";
 
 import styles from "./login.module.css";
 
@@ -12,8 +13,8 @@ export default async function LoginPage() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <Link href="/" className="brand" aria-label="folio.fm home">
-          folio<span className="brand-dot">.</span>fm
+        <Link href="/" aria-label="Infinifolio home">
+          <Brand />
         </Link>
         <span className={styles.headerLabel}>
           PERSONAL PORTFOLIO INTELLIGENCE
@@ -41,7 +42,7 @@ export default async function LoginPage() {
           </div>
           <div className={styles.introBottom}>
             <span>BUILT FOR THE CONSIDERED INVESTOR</span>
-            <span>FOLIO.FM / 2026</span>
+            <span>INFINIFOLIO / 2026</span>
           </div>
         </section>
 

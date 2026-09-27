@@ -3,6 +3,7 @@ import { z } from "zod";
 import { env } from "~/env";
 import { catalog } from "~/lib/generative-catalog";
 import { getStoryBundle } from "~/server/data/story-store";
+import { integratedStoryBundle } from "~/server/data/derived-bundle";
 import { retrieveEvidence } from "~/server/evidence/search";
 import { accessError, authorizedStory } from "~/server/generative/access";
 import {
@@ -16,7 +17,7 @@ const inputSchema = z.object({
   portfolioId: z.number().int().positive(),
   storyId: z.number().int().positive(),
   question: z.string().trim().min(1).max(500),
-  mode: z.enum(["jev", "llm"]).default("jev"),
+  mode: z.enum(["jev", "llm"]).default("llm"),
   initialSpec: z.unknown().optional(),
   seedToken: z.string().max(100).optional(),
   scope: z.enum(["story", "portfolio"]).default("story"),
@@ -61,7 +62,9 @@ export async function POST(request: Request) {
   let candidates;
   try {
     [bundle, candidates] = await Promise.all([
-      getStoryBundle(input.data.storyId),
+      getStoryBundle(input.data.storyId).then((stored) =>
+        integratedStoryBundle(access.story, stored),
+      ),
       retrieveEvidence({
         assetKeys:
           input.data.scope === "portfolio"
@@ -109,6 +112,7 @@ export async function POST(request: Request) {
         Object.hasOwn(evidenceSources, item.id),
       ),
       scope: input.data.scope,
+      question: input.data.question,
       assetKeys:
         input.data.scope === "portfolio"
           ? access.portfolio.holdings.map(
@@ -180,13 +184,23 @@ export async function POST(request: Request) {
           : undefined,
     },
     evidence: selected.map(
-      ({ id, assetKey, title, text, sourceUrl, sourceType, publishedAt }) => ({
+      ({
+        id,
+        assetKey,
+        title,
+        text,
+        sourceUrl,
+        sourceType,
+        contentScope,
+        publishedAt,
+      }) => ({
         id,
         assetKey,
         title,
         text: text.slice(0, 1200),
         sourceUrl,
         sourceType,
+        contentScope,
         publishedAt,
       }),
     ),

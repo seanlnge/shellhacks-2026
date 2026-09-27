@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { accessError, authorizedStory } from "~/server/generative/access";
 import { getStoryBundle } from "~/server/data/story-store";
+import { integratedStoryBundle } from "~/server/data/derived-bundle";
 
 const inputSchema = z.object({
   portfolioId: z.coerce.number().int().positive(),
@@ -22,7 +23,10 @@ export async function GET(request: Request) {
   if ("error" in access && access.error) return accessError(access.error);
 
   try {
-    const bundle = await getStoryBundle(input.data.storyId);
+    const bundle = await integratedStoryBundle(
+      access.story,
+      await getStoryBundle(input.data.storyId),
+    );
     if (!bundle)
       return Response.json(
         { error: "Story data unavailable" },

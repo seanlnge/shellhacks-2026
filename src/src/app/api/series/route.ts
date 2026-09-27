@@ -1,6 +1,7 @@
 import { z } from "zod";
 
-import { getStorySeries } from "~/server/data/story-store";
+import { getStoryBundle } from "~/server/data/story-store";
+import { integratedStoryBundle } from "~/server/data/derived-bundle";
 import { accessError, authorizedStory } from "~/server/generative/access";
 
 const inputSchema = z.object({
@@ -29,14 +30,23 @@ export async function GET(request: Request) {
   if ("error" in access && access.error) return accessError(access.error);
 
   try {
-    const series = await getStorySeries(input.data.storyId, keys);
-    if (!series)
+    const bundle = await integratedStoryBundle(
+      access.story,
+      await getStoryBundle(input.data.storyId),
+    );
+    if (!bundle)
       return Response.json(
         { error: "Story data unavailable" },
         { status: 404 },
       );
     return Response.json(
-      { series },
+      {
+        series: Object.fromEntries(
+          keys.flatMap((key) =>
+            bundle.story.series[key] ? [[key, bundle.story.series[key]]] : [],
+          ),
+        ),
+      },
       { headers: { "Cache-Control": "private, no-store" } },
     );
   } catch {

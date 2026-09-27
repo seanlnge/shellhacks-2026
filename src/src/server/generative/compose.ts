@@ -32,18 +32,46 @@ function contextualHighlight(sentence: string) {
   return sentence.slice(contextStart, number.index + number[0].length).trim();
 }
 
+function relevantEntries<T extends { label: string }>(
+  entries: [string, T][],
+  question: string,
+  count: number,
+): [string, T][] {
+  const words = new Set(
+    (question.toLowerCase().match(/[a-z0-9]{3,}/g) ?? []).filter(
+      (word) =>
+        !/^(show|what|which|this|that|about|with|from|over|time|chart|data|stock|portfolio)$/.test(
+          word,
+        ),
+    ),
+  );
+  return entries
+    .map((entry, index) => ({
+      entry,
+      index,
+      score: [...words].filter((word) =>
+        `${entry[0]} ${entry[1].label}`.toLowerCase().includes(word),
+      ).length,
+    }))
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, count)
+    .map(({ entry }) => entry);
+}
+
 export function compositionCandidates({
   story,
   bundle,
   evidence,
   scope,
   assetKeys,
+  question = "",
 }: {
   story: Story;
   bundle: StoryBundle | null;
   evidence: EvidenceCandidate[];
   scope: "story" | "portfolio";
   assetKeys?: string[];
+  question?: string;
 }): Experimental_CompositionCandidate[] {
   const candidates: Experimental_CompositionCandidate[] = [];
   const add = (
@@ -127,11 +155,11 @@ export function compositionCandidates({
         },
       );
     }
-    for (const [index, [key, metric]] of Object.entries(
-      bundle?.story.metrics ?? {},
-    )
-      .slice(0, 12)
-      .entries()) {
+    for (const [index, [key, metric]] of relevantEntries(
+      Object.entries(bundle?.story.metrics ?? {}),
+      question,
+      12,
+    ).entries()) {
       add(
         `metric_${index}`,
         `Reported ${metric.label}: ${metric.display}, as of ${metric.asOf}; source ${metric.sourceId}`,
@@ -142,11 +170,11 @@ export function compositionCandidates({
         },
       );
     }
-    for (const [index, [key, series]] of Object.entries(
-      bundle?.story.series ?? {},
-    )
-      .slice(0, 8)
-      .entries()) {
+    for (const [index, [key, series]] of relevantEntries(
+      Object.entries(bundle?.story.series ?? {}),
+      question,
+      8,
+    ).entries()) {
       add(
         `line_${index}`,
         `Trend ${series.label}, ${series.unit}, source ${series.sourceId}`,
@@ -193,7 +221,7 @@ export function compositionCandidates({
     for (const [range, period] of ranges)
       add(
         `market_${symbol}_${range}`,
-        `Historical ${symbol} closing-price chart for ${period}. Fetch actual daily data only if selected; no prices available in this candidate.`,
+        `Imported ${symbol} daily closing-price chart for ${period}; may report no data or stale coverage.`,
         "MarketChart",
         { assetKey, range, title: `${symbol} closing price / ${period}` },
         { root: false, resource: `market_${symbol}_${range}` },

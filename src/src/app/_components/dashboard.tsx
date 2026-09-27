@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { CircleUserRound } from "lucide-react";
 
+import { Brand } from "~/app/_components/brand";
+import { Skeleton } from "~/components/ui/skeleton";
 import { GenerativeView } from "~/app/_components/generative-view";
 import { api, type RouterOutputs } from "~/trpc/react";
 
@@ -153,13 +156,25 @@ export function Dashboard({ userName }: { userName: string }) {
   return (
     <main className="app-shell">
       <nav className="topbar">
-        <span className="brand">
-          folio<span className="brand-dot">.</span>fm
-        </span>
+        <Brand />
         <span className="topbar-note">PERSONAL PORTFOLIO INTELLIGENCE</span>
-        <Link href="/api/auth/signout" className="nav-link">
-          SIGN OUT ↗
-        </Link>
+        <details className="account-menu">
+          <summary aria-label="Open account menu">
+            <CircleUserRound aria-hidden="true" />
+          </summary>
+          <div className="account-menu-panel">
+            <button
+              type="button"
+              onClick={(event) => {
+                openEditor();
+                event.currentTarget.closest("details")?.removeAttribute("open");
+              }}
+            >
+              Add Portfolio
+            </button>
+            <Link href="/api/auth/signout">Sign Out</Link>
+          </div>
+        </details>
       </nav>
       <div className="dashboard-layout">
         <aside className="sidebar">
@@ -180,7 +195,17 @@ export function Dashboard({ userName }: { userName: string }) {
               {portfolios.length.toString().padStart(2, "0")}
             </span>
           </h2>
-          {isLoading && <p className="muted">Loading portfolios…</p>}
+          {isLoading && (
+            <div
+              className="portfolio-skeleton"
+              role="status"
+              aria-label="Loading portfolios"
+            >
+              <Skeleton className="skeleton-line" />
+              <Skeleton className="skeleton-line" />
+              <Skeleton className="skeleton-line skeleton-line-short" />
+            </div>
+          )}
           {listError && <p className="error">{listError.message}</p>}
           {portfolios.map((portfolio) => (
             <button
@@ -293,7 +318,16 @@ export function Dashboard({ userName }: { userName: string }) {
                 )}
               </form>
               {storiesLoading ? (
-                <div className="empty-state">Finding your stories…</div>
+                <div
+                  className="story-skeleton"
+                  role="status"
+                  aria-label="Loading stories"
+                >
+                  <Skeleton className="skeleton-line skeleton-line-short" />
+                  <Skeleton className="skeleton-title" />
+                  <Skeleton className="skeleton-paragraph" />
+                  <Skeleton className="skeleton-paragraph skeleton-paragraph-short" />
+                </div>
               ) : stories.length ? (
                 <div className="stories">
                   {stories.map((story, index) => (

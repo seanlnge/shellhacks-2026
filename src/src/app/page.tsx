@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Dashboard } from "~/app/_components/dashboard";
+import { Brand } from "~/app/_components/brand";
 import { auth } from "~/server/auth";
 
 export default async function Home() {
@@ -10,9 +11,7 @@ export default async function Home() {
   ) : (
     <main className="landing">
       <nav className="topbar">
-        <span className="brand">
-          folio<span className="brand-dot">.</span>fm
-        </span>
+        <Brand />
         <span className="topbar-note">PERSONAL PORTFOLIO INTELLIGENCE</span>
       </nav>
       <div className="landing-content">
