@@ -7,9 +7,8 @@ import {
 } from "@json-render/core";
 import {
   defineRegistry,
+  JSONUIProvider,
   Renderer,
-  StateProvider,
-  VisibilityProvider,
 } from "@json-render/react";
 import {
   Children,
@@ -753,14 +752,13 @@ export function GenerativeView({
               ask: (text, anchor) => void generate(text, anchor),
             }}
           >
-            <StateProvider
+            <JSONUIProvider
               key={`${storyId}-${history.length}-${bundle ? "loaded" : "empty"}`}
+              registry={registry}
               initialState={bundle ?? {}}
             >
-              <VisibilityProvider>
-                <Renderer spec={spec} registry={registry} />
-              </VisibilityProvider>
-            </StateProvider>
+              <Renderer spec={spec} registry={registry} />
+            </JSONUIProvider>
           </View.Provider>
         )}
         {loading && (
