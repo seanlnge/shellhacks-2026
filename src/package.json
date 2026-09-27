@@ -11,6 +11,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "data:import": "tsx src/server/data/import-fixture.ts",
+    "stories:seed": "tsx src/server/data/seed-snapshot-stories.ts",
     "evidence:import": "tsx src/server/evidence/import-snapshot.ts",
     "ingestion:import": "tsx src/server/ingestion/import-snapshot.ts",
     "dev": "next dev --turbo",
