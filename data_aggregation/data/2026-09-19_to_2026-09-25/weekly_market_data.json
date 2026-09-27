@@ -1,0 +1,1170 @@
+{
+  "source": "Yahoo Finance public chart endpoint",
+  "retrieved_at_utc": "2026-09-26T22:52:27.020337+00:00",
+  "date_range_utc": {
+    "start": "2026-09-19",
+    "end": "2026-09-25"
+  },
+  "frequency": "daily trading bars over the last seven completed calendar dates; weekly summary is first open to last close",
+  "assets": {
+    "companies": [
+      {
+        "name": "Apple",
+        "symbol": "AAPL",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 335.279999,
+          "high": 345.339996,
+          "low": 333.049988,
+          "close": 341.070007,
+          "open_to_close_change_percent": 1.7269,
+          "volume": 162053000,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 335.279999,
+            "high": 339.640015,
+            "low": 333.049988,
+            "close": 338.980011,
+            "volume": 34999200,
+            "adjusted_close": 338.980011
+          },
+          {
+            "date": "2026-09-22",
+            "open": 340.140015,
+            "high": 345.339996,
+            "low": 338.75,
+            "close": 339.75,
+            "volume": 40711800,
+            "adjusted_close": 339.75
+          },
+          {
+            "date": "2026-09-23",
+            "open": 341.079987,
+            "high": 341.799988,
+            "low": 335.5,
+            "close": 337.019989,
+            "volume": 31658800,
+            "adjusted_close": 337.019989
+          },
+          {
+            "date": "2026-09-24",
+            "open": 336.720001,
+            "high": 338.910004,
+            "low": 334.299988,
+            "close": 335.920013,
+            "volume": 24733100,
+            "adjusted_close": 335.920013
+          },
+          {
+            "date": "2026-09-25",
+            "open": 336.040009,
+            "high": 341.670013,
+            "low": 334.529999,
+            "close": 341.070007,
+            "volume": 29950100,
+            "adjusted_close": 341.070007
+          }
+        ]
+      },
+      {
+        "name": "Google (Alphabet)",
+        "symbol": "GOOGL",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 350.640015,
+          "high": 364.170013,
+          "low": 336.019989,
+          "close": 343.920013,
+          "open_to_close_change_percent": -1.9165,
+          "volume": 141452100,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 350.640015,
+            "high": 357.609985,
+            "low": 349.100006,
+            "close": 354.970001,
+            "volume": 30455400,
+            "adjusted_close": 354.970001
+          },
+          {
+            "date": "2026-09-22",
+            "open": 357.649994,
+            "high": 364.170013,
+            "low": 350.220001,
+            "close": 351.160004,
+            "volume": 29788600,
+            "adjusted_close": 351.160004
+          },
+          {
+            "date": "2026-09-23",
+            "open": 349.859985,
+            "high": 350.0,
+            "low": 337.450012,
+            "close": 337.829987,
+            "volume": 35576200,
+            "adjusted_close": 337.829987
+          },
+          {
+            "date": "2026-09-24",
+            "open": 336.220001,
+            "high": 343.089996,
+            "low": 336.019989,
+            "close": 342.359985,
+            "volume": 23777200,
+            "adjusted_close": 342.359985
+          },
+          {
+            "date": "2026-09-25",
+            "open": 342.350006,
+            "high": 347.029999,
+            "low": 341.109985,
+            "close": 343.920013,
+            "volume": 21854700,
+            "adjusted_close": 343.920013
+          }
+        ]
+      },
+      {
+        "name": "General Electric",
+        "symbol": "GE",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 317.540009,
+          "high": 329.170013,
+          "low": 313.809998,
+          "close": 327.089996,
+          "open_to_close_change_percent": 3.0075,
+          "volume": 19562200,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 317.540009,
+            "high": 322.140015,
+            "low": 313.809998,
+            "close": 319.01001,
+            "volume": 3794700,
+            "adjusted_close": 319.01001
+          },
+          {
+            "date": "2026-09-22",
+            "open": 322.329987,
+            "high": 322.5,
+            "low": 314.359985,
+            "close": 319.220001,
+            "volume": 3400800,
+            "adjusted_close": 319.220001
+          },
+          {
+            "date": "2026-09-23",
+            "open": 318.399994,
+            "high": 325.920013,
+            "low": 317.619995,
+            "close": 319.799988,
+            "volume": 4353100,
+            "adjusted_close": 319.799988
+          },
+          {
+            "date": "2026-09-24",
+            "open": 317.540009,
+            "high": 323.170013,
+            "low": 315.480011,
+            "close": 319.779999,
+            "volume": 3726300,
+            "adjusted_close": 319.779999
+          },
+          {
+            "date": "2026-09-25",
+            "open": 321.899994,
+            "high": 329.170013,
+            "low": 319.640015,
+            "close": 327.089996,
+            "volume": 4287300,
+            "adjusted_close": 327.089996
+          }
+        ]
+      },
+      {
+        "name": "Berkshire Hathaway Class B",
+        "symbol": "BRK-B",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 507.929993,
+          "high": 511.279999,
+          "low": 501.410004,
+          "close": 505.480011,
+          "open_to_close_change_percent": -0.4823,
+          "volume": 20605300,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 507.929993,
+            "high": 510.5,
+            "low": 501.980011,
+            "close": 502.01001,
+            "volume": 4807400,
+            "adjusted_close": 502.01001
+          },
+          {
+            "date": "2026-09-22",
+            "open": 503.329987,
+            "high": 505.579987,
+            "low": 501.410004,
+            "close": 503.48999,
+            "volume": 4704000,
+            "adjusted_close": 503.48999
+          },
+          {
+            "date": "2026-09-23",
+            "open": 503.859985,
+            "high": 511.279999,
+            "low": 502.809998,
+            "close": 507.170013,
+            "volume": 5400400,
+            "adjusted_close": 507.170013
+          },
+          {
+            "date": "2026-09-24",
+            "open": 509.579987,
+            "high": 510.0,
+            "low": 504.980011,
+            "close": 505.179993,
+            "volume": 2701200,
+            "adjusted_close": 505.179993
+          },
+          {
+            "date": "2026-09-25",
+            "open": 505.25,
+            "high": 505.869995,
+            "low": 502.23999,
+            "close": 505.480011,
+            "volume": 2992300,
+            "adjusted_close": 505.480011
+          }
+        ]
+      },
+      {
+        "name": "Broadcom",
+        "symbol": "AVGO",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 358.660004,
+          "high": 366.549988,
+          "low": 346.890015,
+          "close": 352.809998,
+          "open_to_close_change_percent": -1.6311,
+          "volume": 107608400,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 358.660004,
+            "high": 363.970001,
+            "low": 353.5,
+            "close": 362.660004,
+            "volume": 26498600,
+            "adjusted_close": 362.660004
+          },
+          {
+            "date": "2026-09-22",
+            "open": 363.230011,
+            "high": 366.549988,
+            "low": 359.290009,
+            "close": 364.540009,
+            "volume": 20570800,
+            "adjusted_close": 364.540009
+          },
+          {
+            "date": "2026-09-23",
+            "open": 362.200012,
+            "high": 362.899994,
+            "low": 354.01001,
+            "close": 354.98999,
+            "volume": 23387700,
+            "adjusted_close": 354.98999
+          },
+          {
+            "date": "2026-09-24",
+            "open": 349.209991,
+            "high": 351.440002,
+            "low": 346.890015,
+            "close": 350.359985,
+            "volume": 20930400,
+            "adjusted_close": 350.359985
+          },
+          {
+            "date": "2026-09-25",
+            "open": 352.619995,
+            "high": 354.429993,
+            "low": 349.429993,
+            "close": 352.809998,
+            "volume": 16220900,
+            "adjusted_close": 352.809998
+          }
+        ]
+      },
+      {
+        "name": "Nvidia",
+        "symbol": "NVDA",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 222.940002,
+          "high": 229.979996,
+          "low": 221.089996,
+          "close": 225.070007,
+          "open_to_close_change_percent": 0.9554,
+          "volume": 462378400,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 222.940002,
+            "high": 228.5,
+            "low": 221.559998,
+            "close": 227.380005,
+            "volume": 109806100,
+            "adjusted_close": 227.380005
+          },
+          {
+            "date": "2026-09-22",
+            "open": 226.850006,
+            "high": 229.979996,
+            "low": 226.5,
+            "close": 228.869995,
+            "volume": 95746700,
+            "adjusted_close": 228.869995
+          },
+          {
+            "date": "2026-09-23",
+            "open": 228.029999,
+            "high": 228.949997,
+            "low": 224.020004,
+            "close": 225.509995,
+            "volume": 89547300,
+            "adjusted_close": 225.509995
+          },
+          {
+            "date": "2026-09-24",
+            "open": 222.080002,
+            "high": 224.940002,
+            "low": 221.089996,
+            "close": 224.580002,
+            "volume": 77469900,
+            "adjusted_close": 224.580002
+          },
+          {
+            "date": "2026-09-25",
+            "open": 225.130005,
+            "high": 226.940002,
+            "low": 223.130005,
+            "close": 225.070007,
+            "volume": 89808400,
+            "adjusted_close": 225.070007
+          }
+        ]
+      },
+      {
+        "name": "Hilton",
+        "symbol": "HLT",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 306.029999,
+          "high": 315.279999,
+          "low": 304.109985,
+          "close": 313.959991,
+          "open_to_close_change_percent": 2.5912,
+          "volume": 8676000,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 306.029999,
+            "high": 309.160004,
+            "low": 304.109985,
+            "close": 307.079987,
+            "volume": 2128300,
+            "adjusted_close": 307.079987
+          },
+          {
+            "date": "2026-09-22",
+            "open": 311.640015,
+            "high": 314.0,
+            "low": 307.200012,
+            "close": 308.440002,
+            "volume": 1766100,
+            "adjusted_close": 308.440002
+          },
+          {
+            "date": "2026-09-23",
+            "open": 307.25,
+            "high": 310.470001,
+            "low": 305.820007,
+            "close": 307.220001,
+            "volume": 1565500,
+            "adjusted_close": 307.220001
+          },
+          {
+            "date": "2026-09-24",
+            "open": 307.570007,
+            "high": 314.040009,
+            "low": 306.899994,
+            "close": 312.130005,
+            "volume": 1683400,
+            "adjusted_close": 312.130005
+          },
+          {
+            "date": "2026-09-25",
+            "open": 313.049988,
+            "high": 315.279999,
+            "low": 310.350006,
+            "close": 313.959991,
+            "volume": 1532700,
+            "adjusted_close": 313.959991
+          }
+        ]
+      }
+    ],
+    "indices": [
+      {
+        "name": "S&P 500",
+        "symbol": "^GSPC",
+        "currency": "USD",
+        "unit": "index points",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 7692.830078,
+          "high": 7782.189941,
+          "low": 7662.569824,
+          "close": 7743.410156,
+          "open_to_close_change_percent": 0.6575,
+          "volume": 25040800000,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 7692.830078,
+            "high": 7779.220215,
+            "low": 7691.189941,
+            "close": 7764.700195,
+            "volume": 4828050000,
+            "adjusted_close": 7764.700195
+          },
+          {
+            "date": "2026-09-22",
+            "open": 7770.810059,
+            "high": 7782.189941,
+            "low": 7756.259766,
+            "close": 7764.640137,
+            "volume": 5286270000,
+            "adjusted_close": 7764.640137
+          },
+          {
+            "date": "2026-09-23",
+            "open": 7761.939941,
+            "high": 7761.939941,
+            "low": 7694.890137,
+            "close": 7706.029785,
+            "volume": 5110910000,
+            "adjusted_close": 7706.029785
+          },
+          {
+            "date": "2026-09-24",
+            "open": 7666.990234,
+            "high": 7719.009766,
+            "low": 7662.569824,
+            "close": 7704.129883,
+            "volume": 5316390000,
+            "adjusted_close": 7704.129883
+          },
+          {
+            "date": "2026-09-25",
+            "open": 7709.859863,
+            "high": 7752.069824,
+            "low": 7693.080078,
+            "close": 7743.410156,
+            "volume": 4499180000,
+            "adjusted_close": 7743.410156
+          }
+        ]
+      },
+      {
+        "name": "Nasdaq-100",
+        "symbol": "^NDX",
+        "currency": "USD",
+        "unit": "index points",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 29947.160156,
+          "high": 30770.630859,
+          "low": 29933.220703,
+          "close": 30608.130859,
+          "open_to_close_change_percent": 2.2071,
+          "volume": 41993770000,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 29947.160156,
+            "high": 30557.339844,
+            "low": 29933.220703,
+            "close": 30482.349609,
+            "volume": 8813260000,
+            "adjusted_close": 30482.349609
+          },
+          {
+            "date": "2026-09-22",
+            "open": 30496.429688,
+            "high": 30770.630859,
+            "low": 30496.429688,
+            "close": 30732.400391,
+            "volume": 9334690000,
+            "adjusted_close": 30732.400391
+          },
+          {
+            "date": "2026-09-23",
+            "open": 30706.230469,
+            "high": 30706.230469,
+            "low": 30353.880859,
+            "close": 30470.289062,
+            "volume": 8491740000,
+            "adjusted_close": 30470.289062
+          },
+          {
+            "date": "2026-09-24",
+            "open": 30225.189453,
+            "high": 30529.349609,
+            "low": 30204.160156,
+            "close": 30478.859375,
+            "volume": 8078820000,
+            "adjusted_close": 30478.859375
+          },
+          {
+            "date": "2026-09-25",
+            "open": 30517.460938,
+            "high": 30667.560547,
+            "low": 30413.589844,
+            "close": 30608.130859,
+            "volume": 7275260000,
+            "adjusted_close": 30608.130859
+          }
+        ]
+      },
+      {
+        "name": "Dow Jones Industrial Average",
+        "symbol": "^DJI",
+        "currency": "USD",
+        "unit": "index points",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 51936.761719,
+          "high": 52319.011719,
+          "low": 51124.019531,
+          "close": 51828.621094,
+          "open_to_close_change_percent": -0.2082,
+          "volume": 2095140000,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 51936.761719,
+            "high": 52128.578125,
+            "low": 51747.679688,
+            "close": 52048.828125,
+            "volume": 444350000,
+            "adjusted_close": 52048.828125
+          },
+          {
+            "date": "2026-09-22",
+            "open": 52301.921875,
+            "high": 52319.011719,
+            "low": 51726.078125,
+            "close": 51863.691406,
+            "volume": 444770000,
+            "adjusted_close": 51863.691406
+          },
+          {
+            "date": "2026-09-23",
+            "open": 51771.410156,
+            "high": 51846.808594,
+            "low": 51477.53125,
+            "close": 51511.589844,
+            "volume": 428070000,
+            "adjusted_close": 51511.589844
+          },
+          {
+            "date": "2026-09-24",
+            "open": 51415.75,
+            "high": 51485.96875,
+            "low": 51124.019531,
+            "close": 51349.980469,
+            "volume": 390410000,
+            "adjusted_close": 51349.980469
+          },
+          {
+            "date": "2026-09-25",
+            "open": 51359.699219,
+            "high": 51874.941406,
+            "low": 51339.238281,
+            "close": 51828.621094,
+            "volume": 387540000,
+            "adjusted_close": 51828.621094
+          }
+        ]
+      },
+      {
+        "name": "10-year Treasury yield index",
+        "symbol": "^TNX",
+        "currency": "USD",
+        "unit": "yield percent (Yahoo ^TNX quote)",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 4.953,
+          "high": 5.23,
+          "low": 4.926,
+          "close": 5.184,
+          "open_to_close_change_percent": 4.6638,
+          "volume": 0,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 4.953,
+            "high": 4.976,
+            "low": 4.951,
+            "close": 4.963,
+            "volume": 0,
+            "adjusted_close": 4.963
+          },
+          {
+            "date": "2026-09-22",
+            "open": 4.929,
+            "high": 4.982,
+            "low": 4.926,
+            "close": 4.968,
+            "volume": 0,
+            "adjusted_close": 4.968
+          },
+          {
+            "date": "2026-09-23",
+            "open": 4.99,
+            "high": 5.135,
+            "low": 4.984,
+            "close": 5.114,
+            "volume": 0,
+            "adjusted_close": 5.114
+          },
+          {
+            "date": "2026-09-24",
+            "open": 5.121,
+            "high": 5.181,
+            "low": 5.087,
+            "close": 5.162,
+            "volume": 0,
+            "adjusted_close": 5.162
+          },
+          {
+            "date": "2026-09-25",
+            "open": 5.186,
+            "high": 5.23,
+            "low": 5.162,
+            "close": 5.184,
+            "volume": 0,
+            "adjusted_close": 5.184
+          }
+        ]
+      },
+      {
+        "name": "US Dollar Index (DXY)",
+        "symbol": "DX-Y.NYB",
+        "currency": "USD",
+        "unit": "index points",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 100.25,
+          "high": 101.400002,
+          "low": 100.18,
+          "close": 100.970001,
+          "open_to_close_change_percent": 0.7182,
+          "volume": 0,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 100.25,
+            "high": 100.449997,
+            "low": 100.18,
+            "close": 100.43,
+            "volume": 0,
+            "adjusted_close": 100.43
+          },
+          {
+            "date": "2026-09-22",
+            "open": 100.419998,
+            "high": 100.699997,
+            "low": 100.309998,
+            "close": 100.599998,
+            "volume": 0,
+            "adjusted_close": 100.599998
+          },
+          {
+            "date": "2026-09-23",
+            "open": 100.559998,
+            "high": 101.230003,
+            "low": 100.540001,
+            "close": 101.099998,
+            "volume": 0,
+            "adjusted_close": 101.099998
+          },
+          {
+            "date": "2026-09-24",
+            "open": 101.110001,
+            "high": 101.400002,
+            "low": 101.0,
+            "close": 101.290001,
+            "volume": 0,
+            "adjusted_close": 101.290001
+          },
+          {
+            "date": "2026-09-25",
+            "open": 101.269997,
+            "high": 101.309998,
+            "low": 100.870003,
+            "close": 100.970001,
+            "volume": 0,
+            "adjusted_close": 100.970001
+          }
+        ]
+      }
+    ],
+    "real_estate_etfs": [
+      {
+        "name": "Vanguard Real Estate ETF",
+        "symbol": "VNQ",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 93.269997,
+          "high": 93.949997,
+          "low": 90.459999,
+          "close": 90.989998,
+          "open_to_close_change_percent": -2.4445,
+          "volume": 23325300,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 93.269997,
+            "high": 93.949997,
+            "low": 93.25,
+            "close": 93.809998,
+            "volume": 3018100,
+            "adjusted_close": 93.003365
+          },
+          {
+            "date": "2026-09-22",
+            "open": 93.910004,
+            "high": 93.93,
+            "low": 93.489998,
+            "close": 93.620003,
+            "volume": 2955100,
+            "adjusted_close": 92.815002
+          },
+          {
+            "date": "2026-09-23",
+            "open": 92.080002,
+            "high": 92.610001,
+            "low": 91.349998,
+            "close": 91.449997,
+            "volume": 5415800,
+            "adjusted_close": 91.449997
+          },
+          {
+            "date": "2026-09-24",
+            "open": 91.790001,
+            "high": 91.940002,
+            "low": 91.120003,
+            "close": 91.169998,
+            "volume": 5787500,
+            "adjusted_close": 91.169998
+          },
+          {
+            "date": "2026-09-25",
+            "open": 91.550003,
+            "high": 91.550003,
+            "low": 90.459999,
+            "close": 90.989998,
+            "volume": 6148800,
+            "adjusted_close": 90.989998
+          }
+        ]
+      },
+      {
+        "name": "Real Estate Select Sector SPDR Fund",
+        "symbol": "XLRE",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 42.349998,
+          "high": 42.669998,
+          "low": 41.330002,
+          "close": 41.560001,
+          "open_to_close_change_percent": -1.8654,
+          "volume": 28400900,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 42.349998,
+            "high": 42.634998,
+            "low": 42.290001,
+            "close": 42.59,
+            "volume": 5259200,
+            "adjusted_close": 42.59
+          },
+          {
+            "date": "2026-09-22",
+            "open": 42.580002,
+            "high": 42.669998,
+            "low": 42.419998,
+            "close": 42.5,
+            "volume": 4837300,
+            "adjusted_close": 42.5
+          },
+          {
+            "date": "2026-09-23",
+            "open": 42.099998,
+            "high": 42.424999,
+            "low": 41.810001,
+            "close": 41.84,
+            "volume": 6793300,
+            "adjusted_close": 41.84
+          },
+          {
+            "date": "2026-09-24",
+            "open": 42.029999,
+            "high": 42.095001,
+            "low": 41.625,
+            "close": 41.650002,
+            "volume": 5728900,
+            "adjusted_close": 41.650002
+          },
+          {
+            "date": "2026-09-25",
+            "open": 41.779999,
+            "high": 41.794998,
+            "low": 41.330002,
+            "close": 41.560001,
+            "volume": 5782200,
+            "adjusted_close": 41.560001
+          }
+        ]
+      },
+      {
+        "name": "Pacer Data & Infrastructure Real Estate ETF",
+        "symbol": "SRVR",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 29.780001,
+          "high": 30.33,
+          "low": 28.955,
+          "close": 28.997,
+          "open_to_close_change_percent": -2.6293,
+          "volume": 218000,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 29.780001,
+            "high": 30.190001,
+            "low": 29.780001,
+            "close": 30.129999,
+            "volume": 46000,
+            "adjusted_close": 30.129999
+          },
+          {
+            "date": "2026-09-22",
+            "open": 30.120001,
+            "high": 30.33,
+            "low": 30.0,
+            "close": 30.18,
+            "volume": 39000,
+            "adjusted_close": 30.18
+          },
+          {
+            "date": "2026-09-23",
+            "open": 30.030001,
+            "high": 30.030001,
+            "low": 29.514999,
+            "close": 29.516001,
+            "volume": 35600,
+            "adjusted_close": 29.516001
+          },
+          {
+            "date": "2026-09-24",
+            "open": 29.34,
+            "high": 29.363001,
+            "low": 29.059999,
+            "close": 29.162001,
+            "volume": 35100,
+            "adjusted_close": 29.162001
+          },
+          {
+            "date": "2026-09-25",
+            "open": 29.23,
+            "high": 29.27,
+            "low": 28.955,
+            "close": 28.997,
+            "volume": 62300,
+            "adjusted_close": 28.997
+          }
+        ]
+      },
+      {
+        "name": "Pacer Industrial Real Estate ETF",
+        "symbol": "INDS",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 38.790001,
+          "high": 38.990002,
+          "low": 37.780399,
+          "close": 38.002102,
+          "open_to_close_change_percent": -2.0312,
+          "volume": 108024,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 38.790001,
+            "high": 38.900398,
+            "low": 38.790001,
+            "close": 38.900398,
+            "volume": 4577,
+            "adjusted_close": 38.900398
+          },
+          {
+            "date": "2026-09-22",
+            "open": 38.990002,
+            "high": 38.990002,
+            "low": 38.597198,
+            "close": 38.597198,
+            "volume": 3471,
+            "adjusted_close": 38.597198
+          },
+          {
+            "date": "2026-09-23",
+            "open": 38.290001,
+            "high": 38.32,
+            "low": 38.150002,
+            "close": 38.169998,
+            "volume": 82968,
+            "adjusted_close": 38.169998
+          },
+          {
+            "date": "2026-09-24",
+            "open": 38.189999,
+            "high": 38.200001,
+            "low": 37.959999,
+            "close": 37.988899,
+            "volume": 11912,
+            "adjusted_close": 37.988899
+          },
+          {
+            "date": "2026-09-25",
+            "open": 38.040001,
+            "high": 38.040001,
+            "low": 37.780399,
+            "close": 38.002102,
+            "volume": 5096,
+            "adjusted_close": 38.002102
+          }
+        ]
+      },
+      {
+        "name": "iShares Residential and Multisector Real Estate ETF",
+        "symbol": "REZ",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 89.790001,
+          "high": 90.550003,
+          "low": 88.5,
+          "close": 89.199997,
+          "open_to_close_change_percent": -0.6571,
+          "volume": 222100,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 89.790001,
+            "high": 90.529999,
+            "low": 89.790001,
+            "close": 90.300003,
+            "volume": 26100,
+            "adjusted_close": 90.300003
+          },
+          {
+            "date": "2026-09-22",
+            "open": 90.269997,
+            "high": 90.550003,
+            "low": 89.839996,
+            "close": 89.839996,
+            "volume": 21400,
+            "adjusted_close": 89.839996
+          },
+          {
+            "date": "2026-09-23",
+            "open": 89.410004,
+            "high": 90.0,
+            "low": 89.07,
+            "close": 89.089996,
+            "volume": 105400,
+            "adjusted_close": 89.089996
+          },
+          {
+            "date": "2026-09-24",
+            "open": 89.629997,
+            "high": 90.099998,
+            "low": 89.099998,
+            "close": 89.099998,
+            "volume": 28400,
+            "adjusted_close": 89.099998
+          },
+          {
+            "date": "2026-09-25",
+            "open": 89.470001,
+            "high": 89.470001,
+            "low": 88.5,
+            "close": 89.199997,
+            "volume": 40800,
+            "adjusted_close": 89.199997
+          }
+        ]
+      },
+      {
+        "name": "iShares Mortgage Real Estate ETF",
+        "symbol": "REM",
+        "currency": "USD",
+        "unit": "price",
+        "weekly": {
+          "first_trading_date": "2026-09-21",
+          "last_trading_date": "2026-09-25",
+          "open": 19.690001,
+          "high": 20.01,
+          "low": 18.700001,
+          "close": 18.9,
+          "open_to_close_change_percent": -4.0122,
+          "volume": 7362800,
+          "trading_days": 5
+        },
+        "daily": [
+          {
+            "date": "2026-09-21",
+            "open": 19.690001,
+            "high": 19.84,
+            "low": 19.639999,
+            "close": 19.76,
+            "volume": 620400,
+            "adjusted_close": 19.76
+          },
+          {
+            "date": "2026-09-22",
+            "open": 19.85,
+            "high": 20.01,
+            "low": 19.799999,
+            "close": 19.91,
+            "volume": 929600,
+            "adjusted_close": 19.91
+          },
+          {
+            "date": "2026-09-23",
+            "open": 19.889999,
+            "high": 19.9,
+            "low": 19.32,
+            "close": 19.32,
+            "volume": 2635100,
+            "adjusted_close": 19.32
+          },
+          {
+            "date": "2026-09-24",
+            "open": 19.42,
+            "high": 19.43,
+            "low": 18.889999,
+            "close": 18.92,
+            "volume": 1461300,
+            "adjusted_close": 18.92
+          },
+          {
+            "date": "2026-09-25",
+            "open": 19.0,
+            "high": 19.01,
+            "low": 18.700001,
+            "close": 18.9,
+            "volume": 1716400,
+            "adjusted_close": 18.9
+          }
+        ]
+      }
+    ]
+  },
+  "errors": []
+}

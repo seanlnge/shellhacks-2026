@@ -1,0 +1,194 @@
+{
+  "date_range_utc": {
+    "start": "2026-09-19",
+    "end": "2026-09-25"
+  },
+  "retrieved_at_utc": "2026-09-27T00:16:43.728151+00:00",
+  "macro": {
+    "DGS10": {
+      "title": "10-year Treasury constant maturity rate",
+      "observations": [
+        {
+          "date": "2026-09-21",
+          "value": 4.96
+        },
+        {
+          "date": "2026-09-22",
+          "value": 4.96
+        },
+        {
+          "date": "2026-09-23",
+          "value": 5.11
+        },
+        {
+          "date": "2026-09-24",
+          "value": 5.18
+        }
+      ],
+      "source_url": "https://fred.stlouisfed.org/series/DGS10",
+      "last_observation": {
+        "date": "2026-09-24",
+        "value": 5.18
+      }
+    },
+    "FEDFUNDS": {
+      "title": "Effective federal funds rate",
+      "observations": [
+        {
+          "date": "2026-06-01",
+          "value": 3.63
+        },
+        {
+          "date": "2026-07-01",
+          "value": 3.63
+        },
+        {
+          "date": "2026-08-01",
+          "value": 3.63
+        }
+      ],
+      "source_url": "https://fred.stlouisfed.org/series/FEDFUNDS",
+      "last_observation": {
+        "date": "2026-08-01",
+        "value": 3.63
+      }
+    },
+    "CPIAUCSL": {
+      "title": "Consumer Price Index, all urban consumers",
+      "observations": [
+        {
+          "date": "2026-06-01",
+          "value": 332.568
+        },
+        {
+          "date": "2026-07-01",
+          "value": 332.813
+        },
+        {
+          "date": "2026-08-01",
+          "value": 334.131
+        }
+      ],
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "last_observation": {
+        "date": "2026-08-01",
+        "value": 334.131
+      }
+    }
+  },
+  "crypto": {
+    "BTC": {
+      "asset_id": "bitcoin",
+      "daily": [
+        {
+          "date": "2026-09-19",
+          "price_usd": 81226.58014364234,
+          "observed_at_utc": "2026-09-19T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-20",
+          "price_usd": 81197.32632288539,
+          "observed_at_utc": "2026-09-20T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-21",
+          "price_usd": 86421.95454677695,
+          "observed_at_utc": "2026-09-21T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-22",
+          "price_usd": 86120.19453430604,
+          "observed_at_utc": "2026-09-22T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-23",
+          "price_usd": 84550.14189817327,
+          "observed_at_utc": "2026-09-23T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-24",
+          "price_usd": 84249.38872205936,
+          "observed_at_utc": "2026-09-24T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-25",
+          "price_usd": 84069.47476206647,
+          "observed_at_utc": "2026-09-25T23:00:00+00:00"
+        }
+      ],
+      "source_url": "https://www.coingecko.com/en/coins/bitcoin"
+    },
+    "ETH": {
+      "asset_id": "ethereum",
+      "daily": [
+        {
+          "date": "2026-09-19",
+          "price_usd": 2629.914515862336,
+          "observed_at_utc": "2026-09-19T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-20",
+          "price_usd": 2638.6870809448455,
+          "observed_at_utc": "2026-09-20T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-21",
+          "price_usd": 2778.1857010664044,
+          "observed_at_utc": "2026-09-21T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-22",
+          "price_usd": 2753.1248202113484,
+          "observed_at_utc": "2026-09-22T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-23",
+          "price_usd": 2689.5306019537184,
+          "observed_at_utc": "2026-09-23T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-24",
+          "price_usd": 2684.277838013781,
+          "observed_at_utc": "2026-09-24T23:00:00+00:00"
+        },
+        {
+          "date": "2026-09-25",
+          "price_usd": 2691.997733735322,
+          "observed_at_utc": "2026-09-25T23:00:00+00:00"
+        }
+      ],
+      "source_url": "https://www.coingecko.com/en/coins/ethereum"
+    }
+  },
+  "calendars": {},
+  "private_funds": {
+    "BREIT": {
+      "nav": null,
+      "distribution": null,
+      "as_of": null,
+      "source_url": null,
+      "status": "awaiting verified published or manual source"
+    },
+    "BCRED": {
+      "nav": null,
+      "distribution": null,
+      "as_of": null,
+      "source_url": null,
+      "status": "awaiting verified published or manual source"
+    }
+  },
+  "sources": {
+    "fred_DGS10": "cached",
+    "fred_FEDFUNDS": "cached",
+    "fred_CPIAUCSL": "cached",
+    "coingecko_BTC": "cached",
+    "coingecko_ETH": "cached",
+    "finnhub_ipo": "not configured (FINNHUB_API_KEY)",
+    "finnhub_earnings": "not configured (FINNHUB_API_KEY)",
+    "sec_filings": "cached metadata and 21 document texts/chunks; embeddings not configured",
+    "sec_companyfacts": "cached",
+    "prices": "cached Yahoo Finance daily",
+    "news": "cached Google News RSS; Finnhub news needs FINNHUB_API_KEY",
+    "portfolio": "see local SQLite sample portfolio"
+  }
+}

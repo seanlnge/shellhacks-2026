@@ -1,0 +1,237 @@
+{
+  "retrieved_at_utc": "2026-09-27T00:15:41.522510+00:00",
+  "documents": [
+    {
+      "holding": "AAPL",
+      "form": "4",
+      "filed_at": "2026-09-24",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126037584/xslF345X06/form4.xml",
+      "accession_number": "0001140361-26-037584",
+      "status": "text cached; not embedded",
+      "document_id": "73ca17ade00a07b4",
+      "path": "sec_documents/AAPL-73ca17ade00a07b4.json",
+      "chunks": 3
+    },
+    {
+      "holding": "AAPL",
+      "form": "144",
+      "filed_at": "2026-09-22",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000195004726009738/xsl144X01/primary_doc.xml",
+      "accession_number": "0001950047-26-009738",
+      "status": "text cached; not embedded",
+      "document_id": "84c8edb9cc54be5a",
+      "path": "sec_documents/AAPL-84c8edb9cc54be5a.json",
+      "chunks": 3
+    },
+    {
+      "holding": "AAPL",
+      "form": "10-Q",
+      "filed_at": "2026-07-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+      "accession_number": "0000320193-26-000020",
+      "status": "text cached; not embedded",
+      "document_id": "5c93994347d1959e",
+      "path": "sec_documents/AAPL-5c93994347d1959e.json",
+      "chunks": 53
+    },
+    {
+      "holding": "AVGO",
+      "form": "4",
+      "filed_at": "2026-09-25",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000110465926110983/xslF345X06/tm2626134-1_4seq1.xml",
+      "accession_number": "0001104659-26-110983",
+      "status": "text cached; not embedded",
+      "document_id": "48ccb6cd1657f1f0",
+      "path": "sec_documents/AVGO-48ccb6cd1657f1f0.json",
+      "chunks": 6
+    },
+    {
+      "holding": "AVGO",
+      "form": "144",
+      "filed_at": "2026-09-23",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000197372726000059/xsl144X01/primary_doc.xml",
+      "accession_number": "0001973727-26-000059",
+      "status": "text cached; not embedded",
+      "document_id": "898d340aaf09bf62",
+      "path": "sec_documents/AVGO-898d340aaf09bf62.json",
+      "chunks": 3
+    },
+    {
+      "holding": "AVGO",
+      "form": "144",
+      "filed_at": "2026-09-23",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000197372726000058/xsl144X01/primary_doc.xml",
+      "accession_number": "0001973727-26-000058",
+      "status": "text cached; not embedded",
+      "document_id": "0c7351a6b18db011",
+      "path": "sec_documents/AVGO-0c7351a6b18db011.json",
+      "chunks": 3
+    },
+    {
+      "holding": "AVGO",
+      "form": "144",
+      "filed_at": "2026-09-23",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000197372726000057/xsl144X01/primary_doc.xml",
+      "accession_number": "0001973727-26-000057",
+      "status": "text cached; not embedded",
+      "document_id": "a49ea0ff9ac10213",
+      "path": "sec_documents/AVGO-a49ea0ff9ac10213.json",
+      "chunks": 3
+    },
+    {
+      "holding": "AVGO",
+      "form": "10-Q",
+      "filed_at": "2026-09-10",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/avgo-20260802.htm",
+      "accession_number": "0001730168-26-000080",
+      "status": "text cached; not embedded",
+      "document_id": "721a96cd48f28b4c",
+      "path": "sec_documents/AVGO-721a96cd48f28b4c.json",
+      "chunks": 119
+    },
+    {
+      "holding": "BRK-B",
+      "form": "4",
+      "filed_at": "2026-09-25",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526403089/xslF345X06/ownership.xml",
+      "accession_number": "0001193125-26-403089",
+      "status": "text cached; not embedded",
+      "document_id": "b15c9c39844d5dfc",
+      "path": "sec_documents/BRK-B-b15c9c39844d5dfc.json",
+      "chunks": 7
+    },
+    {
+      "holding": "BRK-B",
+      "form": "SD",
+      "filed_at": "2026-09-25",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526402798/d44118dsd.htm",
+      "accession_number": "0001193125-26-402798",
+      "status": "text cached; not embedded",
+      "document_id": "d555af09d1a344c8",
+      "path": "sec_documents/BRK-B-d555af09d1a344c8.json",
+      "chunks": 2
+    },
+    {
+      "holding": "BRK-B",
+      "form": "4",
+      "filed_at": "2026-09-21",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526397059/xslF345X06/ownership.xml",
+      "accession_number": "0001193125-26-397059",
+      "status": "text cached; not embedded",
+      "document_id": "c8a46b6138014f49",
+      "path": "sec_documents/BRK-B-c8a46b6138014f49.json",
+      "chunks": 9
+    },
+    {
+      "holding": "BRK-B",
+      "form": "3",
+      "filed_at": "2026-09-21",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526397052/xslF345X06/ownership.xml",
+      "accession_number": "0001193125-26-397052",
+      "status": "text cached; not embedded",
+      "document_id": "5bb25ac874dcca81",
+      "path": "sec_documents/BRK-B-5bb25ac874dcca81.json",
+      "chunks": 3
+    },
+    {
+      "holding": "BRK-B",
+      "form": "10-Q",
+      "filed_at": "2026-08-10",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526341032/brka-20260630.htm",
+      "accession_number": "0001193125-26-341032",
+      "status": "text cached; not embedded",
+      "document_id": "93b5a2ec1e042d0d",
+      "path": "sec_documents/BRK-B-93b5a2ec1e042d0d.json",
+      "chunks": 172
+    },
+    {
+      "holding": "GE",
+      "form": "8-K",
+      "filed_at": "2026-09-22",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000059/ge-20260921.htm",
+      "accession_number": "0000040545-26-000059",
+      "status": "text cached; not embedded",
+      "document_id": "3615af5bab19c958",
+      "path": "sec_documents/GE-3615af5bab19c958.json",
+      "chunks": 3
+    },
+    {
+      "holding": "GE",
+      "form": "10-Q",
+      "filed_at": "2026-07-16",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000049/ge-20260630.htm",
+      "accession_number": "0000040545-26-000049",
+      "status": "text cached; not embedded",
+      "document_id": "12ccc52b933c8cb6",
+      "path": "sec_documents/GE-12ccc52b933c8cb6.json",
+      "chunks": 92
+    },
+    {
+      "holding": "GOOGL",
+      "form": "10-Q",
+      "filed_at": "2026-07-23",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "accession_number": "0001652044-26-000071",
+      "status": "text cached; not embedded",
+      "document_id": "46bdf3f925a3e8e7",
+      "path": "sec_documents/GOOGL-46bdf3f925a3e8e7.json",
+      "chunks": 137
+    },
+    {
+      "holding": "HLT",
+      "form": "10-Q",
+      "filed_at": "2026-07-28",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585689/000158568926000043/hlt-20260630.htm",
+      "accession_number": "0001585689-26-000043",
+      "status": "text cached; not embedded",
+      "document_id": "0a1a1300933be54a",
+      "path": "sec_documents/HLT-0a1a1300933be54a.json",
+      "chunks": 61
+    },
+    {
+      "holding": "NVDA",
+      "form": "4",
+      "filed_at": "2026-09-23",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000169684126000014/xslF345X06/wk-form4_1790196985.xml",
+      "accession_number": "0001696841-26-000014",
+      "status": "text cached; not embedded",
+      "document_id": "be476c5ea94dc04e",
+      "path": "sec_documents/NVDA-be476c5ea94dc04e.json",
+      "chunks": 3
+    },
+    {
+      "holding": "NVDA",
+      "form": "4",
+      "filed_at": "2026-09-22",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000119903926000016/xslF345X06/wk-form4_1790110579.xml",
+      "accession_number": "0001199039-26-000016",
+      "status": "text cached; not embedded",
+      "document_id": "f4842d8e45877c3a",
+      "path": "sec_documents/NVDA-f4842d8e45877c3a.json",
+      "chunks": 3
+    },
+    {
+      "holding": "NVDA",
+      "form": "144",
+      "filed_at": "2026-09-21",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000192109426001040/xsl144X01/primary_doc.xml",
+      "accession_number": "0001921094-26-001040",
+      "status": "text cached; not embedded",
+      "document_id": "123826f63e92a484",
+      "path": "sec_documents/NVDA-123826f63e92a484.json",
+      "chunks": 3
+    },
+    {
+      "holding": "NVDA",
+      "form": "10-Q",
+      "filed_at": "2026-08-26",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "accession_number": "0001045810-26-000075",
+      "status": "text cached; not embedded",
+      "document_id": "abcad31413719cc6",
+      "path": "sec_documents/NVDA-abcad31413719cc6.json",
+      "chunks": 97
+    }
+  ],
+  "embedding_status": "not configured; text chunks only"
+}
