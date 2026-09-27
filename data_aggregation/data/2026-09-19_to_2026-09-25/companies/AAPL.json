@@ -1,0 +1,432 @@
+{
+  "company": "Apple",
+  "symbol": "AAPL",
+  "date_range_utc": {
+    "start": "2026-09-19",
+    "end": "2026-09-25"
+  },
+  "retrieved_at_utc": "2026-09-26T23:29:43.845514+00:00",
+  "news_source": "Google News RSS (headline metadata, not full article text)",
+  "news": [
+    {
+      "title": "Apple (AAPL) Sets a New 52-Week High at $341.07 - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZ1dDbEIzY1lzWFhldFRsb0VSSmdVTWlPa3ljVE5iZmZJRFBaSUY4RXBhVXFBWmp3d0R5Z3RLRHRoTjAtMkZtZnNQeEJnM0Zid3J5clh2WHc2NlV2QkRfMFQ0Y2w3eXE1b1ZsaE82ZDI0VHM5VTJnNzB1T2tiY1kyQUdHOXhGUkxXWHBCM0pGOWRvcGdQT3ltT01qUnp5TFQydGdPSGMtUFlwNmtJY3VSbTNYdUlXZUthb19Pa1pwekZPeTJYRnVIc1VsLWo?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-25T22:00:00+00:00"
+    },
+    {
+      "title": "Apple (AAPL) Rises Higher Than Market: Key Facts - Yahoo Finance Australia",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNbTFid0l2bFZld1NPLUdSSTFtcElvSGtPVTRvSHB0SUhHVWt4WTJ5d1NOT2Z2dk9RVmFhQkxmU2dvVTBKQXhOUGRJNHlXQzB2dkZaV3ZjSk9FOTF4UnhrVmZrSjAzMl85V0NjQlJmUWF6OXZ5QS1PWlJEa252c1J2VXdBcWN3QQ?oc=5",
+      "publisher": "Yahoo Finance Australia",
+      "published_at_utc": "2026-09-25T20:45:01+00:00"
+    },
+    {
+      "title": "Apple stock rises 10% in a month, eyes $350 as AI-powered Mac sales could boost analyst targets. - Pluang",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNzZWT0E2d0x0NGNJQm9ZX1NhZTNmLWlPRUMxMjhhX2JMVy00NmQ1bi1kMmlCa3c0QzFqdWkwdTF4aTQzckk3d0ttQ3dJSzl4REhGeXJ0c00zdUE4UWF5Q1FXemdFRGpsWGhRaXZmR1N2VFBGdC1JSHFKYldvWmRFR3N1OVhRb1dPdktoN2gzLTRDZ09GUDI3cE12WnhzY2NCUjJZNVFpV3N2S1k?oc=5",
+      "publisher": "Pluang",
+      "published_at_utc": "2026-09-25T19:15:10+00:00"
+    },
+    {
+      "title": "Apple Just Gained 10% in a Month. What Will It Take for AAPL Stock to Finally Hit $350? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOdHFQS2dzeDd2LTBjbnJpLXZfbWNHRUloMWREcVJWZXJnbDhsNW12UTFhSEh3Nk5tV2pDYlNRNkxRS3E0TGdVX1hQU2MwS19VZnJLM2tMZEExcVVfOUJRdG1ndTlUcS1ZVE5EZk1oZEc4bWxydDh0bERibGlxcm1yYVJIZzNhRkxkMTZRbExxQ0FXc3dNYUE?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T18:58:49+00:00"
+    },
+    {
+      "title": "Apple Just Gained 10% in a Month. What Will It Take for AAPL Stock to Finally Hit $350? - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQVnNCY0Z4d3VBYW9MV0llUzJPRGp6UUlKNUY1cXpsZjcyV21FLXVmSF8wTW5lYVJtUEJwODVuY1A2X05Zem5QRlpDWDRWS1VjVXpJR2VSZFFQZHE3azl3Y0VOd1Njdk5fanNubi1ZX0lvYnRiM3dqN1NYNVpTUjJaSzNRYzNCbG8wNnc0bTFCNldpNEFBZ0hmMzFuclpNRmxwb3gwanNQeGZNUGNZU21ubjRFaVRGTl9BN2Nhd0lJcVhpR3ZLdGc?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-25T18:58:00+00:00"
+    },
+    {
+      "title": "Bernstein reiterates Apple stock Outperform on margin concerns By Investing.com - Investing.com Nigeria",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONFR6Q2NocWZSNm5nQkl1LU8yQmR2Ui1tTjYxYWJzZFlwTDhKeFZWMHVwMkVnLUlLRnV0YlR3a3MzUUNKY3JvRXk2SmpmekZNbk1rd19ObXZuQXRWRFdsOHdPcmg2U0FFSEtkd2lZd0V2NXl6UnFvMWxRb3pSRV9fQWctekNlMi1neURsR3dIaFZjMjRDWFJOdGJmdXlvUS1GLW1QWWhPdkxzUFh5R25OeURtdlo2NWhmcUNoMGViS0U?oc=5",
+      "publisher": "Investing.com Nigeria",
+      "published_at_utc": "2026-09-25T18:50:42+00:00"
+    },
+    {
+      "title": "Amazon's $199 Discount on Apple Watch Ultra 3 Returns to Help Clear Stock - MacRumors",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5fY2NhdmtXMC1hU2RzVHJaYjZSOGhrZnp6bUVpNG13TXAxbzZNamhRLWNPTXdYaUZkdXFIaTFHbFVEUDZJc285SzN1LVRueWhpMXA1cUJlWmxCOE9yYnZISlJqSUdSZnI2WU1JcFVEYXFwUWc?oc=5",
+      "publisher": "MacRumors",
+      "published_at_utc": "2026-09-25T18:17:02+00:00"
+    },
+    {
+      "title": "Qualcomm Stocks Jump as Apple Extends the Royalty Bridge - Yahoo Finance Australia",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPamloZm94dlRka1dBcTRWbVBQV1NaNjN2M25ZeVVXNzNTSG5IWXlEVW9waU5vSG9ybmNRUFlIa25EQ01tb1l0M0pDZ2psLVJWd0xWeFNpdkFxbkxHODFZbUtrUVBocVpaMVhtN19zMnlUZUJ0ZUNGLUtlSnppaEZzMGZyb1ZTZzBGVWtF?oc=5",
+      "publisher": "Yahoo Finance Australia",
+      "published_at_utc": "2026-09-25T17:52:40+00:00"
+    },
+    {
+      "title": "Qualcomm stock jumps 6% after Apple deal renewa... - Pluang",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZE9xUGNsQ0xKcXJGVzZsbzRtZGh2ODFLU0pEZjc4bm0wQWYydm5HcHZWZGhEU3M5VTZvZ3RnZUp0RHU0UHoyeFpjb19HbGlMUGFnLXhmLTFkMFY2Qy1DTXpMRThlbldfdmk3SXV5MVdEbS1BOEdmU0llQkptOVV3V1lKa0Y5SkY5dnhZSVJjazNMMEU?oc=5",
+      "publisher": "Pluang",
+      "published_at_utc": "2026-09-25T17:14:05+00:00"
+    },
+    {
+      "title": "Qualcomm Rallies 6% as Buyers Reverse Apple Renewal Selloff; Apple Stock Ticks Up - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMGQ2LXZ3ZG1vbmFjRDdyLUZ4ZHQyZDVjRWFocFQ1T1JfMVBES0Q4TEt3QkNJMWJHRlB5UktGdE1FZzQ3amgwTW80aS1NanJQd1VVMTdlb3Q5aXk4LUJRemNWVTdIR1Nwb1dTeVFtQWVNUUo5ZXUwa1hWc096MUdFRnJsb0Z3bG9TbHVBWnpRVzVoUUZ0NTN2aDRMT3RIcndFUC1EcWR3LVlRemR1NWF2cXBnYThDQjJFeHhmMmJKMGs?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-25T17:02:00+00:00"
+    },
+    {
+      "title": "Alphabet vs. Apple: Which Consumer AI Tech Stock Has an Edge Now? - uk.finance.yahoo.com",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdmNiZWlvZ0JpUVpWbzlYMS1WOHkzRzFnd2d6bmpRYk9VYVR5ZXNfakVseHhmQncxR1JxRzdrcmVUM3g1alRIZlE4N2JxTWVYVWdPb0ViQkplbG5FOUZlSXlhMGNIQU9qdzE5WVdvY1R5U095RmdEXzlXdHRZTG5lcV96UGY?oc=5",
+      "publisher": "uk.finance.yahoo.com",
+      "published_at_utc": "2026-09-25T17:02:00+00:00"
+    },
+    {
+      "title": "Apple Stock Gains as Macs Attack the Token Meter - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZWkxRFFaTDk1UkJNT01qbXJmaFlibWh1aXM4RmI1SlMzcTM0SWhFdGpqNThQWUdfcDZhM2F6a1FiZ2hKTkZXRWItczRkeW9XOERPMmFFc25JcjgzZ04ybEdTeUhTNUgwUjNQa2lwdXFFT3FHZUdfY0RITndPM1ZCcGxrdmZzZUlsbmsxREhjM2tkTmFiZEloYktR?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T16:59:56+00:00"
+    },
+    {
+      "title": "Apple Stock Outlook: Our Target Leaves Wall Street Behind - aol.com",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRmRJU3pfUm5GZUhGSXRPeXBXMXVRLXplN1BpTzh2NGtPLUhxQTRwcXcwbEhNdkdtTzV4MDd3Y0hiaTF1QXZQcEdxV0FpYTZ4OEx2VGh6RnJ1SFo5RnJOV2VSMUhqQ29PN0JzbkFCZ0g0NXdWREppXzUwNmJZVmdOUHVlWQ?oc=5",
+      "publisher": "aol.com",
+      "published_at_utc": "2026-09-25T16:30:30+00:00"
+    },
+    {
+      "title": "Apple Stock Outlook: Our Target Leaves Wall Street Behind - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYUhXekdQTV9hVFM4RHNuZl9tbnRJUlA3LTNCbUxYOFdFMnI4cTRUTnNtV0g0VDIzc2NNRVVHNW9Cemg0dGVjNXRfOC02azBnRzZKanRLSU96WVhPY0R2VXRRQWJ4T3NFbTZKejJlUVdVV3B5SndTdnVLOTRCOXBFWUN5MEFUM2dqbXVfM2hQWmw4MGVBeWY5aEVnSkNteTdmQzhF?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-25T16:30:00+00:00"
+    },
+    {
+      "title": "Apple\u2019s new Mac Studio is in stock and already on sale at Amazon - Macworld",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMjJ6c3gtdkt4bFkzMTQ4cVpmRW5HT2toLTJlMFpSdzhKaDFxaWlLZS1Vb2cycnp4T21sUE9vZEc3dTZiOEVBcFJuaHAySlBKVHpxSHJKQUtiZ0tfRFVDTlo2WGo2Z1NOREU1bmJDR3lxYk1mVEtBR1M0N3pCV29JMFJwTHJ5MXktNXdZYXJubUtseEJnUFVqWS1ZVFczWHRMRnNETVBqbDY2X243Mno5Tk04cWRkVWs?oc=5",
+      "publisher": "Macworld",
+      "published_at_utc": "2026-09-25T16:02:22+00:00"
+    },
+    {
+      "title": "Apple Stock Gains as Macs Attack the Token Meter - GuruFocus",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOcDFwWHJCZlZLdlNVRXNOSXFOS0JmZ1ZOQVhJaXhqOVVaeDZ4UXhJdVNTdzB2alNwSDF4Nm56VU1RRERUMWVPbnBGaHJLSFdSbDRVY1V1cUFCUDVRY3pCVGhkZHVnRndwck5JS015OUQ3ZWxrazBJUXZRZUQ2Smk5X1lkaTc1LUJFTnZGZjE4Um0?oc=5",
+      "publisher": "GuruFocus",
+      "published_at_utc": "2026-09-25T16:01:47+00:00"
+    },
+    {
+      "title": "If You Invest $15,000 Into These 3 Stocks, You Could Have $30,000 In 2030 - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQ0JEM2hzUHFVeVdOWTVFY2l5SjBmTEJYSzQ1a1k5VEdiekp6aUhCUEdaTXpYbm1aOHJ4Z2c1SWJUaUc4YVVKUndldGMyMk5ZRDdNSW50NlViZzZoVDBWN0szQ3ZWUFo1Z0RUSUZ4YTlSVWtQY0lISkpPcDYyME5YUHo3N3ZLR3BuMnpidGE3X3BmYUVDc1RvRThJTHVRczd2NDJRY0VNU1cyRjVXb2w1ZnBB?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-25T15:00:00+00:00"
+    },
+    {
+      "title": "Apple Stock Forecast: $5 Trillion Milestone Meets New iPhone Growth Cycle - TradingKey",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTjJLdGMxWTJPSWJSTDZ0Yk1SQlpTNDJTWHdpWEFnSXY2ejJfb01wYWdEWnZqOEhpLThiUFVocWRFcG1EOEZOWFJKWUFSQmtUSnNIc3ZCajIyNEw4a2JXQnJYTUt3ZjZLV3NpemY2bC1UZEtaOU82VTctcFFjYkR0NnVqbmtkeFpYMV91WUZIUThrOHplOGFaS1E0MlYtUFpNRjhRNGhBQUZ3SGpsYlh3QmJPdm5rZXhCZXRFZGFqY2ZQOEU?oc=5",
+      "publisher": "TradingKey",
+      "published_at_utc": "2026-09-25T14:49:36+00:00"
+    },
+    {
+      "title": "Nvidia, AMD Love This High-Tech Facilitator. So Does Wall Street. - Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMU5lRmVoWjZMZE84cVFSc3Z3TVF6MnJXb2dyOW9NOU1XZWNHLUZpUnNrN01vYVpXN0J0RXVIUmZlYUdRMXVRTkJWZnpXTWhnRTUtcHNvdDNWWHZjbmktLXB4eTAzN20zY3VSUUdrd1o0Ykd5V29BVmo1UnRHajUzcHRCcXdGYkw4SnFYOXJPUVlUMkJOX2FxOS12Q3U3cTI0czJpbUVpclRETU9PYW1JM2ZCM3hSZw?oc=5",
+      "publisher": "Investor's Business Daily",
+      "published_at_utc": "2026-09-25T14:47:00+00:00"
+    },
+    {
+      "title": "The 200-Day Moving Average: The Worst-Kept Secret for Investing - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPU0JFSlB0cXUzUTJzN3RiajV3dWg0c19sVm5lOE9GLWRZRHZqd1hlN05HUnZXdTdpSDVNYWw4M21iRHM1ZmJ4aU1NT3VkVFZFWGFmdm5RY1FXT0lZZDlFcUVIZ0Y3TlpDaUNVUzFhQWJudFQyS3hMYWp2alFUMms2VTZSaEljWTdDTlpISnQ3TndUZDdLb19wU3dnazJCMFVFemd0eDFsb1dEMDhBVVZNamc3aWdMUHM1?oc=5",
+      "publisher": "TradingView",
+      "published_at_utc": "2026-09-25T14:30:00+00:00"
+    },
+    {
+      "title": "Apple Gains Indian Market Share as Massive iPhone 18 Pro Demand Drives Record Store Crowds - TIKR.com",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPNEhfZG5fQWV3VWVpV2ViS3M3b0ZRcnNtZ0lDWGdHNHRuLVRoQ1Zia2Jybjl6Ui1jRFRKRE9UZExRajJVNjB1b3RFb0VMUV9UR2g1eHZpdC1vY1llQ1I1VDBzU3FXZ3hva1ZsM0wwVEV3amg4NGhjZWNvWThDRW83NTlxVQ?oc=5",
+      "publisher": "TIKR.com",
+      "published_at_utc": "2026-09-25T12:52:14+00:00"
+    },
+    {
+      "title": "Apple Stock Approaches Buy Point Following Launch Of New iPhone And New CEO - Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNOXdFdDFtOWg1MV94Y3NLem1jVXlMaFdqZ1VfOERIOUJ0bEdIam05T0FEVVpqLTBEbll0RWJLa1Y0Mndxd1J3bF8zbnNwNkVlU2dJOTdjall1TUVhSG5PcVBJbG1BTHctYlFRSDM3U3VwNFJVVmt2SzdjWWpUYzhCdV8zX2ZlaEFXY0pIbU9MMnJ4bS12dkxraWJXeGE2UnJHcGlOME1yNA?oc=5",
+      "publisher": "Investor's Business Daily",
+      "published_at_utc": "2026-09-25T12:00:00+00:00"
+    },
+    {
+      "title": "Chip Stocks Retreat. Qualcomm Secures Apple Licensing Deal. - Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcDN5LVJyWVNyZHQ2UFFULURtd0E5WW9HMFZNVlo5MHV4VHpKNVJTWU5IdzYyTTA1akQ5cUlNc0FBWXhGV2ltcVBGMUM0dWF3LXVIT0NJOU5GUllLSW5YUGpDSnVZRVVaNHludEFUWHNhazBGWktSQUpMb0Z4N3RxdDloV3hyOHRaZERWUG9vOFRSTUFJM2dmenc4dE43QmZPX0E?oc=5",
+      "publisher": "Investor's Business Daily",
+      "published_at_utc": "2026-09-24T20:42:00+00:00"
+    },
+    {
+      "title": "Qualcomm Renews Deal With Apple. Why the Stock Is Dropping Anyway. - Barron's",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9TcVNpYmRDcFlRcEp2NFR4aEp5VDZSM0VieFAyN1YzU2V0aFFUdVk3VXZsNkwyeGlHYUFxbkExTXhOT2c1ancyc1VYaGV2a1ZQNWEydW1sSExXNzBtaUozR2lFU2NLc1pueWxnZjFpUWo1dGF2eWpHLQ?oc=5",
+      "publisher": "Barron's",
+      "published_at_utc": "2026-09-24T20:41:00+00:00"
+    },
+    {
+      "title": "3 Stocks Tied To Apple And Nvidia Supply Chain Demand - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOT0dMN0tzdDdaR1RtNjNYX2ZXdHMwenlnRkQzMWpKY0M3WUlEWUQzaWRxYWpnNzg3b0Q5UGVCc2puLXlnTVpCWHVtdXN1Rkc3cTZKR3pZbnhldV9pRHZsSG1iTVh3cHZWeFlrSHliWDNqYlhHVnNNQmRZS2M5TS1BRVJzbGRRUjYybE1vZnFGR3lVNXIwUnc?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T20:18:26+00:00"
+    },
+    {
+      "title": "Apple\u2019s rumored iPhone 20 could change the phone\u2019s look in a big way - thestreet.com",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5iTjl6RWpMUUVtTlViSHozZzRoeGZuTVVmVzdSYkpvUEROSnZxRWt4TWRvZUhkUlc1bkxYZl9CNXlwbTFDaFJBbHlKQlFKMjJfRDNOQzVTSnhhS3g1V2NJS2J1azBRZTZNRjZPdkVUZm5KNm9VVmxEWVFR?oc=5",
+      "publisher": "thestreet.com",
+      "published_at_utc": "2026-09-24T19:33:00+00:00"
+    },
+    {
+      "title": "Prediction: This Is What a $1,000 Investment in Apple Will Be Worth by 2030 - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNS1EaDVlSXpEeDgzZmNHYjd2LWNYTFdJTDZLODFHTjVFanRuTEh4VWV5bDM5OEMxYmlQSXE1ZGt6V3Fkal9kZ2RNbE9qZk83UHZDXzUwc2lNMjI1bHhfUktaSVN5NlRUMTdmQ2l4WFVNbFpqYzR4RE5tRC1TclNlRnlraDJLOUhGZ25LWWVDVFd3YlJWUnJrWQ?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-24T18:23:00+00:00"
+    },
+    {
+      "title": "Back in-stock: Apple Watch Ultra 3 Milanese all-time low clearance deals at nearly $200 off - 9to5Toys",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZ240UTZLaUdvdndRWWVfM1l6bWM3NmtBbi1jZS01NXJXOXEtam5iclV0MElsMFFWWHVOMVE5M19panRVV1hncGUwV0xRZEtZd2NPcWxZOUlITFR5ZHJwZUs5emhzbkFTMkZNYUp0MHk4VDBic0pJUTllZVA5ZktJMVBuRQ?oc=5",
+      "publisher": "9to5Toys",
+      "published_at_utc": "2026-09-24T18:09:00+00:00"
+    },
+    {
+      "title": "Prediction: This Is What a $1,000 Investment in Apple Will Be Worth by 2030 - theglobeandmail.com",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOc1lwYWZlYjNYaGIxdHNwcEdMakN1OUVIcmpDWTJ1dENGaTJGN05PSXRlV2JXUTAxZnlhOTN4OW82ajA5eHFsaXpic3VXc2lMTllsQUFqd1N5eGxDeDJ3bktLb0UtU2NTcm5pMHhoeWphRC1RSDJLTmpCSDhKalRIeThoWXpreEp1ZEtPREVvaWt5THFhMUM5SUVCU2hmaGc4LVFYYzVDUWJWYXpvaDJ0VkRlaEZPbEU2XzRlRVJKdGhMNjVISjRLaDY0MS14UVkwcWpLU3R6R3JvNU1BaHl2MXVHeGhmV0ZXVXMyWV9yZHdaQQ?oc=5",
+      "publisher": "theglobeandmail.com",
+      "published_at_utc": "2026-09-24T17:43:40+00:00"
+    },
+    {
+      "title": "Apple Shares New Video Promoting iOS 27 Parental Controls - MacRumors",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8tLVZvNnFrelU4c1A4THUyTUZ4dUh0NVhZOE5yMWNPVGFmZklGZWcwcUY4cnRVS3R4MGFBU0Q3UmxkOTFoa3k3ZXZ3UU1JSUF6UUhnUVd5ZlFRWGstZ3UwU1BvcW1hbW1uckpybFBpQWs4Tk1tUU1n?oc=5",
+      "publisher": "MacRumors",
+      "published_at_utc": "2026-09-24T16:58:17+00:00"
+    },
+    {
+      "title": "Apple stock is giving new CEO John Ternus plenty to smile about - thestreet.com",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWUVNbmpFR1NsaW9QYXVBRjhzTFdibHI5X3VvTHEwMHUyTFdMSjcycWR2VWU4eXczX2JxTnlzOXdFYVZtaWJrTFFfRUhWMXlGNXlPbmxfTnpQTC1lX3pmTlV2cWhUTzFzUmYtZkJtZ3lrT3c0SUlleDJwaTRjd0RXTkdRR0lFR3Q0anpiQzJWdVpBQWc?oc=5",
+      "publisher": "thestreet.com",
+      "published_at_utc": "2026-09-24T16:13:00+00:00"
+    },
+    {
+      "title": "Apple Price Prediction: Why Our Target Sits Above Wall Street\u2019s - 24/7 Wall St.",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZXZuTE4xWjNpZDVnR19falVSY3dPTV83enMtZDVPNEJSN3ZoWU96d2tmMEpqM3hXS2V2N2Q2UzM3ZEt6dzAwLWM4YkY4WUNYLXlYSnFOclNtOFRERGRnc2NQMDk5NHdrdnVTMV9BdkNiZUM3WlBCaDhlUXh5Z3ZNblNYN2lXSm5QNHNlZ0JQQ3NUM2pGRHRDMmRFSTN4Mk1BWWI4NjJjSGg?oc=5",
+      "publisher": "24/7 Wall St.",
+      "published_at_utc": "2026-09-24T14:00:00+00:00"
+    },
+    {
+      "title": "INTC Stock Pulls Back After Sharp Rally As Apple Moves On - timothysykes.com",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNNXBXbTFtd0J5bUpMeUNfcTZSbzlwOGR5YnNzdjljLXQ3Nnpadl9jY0Fma1I2aDZ3UEZiTVZwbGpDSzJwNGVIbkRVdi1mYzRBeDVBczBvc2FHT2RlWnEzWS1lemo4TmFQSmdlOTRmX0lHOTRoaWJYNE9oT21JSjV5Wg?oc=5",
+      "publisher": "timothysykes.com",
+      "published_at_utc": "2026-09-24T13:19:00+00:00"
+    },
+    {
+      "title": "About That Apple-Qualcomm News: 8 Key Items Shaping the Stock Market Thursday - TheStreet Pro",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxONmViZXdaamVjTHBuQWRfampmQnQ0MzdiRTZRdVd6b2h0dVhwVDdLVExnV2w1a3R4ZThqNDF4QzktZkZiVUx3blJzTkFLdEFOWDllanVlczFvQ2JYZTRwM1FkOFdIaUFWa3BrVmpiYlpZd0hmV3NuY1BMemFfME1uVDFKZ21vTGFJRkptOGFzdHdnM3dVa0g1QVc4Zlp4S2c1RWl3SHU0WDlrNXBzT29pWm9n?oc=5",
+      "publisher": "TheStreet Pro",
+      "published_at_utc": "2026-09-24T12:48:00+00:00"
+    },
+    {
+      "title": "Apple Stock Forecast After Beats 360: Is AAPL Too Expensive at $337? - techi.com",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFB4UDVmRHpNY1c0c21XNTJVLUpwMDJjTWFyMGNEMUtHNktNVDU2Sk5UNi16aktTaDVuVTFEVFJsWC12d3BHWFdNUzNyMHM1c0hxSTl0NTFtYmxFM1JyMDB1MG5ORTVveXFGQ2U2dHQtRnNDTHhmLXlV?oc=5",
+      "publisher": "techi.com",
+      "published_at_utc": "2026-09-24T12:32:25+00:00"
+    },
+    {
+      "title": "The S&P 500 has never been this concentrated in just 2 stocks - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUk9mUURLSlhHMDZCMkZFc2gwdkxxQVNWWnY0cVl4Zkh4VTZtcTRCRXZaVmt4SEwyU2kxNmFiZVl3VEgzSW02bTlZeGZwWC04U3Jiei03S1g4OWl2Q0NsVVczQ2RiU0l2U1JDUXZGdUZ1UUZuWkhQV3k3eVdoaGs3STdFRmszY1A4bG5EclREUi04WHZGblpFTGdaMDBYcHZCOFVCSzNYMzBPV0ZxeUxUMWQwSkZPcHUz?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T12:25:19+00:00"
+    },
+    {
+      "title": "The S&P 500 has never been this concentrated in just 2 stocks - Yahoo Finance Singapore",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQRXROTFllOVlyR2xTLVFPMkcxTFJqZjVfbUd2N2RFdjlPOXB0NXNWMUV2ckFkbG4ybkhWSjNFbXA0XzVTNTh5a2tHb0J6cFQ5ZDZtTHRfXzlsX3dLcjlpM2NoWkpsUVo2YU9vSmZDanJ6SnpiV1dyc2JsSXpTc0JZWElSRjVMLXNIeVdVdDFEVGljb1dfS0ZlTW01aEp6NUxGTDU2cjdJVWtqUFZSY1E?oc=5",
+      "publisher": "Yahoo Finance Singapore",
+      "published_at_utc": "2026-09-24T12:25:19+00:00"
+    },
+    {
+      "title": "Qualcomm slips even as it renews patent license agreement with Apple (QCOM:NASDAQ) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUmFYSFVkZHhyUktPbzdreGFFSWxkQkd0MXAwaFFTSl96VU0tNFdLLTNWZkxIRzNUd1dXaUt2Q253bmlGOURDdnNGVk13TFgwMDAxV1hPS3JXYXBMdGtHMVBSMWlUblIzcVBHbjZ3dzdlXzFLaEd0WjlwcUs2TzM3aXdaVEh4ckdpQlhmUFp0SGxNSW81UEpReVFpVmlJakFCYm13?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-24T11:40:16+00:00"
+    },
+    {
+      "title": "How to Play AAPL Stock as New Fitness+ Layoffs Hit Apple - Barchart.com",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNY3BrVF93a2RzTktIblhJdjcxY25UQmZDZVcwSTRIS3VvdTcwVDhTUjlCWUM5X2dzOUhZeHZzSzBEdHlraVZhM1Vwc1BScFd1YUYxNV9CRjgyNTNVTWRiMFhoSXdCSWZhTWEzMVgxaEVaZjBZUG92bllUYmpDeXJ6RFNiOHh4dGpaZ29rUUlOQURCdmlJdnNicVZ0ZGY0U294?oc=5",
+      "publisher": "Barchart.com",
+      "published_at_utc": "2026-09-24T10:34:25+00:00"
+    },
+    {
+      "title": "1 Unstoppable Stock to Buy Before It Joins Nvidia, Alphabet, Apple, and Microsoft in the $3 Trillion Club - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYVVnTUdmWTlGYmpZT0xZUnhzelJBTFRVVW15QWp5Q2ZkdEJWS1AzbmREQU1FekQxdmZucmhNOWZ3ck5ZZXNPVklrdmhhRGZuMDNMV3hqY01MMU1oQ0Fkam0tLW5VN1RVdlRJVGpRcGZnWWJaZjdRYlBWc1F2Vk9VY3hZWnZnOW1DNXIwd1BpYzNPelZSTHc?oc=5",
+      "publisher": "The Motley Fool",
+      "published_at_utc": "2026-09-24T09:46:00+00:00"
+    },
+    {
+      "title": "Analysts Offer Insights on Technology Companies: Apple (AAPL) and Fastly (FSLY) - theglobeandmail.com",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPcFpzM1lMLWwxRTB2TW5uanVBb2xmb2RjRTZIeDRDQjRMbGlZSWhaUkxoQkxwOFUtcU55SVF0eHZJNHhmTnBSa0lQc2lRTGo0aWJfMlRISEdIRW03ZlZDdHctQ2N2dWhQWG9GU3Y0RnpBWkJIVGhUNDZ1bHR2N2hITWtOYlV4ekVHTjJiMkJoaXVoRmRuRGU1a3o2WEVqRFd1U0VXekhHUFpZcUtrLXBLd0d2NzdFV1VZWHl4Y1ZWT2ZKMGFjbk83QktVdnNUTVJKSFFYNXRfckItSXdNRk1hYmZOLTdZWGRwYy1UZ1FhbkpPYzA?oc=5",
+      "publisher": "theglobeandmail.com",
+      "published_at_utc": "2026-09-24T09:05:53+00:00"
+    },
+    {
+      "title": "Apple (AAPL) Gets a Hold from UBS - theglobeandmail.com",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMHlCeklNVmc0OVpjbUFWZUJkTzh2M0VfOGxjZWFKX29LX3dRdVo2cjBsa1hkcWtfMGFmSERMLUtTci1GLWFtR3dpbWZLZUE4NkZMM1VlZ1h1Y0JLVmR6NF9pSERBU3VVY3g3bDhKTjgyUFJDbmVyOWxLakFEYWFzVy0tWV9YOTd1Z2REQi1HdV9GOF9jRzltOG9CUVFfUUpuNE1tTVUwYnd4eTdfeVEtNFk3SFZKVUU?oc=5",
+      "publisher": "theglobeandmail.com",
+      "published_at_utc": "2026-09-24T06:49:06+00:00"
+    },
+    {
+      "title": "Apple (AAPL) Stock Could Be 32% Overpriced After Fresh AI Cost Warnings - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNZTJYNko0cmVmdm1sRjNOWGZwRzdGUzhqODR6SWd0YXhvcjk3SW1mYzVZMDRCQzllX1R0UFhWaGN4dEhjaFJHZjZlVVpnQnhCdC1aWVZNbGlSZGlQVEFLWEY2TVRnRDJlVlJ6YXBOSVJvVUVrQkY4WU4zdUhHb2Y1UVZqdTMxODdCR0pOYlhQWk5JVEhl?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T05:14:00+00:00"
+    },
+    {
+      "title": "Apple (AAPL) After The iPhone Duo Launch Is The Stock Already Fully Valued - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSnlJeDNjTUVXV2FfSU5UWWJ0V0ZtS2FpVEVrblJPWTI0eGF3X0ZDTXo5ZEhxejFVdGZ5UEhkV2ZIcktfX2hDUElEdmVhTHpTVU1oN25fV0pjRnJ3a3pFQVlyMnhfUFp5RDFMNHlFVXlyaVExSUxVVzJBWEV4ZWp6MjNyOWZuZzdzMWJhMm9FalZCMTFPVGFRUlpCN0ZsM1NrTDFjNmxGSnpxaHdkM0FXUzVWVEM2Nm5ZbzhF0gHAAUFVX3lxTFBFZ09MTTRZd1V5LXVmTGRHbDFRNko4WFFpdjNNcWxXVnZNRXJJV3Z6VW9sa3p0TGpMOTJvVWplUEY0UXN4MkRhbjlnbkN2V0dZRUlMellxUzNrd21HWWI2UEl4N2E4MGoyUDFDLUFMS0lhNkQyVkRPWmo4VUprZTZ1Zk84OGJtR3dwdmJmTTVoa0lseGpLbVdSY1BIaUtpRlFXSVNVdFlkdmQzNm4xY3gxQlVKNWVJYUp6VFFLNFhncw?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-24T01:20:50+00:00"
+    },
+    {
+      "title": "Inside India newsletter: Apple set to take a bigger bite of the world\u2019s second-largest smartphone market - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOS3dwa1NMS3hMa3dtbzFFN1BDTWdVYzlNcnhyTWhaU0FvVl80bEZod3lKWGMxQnppVnd2VGE4QnpEb3BoWTJfN3Q2N1R3V1BSQ3FzMXlNVkhpcWdJZXJjZ3c2bHdDNjMzemttdjFNYS1jZ3hzUlZjUDM4ZmRxMzNlQmljdUl0V0k2UGpR0gGQAUFVX3lxTE43UDhkWHVkMDNLaDl2Zmp0MTdJdjN5M0lnaWZ2S1pGWkVyZTdHT3FfWklzYlVvWFBkeF92MDUzN3J4clNDVG5hanFySkRZeWVEOTR1RDJOUi1jZ1ZOWHNWY0R3eXhMbEVUdjZqWkIyR1Vka0xpcnQtN0pDRExsN1F4VE9jenpXSVZVbzZWTEctZg?oc=5",
+      "publisher": "CNBC",
+      "published_at_utc": "2026-09-24T00:01:00+00:00"
+    },
+    {
+      "title": "Apple Slips as $20,000 Macs Challenge Token Rent - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZ3M2cGxsSm5UMnJHeHdYNkZLcUN0QzZ0X3JmdkdrR3B5bUNnWUVSM09YcDBlMXEzaVJQc0JIbG55QzFud1ZDNVpnRUxKQ01Va0FqcHp5N3JldDdDeUtwZEhxUXg3ajhsQjctelRlR1JIVVhVS1J4Tkhfb19wMUd6eklpSk4tZ0pCcHZLSWhPb1k?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T17:20:22+00:00"
+    },
+    {
+      "title": "Pete Sessions makes significant stock sale in Apple from his IRA - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQOUVMbUl0bzJTaGpISEZpeXB1Z0lhb1F4S0d1TnRjUTB1WlJ2TVpuRGJUUW9RZG1MTDZhbkZ4cUxfWXVOTEc3Y0d5VktXb2pLalZ6VEU5eFFXN1dDa3hQM0tJZy14RkJJUkhoUHljN3VyOU9naGRaWGxwTThDS2lfdy10Njk5Njk0RjVvLUxaeVcyR2hXNW1vYktyYzlQTWhTR3RCYXZQRFNpRXN5NnJlOTRlWFd6MlJnM3l6UVhB?oc=5",
+      "publisher": "Investing.com",
+      "published_at_utc": "2026-09-23T17:12:47+00:00"
+    },
+    {
+      "title": "BofA Sends Stark Message to Apple Stock Investors on iPhone 18 - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeE9kbFFEYktvc0FMT0NRYURoNW9kdmFSalBVNnpDamE5LVNIblJJR3ZXbnREWlh3RFF3a0Z3X2VBdXdQOVpzdHlmdXB4WldUakRrRVMxc0VhX0o4Ulp1SlBqbkt2UHNkNElnMDVSYVFvUV9TWklVNlYxZlpGYkpYdm5paE9hMnBUTS1BOUxzV1dpNGZCTFd1TGFTNA?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T16:47:50+00:00"
+    },
+    {
+      "title": "Apple Average iPhone Wait Times Increase, UBS Says; Maintains 'Neutral' Rating - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbmVDR2VnOFZFOW9tc3hCbTJpWVllQ0hoeE51SUpuTU4wLThtcVVJTzhlYmdsUmE5T3Z0cVlfT0dSaXNwUVA4SmRsQ2NYblB5TzNSZmpnSklKU21BN1lCUUJ4NW53Z1lhM2d6VTZ4SzRZdFAtcXRRZUR4aVNwVmt4YWlubW5JUkNUOTJJZV9OekFKWUpTN1RzN0M0M3o?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T16:45:34+00:00"
+    },
+    {
+      "title": "What Is Going on with Apple Stock on Wednesday? - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNUkZEOVVza0UwNThRQkZITGl4LUV3ZVhMNlBtMng5Q0dEYVhvQm9UN0FJT1VHZF96VWlmNF9lc0RaNGRBM3dDVjlqejJONkdINUNpeWJYeU1ndXVEd0RXZE9TRUw2UjZjNzVIUG1xZjhDYlZEY3Zob3RpR3N5V2UzaVpocHpaMkllUVp6bDlhcG93SUx6dkUyb2V3OFBTNXFN?oc=5",
+      "publisher": "Benzinga",
+      "published_at_utc": "2026-09-23T15:46:45+00:00"
+    }
+  ],
+  "sec_filings_in_window": [
+    {
+      "form": "4",
+      "filed_at": "2026-09-24",
+      "report_date": "2026-09-22",
+      "accession_number": "0001140361-26-037584",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126037584/xslF345X06/form4.xml"
+    },
+    {
+      "form": "144",
+      "filed_at": "2026-09-22",
+      "report_date": "",
+      "accession_number": "0001950047-26-009738",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000195004726009738/xsl144X01/primary_doc.xml"
+    }
+  ],
+  "latest_sec_reports": [
+    {
+      "form": "10-Q",
+      "filed_at": "2026-07-31",
+      "report_date": "2026-06-27",
+      "accession_number": "0000320193-26-000020",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
+    },
+    {
+      "form": "10-Q",
+      "filed_at": "2026-05-01",
+      "report_date": "2026-03-28",
+      "accession_number": "0000320193-26-000013",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+    }
+  ],
+  "financials": {
+    "cik": 320193,
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+    "latest_reported_facts": {
+      "Revenues": {
+        "val": 62900000000,
+        "start": "2018-07-01",
+        "end": "2018-09-29",
+        "filed": "2018-11-05",
+        "form": "10-K",
+        "accn": "0000320193-18-000145",
+        "unit": "USD"
+      },
+      "RevenueFromContractWithCustomerExcludingAssessedTax": {
+        "val": 109417000000,
+        "start": "2026-03-29",
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "USD"
+      },
+      "NetIncomeLoss": {
+        "val": 29789000000,
+        "start": "2026-03-29",
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "USD"
+      },
+      "Assets": {
+        "val": 383266000000,
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "USD"
+      },
+      "Liabilities": {
+        "val": 275746000000,
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "USD"
+      },
+      "StockholdersEquity": {
+        "val": 107520000000,
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "USD"
+      },
+      "EarningsPerShareDiluted": {
+        "val": 2.02,
+        "start": "2026-03-29",
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "USD/shares"
+      },
+      "CommonStockSharesOutstanding": {
+        "val": 14608963000,
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "shares"
+      },
+      "NetCashProvidedByUsedInOperatingActivities": {
+        "val": 116996000000,
+        "start": "2025-09-28",
+        "end": "2026-06-27",
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "accn": "0000320193-26-000020",
+        "unit": "USD"
+      }
+    }
+  },
+  "latest_earnings_transcript": null,
+  "unavailable": {
+    "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+  },
+  "cik": 320193
+}

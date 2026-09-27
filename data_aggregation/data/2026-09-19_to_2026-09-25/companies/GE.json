@@ -1,0 +1,425 @@
+{
+  "company": "GE Aerospace",
+  "symbol": "GE",
+  "date_range_utc": {
+    "start": "2026-09-19",
+    "end": "2026-09-25"
+  },
+  "retrieved_at_utc": "2026-09-26T23:29:48.143090+00:00",
+  "news_source": "Google News RSS (headline metadata, not full article text)",
+  "news": [
+    {
+      "title": "GE Stock Ends Lower Despite GE Aerospace Scoring Two Aviation Wins At Farnborough - Stocktwits",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOSzNReTR5Q3AyNjdVNV9WeVFQYmoxeHZVNjJERXJWTlYzcndhcl9vLWFDU3V1NG1zdFF6dDluUXMxcFZIWTlRRmh6cERTVU51Rjh1VEpJb1FMc0JULXBzVVB2TGZMUGttbXRSeEExOWp2RGRWRklEczdDQ1V6T1plU1J3N2ctWUtqUExoNHd3Z25SZ25haldLY2VYbHl2R25pQUNEVGpZaU5BQXk3RDYxMVFtZEEwcDQ?oc=5",
+      "publisher": "Stocktwits",
+      "published_at_utc": "2026-09-25T22:59:18+00:00"
+    },
+    {
+      "title": "GE Aerospace (NYSE:GE) Shares Up 2.2% - Here's What Happened - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQWHZVLTE4TElZMFNaSU9ZVi1PeWszM2FZOTVYX0hUb0ZxbDY3Y0V6aUMzZ0xTcDZfOXdyb1Q2Y01OaTh0eVdMNTQyUFVQVnNGX3ZLVDhlVmUwZ3hhVjM0RkpCMjc1eUNHbHpKWWNnbTB5Q2lSa2pHY0RKNk1MTGlOWXhJajQxSU4tYWExcGxvZEdpbGxNWFM2SnFlUFR0bl9HNENWT0hfcUZBXzQtTkVnaHlGWQ?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-25T21:22:34+00:00"
+    },
+    {
+      "title": "GE Aerospace (GE) Surpasses Market Returns: Some Facts Worth Knowing - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdDcyc3BFdTRnTEE5NVAxWHRZT19tV1JYU0U2aGhmeFVjMU55OU9yOHpGVWVnanpUZm9CSmY4WHQ3Umd2Nk5aeWVCSEV5MWNGMGJVTnBXaFp1Sk12YnduZC1IN0FoOHgtQ1d4cFVxVHF6dUg2b0ZzV2xncldXYkNuYUVJZmwyRFY5NzlUNzYtZkRvR3VKTTdoRGFLV1hIQQ?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T20:45:06+00:00"
+    },
+    {
+      "title": "GE Aerospace (GE) Stock forecasts - Yahoo Finance Australia",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZlBuN1NvaUpzUElLZ3pnSzhqN1hTT3BscGpwTllnU3NzblYzcm5SSFlmQmN0ZnZwbUw0WjhHX29nSXZoeXlLTmhDbzBpS0ZzaEFBb1RlNHZQMWctSFdnVzFPbGJOMFVBSFo2VUlqSTlRXzVhWFBZWUc5czdJTjltUThyV05NN0ZlMjZHbHB2X003dw?oc=5",
+      "publisher": "Yahoo Finance Australia",
+      "published_at_utc": "2026-09-25T20:39:16+00:00"
+    },
+    {
+      "title": "GE Aerospace stock outperforms competitors on strong trading day - MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOOHdqVlc4OERRNXFyNk5TRG51VmtTdlZMbUIwanZNVy1jRHBzY09xdzJyT0FIY2RxdGtxUndQMGI1M0ZjTERLM0lfa1pGS25EUExNTlhzcmlReHhiMm1KYm1mZkdEVnJCN3hwT0RtRHBQdlFUR2xnY1BQNlF6MW01NnRpMXBTa3JlTG1pRFhDSkxsNzZDb2xhRjlnYmI4QVNPRHRBZllndlRoWEJlN2Z3bEdRd0pGYkotLXJ1dV9IUnJfSjJxNWJuemlGU3dRaWVqYXJPOS1Hd21WQQ?oc=5",
+      "publisher": "MarketWatch",
+      "published_at_utc": "2026-09-25T20:32:00+00:00"
+    },
+    {
+      "title": "GE Aerospace Stock Gains as $225 Million Funds Physical AI - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNSDhMX2FrVjlvanhPdzRsX25QLVBmbGw5ajFBMlBmLVpyRU5LOFJNQUJmMFVJaFlPVXZ3RDFPOHItdkZjWGY2emxIMklFLTNrek9lRmgwQmctdmhMRlYyQWw1OXBFbmRnbG0xOGE3UWVnb1o4YktpWkFSd0dnX3ZJWUFaT2doZG5VeC1MU2NnNHp0eHk0UC1IdA?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-25T18:28:29+00:00"
+    },
+    {
+      "title": "GE Aerospace Stock Gains as $225 Million Funds Physical AI - GuruFocus",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOdklVeXF3UklEUGxRUk9RSWFJOHB5U3VsODN2cE4zQmtqMlVKekdXSjU2a3J2cU44VkRnamFjWHhIaEM2eE1xQjZYenFmd0VpX05wWkg0YUpqQlNJa2JDOFFTNXo5TnJZTDBIT2xWYVh4WDVUNl9wVEg4WldManNUUnRfZnkwYzdzeXhBbWcydGl3WGhJLVliMkU2SWQ?oc=5",
+      "publisher": "GuruFocus",
+      "published_at_utc": "2026-09-25T17:35:48+00:00"
+    },
+    {
+      "title": "GE Aerospace stock faces a lower Jefferies target after Q2 growth - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQOTBVbmRaaVFXa3BNWE9EdFNlaWlfVHViUVNZbTB3aEt6ejlqQllCaXF4UWNMa3BRTEJ4RFY4QXhQVzEtdm0zcG1yVGt4T09uV1c1X3JqVlhJa0xOeTdFNHpSdERPazBBaTVpa2ZmQkdrelZyNWxKWXdlLU01T2VPUlh0SnBzR09BUDNtaWVQWFpSdjFtZWhRSlVuZWtUQV90bUxpV29YSFk0SHlNZTZoRk5JN3BXNHNUekFQMWMtbENEOF9STlg4?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-25T10:10:16+00:00"
+    },
+    {
+      "title": "GE Aerospace $GE Shares Sold by Engineers Gate Manager LP - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVHVPaHRrc3BnYmFFZWJGNllxYl9pWlhHeFJacDdsbFNzX1NLc19IU1ZkeTQxazdlNllqUjNTaVdNMVQyZXUteXRWbHUxcjVTMjMwS1kxMDI0VDFRV2c1bXh1NEtlX1FUOG1wQUI1emN1Q194TGpXcVh2R19GT2pYcEhrVlNsMHNqVDBXTGRWZkR6UVBBdTRJWk9iNEdmSU1tZlRKMEJnOUx0czZQZmx1X0kxV3RZdGNx?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-25T07:22:42+00:00"
+    },
+    {
+      "title": "GE Aerospace $GE Shares Bought by Envestnet Portfolio Solutions Inc. - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMldjbzVRalNOakZHQlFvTnJxSzJ3X3N4TnBqT2JWcklSMmNjUlFuMXdTaGR2bzBZTEkzaWc4dEo0TjhTX29Nem5vYUNCY0t5d2hYZExBdzRKUFdOWndXaHNWSFM1bzY0SHlHaVRBX0NXbmxfVTlwRnVFSHlxSXFQQ2VFWVlVMFE5cUpxdHZ0aXcxUGkxdUFOUTR3UW9fRHVXQ1R0VUpkbGw2NjZ0dGhicG1yUlJtUmRmdmdPUVc2YnA0QVdvQUE?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-25T07:08:34+00:00"
+    },
+    {
+      "title": "GE stock heads into the open after a 0.04 percent gain - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRjNJZHVZQVhkbGRESG1vQUZNWlNNRFlqOHZUenV3a3JOLTVlMVg1QUNDcjlPRWFKcDVrS3l4VnczTWd3YVVXUU8tc2tycS01TF91V3p0QUM0dDdfYUtFRzB6M2VMUkc1SHlRVFZnVnU1dkZZTW55dWNncWxNUjFwdndDTVhQUVhKaEF2T19WbVJyUzNrT0h4anMycWFza2Z4Z0lUWGpsRkRIZElSOWxpcGNB?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-25T04:17:22+00:00"
+    },
+    {
+      "title": "GE Aerospace stock gains 0.7 percent ahead of the open - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQUxlbENiMXNsczhsTnZDa0E5NGtJODZaZUFmZGF6WGFaV1UtVTd0NF9BR1NMelo0X0xVZ0FZUVVMMHdDcTZxeVdjY1NPaldvZDRvc0dpeEFaeWFFQjJkTHNWbTJNaXlieEZaNkV1eUZxSEZkWWlxZzRKUEJBX005bnZRcV8xVzJPbzF5NlI1cG5obEtvVzk3RWdyOEZ1MVc2LUk3YURFV195RkJsb083WVl3?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-25T00:58:06+00:00"
+    },
+    {
+      "title": "GE Aerospace Faces Margin Pressure From Rising Costs: Can It Recover? - Zacks Investment Research",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbHJqUlFmNGt0ZVJxbnBhVXZ5bFdMX3NjSTNMQ1RuTVFWOXpYSExueHNXTnJFU1RfTEUwUlQ4ZEpua0hOOGptQ0UyeWxLaDRBQ3dCcDJwN2FzekM4RVI5cjRVdnpzSzR6WWVhV0NHUlZMY2RFQldLU05OSHVqeVZwZjdxZkxkSUZkYkJGcExGcWFVQWZ2eEtaalR5X0NoZDA3M3RveGtxU0NlTmlU?oc=5",
+      "publisher": "Zacks Investment Research",
+      "published_at_utc": "2026-09-24T20:22:37+00:00"
+    },
+    {
+      "title": "Is GE Aerospace\u2019s Lead Already In Its Stock Price? - Trefis",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPU2Jlb3REUUFUQ2J6bVFibUZPaXU2MHhYS1k4U2w3dXpldzA0YVlCOGtBSzh6RlFWWWNjTzlIWnY3VlB0dmtyUXZWc29zX1VKeDg2bXBhQzMtWjhJdUJhVzJnb0dsbm5nck0wZU1HWTZvTldmbWp6LU1SQWdTb25tUmNEalJrYjI5TWVQQmhMWXprZEdVV2l5MGlDRlB0QmVZRGtXbFJ1TVBadlU?oc=5",
+      "publisher": "Trefis",
+      "published_at_utc": "2026-09-24T19:23:36+00:00"
+    },
+    {
+      "title": "GE Aerospace acquires CPP for $11.75B to secure casting capacity - scanx.trade",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNy1zeDJsMDVWVTNvb3duSmljeThFRGxSVVB3Xy01a3l3SUQzZGI2Y3VHNVJnRlBJMmhBU3lRbjhNUVJCUGZvb3dKOXIyOEljSG9UdHp4ZmNxVzVNRExxQXZmbU9JMm1XZktsTUgwUmRxeXo4Um5fMEhrNzVTMTRXRWYwczF1NUxBb0RtN21HR3FPcE04SVZHSndHY0FTNGpoaFQ1cmNCeUg4THpuQ25fYkd0YnRma1poMWNqag?oc=5",
+      "publisher": "scanx.trade",
+      "published_at_utc": "2026-09-24T18:16:33+00:00"
+    },
+    {
+      "title": "Jefferies cuts GE Aerospace price target to $435, maintains Buy - scanx.trade",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZjRpbDRZTlFkaTR3NUVBdEhMbWU3Y0gta2NHelVIZGNVZi1SLXJ0S2E5OHM0WEJBWk15UEgzY3RZNGZRalhCVEZwQ1Y1YnhqcXduZVZrVEIxc3pYRnJQWGJTZ1VuZXpJbDA0ekpOc0NiR19fTGJNQjNDRTMza0xvNXF5ZHdvTVdNTkpiZ3RJZks1eGkxMzByNndtS1RvbHBwZGFpbDRCNV9WbzN3T2tYcVR1QXdtUQ?oc=5",
+      "publisher": "scanx.trade",
+      "published_at_utc": "2026-09-24T17:49:23+00:00"
+    },
+    {
+      "title": "GE Aerospace Stock Faces Pressure As Jefferies Cuts Price Target - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaHZIc1FBRkxMekVUNVZWSmQ4WXFHR2VXQmZVOXBuek5FX3RhRGVDeXkyYkpzczMzeHNVZi1NUWQ4RzhKMWJVcXRQemNIeTkxMnN4OWgxelBuQkRkR0tXTUEwOUIwa0hBZFJUdXB3NkdxQm9YOEN5Sl9zcWhBZ1ZnN0lQZGxLRGdlTVJic1BzYUJiRmNIbVl0UVhxV0xPZDRVdTVvWUpaVmw5ZEtuUlBZWHBvUkdObDEwTDN1T2prSQ?oc=5",
+      "publisher": "Benzinga",
+      "published_at_utc": "2026-09-24T17:25:04+00:00"
+    },
+    {
+      "title": "GE Aerospace is Spending $11.75 Billion to Fix a Supply-Chain Bottleneck. Will it Pay Off? - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQN0NxVFA2T0dld0VBeGVERDRZV3pxRUc1NDl0ak1lOWZBMG1ublcxQWRCWnNSaFBJTnhZdm9ZckZEMmYzazZuZUQ4WVQ3aTMtZDlwb2tnWmt5NE1SWEozLV9KSElRLV9vR1dXVXh2bjdHNnNTdVU3THdxQnhiYUJDbzBDaEprZVllYVdvekZSLUJKTF9kOFVr?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-24T17:18:01+00:00"
+    },
+    {
+      "title": "GE Aerospace (NYSE:GE) Declares Dividend, Deepens Supply Chain With Deal - Kalkine Media",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOanUzR2NYbzh1MGVxZWVYRVU4VHpNODhIVHNqSVlaellYSXRCX3pWZ0txX0p1WkpmMlhQeENjaFN0bHFPVHBqQnR4Vi1FcVVFTnE0cEhOWkhFVkhaQ3FXcmV3Tml1R05qRXFCSkxIdnFkdXFvMUZxcnhEcWxsbDVXUjBVNkNSYmlLQnZuOUJOUzcxam9ZYXpMRjhQVC1kek1fVmFZYUNNUDBwNWpxUF9hLVJ5TmE?oc=5",
+      "publisher": "Kalkine Media",
+      "published_at_utc": "2026-09-24T16:43:00+00:00"
+    },
+    {
+      "title": "ABNB vs GE: US Stock Price & Performance Comparison 2026 | MEXC - mexc.co",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9yNk5QZ0NKelhqZ0pWMmZTNkR6QVpiVjJ5MEpLWVl5V2ZrcGVIVDE3N1UybHJvYmtaUE11NTBfaHF4bEMxS2YwU01GOHhNRjQ?oc=5",
+      "publisher": "mexc.co",
+      "published_at_utc": "2026-09-24T14:16:45+00:00"
+    },
+    {
+      "title": "GE Aerospace stock trades 18.56 percent below its yearly high - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWHVVa21ET2VHbFVpUGFoODAxMi1ucDV6YzJpTGVqcGhHNTBCRmlOd3NhdlVzTTlEU0dYZmJtNXJ6RVFYSDI0cWpHeWhMX3ZhWjYxclFHY0ZsTkRSRnN2NVE5Vy1CMVhYUUlMWDFaOUEtZ3hxQ181ZG9xWEZuMVgxWUhMLUFjMGFnUms3UzkxTVBBRi1aalNhakNyUGo4bXF3RWtoZWFkVnZHdF9FRXUydWMzWVdnT1RSNGY5ZWJJVXluZw?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-24T13:40:55+00:00"
+    },
+    {
+      "title": "GE Aerospace stock reports 21 percent Q2 revenue growth - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQQmUtVHl5bGRSSVl6QlR1c0x2QXA5MnVQSlhzMU82N0d5a3Njd3lJMDBZa2lUNXNoc2FoYkhsSTkwOTNmLUlZVjhHZS15QnhlVDhfbFl4NzZldDVTcGtlV0FfcjNqcVhIbzJIWTdOemM0OTF1TnFxMExQVXB4dkV0dEdKTHVab0dvVFpySGxrZDBKVkhaM1FnQjlyWmk4cXQ4NkRpOWQtQVh4VzJvYWlsLW1LN1VJZGlQSHc?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-24T11:49:49+00:00"
+    },
+    {
+      "title": "GE Aerospace $GE Shares Purchased by Envestnet Asset Management Inc. - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMF9UTVJMdWRpaHNsaEtFV0lSQzlCaFZoV1FoaXE4WFpxdUFWVmx5aTRHMVE3QXBuVEJ2MXZJdEREdkVRNmNMNEtmYWFBODk1SHZONzZiZGFJTmYtd1FTSnhRWXJPWVVfaTAxc3ZNMFlYT0NxOU8yOEdGdHBacjF4QzRDaVBhZnZHZWNkRHZyRGsyZlNDdFJzaWRmWHlBTGRDNkdGSGMyQjJiS1BYQlJDcXJaeDZJOHgtOFNtaEpPbUtzcnIwV0E?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-24T07:15:57+00:00"
+    },
+    {
+      "title": "GE stock heads into the open after a 0.30 percent gain - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaEl3OWNtZTFqVnU4LUpEN2VoSVdFb0EtcElMREFZMUx4NF84NHJndnBZd3ZEU0ZVYjdfVnZJMUFuZ3JOMUtMZmI2NU9naDVMendWbC1fUDIwNmQzdUFsUWxsMzNOdWZjVTdhckVld2tUb2oyWmFJN3MtN1QyaTQ4ZVg0SU5tM2pnaV9vb2lFWk9WVkFVYmZJMi1SZmdrMzlmaEYwTTNMcDI5TldXNU9QcHBB?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-24T05:48:12+00:00"
+    },
+    {
+      "title": "GE Aerospace stock gains 0.18 percent ahead of the open - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdTRFYmNuWlBDSGItNnZhWjdCWW1NTlRpYU1sekxRN29KdTZ0UGVuSmlqMnBSajlSaEp1RDhyUHVPeWNQRENPaW5VNmVfd1pCb1p5bXExVFBpcmoyQ1JCaG1hYTlKSDVZQ3hMUEZ1aWYza3Ztb2VEX3hZcWxtZFU1MlI1NFF1VXk1b3VZTWF1R3RBUkFFRHJmeDRsNG9mdFJEZU1RSFcxUWFoel92X0lNUDR5Zm1JOS1Wb3c?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-24T04:48:41+00:00"
+    },
+    {
+      "title": "3 stocks where super investors are showing their strongest conviction - financialexpress.com",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQa3M1RkdSWjZZZFM1N19mR3k2SlBfZnlVd2NqbWc5Q2JWbXcweEVGa211UUc0XzNiMC1ZTklZV2U4emh2NHh4cDRqUXpvUWh1bEx3ajBRT01iSUo3NXRGeE03YVg4Z3lWRm4tOG5wandWa3ZrSldWLVdnMV9RaG1lcGJtTDF3UEN3TlZkX3JOM09jRHNfWEZnY1V1ZmxQQzlKSTBvdlNrakFFSmE4b0tjWXdCRUE2YzdUSkppd2FFUVp6OUZURjBXTGdudUtUQmvSAdYBQVVfeXFMUE1HSUljNXFiOU5hNFlNWkVIVTNFZTR2WWZwc0ZCSUw1ZEd5S3ljMkpfeU1pYU1SV3FKcXhfTFRHcnh6ekY3ODhDNTM2VGdIX3Y5MzlfOGl3RlJuYzFnZmFLbXJJblhBMG1xUkQ4Znd3ODNycFFkeE1uamJPclZUMGI3dHIxeXplbmZubDdYRlVyX3B0N0xpdUtKbDl6bm9DYVZLUnZJbFgxaFFCS0RjMlpJOGc2dDRiRUxZaUk1T3lzQXF6X1RPNWl5SXdmY1V0eTRBWnRSZw?oc=5",
+      "publisher": "financialexpress.com",
+      "published_at_utc": "2026-09-24T00:36:00+00:00"
+    },
+    {
+      "title": "GE Aerospace $GE Position Boosted by QRG Capital Management Inc. - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQU21sdGlxNXR3VTAtNEc5X19Ob1h4cF9SWTVsMS01M3lxZUpIVTZveFB6dUZGNWJNa2V4TnRiS3g4Z0dPWTd2RW5BLUdZRnUwNE1OOG1ZTEFfQmlSTWc1S0ZoeTMwcnh1VzBweFpwMXJvQUViUmoyczE5ZnRYd1R2TVFLR3d2V0VLQkdmTGNyZXR2Uk1JcmdUeElNcWZwS1AwNko0NkRHc0R5d0RQNG9YZHBwb01zX29aQ0ZzUDZxV00?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-23T23:08:13+00:00"
+    },
+    {
+      "title": "3 Aerospace Stocks With Revenue Growth Up To 43% - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOTzhPYkxZTVluR2ViTklFemNvU0FLalBnN1M4RndnVDhZTDdKczI0eVNpTnZHOGQ4a2lUMkZwWUs4R3JZV0RsdGNaY3QzSDhwamk5WUJZV3VEYzFMZjFCM0FkUGVlbzRCRnh2RmlmSTlHNzNpVkNyaXBrRVNFR3hsWEhCdWF4YTRkSUlQeGxBa3RLNW1kMV9XM2tjVDl0amxBM1dCTDdIZUtqTlU3eFpXOFUySGk4UdIBuwFBVV95cUxOR2ZqZkZwSEJzT01kYXVzd3g1NHhnaTRDTHk4aWIyUGdMa0k1M2Znc09Sa0Jiek5hY0d2djZvRFBHN1hMM2VwcGVfcGRLUURlQnpXcnkwZzZ6S1FYQ2VQQUlZVmJ6RDRlYWVqU3FTT0p5bm5tbnA4ZWJKalpCUk1KX2VDSVZfdUZuOEpuamk1UHhiVDZTZ01YOUxVdUduY2pJb2ZqSkM1SXlPcndHMzJ1THBNVkxFV3pDRTJr?oc=5",
+      "publisher": "simplywall.st",
+      "published_at_utc": "2026-09-23T21:34:29+00:00"
+    },
+    {
+      "title": "GE stock ends the day 0.52 percent higher at USD 321.63 - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOFVHckRSandLZWJuYTF3aTBuUmZEOVB3MVpSQ09BWGQ0Szg4dTJrcmR6UDZ3TkgtejBQeWVxaXdvV042a3JXZ3NMLXhZQm9rMGNrdmlIeDBIaUVyNnRBVG85a0x6eExQTmNvTTQ3TTUxcjV5NDFrVXBibEp0U0VEZWZRVzQxN0t5TXNWUWR0bWliOG44dkVfMk1Gd3dCZlFpZ3IxUnlNWG1WcDEtM280SHB6a0U?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T20:55:19+00:00"
+    },
+    {
+      "title": "GE Aerospace stock reports a 21.1 percent revenue gain - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVE5QNW9JODRpMlRndlB5TU9LYlJtTWVfZG5JMVJobFZaN0tQWEthYUVxNGVaN2pMcmJ2ZnF6X1dldkZsV2lTUElEYXhadlBmQmotRWplR3RIOTlXQ2MxUzlhNHVJaW91Um5GQnlyWlgzdEJuczZjWkl4MWVpZDBNakhlZmYxTmM2RmZRMk5malhHQ2VkV2ZGYmtXSUhYQW0zblF2TjRLWGMzbjd3ckRBRjZjd2dNazZl?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T20:51:43+00:00"
+    },
+    {
+      "title": "GE Aerospace stock could rise 35% as analysts h... - Pluang",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOY3pzNkwtTDJUell3cGtUbFFOWk5Rd3RtVjJ2aUhJRm14YTJJaEc4UE5lVThVWDhTaDZhZkpzVi16eXJFaWRiWThHbDdvbV8zNjJkZHNaZEhlem4xZGlkUW1NaGQ3aWI1QmpLU1R1NDFPSWNGbm1Qb09BWlVnQTZXRkdRS1ROa2FHV3RaUm83QTEtelF3MXZEWERDMmhlODUyVEE?oc=5",
+      "publisher": "Pluang",
+      "published_at_utc": "2026-09-23T17:31:02+00:00"
+    },
+    {
+      "title": "Full Throttle: Kratos and GE Fire Up a Next-Gen Defense Engine - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWTlHYW5yX1dnZ2x1U25ETzFRbXprdElseTlGSFZIUmFyMHBzMWU4bndkaU44RTRsTklFQ084VUo1M0xHWFZuUTJoQk00N0ZkdElyb2ZrOUxDXzVYN0JSYi1MTU02T0hrSm40Mmh1XzMtNjJOWGNyelBoNmRGNXdtb3EzVmpsU2ZJaTkzcUNKN2syOGE3WGtkWFBXN3J4dGc?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-23T15:35:01+00:00"
+    },
+    {
+      "title": "The Zacks Analyst Blog Highlights NVIDIA, Berkshire Hathaway and GE Aerospace - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVmswNWxUQXc5MnVUVzdRMDFERXk4T0k1UDNvTVRkRmZseFZvY0Z4SS01R1RiQkQ2U2tQWm1mZks0c0gycVBsUjhRQzFEVzhSS3JrNDhtMzlMU2E0dzFGQVBnVnEyUnNZcFlYNkxZWDBiZDA3MkFLUHYzSXBzQ3ZWREUwYms3UV95aFFSQU14R180TVVQc3V3NUt6d18xMFlva3Vr?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-23T12:43:00+00:00"
+    },
+    {
+      "title": "GE Stock Price Today - CoinDesk",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1pZGFwUUlzM2dtb1RmaXZxdjhDMk9QQ1M0SFU4S21KS1U5X3pwa1FYMF9NMEdaVWs1MVhxTjloendMd1Z3Ml8wb3VCOUZldnRY?oc=5",
+      "publisher": "CoinDesk",
+      "published_at_utc": "2026-09-23T12:43:00+00:00"
+    },
+    {
+      "title": "Is GE Aerospace (NYSE:GE) on the Radar as Oil and Bond Yields Reshape Market Tone? - Kalkine Media",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcXZJNDVWemw5NE1EcDhTcjl6VllkdkZUdFk2LWRYT2x3TGVVTVM2QkkteFpCNVRkUDhpdGRXaXItRFJDckc4cURYUFlZMUFDeFNFeHBTZnVZZk1DRXBXOU5PcGE2dC1kcnhmY0tKaXJqdEpHY0RWR1dldkw1OFZab0dWYWpTd0NFRjg1b3VTT1ptcUQ3bnhEb2FXVmkzcHdRaE1TWG55bENoTlZ5cW9rR1lIRDRRZWRmcHU1LURvZ25Rdw?oc=5",
+      "publisher": "Kalkine Media",
+      "published_at_utc": "2026-09-23T12:30:00+00:00"
+    },
+    {
+      "title": "GE stock trades at $322.77 as earnings growth supports valuation - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOb1BLX0V2ZWU5bkxoYkJicXlWZENjRkZ1YWcybFBRc3NJZlZHOTlId1Ntbm1BTUFqNzhqMDVHNjV4ZlFZVUQ5NmtKVm5zbjNsWFluZkNJdGZxVlgzUF9xRnVJMGdyMm05ZmFiQVZ6a2NrOXVxZDJLWFRvNDZwN010eXpxMGdxV21hS2VxemdjWDBwUFZSY3Z5WEwtcmhKYXZ3cjZuRzRSWUhyYVd2ZUVTYUdpN1JVaGJTdUtDbUpYeUVaLUJv?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T11:43:54+00:00"
+    },
+    {
+      "title": "What would make the current case for GE Aerospace (NYSE:GE) hold? - Kalkine Media",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTHQwQmo3NVREUzZCWUlYeVNjdmxMbW1xNDByMjRhNENRSHMxZFotUkttUVNvc0xwSUF1NlZuX0RRRDd1X2E0NVZBVlNiYWdjaUdnSS1hYnRuUy04RkU3NEdxYTg1VEQ3TUQ2bk1UMjNNTHpZZ0JKbFl5MFR2M3JyQ09JSWprdnI5OVN3cl9IX19uYWxILWxpdEVOZW1Od3pIQXBFdTVCcjdLUWM?oc=5",
+      "publisher": "Kalkine Media",
+      "published_at_utc": "2026-09-23T07:35:00+00:00"
+    },
+    {
+      "title": "GE Aerospace (GE) Stock Forecast and Price Target 2026 $GE - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB1dmxMbWtVMGtzM1pITHAxOGF5bHJJS09uRE9EMjBacHdTOUhWYzFoX3AtOTFYdm9iMF9PMkhLWXJWMmE1NUw3clFvZmJKSUVpb2RGV3F0RU5OeW5qRnBOcA?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-23T07:00:00+00:00"
+    },
+    {
+      "title": "GE Aerospace stock adds 0.07 percent ahead of the open - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdGhoU0wxQ3J0QU5VaDJrNnRNcjViSUxubE1Ib2tYeWdTRXM0d2RkUHI3MWVXYmR5cXllSW9vd3JQSUVVV2lsaUYyc2k2cURIblFObmQxT2ZlLUVLblNKRndCcVM0VXdvU1hwQm83SVFIampNWFlXMnktTm9zbTlOZ0ptYVg3c292UHJ2SlZKSWhPeGFoX3ItRUhtWjBDWU9rMkRWMmZpR1JTUERZdEdDSkVwSW42T3Q4?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T05:35:42+00:00"
+    },
+    {
+      "title": "GE stock heads into the open after closing at USD 319.96 - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTzhhZzczaktsYTY1SjBqbUdrdUFCS3V1QkpXNWVfZ3ZQc1RXSlowZlRKel9fRFo3YVdfTDhKQ1ppYUtseDVIWE1kdklnLTFqRlFKNWtSSEpnX0h5Q1E3c1RQZ3R0LS0yZnNUUlFyejZLV2UzLURZQmJfN01DcnRkdWFDOEo2bnFVODNuWFZsRFlYelFDcEhtUngxMFZ0OG1BZ1p6NlpUa3dvQU45NDV1Nk8wYzEwWW5EVmVF?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-23T04:38:03+00:00"
+    },
+    {
+      "title": "GE Aerospace remains a Buy despite oil price fe... - Pluang",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOUJOazVkV1EzcGR0bmRTdGIxT21xMmRuc21JSFAyYzRyczFCZFh6YWxiNHp5MjBCSmVsWXFsdVlWaVlXeElvX25CckoxN1YwTXVFT1V1YlFwX0hfV2Z3TThEdUJxS0tnb3RjWTZiTWROMmtjbUxzLU82RHVTV3BScFlXekhjOS10U1ZFeC1NLXFZT0QwZndWVnJSV2Rhdw?oc=5",
+      "publisher": "Pluang",
+      "published_at_utc": "2026-09-22T22:05:58+00:00"
+    },
+    {
+      "title": "GE Aerospace: Why $100 Oil Doesn't Break The Bull Case (NYSE:GE) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUFBMQTJSYzJnVi16cDVsanRHYlZCWkc1Zkw5RmZFM0FqSzhvc1dKX19ZUjJSUWFzU09OcE9UVFQwNmtFQkJNRmt0TmxtWlpIME9nTVZpVUMzRG9xenNWUjRXUGRKX2FQOXFVZ3hxYzFuMHFBbGNoZ0trVkVkV1BnQ0NrRkZTdzJjNXFrck5qMDZlMVlqamhR?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-22T21:46:15+00:00"
+    },
+    {
+      "title": "Wall Street Analysts Are Bullish on Top NA Picks - theglobeandmail.com",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPMTBINEhUcWU4aVZHd3FCZUE2MkxvUWY4V3F6RVV6OGphZVB6Q2hTUXdQUFBVWmZnNkFxV1d0YWt3bFlNQkxkQkFHMmhMRklEYV9xX09XTTh3OElQelZjM1hSVUEyTGNZdWFvQ3EtajVOY3U4eU15TzBCZ2ZYNlFHRHBSUFNoZjlxQ3MtRlNjaENFZXFEQzlhR3oyNFViWWx2RFZiYWlNRjRXNW41NUFiSnlld3ZsbGRRb3IzZDZLa21xa2pyUmNoZ1FEd24yUQ?oc=5",
+      "publisher": "theglobeandmail.com",
+      "published_at_utc": "2026-09-22T21:42:00+00:00"
+    },
+    {
+      "title": "GE stock slips after the closing bell - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbURCYkl4cFlvZlRyT2dPMlR4eXNvb1BFU3I1X0RPTzhkM0loMS14THlpZXE1aHJRaHF4Vlc2YXUycU1VOWRCZXQ4SFBrYWJCd2ZtUkJBdzNQX0JiRGhaLVNvVkNpZkpNZ2hKZGhIMkkzcUYtbnB4bEFhaVZ6UUdsV005TXg3NUZyV3dCdUNndUMwVGJQZjUyNFFVN2Q?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-22T21:37:05+00:00"
+    },
+    {
+      "title": "Top Analyst Reports for NVIDIA, Berkshire Hathaway & GE Aerospace - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQS1JzUmZzME05LXQ0MmltUDRTV1Rtc1pQakw2TzNxZ0VYVmx1QkxzYkNfZ0toZEtYdlI2X1hBa2dPQ3gwcnNBaXRDOF9sNFIyVVM3QUNIQkdaT2ROR0lYVVB4d0lWRkctTmEwcldXWXZVakhTTkRUd25UdXM5UnVsbzc5LUxtZVhlM0otWFZFQnZvY0M2NjBZMVVqNkppQm5GMzdv?oc=5",
+      "publisher": "Yahoo Finance",
+      "published_at_utc": "2026-09-22T20:24:00+00:00"
+    },
+    {
+      "title": "GE Aerospace CFO confident GE9X issue won't delay 777X service next year - scanx.trade",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNOWFXaGxTN0pwNU5DcjdLcTF6dUVDSGVkRVplQl8xSC1kYkVOWEU1MHRpczd5OG5OY2lHVEFaUHctbnlyNkxhQkpCX0VqT28zYkRQV2JwU2lwN0lFeEFwYzU0QWxrUGdOMDVkZGthdVBydklKRjNfM2JwR19ULVhSeWg5Y21vNGEzNWtzLUE3VlAxdkhkekl6cWtHMlZ3ZmZFTEVRS1pncEVEclJoVXY3TDBURGpENWFFRlAyZUY0YzY?oc=5",
+      "publisher": "scanx.trade",
+      "published_at_utc": "2026-09-22T18:22:54+00:00"
+    },
+    {
+      "title": "GE Aerospace names Wes Bush independent lead director (GE:NYSE) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNRFBiQVpTWGZCb2ZNX3NhZEsyaGFMTVdPYzFZNmIyb0lXM3VFN3RFSWFVZ2MyVXVQUlBnVWJ5RzljVlBEeGdyTHdxS2FDMUJ0TTNBZDNCODlUXy1pYk9uVzVkblFWbHVrQjFnZHpnQ2FlQ0diTU5qN3cxallyS2VfMElzcTlZTUhiUWw3YmpUV3YtRjdaWEE?oc=5",
+      "publisher": "Seeking Alpha",
+      "published_at_utc": "2026-09-22T17:40:50+00:00"
+    },
+    {
+      "title": "GE Aerospace $GE Shares Bought by State Street Corp - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdTNfUmQtNEtIUDFpV3FndlZMelhMUExaUWw2RkNONGpDbDJxaHE2N0EweVltNS1WTGY2V1NYSDlOMXBFNlFTQ1R1d1BPdnhyajJ6ampLVVZSNmh2VWxROVNrNGU2SHk4NDd0U0E0bVoxWXVydkNoN1o3bUNjY1FyOENfU1ItTW44S2hoNkhudzVJYVE5aXF0ZTdubzdiTVFPdzhfbVNXYVpWcnNTQ21pbA?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-22T17:06:55+00:00"
+    },
+    {
+      "title": "Andra AP fonden Sells 37,480 Shares of GE Aerospace $GE - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOaFh6TzRqZXhmcENpdGt3Qkx1YU53Q2Q2bFZfd0dJNWhYVDNSVE5oeHo5TGktcjQxWi1pQlhzWFB4OXlNemRSR0xlSk5oeXp0c0JTa1BieEpQdTVaU2hhSC1iak5uUU55dmhzYnNQQzhhTld2dHR5WE93cjlRb3JSM0w4djNrMXA4MXJzWnFJWHNCaDR3cVltdU14S0xjTjFLaGVTU1dua3hoV05LUmtkWlVhWm4?oc=5",
+      "publisher": "MarketBeat",
+      "published_at_utc": "2026-09-22T17:06:55+00:00"
+    },
+    {
+      "title": "GE Aerospace stock gains 1.6 percent after dividend decision - AD HOC NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUDBhVHVkNFdiLU9FSVdwODUySUpQeEg5SVN1d3doSFFFa1pvTUx0aXczdXRhTFhfY05JaE93aVRsS2dXTXFibS05NVBCa0tRdlBfeUNmR0tZV1pITGpmUk9qbzViMWZpV0pVaFJRSFlsUzBKYzBDbmJYbDNzdjNUUTlUUWtQQnRrSWh5WjE0U0NBMmd0eFVpU1habWxfZUU0MXZ4QTZFNi1SYVZYeGZxamxDWkR6dHRuQkU0aG04TFU?oc=5",
+      "publisher": "AD HOC NEWS",
+      "published_at_utc": "2026-09-22T16:58:07+00:00"
+    }
+  ],
+  "sec_filings_in_window": [
+    {
+      "form": "8-K",
+      "filed_at": "2026-09-22",
+      "report_date": "2026-09-21",
+      "accession_number": "0000040545-26-000059",
+      "url": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000059/ge-20260921.htm"
+    }
+  ],
+  "latest_sec_reports": [
+    {
+      "form": "10-Q",
+      "filed_at": "2026-07-16",
+      "report_date": "2026-06-30",
+      "accession_number": "0000040545-26-000049",
+      "url": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000049/ge-20260630.htm"
+    },
+    {
+      "form": "10-Q",
+      "filed_at": "2026-04-21",
+      "report_date": "2026-03-31",
+      "accession_number": "0000040545-26-000027",
+      "url": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000027/ge-20260331.htm"
+    }
+  ],
+  "financials": {
+    "cik": 40545,
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json",
+    "latest_reported_facts": {
+      "Revenues": {
+        "val": 13349000000,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "USD"
+      },
+      "RevenueFromContractWithCustomerExcludingAssessedTax": {
+        "val": 9879000000,
+        "start": "2024-10-01",
+        "end": "2024-12-31",
+        "filed": "2025-02-03",
+        "form": "10-K",
+        "accn": "0000040545-25-000015",
+        "unit": "USD"
+      },
+      "NetIncomeLoss": {
+        "val": 2370000000,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "USD"
+      },
+      "Assets": {
+        "val": 127672000000,
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "USD"
+      },
+      "Liabilities": {
+        "val": 109805000000,
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "USD"
+      },
+      "StockholdersEquity": {
+        "val": 17640000000,
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "USD"
+      },
+      "EarningsPerShareDiluted": {
+        "val": 2.26,
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "USD/shares"
+      },
+      "CommonStockSharesOutstanding": {
+        "val": 1037562513,
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "shares"
+      },
+      "NetCashProvidedByUsedInOperatingActivities": {
+        "val": 5018000000,
+        "start": "2026-01-01",
+        "end": "2026-06-30",
+        "filed": "2026-07-16",
+        "form": "10-Q",
+        "accn": "0000040545-26-000049",
+        "unit": "USD"
+      }
+    }
+  },
+  "latest_earnings_transcript": null,
+  "unavailable": {
+    "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+  },
+  "cik": 40545
+}
