@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { CircleUserRound } from "lucide-react";
 
@@ -23,14 +23,15 @@ function StorySummary({ story }: { story: Story }) {
         .replace(/\s+\S*$/, "")
         .trimEnd()
     : summary;
-  const canExpand =
-    story.content.trim().length > preview.length ||
-    story.summary.trim().length > preview.length;
+  const fullText = story.content.trim().startsWith(summary)
+    ? story.content.trim()
+    : `${summary}\n\n${story.content.trim()}`.trim();
+  const canExpand = fullText.length > preview.length;
 
   return (
     <p>
-      {expanded ? story.content || story.summary : preview}
-      {!expanded && canExpand && "…"}{" "}
+      {expanded ? fullText : preview}
+      {!expanded && canExpand && !preview.endsWith("…") && "…"}{" "}
       {canExpand && (
         <button
           type="button"
@@ -81,12 +82,19 @@ export function Dashboard({ userName }: { userName: string }) {
       { portfolioId: active?.id ?? 0 },
       { enabled: !!active },
     );
+  const feedStories = stories.filter(
+    (story, index) =>
+      stories.findIndex(
+        (candidate) =>
+          candidate.title.trim().toLowerCase() ===
+          story.title.trim().toLowerCase(),
+      ) === index,
+  );
   const [editing, setEditing] = useState<Portfolio | "new" | null>(null);
   const [name, setName] = useState("");
   const [holdings, setHoldings] = useState<Holding[]>([]);
   const [kind, setKind] = useState<Holding["kind"]>("stock");
   const [symbol, setSymbol] = useState("");
-  const [assetName, setAssetName] = useState("");
   const [formError, setFormError] = useState("");
   const [view, setView] = useState<{
     storyId: number;
@@ -94,6 +102,73 @@ export function Dashboard({ userName }: { userName: string }) {
     scope: "story" | "portfolio";
   } | null>(null);
   const [globalQuestion, setGlobalQuestion] = useState("");
+  const accountMenu = useRef<HTMLDetailsElement>(null);
+  const editorClose = useRef<HTMLButtonElement>(null);
+  const previousFocus = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const portfolio = Number(params.get("portfolio"));
+    const story = Number(params.get("story"));
+    if (Number.isInteger(portfolio) && portfolio > 0) setSelectedId(portfolio);
+    if (Number.isInteger(story) && story > 0) {
+      setView({ storyId: story, question: "", scope: "story" });
+    }
+    const restore = () => {
+      const current = new URLSearchParams(window.location.search);
+      const portfolioId = Number(current.get("portfolio"));
+      const storyId = Number(current.get("story"));
+      setSelectedId(
+        Number.isInteger(portfolioId) && portfolioId > 0 ? portfolioId : null,
+      );
+      setView(
+        Number.isInteger(storyId) && storyId > 0
+          ? { storyId, question: "", scope: "story" }
+          : null,
+      );
+    };
+    window.addEventListener("popstate", restore);
+    return () => window.removeEventListener("popstate", restore);
+  }, []);
+
+  useEffect(() => {
+    if (!active) return;
+    const params = new URLSearchParams(window.location.search);
+    params.set("portfolio", String(active.id));
+    if (view?.scope === "story") params.set("story", String(view.storyId));
+    else params.delete("story");
+    const query = params.toString();
+    const url = `${window.location.pathname}${query ? `?${query}` : ""}`;
+    if (window.location.href !== `${window.location.origin}${url}`)
+      window.history.pushState(null, "", url);
+  }, [active?.id, view]);
+
+  useEffect(() => {
+    if (!editing) return;
+    previousFocus.current = document.activeElement as HTMLElement;
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => editorClose.current?.focus());
+    return () => {
+      document.body.style.overflow = "";
+      previousFocus.current?.focus();
+    };
+  }, [editing]);
+
+  useEffect(() => {
+    const closeMenu = (event: KeyboardEvent) => {
+      if (event.key === "Escape") accountMenu.current?.removeAttribute("open");
+    };
+    const closeOutside = (event: PointerEvent) => {
+      if (!accountMenu.current?.contains(event.target as Node))
+        accountMenu.current?.removeAttribute("open");
+    };
+    document.addEventListener("keydown", closeMenu);
+    document.addEventListener("pointerdown", closeOutside);
+    return () => {
+      document.removeEventListener("keydown", closeMenu);
+      document.removeEventListener("pointerdown", closeOutside);
+    };
+  }, []);
 
   const create = api.portfolio.create.useMutation({
     onSuccess: async () => {
@@ -120,26 +195,21 @@ export function Dashboard({ userName }: { userName: string }) {
     setName(portfolio?.name ?? "");
     setHoldings(portfolio?.holdings ?? []);
     setSymbol("");
-    setAssetName("");
     setFormError("");
   }
 
   function addHolding() {
     const normalized = symbol.trim().toUpperCase();
-    if (!/^[A-Z0-9._-]{1,32}$/.test(normalized) || !assetName.trim()) {
-      setFormError("Enter an asset name and a valid ticker or identifier.");
+    if (!/^[A-Z0-9._-]{1,32}$/.test(normalized)) {
+      setFormError("Enter a valid ticker or identifier.");
       return;
     }
     if (holdings.some((h) => h.kind === kind && h.symbol === normalized)) {
       setFormError("That asset is already in this portfolio.");
       return;
     }
-    setHoldings([
-      ...holdings,
-      { kind, symbol: normalized, name: assetName.trim() },
-    ]);
+    setHoldings([...holdings, { kind, symbol: normalized, name: normalized }]);
     setSymbol("");
-    setAssetName("");
     setFormError("");
   }
 
@@ -153,12 +223,33 @@ export function Dashboard({ userName }: { userName: string }) {
     else if (editing) update.mutate({ ...payload, id: editing.id });
   }
 
+  function closeEditor() {
+    if (
+      editing !== "new" &&
+      editing &&
+      (name !== editing.name ||
+        JSON.stringify(holdings) !== JSON.stringify(editing.holdings)) &&
+      !window.confirm("Discard unsaved portfolio changes?")
+    )
+      return;
+    setEditing(null);
+  }
+
   return (
     <main className="app-shell">
       <nav className="topbar">
         <Brand />
         <span className="topbar-note">PERSONAL PORTFOLIO INTELLIGENCE</span>
-        <details className="account-menu">
+        <details
+          ref={accountMenu}
+          className="account-menu"
+          onBlur={(event) => {
+            if (
+              !event.currentTarget.contains(event.relatedTarget as Node | null)
+            )
+              event.currentTarget.removeAttribute("open");
+          }}
+        >
           <summary aria-label="Open account menu">
             <CircleUserRound aria-hidden="true" />
           </summary>
@@ -217,12 +308,12 @@ export function Dashboard({ userName }: { userName: string }) {
               }}
             >
               <span>{portfolio.name}</span>
-              <small>{portfolio.holdings.length} ASSETS</small>
+              <small>
+                {portfolio.holdings.length}{" "}
+                {portfolio.holdings.length === 1 ? "ASSET" : "ASSETS"}
+              </small>
             </button>
           ))}
-          <button className="add-portfolio" onClick={() => openEditor()}>
-            + New portfolio
-          </button>
           <div className="sidebar-footer">
             A clearer view of what moves your portfolio.
             <br />
@@ -266,7 +357,7 @@ export function Dashboard({ userName }: { userName: string }) {
                   className="text-button"
                   onClick={() => openEditor(active)}
                 >
-                  Edit portfolio ↗
+                  Edit portfolio
                 </button>
               </div>
               <div className="asset-strip">
@@ -309,7 +400,7 @@ export function Dashboard({ userName }: { userName: string }) {
                     required
                     disabled={!stories.length}
                   />
-                  <button disabled={!stories.length}>Explore ↗</button>
+                  <button disabled={!stories.length}>Explore</button>
                 </div>
                 {!stories.length && (
                   <p className="muted">
@@ -328,9 +419,9 @@ export function Dashboard({ userName }: { userName: string }) {
                   <Skeleton className="skeleton-paragraph" />
                   <Skeleton className="skeleton-paragraph skeleton-paragraph-short" />
                 </div>
-              ) : stories.length ? (
+              ) : feedStories.length ? (
                 <div className="stories">
-                  {stories.map((story, index) => (
+                  {feedStories.map((story, index) => (
                     <article className="story" key={story.id}>
                       <div className="story-meta">
                         <span>STORY {String(index + 1).padStart(2, "0")}</span>
@@ -339,8 +430,12 @@ export function Dashboard({ userName }: { userName: string }) {
                             (holding) =>
                               `${holding.kind}:${holding.symbol}` ===
                               story.assetKey,
-                          )?.name ?? story.assetKey.split(":")[1]}{" "}
+                          )?.symbol ?? story.assetKey.split(":")[1]}{" "}
                           / {story.assetKey.split(":")[1]}
+                        </span>
+                        <span>
+                          {story.sourceName} ·{" "}
+                          {new Date(story.publishedAt).toLocaleDateString()}
                         </span>
                       </div>
                       <h3>{story.title}</h3>
@@ -386,7 +481,7 @@ export function Dashboard({ userName }: { userName: string }) {
                   you want to follow.
                 </p>
                 <button className="primary-button" onClick={() => openEditor()}>
-                  Create a portfolio ↗
+                  Create a portfolio
                 </button>
               </div>
             )
@@ -399,12 +494,19 @@ export function Dashboard({ userName }: { userName: string }) {
           role="dialog"
           aria-modal="true"
           aria-label="Portfolio editor"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") closeEditor();
+          }}
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) closeEditor();
+          }}
         >
           <div className="editor">
             <div className="editor-top">
               <span className="eyebrow">YOUR WATCHLIST</span>
               <button
-                onClick={() => setEditing(null)}
+                ref={editorClose}
+                onClick={closeEditor}
                 aria-label="Close editor"
               >
                 ×
@@ -417,6 +519,7 @@ export function Dashboard({ userName }: { userName: string }) {
             <label className="field">
               Portfolio name
               <input
+                required
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 maxLength={100}
@@ -441,13 +544,12 @@ export function Dashboard({ userName }: { userName: string }) {
                   onChange={(event) => setSymbol(event.target.value)}
                   placeholder="AAPL / BTC"
                   maxLength={32}
-                />
-                <input
-                  aria-label="Asset name"
-                  value={assetName}
-                  onChange={(event) => setAssetName(event.target.value)}
-                  placeholder="Asset name"
-                  maxLength={100}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                      event.preventDefault();
+                      addHolding();
+                    }
+                  }}
                 />
                 <button
                   type="button"
@@ -496,12 +598,12 @@ export function Dashboard({ userName }: { userName: string }) {
               )}
               <button
                 className="primary-button"
-                disabled={create.isPending || update.isPending}
+                disabled={create.isPending || update.isPending || !name.trim()}
                 onClick={savePortfolio}
               >
                 {create.isPending || update.isPending
                   ? "Saving…"
-                  : "Save portfolio ↗"}
+                  : "Save portfolio"}
               </button>
             </div>
           </div>
@@ -513,8 +615,10 @@ export function Dashboard({ userName }: { userName: string }) {
           portfolioId={active.id}
           storyId={view.storyId}
           storyTitle={
-            stories.find((story) => story.id === view.storyId)?.title ??
-            "Portfolio briefing"
+            view.scope === "portfolio"
+              ? view.question
+              : (stories.find((story) => story.id === view.storyId)?.title ??
+                "Portfolio briefing")
           }
           question={view.question}
           scope={view.scope}

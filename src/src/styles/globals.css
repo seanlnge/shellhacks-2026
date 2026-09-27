@@ -256,6 +256,11 @@ a {
   min-height: calc(100vh - 82px);
 }
 .sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 40px 20px 30px;
@@ -353,7 +358,7 @@ a {
   color: var(--muted);
 }
 .hero {
-  padding: 70px 0 64px;
+  padding: 34px 0 30px;
   border-bottom: 1px solid var(--ink);
 }
 .hero h1 {
@@ -600,7 +605,7 @@ a {
 }
 .holding-entry {
   display: grid;
-  grid-template-columns: 120px 1fr 1.5fr 44px;
+  grid-template-columns: 120px 1fr 44px;
   gap: 6px;
 }
 .holding-entry button {
@@ -883,6 +888,14 @@ a {
   flex-direction: column;
   background: var(--bg);
   color: var(--text);
+}
+body:has(.gen-overlay),
+body:has(.modal-backdrop) {
+  overflow: hidden;
+}
+.gen-question {
+  margin-top: 12px;
+  color: var(--muted);
 }
 .gen-toolbar {
   display: flex;

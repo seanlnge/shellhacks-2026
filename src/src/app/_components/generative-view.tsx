@@ -347,9 +347,12 @@ function Chart({
     .flatMap(({ data }) => data.points.map((point) => point.value))
     .filter(Number.isFinite);
   if (!values.length) return <EmptyData />;
-  const min = Math.min(0, ...values);
-  const max = Math.max(0, ...values);
-  const range = max - min || 1;
+  const rawMin = Math.min(...values);
+  const rawMax = Math.max(...values);
+  const padding = (rawMax - rawMin) * 0.12 || Math.abs(rawMax) * 0.01 || 1;
+  const min = mode === "line" ? rawMin - padding : Math.min(0, rawMin);
+  const max = mode === "line" ? rawMax + padding : Math.max(0, rawMax);
+  const range = max - min;
   const dates = [
     ...new Set(series.flatMap(({ data }) => data.points.map((p) => p.date))),
   ].sort();
@@ -507,7 +510,13 @@ function Chart({
         {series.map(({ ref, data }, index) => (
           <span key={ref}>
             <i className={`gen-legend-mark gen-bar-${index % 4}`} />
-            {data.label} <small>{data.unit}</small>
+            {data.label}{" "}
+            {data.unit &&
+            data.label
+              .toLowerCase()
+              .includes(data.unit.toLowerCase()) ? null : (
+              <small>{data.unit}</small>
+            )}
           </span>
         ))}
       </div>
@@ -1303,6 +1312,8 @@ export function GenerativeView({
   scope: "story" | "portfolio";
   onClose: () => void;
 }) {
+  const overlay = useRef<HTMLDivElement>(null);
+  const returnFocus = useRef<HTMLElement | null>(null);
   const [spec, setSpec] = useState<Spec | null>(null);
   const [bundle, setBundle] = useState<Bundle | null>(null);
   const [evidenceSources, setEvidenceSources] = useState<
@@ -1549,6 +1560,15 @@ export function GenerativeView({
     void generateRef.current(question, undefined, "initial");
     return () => abort.current?.abort();
   }, [portfolioId, storyId, question, scope]);
+  useEffect(() => {
+    returnFocus.current = document.activeElement as HTMLElement;
+    document.body.style.overflow = "hidden";
+    overlay.current?.focus();
+    return () => {
+      document.body.style.overflow = "";
+      returnFocus.current?.focus();
+    };
+  }, []);
   function goBack() {
     abort.current?.abort();
     currentPageIndex.current = 0;
@@ -1606,19 +1626,40 @@ export function GenerativeView({
   };
   return (
     <div
+      ref={overlay}
       className="gen-overlay"
       role="dialog"
       aria-modal="true"
       aria-label="Generated portfolio briefing"
+      aria-labelledby="gen-page-title"
+      tabIndex={-1}
       onKeyDown={(event) => {
-        if (event.key === "Escape") onClose();
+        if (event.key === "Escape") {
+          event.stopPropagation();
+          onClose();
+        }
+        if (event.key === "Tab") {
+          const items = overlay.current?.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), a[href], input:not([disabled]), [tabindex="0"]',
+          );
+          if (!items?.length) return;
+          const first = items[0]!;
+          const last = items[items.length - 1]!;
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
       }}
     >
       <div className="gen-toolbar">
         <Brand />
         <nav aria-label="Briefing navigation">
-          <button disabled={!history.length} onClick={goBack}>
-            ← Back {history.length ? `(${history.length})` : ""}
+          <button onClick={history.length ? goBack : onClose}>
+            {history.length ? `← Back (${history.length})` : "← Feed"}
           </button>
           <span className="eyebrow">
             {evidenceMode
@@ -1659,10 +1700,17 @@ export function GenerativeView({
             </BreadcrumbList>
           </Breadcrumb>
           <p className="eyebrow">
-            {history.length ? "FOCUSED EXPLORATION" : "SOURCED BRIEFING"}{" "}
+            {history.length
+              ? "FOCUSED EXPLORATION"
+              : scope === "portfolio"
+                ? "PORTFOLIO RESEARCH"
+                : "SOURCED BRIEFING"}{" "}
             {evidenceMode && `/ ${evidenceMode.toUpperCase()}`}
           </p>
-          <h1>{pageTitle}</h1>
+          <h1 id="gen-page-title">{pageTitle}</h1>
+          {scope === "portfolio" && (
+            <p className="gen-question">Question: {question}</p>
+          )}
         </header>
         {spec && (
           <View.Provider

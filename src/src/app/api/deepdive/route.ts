@@ -319,6 +319,7 @@ export async function POST(request: Request) {
       "Use only facts from the supplied story and selected EVIDENCE. Cite evidence IDs with SourceChips; distinguish conflicting evidence, and admit when sources do not answer the question.",
       "Aim to use at least four distinct source URLs when the selected evidence supports them. Do not count separate passages from one document as separate sources; if fewer than four are available, make that limitation clear. Different URLs alone do not prove independent corroboration.",
       "Portfolio scope may discuss only holdings represented by selected evidence. The anchor story and its data bundle do not establish facts about other holdings.",
+      "For portfolio-scope questions, explicitly inspect evidence for every holding in the portfolio, name relevant tickers, and do not claim no exposure when selected evidence documents a relationship. Do not base the answer only on the anchor story.",
       "Headline-only news is a headline, not verified article text. Never infer details absent from an excerpt. Never invent numbers, dates, quotes, sources or refs.",
       "If the manifest is empty, avoid all data-dependent components. Explain missing evidence rather than fabricating it.",
       "Use metric/series keys from the manifest and source IDs from the manifest or selected evidence only. Do not provide investment advice.",
