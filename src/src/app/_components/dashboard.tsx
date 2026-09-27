@@ -103,7 +103,7 @@ export function Dashboard({ userName }: { userName: string }) {
         <span className="brand">
           folio<span className="brand-dot">.</span>fm
         </span>
-        <span className="topbar-note">THE PORTFOLIO BRIEFING</span>
+        <span className="topbar-note">PERSONAL PORTFOLIO INTELLIGENCE</span>
         <Link href="/api/auth/signout" className="nav-link">
           SIGN OUT ↗
         </Link>
@@ -111,7 +111,7 @@ export function Dashboard({ userName }: { userName: string }) {
       <div className="dashboard-layout">
         <aside className="sidebar">
           <div className="sidebar-heading">
-            <span className="eyebrow">YOUR SPACE</span>
+            <span className="eyebrow">PORTFOLIO DIRECTORY</span>
             <button
               className="icon-button"
               aria-label="Create portfolio"
@@ -146,16 +146,14 @@ export function Dashboard({ userName }: { userName: string }) {
             + New portfolio
           </button>
           <div className="sidebar-footer">
-            A clearer view of what moves you.
+            A clearer view of what moves your portfolio.
             <br />
-            Built for the curious investor.
+            Research with perspective.
           </div>
         </aside>
         <div className="content">
           <header className="content-header">
-            <span>
-              YOUR DAILY SIGNAL <span className="accent">●</span>
-            </span>
+            <span>YOUR PORTFOLIO REVIEW</span>
             <span>
               {new Date()
                 .toLocaleDateString("en-US", {
@@ -167,24 +165,24 @@ export function Dashboard({ userName }: { userName: string }) {
             </span>
           </header>
           <section className="hero">
-            <p className="eyebrow">GOOD TO SEE YOU, {userName.toUpperCase()}</p>
+            <p className="eyebrow">
+              PRIVATE BRIEFING / {userName.toUpperCase()}
+            </p>
             <h1>
-              The story is
+              A clearer view
               <br />
-              <em>in your holdings.</em>
+              <em>of your holdings.</em>
             </h1>
-            <p>Follow what matters. Explore what it means.</p>
+            <p>Relevant developments, with the context to go further.</p>
           </section>
           {active ? (
             <>
               <div className="section-header">
                 <div>
                   <p className="eyebrow">
-                    NOW PLAYING / {active.name.toUpperCase()}
+                    PORTFOLIO / {active.name.toUpperCase()}
                   </p>
-                  <h2>
-                    Your briefing<span className="accent">.</span>
-                  </h2>
+                  <h2>Your briefing</h2>
                 </div>
                 <button
                   className="text-button"
@@ -300,20 +298,24 @@ export function Dashboard({ userName }: { userName: string }) {
                 </div>
               ) : (
                 <div className="empty-state">
-                  <span className="empty-symbol">✳</span>
+                  <span className="empty-symbol" aria-hidden="true">
+                    01
+                  </span>
                   <h3>No stories in rotation yet.</h3>
                   <p>
                     When your data pipeline adds sourced news or filings for
                     these assets, your personalized briefing will appear here.
                   </p>
-                  <span className="eyebrow">READY FOR YOUR FIRST SIGNAL</span>
+                  <span className="eyebrow">AWAITING YOUR FIRST UPDATE</span>
                 </div>
               )}
             </>
           ) : (
             !isLoading && (
               <div className="empty-state">
-                <span className="empty-symbol">✳</span>
+                <span className="empty-symbol" aria-hidden="true">
+                  01
+                </span>
                 <h3>Make it yours.</h3>
                 <p>
                   Create a portfolio and add the stocks or alternative assets

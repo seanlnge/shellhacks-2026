@@ -13,27 +13,27 @@ export default async function Home() {
         <span className="brand">
           folio<span className="brand-dot">.</span>fm
         </span>
-        <span className="topbar-note">YOUR MARKET, IN FOCUS</span>
+        <span className="topbar-note">PERSONAL PORTFOLIO INTELLIGENCE</span>
       </nav>
       <div className="landing-content">
-        <p className="eyebrow">THE PERSONAL PORTFOLIO BRIEFING</p>
+        <p className="eyebrow">A MORE CONSIDERED VIEW OF YOUR PORTFOLIO</p>
         <h1>
-          Follow the story
+          Clarity behind
           <br />
-          <em>behind the ticker.</em>
+          <em>every holding.</em>
         </h1>
         <p className="landing-copy">
-          The news that matters to your holdings, told in a format worth
-          exploring. One portfolio. Every angle.
+          The developments that matter to your holdings, distilled into a
+          considered briefing. Explore the context behind every decision.
         </p>
         <Link href="/api/auth/signin" className="primary-button">
-          Start your briefing <span aria-hidden="true">↗</span>
+          Enter your briefing <span aria-hidden="true">↗</span>
         </Link>
       </div>
       <div className="landing-bottom">
-        <span>01 / BUILD YOUR WATCHLIST</span>
-        <span>02 / FOLLOW THE SIGNAL</span>
-        <span>03 / GO DEEPER</span>
+        <span>01 / DEFINE YOUR PORTFOLIO</span>
+        <span>02 / REVIEW THE DEVELOPMENTS</span>
+        <span>03 / EXPLORE THE DETAIL</span>
       </div>
     </main>
   );
