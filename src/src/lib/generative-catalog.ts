@@ -28,6 +28,15 @@ export const catalog = defineCatalog(schema, {
       slots: ["default"],
       description: "Dashboard section. Children are evidence components.",
     },
+    Accordion: {
+      props: z.object({
+        title: z.string().max(120),
+        expanded: z.boolean().optional(),
+      }),
+      slots: ["default"],
+      description:
+        "A collapsible disclosure for supporting detail; use a concise, informative title.",
+    },
     StorySlide: {
       props: z.object({
         kicker: z.string().max(40),
@@ -69,6 +78,14 @@ export const catalog = defineCatalog(schema, {
       props: z.object({ metricRefs: z.array(z.string()).min(1).max(8) }),
       description: "Small grid of real metric refs from DATA MANIFEST.",
     },
+    MetricsTable: {
+      props: z.object({
+        metricRefs: z.array(z.string()).min(1).max(8),
+        title: z.string().max(100).optional(),
+      }),
+      description:
+        "Compact comparison table of sourced metrics from DATA MANIFEST. Never write numeric values.",
+    },
     LineChart: {
       props: z.object({
         seriesRefs: z.array(z.string()).min(1).max(4),
@@ -93,6 +110,22 @@ export const catalog = defineCatalog(schema, {
       }),
       description:
         "Bar comparisons from series keys in DATA MANIFEST. Never supply values.",
+    },
+    HorizontalBarChart: {
+      props: z.object({
+        seriesRefs: z.array(z.string()).min(1).max(4),
+        title: z.string().max(100).optional(),
+      }),
+      description:
+        "Ranked horizontal bars from series keys in DATA MANIFEST. Never supply values.",
+    },
+    PieChart: {
+      props: z.object({
+        seriesRefs: z.array(z.string()).min(1).max(8),
+        title: z.string().max(100).optional(),
+      }),
+      description:
+        "Show the latest values from distinct series as a sourced composition. Use only non-negative values.",
     },
     Timeline: {
       props: z.object({ eventsRef: z.string().optional() }),

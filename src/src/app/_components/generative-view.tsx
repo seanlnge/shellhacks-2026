@@ -354,8 +354,8 @@ function Chart({
     ...new Set(series.flatMap(({ data }) => data.points.map((p) => p.date))),
   ].sort();
   const x = (date: string) =>
-    42 + (dates.indexOf(date) / Math.max(1, dates.length - 1)) * 550;
-  const y = (value: number) => 165 - ((value - min) / range) * 135;
+    74 + (dates.indexOf(date) / Math.max(1, dates.length - 1)) * 518;
+  const y = (value: number) => 158 - ((value - min) / range) * 118;
   return (
     <figure className="gen-chart">
       <figcaption>
@@ -366,8 +366,33 @@ function Chart({
         role="img"
         aria-label={`${mode === "line" ? "Line" : "Bar"} chart: ${series.map(({ data }) => data.label).join(", ")}`}
       >
-        <line x1="42" x2="592" y1="165" y2="165" className="gen-axis" />
-        <line x1="42" x2="592" y1="30" y2="30" className="gen-gridline" />
+        {[0, 1, 2, 3].map((step) => {
+          const value = max - (range * step) / 3;
+          const yPos = 40 + step * 39;
+          return (
+            <g key={step}>
+              <line
+                x1="66"
+                x2="592"
+                y1={yPos}
+                y2={yPos}
+                className="gen-gridline"
+              />
+              <text
+                x="58"
+                y={yPos + 4}
+                textAnchor="end"
+                className="gen-axis-label"
+              >
+                {Math.abs(value) >= 1000
+                  ? `${(value / 1000).toFixed(1)}k`
+                  : formatCents(value)}
+              </text>
+            </g>
+          );
+        })}
+        <line x1="66" x2="66" y1="40" y2="158" className="gen-axis" />
+        <line x1="66" x2="592" y1="158" y2="158" className="gen-axis" />
         {series.map(({ ref, data }, index) => {
           const points = data.points
             .filter((p) => Number.isFinite(p.value))
@@ -471,10 +496,10 @@ function Chart({
             </g>
           );
         })}
-        <text x="42" y="188">
+        <text x="66" y="184">
           {dates[0]}
         </text>
-        <text x="592" y="188" textAnchor="end">
+        <text x="592" y="184" textAnchor="end">
           {dates[dates.length - 1]}
         </text>
       </svg>
@@ -488,6 +513,121 @@ function Chart({
       </div>
       <div className="gen-chart-sources">
         {[...new Set(series.map(({ data }) => data.sourceId))].map((id) => (
+          <SourceLink key={id} sourceId={id} />
+        ))}
+      </div>
+    </figure>
+  );
+}
+
+function HorizontalBarChart({
+  refs,
+  title,
+}: {
+  refs: string[];
+  title?: string;
+}) {
+  const { bundle } = useContext(View);
+  const items = refs.flatMap((ref) => {
+    const series = bundle?.story.series[ref];
+    const point = series?.points
+      .filter((entry) => Number.isFinite(entry.value))
+      .at(-1);
+    return series && point ? [{ ref, series, point }] : [];
+  });
+  if (!items.length) return <EmptyData />;
+  const max = Math.max(...items.map(({ point }) => Math.abs(point.value)), 1);
+  return (
+    <figure className="gen-chart gen-horizontal-chart">
+      <figcaption>{title ?? "Latest values"}</figcaption>
+      <ol>
+        {items.map(({ ref, series, point }, index) => (
+          <li key={ref}>
+            <div className="gen-horizontal-label">
+              <span>{series.label}</span>
+              <strong>
+                {formatCents(point.value)} <small>{series.unit}</small>
+              </strong>
+            </div>
+            <div className="gen-horizontal-track" aria-hidden="true">
+              <span
+                className={`gen-bar-${index % 4}`}
+                style={{
+                  width: `${Math.max(2, (Math.abs(point.value) / max) * 100)}%`,
+                }}
+              />
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div className="gen-chart-sources">
+        {[...new Set(items.map(({ series }) => series.sourceId))].map((id) => (
+          <SourceLink key={id} sourceId={id} />
+        ))}
+      </div>
+    </figure>
+  );
+}
+
+function PieChart({ refs, title }: { refs: string[]; title?: string }) {
+  const { bundle } = useContext(View);
+  const items = refs.flatMap((ref) => {
+    const series = bundle?.story.series[ref];
+    const point = series?.points
+      .filter((entry) => Number.isFinite(entry.value) && entry.value >= 0)
+      .at(-1);
+    return series && point && point.value > 0 ? [{ ref, series, point }] : [];
+  });
+  if (items.length < 2) return <EmptyData />;
+  const total = items.reduce((sum, item) => sum + item.point.value, 0);
+  const colors = [
+    "#275d50",
+    "#d49b55",
+    "#829b8d",
+    "#c56b52",
+    "#8293a0",
+    "#b8a16a",
+    "#6c6c65",
+    "#b47d7a",
+  ];
+  let cursor = 0;
+  const gradient = items
+    .map((item, index) => {
+      const start = cursor;
+      cursor += (item.point.value / total) * 100;
+      return `${colors[index % colors.length]} ${start}% ${cursor}%`;
+    })
+    .join(", ");
+  return (
+    <figure className="gen-chart gen-pie-chart">
+      <figcaption>{title ?? "Latest-value composition"}</figcaption>
+      <div className="gen-pie-layout">
+        <div
+          className="gen-pie"
+          style={{ background: `conic-gradient(${gradient})` }}
+          role="img"
+          aria-label={`Composition chart: ${items.map(({ series, point }) => `${series.label} ${((point.value / total) * 100).toFixed(1)} percent`).join(", ")}`}
+        >
+          <span>
+            <strong>{items.length}</strong>
+            <small>series</small>
+          </span>
+        </div>
+        <ul className="gen-pie-legend">
+          {items.map(({ ref, series, point }, index) => (
+            <li key={ref}>
+              <i style={{ background: colors[index % colors.length] }} />
+              <span>{series.label}</span>
+              <strong>{((point.value / total) * 100).toFixed(1)}%</strong>
+              <small>
+                {formatCents(point.value)} {series.unit}
+              </small>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="gen-chart-sources">
+        {[...new Set(items.map(({ series }) => series.sourceId))].map((id) => (
           <SourceLink key={id} sourceId={id} />
         ))}
       </div>
@@ -636,20 +776,24 @@ function MarketChart({
       <header className="gen-market-heading">
         <div>
           <span className="eyebrow">{title ?? series.label}</span>
-          <strong className="gen-market-price">${formatCents(last.value)}</strong>
+          <strong className="gen-market-price">
+            ${formatCents(last.value)}
+          </strong>
           <span className="gen-market-caption">Latest close · {last.date}</span>
         </div>
         <div className="gen-market-summary">
           {change !== null && (
             <span
-              className={`gen-market-change${rising ? " is-up" : " is-down"}`}
+              className={`gen-market-change${rising ? "is-up" : "is-down"}`}
             >
               <span aria-hidden="true">{rising ? "↗" : "↘"}</span>{" "}
               {change >= 0 ? "+" : ""}
               {change.toFixed(2)}%
             </span>
           )}
-          <span className="gen-market-period">{first.date} — {last.date}</span>
+          <span className="gen-market-period">
+            {first.date} — {last.date}
+          </span>
           {stale && <span className="gen-market-stale">Delayed data</span>}
         </div>
       </header>
@@ -714,35 +858,45 @@ const { registry: baseRegistry } = defineRegistry(catalog, {
   components: {
     Deck: ({ props, children }) => {
       const slides = Children.toArray(children);
-      const { setPageIndex } = useContext(View);
-      const [index, setIndex] = useState(0);
-      const current = Math.min(index, Math.max(0, slides.length - 1));
-      useEffect(() => setPageIndex(current), [current, setPageIndex]);
+      const spec = useContext(View).spec;
+      const root = spec?.elements[spec.root];
       return (
-        <div
-          className="gen-deck"
-          aria-label={props.title}
-          onKeyDown={(event) => {
-            if (
-              event.target !== event.currentTarget &&
-              (event.target as HTMLElement).closest("input,textarea,button,a")
-            )
-              return;
-            if (event.key === "ArrowRight")
-              setIndex(Math.min(current + 1, slides.length - 1));
-            if (event.key === "ArrowLeft") setIndex(Math.max(current - 1, 0));
-          }}
-          tabIndex={0}
-        >
+        <article className="gen-deck" aria-label={props.title}>
           <div className="gen-deck-header">
-            <span className="eyebrow">{props.title}</span>
-            <span className="eyebrow">
-              {slides.length
-                ? `${String(current + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`
-                : "GENERATING"}
-            </span>
+            <span className="eyebrow">IN THIS ARTICLE</span>
+            {slides.length ? (
+              <nav aria-label="Article topics" className="gen-article-toc">
+                {slides.map((_, index) => {
+                  const pageId = root?.children?.[index];
+                  const page = pageId ? spec?.elements[pageId] : undefined;
+                  const title =
+                    typeof page?.props.title === "string"
+                      ? page.props.title
+                      : `Topic ${index + 1}`;
+                  return (
+                    <a key={index} href={`#article-topic-${index}`}>
+                      {title}
+                    </a>
+                  );
+                })}
+              </nav>
+            ) : (
+              <span className="eyebrow">GENERATING</span>
+            )}
           </div>
-          {slides[current] ?? (
+          {slides.length ? (
+            <div className="gen-article-body">
+              {slides.map((slide, index) => (
+                <div
+                  className="gen-article-topic"
+                  id={`article-topic-${index}`}
+                  key={index}
+                >
+                  {slide}
+                </div>
+              ))}
+            </div>
+          ) : (
             <div
               className="briefing-skeleton"
               role="status"
@@ -754,35 +908,7 @@ const { registry: baseRegistry } = defineRegistry(catalog, {
               <Skeleton className="skeleton-paragraph skeleton-paragraph-short" />
             </div>
           )}
-          <div className="gen-deck-nav">
-            <button
-              disabled={current === 0}
-              onClick={() => setIndex(current - 1)}
-            >
-              ← Previous
-            </button>
-            <div
-              className="gen-progress"
-              role="progressbar"
-              aria-label="Briefing progress"
-              aria-valuenow={slides.length ? current + 1 : 0}
-              aria-valuemin={0}
-              aria-valuemax={slides.length}
-            >
-              <span
-                style={{
-                  width: `${slides.length ? ((current + 1) / slides.length) * 100 : 0}%`,
-                }}
-              />
-            </div>
-            <button
-              disabled={current >= slides.length - 1}
-              onClick={() => setIndex(current + 1)}
-            >
-              Next →
-            </button>
-          </div>
-        </div>
+        </article>
       );
     },
     Dashboard: ({ props, children }) => (
@@ -799,6 +925,12 @@ const { registry: baseRegistry } = defineRegistry(catalog, {
         <h3>{props.title}</h3>
         {children}
       </section>
+    ),
+    Accordion: ({ props, children }) => (
+      <details className="gen-accordion" open={props.expanded ?? false}>
+        <summary>{props.title}</summary>
+        <div className="gen-accordion-content">{children}</div>
+      </details>
     ),
     StorySlide: ({ props, children }) => (
       <section className="gen-slide">
@@ -866,12 +998,56 @@ const { registry: baseRegistry } = defineRegistry(catalog, {
         ))}
       </div>
     ),
+    MetricsTable: ({ props }) => {
+      const bundle = useContext(View).bundle;
+      const metrics = props.metricRefs
+        .map((ref) => ({ ref, metric: bundle?.story.metrics[ref] }))
+        .filter(
+          (entry): entry is { ref: string; metric: Metric } => !!entry.metric,
+        );
+      if (!metrics.length) return <EmptyData />;
+      return (
+        <div
+          className="gen-table-wrap"
+          role="region"
+          aria-label={props.title ?? "Sourced metrics"}
+          tabIndex={0}
+        >
+          <table className="gen-table">
+            <caption>{props.title ?? "Sourced metrics"}</caption>
+            <thead>
+              <tr>
+                <th scope="col">Metric</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {metrics.map(({ ref, metric }) => (
+                <tr key={ref}>
+                  <th scope="row">{metric.label}</th>
+                  <td>
+                    <strong>{metric.display}</strong>
+                    <SourceLink sourceId={metric.sourceId} superscript />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
     LineChart: ({ props }) => (
       <Chart refs={props.seriesRefs} title={props.title} mode="line" />
     ),
     MarketChart: ({ props }) => <MarketChart {...props} />,
     BarChart: ({ props }) => (
       <Chart refs={props.seriesRefs} title={props.title} mode="bar" />
+    ),
+    HorizontalBarChart: ({ props }) => (
+      <HorizontalBarChart refs={props.seriesRefs} title={props.title} />
+    ),
+    PieChart: ({ props }) => (
+      <PieChart refs={props.seriesRefs} title={props.title} />
     ),
     Timeline: () => {
       const events = useContext(View).bundle?.story.events;

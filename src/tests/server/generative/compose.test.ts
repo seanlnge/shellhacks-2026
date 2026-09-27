@@ -177,6 +177,67 @@ void test("question-relevant metrics and series outrank bundle insertion order",
   );
 });
 
+void test("financial questions prioritize sourced financial tables and trends", () => {
+  const financialBundle: StoryBundle = {
+    story: {
+      ...bundle.story,
+      metrics: {
+        share_price: {
+          label: "Share price",
+          display: "$150",
+          value: 150,
+          asOf: "2026-01-01T00:00:00Z",
+          sourceId: "filing",
+        },
+        revenue: bundle.story.metrics.revenue!,
+        cash_flow: {
+          label: "Operating cash flow",
+          display: "$4B",
+          value: 4,
+          asOf: "2026-01-01T00:00:00Z",
+          sourceId: "filing",
+        },
+      },
+      series: {
+        imported_close: {
+          label: "TEST daily closing price",
+          unit: "USD",
+          sourceId: "filing",
+          asOf: "2026-01-01T00:00:00Z",
+          points: [{ date: "2026-01-01", value: 150 }],
+        },
+        imported_revenue: {
+          label: "Annual revenue",
+          unit: "USD",
+          sourceId: "filing",
+          asOf: "2026-01-01T00:00:00Z",
+          points: [
+            { date: "2025-01-01", value: 8 },
+            { date: "2026-01-01", value: 10 },
+          ],
+        },
+      },
+    },
+  };
+  const candidates = compositionCandidates({
+    story,
+    bundle: financialBundle,
+    evidence: [],
+    scope: "story",
+    question: "Show me the company's financials",
+  });
+  const table = candidates.find(
+    (candidate) => candidate.id === "metrics_table",
+  );
+  assert.ok(table);
+  assert.deepEqual(table.element.props.metricRefs, ["revenue", "cash_flow"]);
+  assert.ok(candidates.some((candidate) => candidate.id === "line_0"));
+  assert.equal(
+    candidates.some((candidate) => candidate.element.type === "MarketChart"),
+    false,
+  );
+});
+
 void test("numeric highlights include their immediate sentence context", () => {
   const candidates = compositionCandidates({
     story,

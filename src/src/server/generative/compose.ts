@@ -57,6 +57,16 @@ function relevantEntries<T extends { label: string }>(
     .map(({ entry }) => entry);
 }
 
+const financialQuestion = (question: string) =>
+  /\b(financials?|revenue|earnings|net income|profit|cash flow|balance sheet|income statement|eps|margins?|quarterly results|annual results)\b/i.test(
+    question,
+  );
+
+const asksForMarketPrice = (question: string) =>
+  /\b(stock price|share price|closing price|market price|price chart|trading price)\b/i.test(
+    question,
+  );
+
 export function compositionCandidates({
   story,
   bundle,
@@ -86,6 +96,7 @@ export function compositionCandidates({
     candidates.push({ id, description, element: { type, props }, ...options });
   const title =
     scope === "story" ? story.title.slice(0, 120) : "Portfolio evidence";
+  const financialIntent = financialQuestion(question);
   add(
     "deck",
     "Editorial answer to the user's question",
@@ -154,11 +165,31 @@ export function compositionCandidates({
         },
       );
     }
-    for (const [index, [key, metric]] of relevantEntries(
+    const selectedMetrics = relevantEntries(
       Object.entries(bundle?.story.metrics ?? {}),
       question,
-      12,
-    ).entries()) {
+      8,
+    );
+    if (financialIntent) {
+      if (!asksForMarketPrice(question))
+        selectedMetrics.splice(
+          0,
+          selectedMetrics.length,
+          ...selectedMetrics.filter(
+            ([key, metric]) =>
+              !/share price|stock price|closing price|market price/i.test(
+                `${key} ${metric.label}`,
+              ),
+          ),
+        );
+      const priority =
+        /revenue|income|earnings|cash|profit|margin|eps|asset|liabilit|equity|debt/i;
+      selectedMetrics.sort(
+        ([, a], [, b]) =>
+          Number(priority.test(b.label)) - Number(priority.test(a.label)),
+      );
+    }
+    for (const [index, [key, metric]] of selectedMetrics.entries()) {
       add(
         `metric_${index}`,
         `Reported ${metric.label}: ${metric.display}, as of ${metric.asOf}; source ${metric.sourceId}`,
@@ -169,11 +200,41 @@ export function compositionCandidates({
         },
       );
     }
-    for (const [index, [key, series]] of relevantEntries(
+    if (
+      selectedMetrics.length > 1 ||
+      (financialIntent && selectedMetrics.length > 0)
+    )
+      add(
+        "metrics_table",
+        `${financialIntent ? "Primary financials comparison table; include this table for financial questions. " : "Sourced comparison table of reported metrics: "}${selectedMetrics.map(([, metric]) => metric.label).join(", ")}`,
+        "MetricsTable",
+        {
+          title: "Reported metrics",
+          metricRefs: selectedMetrics.map(([key]) => key),
+        },
+      );
+    const selectedSeries = relevantEntries(
       Object.entries(bundle?.story.series ?? {}),
       question,
       8,
-    ).entries()) {
+    );
+    if (financialIntent) {
+      const financialSeries = selectedSeries.filter(
+        ([key, series]) =>
+          !/price|close|volume/i.test(`${key} ${series.label}`),
+      );
+      selectedSeries.splice(0, selectedSeries.length, ...financialSeries);
+      selectedSeries.sort(
+        ([, a], [, b]) =>
+          Number(
+            /revenue|income|earnings|cash|profit|margin|eps/i.test(b.label),
+          ) -
+          Number(
+            /revenue|income|earnings|cash|profit|margin|eps/i.test(a.label),
+          ),
+      );
+    }
+    for (const [index, [key, series]] of selectedSeries.entries()) {
       add(
         `line_${index}`,
         `Trend ${series.label}, ${series.unit}, source ${series.sourceId}`,
@@ -194,7 +255,32 @@ export function compositionCandidates({
         },
         { root: false, resource: `series_${index}` },
       );
+      add(
+        `horizontal_bar_${index}`,
+        `Ranked horizontal comparison of ${series.label}, ${series.unit}, source ${series.sourceId}`,
+        "HorizontalBarChart",
+        { title: series.label.slice(0, 100), seriesRefs: [key] },
+        { root: false, resource: `series_${index}` },
+      );
     }
+    const compositionSeries = financialIntent
+      ? []
+      : relevantEntries(
+          Object.entries(bundle?.story.series ?? {}),
+          question,
+          8,
+        );
+    if (compositionSeries.length > 1)
+      add(
+        "pie_composition",
+        `Latest-value composition across ${compositionSeries.map(([, series]) => series.label).join(", ")}`,
+        "PieChart",
+        {
+          title: "Latest-value composition",
+          seriesRefs: compositionSeries.map(([key]) => key),
+        },
+        { root: false, resource: "series_composition" },
+      );
     if (bundle?.story.events.length)
       add(
         "timeline",
@@ -216,6 +302,7 @@ export function compositionCandidates({
   for (const assetKey of [...new Set(assetKeys ?? [story.assetKey])]
     .filter((key) => /^stock:[A-Z0-9][A-Z0-9.\-]{0,14}$/.test(key))
     .slice(0, 8)) {
+    if (financialIntent && !asksForMarketPrice(question)) continue;
     const symbol = assetKey.slice("stock:".length);
     for (const [range, period] of ranges)
       add(
@@ -270,7 +357,13 @@ export function visualSpec(
   anchor?: { elementProps?: Record<string, unknown> },
 ): Spec | null {
   const charts = candidates.filter((candidate) =>
-    ["LineChart", "BarChart", "MarketChart"].includes(candidate.element.type),
+    [
+      "LineChart",
+      "BarChart",
+      "HorizontalBarChart",
+      "PieChart",
+      "MarketChart",
+    ].includes(candidate.element.type),
   );
   const refs = anchor?.elementProps?.seriesRefs;
   const assetKey = anchor?.elementProps?.assetKey;
