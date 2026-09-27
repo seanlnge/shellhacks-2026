@@ -1,0 +1,71 @@
+{
+  "date_range_utc": {
+    "start": "2026-08-28",
+    "end": "2026-09-26"
+  },
+  "companies": {
+    "AAPL": {
+      "news": 1218,
+      "filings": 8,
+      "financials": true,
+      "transcript": false,
+      "unavailable": {
+        "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+      }
+    },
+    "GOOGL": {
+      "news": 609,
+      "filings": 18,
+      "financials": true,
+      "transcript": false,
+      "unavailable": {
+        "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+      }
+    },
+    "GE": {
+      "news": 294,
+      "filings": 2,
+      "financials": true,
+      "transcript": false,
+      "unavailable": {
+        "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+      }
+    },
+    "BRK-B": {
+      "news": 826,
+      "filings": 5,
+      "financials": true,
+      "transcript": false,
+      "unavailable": {
+        "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+      }
+    },
+    "AVGO": {
+      "news": 750,
+      "filings": 11,
+      "financials": true,
+      "transcript": false,
+      "unavailable": {
+        "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+      }
+    },
+    "NVDA": {
+      "news": 1716,
+      "filings": 19,
+      "financials": true,
+      "transcript": false,
+      "unavailable": {
+        "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+      }
+    },
+    "HLT": {
+      "news": 113,
+      "filings": 4,
+      "financials": true,
+      "transcript": false,
+      "unavailable": {
+        "earnings_transcript": "Skipped by default; use --include-transcripts to request FMP transcripts"
+      }
+    }
+  }
+}

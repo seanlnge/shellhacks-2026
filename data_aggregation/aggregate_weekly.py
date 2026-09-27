@@ -1,4 +1,4 @@
-"""Collect the last seven completed UTC dates of daily market prices as JSON."""
+"""Collect a rolling window of daily market prices as JSON."""
 
 import argparse
 import json
@@ -98,14 +98,17 @@ def fetch_asset(name: str, symbol: str, start: date, end: date) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--end-date", type=date.fromisoformat, default=datetime.now(UTC).date() - timedelta(days=1), help="Last included UTC date (YYYY-MM-DD); defaults to yesterday")
+    parser.add_argument("--days", type=int, default=30, help="Completed calendar dates to include (default: 30)")
     args = parser.parse_args()
+    if args.days < 1:
+        parser.error("--days must be positive")
     end = args.end_date
-    start = end - timedelta(days=6)
+    start = end - timedelta(days=args.days - 1)
     result = {
         "source": "Yahoo Finance public chart endpoint",
         "retrieved_at_utc": datetime.now(UTC).isoformat(),
         "date_range_utc": {"start": start.isoformat(), "end": end.isoformat()},
-        "frequency": "daily trading bars over the last seven completed calendar dates; weekly summary is first open to last close",
+        "frequency": f"daily trading bars over {args.days} completed calendar dates; weekly field summarizes the entire window from first open to last close",
         "assets": {},
         "errors": [],
     }

@@ -1,0 +1,590 @@
+{
+  "date_range_utc": {
+    "start": "2026-08-28",
+    "end": "2026-09-26"
+  },
+  "retrieved_at_utc": "2026-09-27T13:22:52.883738+00:00",
+  "metrics": {
+    "AAPL": {
+      "symbol": "AAPL",
+      "asset_class": "companies",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 341.070007,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": 5009416510920,
+      "market_cap_source": "FMP current company profile (retrieval-time value)",
+      "pe_ratio": 38.93493150684932,
+      "pe_ratio_source": "FMP current trailing-twelve-month ratios (retrieval-time value)",
+      "dividend_history": [
+        {
+          "date": "2025-11-10",
+          "amount": 0.26
+        },
+        {
+          "date": "2026-02-09",
+          "amount": 0.26
+        },
+        {
+          "date": "2026-05-11",
+          "amount": 0.27
+        },
+        {
+          "date": "2026-08-10",
+          "amount": 0.27
+        }
+      ],
+      "latest_dividend_amount": 0.27,
+      "latest_quarterly_dividend_amount": 0.27,
+      "fifty_two_week_high": 345.3399963378906,
+      "fifty_two_week_low": 243.4199981689453,
+      "notes": [],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "GOOGL": {
+      "symbol": "GOOGL",
+      "asset_class": "companies",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 343.920013,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": 4162158113480.9995,
+      "market_cap_source": "FMP current company profile (retrieval-time value)",
+      "pe_ratio": 16.93545183714002,
+      "pe_ratio_source": "FMP current trailing-twelve-month ratios (retrieval-time value)",
+      "dividend_history": [
+        {
+          "date": "2025-12-08",
+          "amount": 0.21
+        },
+        {
+          "date": "2026-03-09",
+          "amount": 0.21
+        },
+        {
+          "date": "2026-06-08",
+          "amount": 0.22
+        },
+        {
+          "date": "2026-09-04",
+          "amount": 0.22
+        }
+      ],
+      "latest_dividend_amount": 0.22,
+      "latest_quarterly_dividend_amount": 0.22,
+      "fifty_two_week_high": 408.6099853515625,
+      "fifty_two_week_low": 235.83999633789062,
+      "notes": [],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "GE": {
+      "symbol": "GE",
+      "asset_class": "companies",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 327.089996,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": 339376322377,
+      "market_cap_source": "FMP current company profile (retrieval-time value)",
+      "pe_ratio": 38.390845070422536,
+      "pe_ratio_source": "FMP current trailing-twelve-month ratios (retrieval-time value)",
+      "dividend_history": [
+        {
+          "date": "2025-09-29",
+          "amount": 0.36
+        },
+        {
+          "date": "2025-12-29",
+          "amount": 0.36
+        },
+        {
+          "date": "2026-03-09",
+          "amount": 0.47
+        },
+        {
+          "date": "2026-07-06",
+          "amount": 0.47
+        }
+      ],
+      "latest_dividend_amount": 0.47,
+      "latest_quarterly_dividend_amount": 0.47,
+      "fifty_two_week_high": 388.8399963378906,
+      "fifty_two_week_low": 268.9100036621094,
+      "notes": [],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "BRK-B": {
+      "symbol": "BRK-B",
+      "asset_class": "companies",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 505.480011,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [],
+      "latest_dividend_amount": null,
+      "latest_quarterly_dividend_amount": null,
+      "fifty_two_week_high": 537.739990234375,
+      "fifty_two_week_low": 464.010009765625,
+      "notes": [
+        "FMP profile HTTP 402",
+        "FMP ratios-ttm HTTP 402",
+        "Market cap unavailable from accessible provider data",
+        "P/E unavailable from accessible provider data"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "AVGO": {
+      "symbol": "AVGO",
+      "asset_class": "companies",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 352.809998,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": 1678521799800,
+      "market_cap_source": "FMP current company profile (retrieval-time value)",
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-12-22",
+          "amount": 0.65
+        },
+        {
+          "date": "2026-03-23",
+          "amount": 0.65
+        },
+        {
+          "date": "2026-06-22",
+          "amount": 0.65
+        },
+        {
+          "date": "2026-09-21",
+          "amount": 0.65
+        }
+      ],
+      "latest_dividend_amount": 0.65,
+      "latest_quarterly_dividend_amount": 0.65,
+      "fifty_two_week_high": 495.0,
+      "fifty_two_week_low": 289.9599914550781,
+      "notes": [
+        "FMP ratios-ttm HTTP 402",
+        "P/E unavailable from accessible provider data"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "NVDA": {
+      "symbol": "NVDA",
+      "asset_class": "companies",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 225.070007,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": 5451420470000,
+      "market_cap_source": "FMP current company profile (retrieval-time value)",
+      "pe_ratio": 28.310691823899365,
+      "pe_ratio_source": "FMP current trailing-twelve-month ratios (retrieval-time value)",
+      "dividend_history": [
+        {
+          "date": "2025-12-04",
+          "amount": 0.01
+        },
+        {
+          "date": "2026-03-11",
+          "amount": 0.01
+        },
+        {
+          "date": "2026-06-04",
+          "amount": 0.25
+        },
+        {
+          "date": "2026-09-10",
+          "amount": 0.25
+        }
+      ],
+      "latest_dividend_amount": 0.25,
+      "latest_quarterly_dividend_amount": 0.25,
+      "fifty_two_week_high": 236.5399932861328,
+      "fifty_two_week_low": 164.27000427246094,
+      "notes": [],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "HLT": {
+      "symbol": "HLT",
+      "asset_class": "companies",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 313.959991,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": 70661407400,
+      "market_cap_source": "FMP current company profile (retrieval-time value)",
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-11-21",
+          "amount": 0.15
+        },
+        {
+          "date": "2026-02-27",
+          "amount": 0.15
+        },
+        {
+          "date": "2026-05-22",
+          "amount": 0.15
+        },
+        {
+          "date": "2026-08-21",
+          "amount": 0.15
+        }
+      ],
+      "latest_dividend_amount": 0.15,
+      "latest_quarterly_dividend_amount": 0.15,
+      "fifty_two_week_high": 358.0,
+      "fifty_two_week_low": 253.5399932861328,
+      "notes": [
+        "FMP ratios-ttm HTTP 402",
+        "P/E unavailable from accessible provider data"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "^GSPC": {
+      "symbol": "^GSPC",
+      "asset_class": "indices",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 7743.410156,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [],
+      "latest_dividend_amount": null,
+      "latest_quarterly_dividend_amount": null,
+      "fifty_two_week_high": 7816.7001953125,
+      "fifty_two_week_low": 6316.91015625,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "^NDX": {
+      "symbol": "^NDX",
+      "asset_class": "indices",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 30608.130859,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [],
+      "latest_dividend_amount": null,
+      "latest_quarterly_dividend_amount": null,
+      "fifty_two_week_high": 30770.630859375,
+      "fifty_two_week_low": 22841.419921875,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "^DJI": {
+      "symbol": "^DJI",
+      "asset_class": "indices",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 51828.621094,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [],
+      "latest_dividend_amount": null,
+      "latest_quarterly_dividend_amount": null,
+      "fifty_two_week_high": 54744.328125,
+      "fifty_two_week_low": 45057.28125,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "^TNX": {
+      "symbol": "^TNX",
+      "asset_class": "indices",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 5.184,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [],
+      "latest_dividend_amount": null,
+      "latest_quarterly_dividend_amount": null,
+      "fifty_two_week_high": 5.230000019073486,
+      "fifty_two_week_low": 3.947000026702881,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "DX-Y.NYB": {
+      "symbol": "DX-Y.NYB",
+      "asset_class": "indices",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 100.970001,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [],
+      "latest_dividend_amount": null,
+      "latest_quarterly_dividend_amount": null,
+      "fifty_two_week_high": 101.80000305175781,
+      "fifty_two_week_low": 95.55000305175781,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "VNQ": {
+      "symbol": "VNQ",
+      "asset_class": "real_estate_etfs",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 90.989998,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-12-22",
+          "amount": 0.801
+        },
+        {
+          "date": "2026-03-24",
+          "amount": 0.946
+        },
+        {
+          "date": "2026-06-24",
+          "amount": 0.855
+        },
+        {
+          "date": "2026-09-23",
+          "amount": 0.805
+        }
+      ],
+      "latest_dividend_amount": 0.805,
+      "latest_quarterly_dividend_amount": 0.805,
+      "fifty_two_week_high": 101.80000305175781,
+      "fifty_two_week_low": 86.83999633789062,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF",
+        "Cash distributions may include capital gains or return of capital; not necessarily dividends"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "XLRE": {
+      "symbol": "XLRE",
+      "asset_class": "real_estate_etfs",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 41.560001,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-12-22",
+          "amount": 0.436
+        },
+        {
+          "date": "2026-03-23",
+          "amount": 0.271
+        },
+        {
+          "date": "2026-06-22",
+          "amount": 0.381
+        },
+        {
+          "date": "2026-09-21",
+          "amount": 0.355
+        }
+      ],
+      "latest_dividend_amount": 0.355,
+      "latest_quarterly_dividend_amount": 0.355,
+      "fifty_two_week_high": 46.45500183105469,
+      "fifty_two_week_low": 39.724998474121094,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF",
+        "Cash distributions may include capital gains or return of capital; not necessarily dividends"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "SRVR": {
+      "symbol": "SRVR",
+      "asset_class": "real_estate_etfs",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 28.997,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-12-30",
+          "amount": 0.43
+        },
+        {
+          "date": "2026-03-05",
+          "amount": 0.237
+        },
+        {
+          "date": "2026-06-04",
+          "amount": 0.075
+        },
+        {
+          "date": "2026-09-03",
+          "amount": 0.637
+        }
+      ],
+      "latest_dividend_amount": 0.637,
+      "latest_quarterly_dividend_amount": 0.637,
+      "fifty_two_week_high": 35.810001373291016,
+      "fifty_two_week_low": 28.44499969482422,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF",
+        "Cash distributions may include capital gains or return of capital; not necessarily dividends"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "INDS": {
+      "symbol": "INDS",
+      "asset_class": "real_estate_etfs",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 38.002102,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-12-30",
+          "amount": 0.891633
+        },
+        {
+          "date": "2026-03-05",
+          "amount": 0.028984
+        },
+        {
+          "date": "2026-06-04",
+          "amount": 0.03686
+        },
+        {
+          "date": "2026-09-03",
+          "amount": 0.791105
+        }
+      ],
+      "latest_dividend_amount": 0.791105,
+      "latest_quarterly_dividend_amount": 0.791105,
+      "fifty_two_week_high": 43.040000915527344,
+      "fifty_two_week_low": 35.959999084472656,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF",
+        "Cash distributions may include capital gains or return of capital; not necessarily dividends"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "REZ": {
+      "symbol": "REZ",
+      "asset_class": "real_estate_etfs",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 89.199997,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-12-16",
+          "amount": 0.907
+        },
+        {
+          "date": "2026-06-15",
+          "amount": 0.507
+        },
+        {
+          "date": "2026-09-15",
+          "amount": 0.535
+        }
+      ],
+      "latest_dividend_amount": 0.535,
+      "latest_quarterly_dividend_amount": null,
+      "fifty_two_week_high": 100.43000030517578,
+      "fifty_two_week_low": 80.87000274658203,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF",
+        "Cash distributions may include capital gains or return of capital; not necessarily dividends"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    },
+    "REM": {
+      "symbol": "REM",
+      "asset_class": "real_estate_etfs",
+      "as_of": "2026-09-25",
+      "currency": "USD",
+      "market_price": 18.9,
+      "market_price_source": "Yahoo Finance last trading close",
+      "market_cap": null,
+      "market_cap_source": null,
+      "pe_ratio": null,
+      "pe_ratio_source": null,
+      "dividend_history": [
+        {
+          "date": "2025-12-16",
+          "amount": 0.813
+        },
+        {
+          "date": "2026-03-17",
+          "amount": 0.163
+        },
+        {
+          "date": "2026-06-15",
+          "amount": 0.499
+        },
+        {
+          "date": "2026-09-15",
+          "amount": 0.506
+        }
+      ],
+      "latest_dividend_amount": 0.506,
+      "latest_quarterly_dividend_amount": 0.506,
+      "fifty_two_week_high": 24.049999237060547,
+      "fifty_two_week_low": 18.700000762939453,
+      "notes": [
+        "Market cap and P/E not applicable or not requested for this index/ETF",
+        "Cash distributions may include capital gains or return of capital; not necessarily dividends"
+      ],
+      "fifty_two_week_source": "Yahoo Finance daily highs/lows for trailing 365 calendar days"
+    }
+  }
+}
