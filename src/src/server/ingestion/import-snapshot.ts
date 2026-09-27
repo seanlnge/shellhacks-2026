@@ -108,7 +108,13 @@ export async function loadSnapshot(
   const root = await realpath(resolve(path));
   const companyManifest = await json(root, "companies/manifest.json");
   const manifestCompanies = object(companyManifest.companies);
-  const history = await json(root, "price_history.json");
+  let historyFile = "price_history.json";
+  try {
+    await realpath(join(root, historyFile));
+  } catch {
+    historyFile = "weekly_market_data.json";
+  }
+  const history = await json(root, historyFile);
   const sec = await json(root, "sec_documents/manifest.json");
   const documents: (typeof sourceDocuments.$inferInsert)[] = [];
   const chunks: (typeof documentChunks.$inferInsert)[] = [];
@@ -118,7 +124,7 @@ export async function loadSnapshot(
   const errors: string[] = [];
   const files: string[] = [
     "companies/manifest.json",
-    "price_history.json",
+    historyFile,
     "sec_documents/manifest.json",
   ];
   const assets = object(history.assets);
@@ -246,7 +252,13 @@ export async function loadSnapshot(
     if (company.financials != null) {
       const financials = object(company.financials);
       const sourceUrl = url(financials.source, "data.sec.gov");
-      const historyFacts = object(financials.historical_facts);
+      const historyFacts = financials.historical_facts
+        ? object(financials.historical_facts)
+        : Object.fromEntries(
+            Object.entries(object(financials.latest_reported_facts ?? {})).map(
+              ([tag, fact]) => [tag, [fact]],
+            ),
+          );
       for (const [tag, rows] of Object.entries(historyFacts)) {
         if (!/^[A-Za-z][A-Za-z0-9_]{0,127}$/.test(tag))
           throw new Error(`Invalid fact tag: ${tag}`);

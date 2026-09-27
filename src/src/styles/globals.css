@@ -1034,6 +1034,15 @@ a {
   border-radius: 6px;
   background: var(--surface);
   box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+.gen-anchor-actions.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 .gen-anchor-actions .gen-anchor-trigger {
   padding: 4px 0;

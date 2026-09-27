@@ -936,6 +936,7 @@ function Anchorable({
   const { ask, explore, spec, bundle, evidenceSources } = useContext(View);
   const [prompting, setPrompting] = useState(false);
   const [question, setQuestion] = useState("");
+  const [actionsOpen, setActionsOpen] = useState(false);
   const entry = Object.entries(spec?.elements ?? {}).find(
     ([, candidate]) =>
       candidate === element ||
@@ -963,9 +964,27 @@ function Anchorable({
     primaryId ??
     (metricRef ? bundle?.story.metrics[metricRef]?.sourceId : undefined);
   return (
-    <div className={`gen-anchor${page ? "gen-page" : ""}`}>
+    <div
+      className={`gen-anchor${page ? "gen-page" : ""}`}
+      onClick={(event) => {
+        if ((event.target as HTMLElement).closest("button,a,input,textarea"))
+          return;
+        setActionsOpen((open) => !open);
+      }}
+      onKeyDown={(event) => {
+        if (event.target !== event.currentTarget) return;
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          setActionsOpen((open) => !open);
+        }
+      }}
+      tabIndex={0}
+    >
       {children}
-      <div className="gen-anchor-actions">
+      <div
+        className={`gen-anchor-actions${actionsOpen ? "is-open" : ""}`}
+        aria-hidden={!actionsOpen}
+      >
         <span className="gen-explore-wrap">
           <button
             type="button"
