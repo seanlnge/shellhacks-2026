@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { BriefingDeck } from "~/app/_components/briefing-deck";
+import { GenerativeView } from "~/app/_components/generative-view";
 import { api, type RouterOutputs } from "~/trpc/react";
 
 type Portfolio = RouterOutputs["portfolio"]["list"][number];
@@ -34,9 +34,11 @@ export function Dashboard({ userName }: { userName: string }) {
   const [formError, setFormError] = useState("");
   const [expandedStory, setExpandedStory] = useState<number | null>(null);
   const [question, setQuestion] = useState("");
-  const [deck, setDeck] = useState<
-    RouterOutputs["briefing"]["generate"] | null
-  >(null);
+  const [view, setView] = useState<{
+    storyId: number;
+    question: string;
+  } | null>(null);
+  const [globalQuestion, setGlobalQuestion] = useState("");
 
   const create = api.portfolio.create.useMutation({
     onSuccess: async () => {
@@ -57,7 +59,6 @@ export function Dashboard({ userName }: { userName: string }) {
       setEditing(null);
     },
   });
-  const generate = api.briefing.generate.useMutation({ onSuccess: setDeck });
 
   function openEditor(portfolio?: Portfolio) {
     setEditing(portfolio ?? "new");
@@ -136,6 +137,7 @@ export function Dashboard({ userName }: { userName: string }) {
               onClick={() => {
                 setSelectedId(portfolio.id);
                 setExpandedStory(null);
+                setView(null);
               }}
             >
               <span>{portfolio.name}</span>
@@ -204,6 +206,40 @@ export function Dashboard({ userName }: { userName: string }) {
                   </span>
                 )}
               </div>
+              <form
+                className="question-form global-question"
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  if (stories[0] && globalQuestion.trim()) {
+                    setView({
+                      storyId: stories[0].id,
+                      question: globalQuestion.trim(),
+                    });
+                    setGlobalQuestion("");
+                  }
+                }}
+              >
+                <label htmlFor="global-question">
+                  ASK ABOUT YOUR PORTFOLIO
+                </label>
+                <div>
+                  <input
+                    id="global-question"
+                    value={globalQuestion}
+                    onChange={(event) => setGlobalQuestion(event.target.value)}
+                    maxLength={500}
+                    placeholder="What changed across my holdings?"
+                    required
+                    disabled={!stories.length}
+                  />
+                  <button disabled={!stories.length}>Explore ↗</button>
+                </div>
+                {!stories.length && (
+                  <p className="muted">
+                    Questions become available when sourced stories arrive.
+                  </p>
+                )}
+              </form>
               {storiesLoading ? (
                 <div className="empty-state">Finding your stories…</div>
               ) : stories.length ? (
@@ -248,8 +284,10 @@ export function Dashboard({ userName }: { userName: string }) {
                         <button
                           className="deep-button"
                           onClick={() => {
-                            setExpandedStory(story.id);
-                            setQuestion("What matters most about this story?");
+                            setView({
+                              storyId: story.id,
+                              question: "What matters most about this story?",
+                            });
                           }}
                         >
                           Explore this story ↗
@@ -260,11 +298,10 @@ export function Dashboard({ userName }: { userName: string }) {
                           className="question-form"
                           onSubmit={(event) => {
                             event.preventDefault();
-                            if (active)
-                              generate.mutate({
-                                portfolioId: active.id,
+                            if (question.trim())
+                              setView({
                                 storyId: story.id,
-                                question,
+                                question: question.trim(),
                               });
                           }}
                         >
@@ -282,15 +319,8 @@ export function Dashboard({ userName }: { userName: string }) {
                               placeholder="What does this mean for the company?"
                               required
                             />
-                            <button disabled={generate.isPending}>
-                              {generate.isPending
-                                ? "Generating…"
-                                : "Build my deep dive ↗"}
-                            </button>
+                            <button>Build my deep dive ↗</button>
                           </div>
-                          {generate.error && (
-                            <p className="error">{generate.error.message}</p>
-                          )}
                         </form>
                       )}
                     </article>
@@ -443,7 +473,15 @@ export function Dashboard({ userName }: { userName: string }) {
           </div>
         </div>
       )}
-      {deck && <BriefingDeck spec={deck} onClose={() => setDeck(null)} />}
+      {view && active && (
+        <GenerativeView
+          key={`${active.id}:${view.storyId}:${view.question}`}
+          portfolioId={active.id}
+          storyId={view.storyId}
+          question={view.question}
+          onClose={() => setView(null)}
+        />
+      )}
     </main>
   );
 }

@@ -1,0 +1,57 @@
+{
+  "record": {
+    "assetKey": "stock:AAPL",
+    "title": "Apple reports third quarter results",
+    "summary": "Apple reported fiscal 2025 third-quarter revenue of $94.0 billion and diluted earnings per share of $1.57 for the quarter ended June 28, 2025.",
+    "content": "In its July 31, 2025 earnings release, Apple reported revenue of $94.0 billion and diluted earnings per share of $1.57 for its fiscal 2025 third quarter ended June 28, 2025. Apple's board also declared a cash dividend of $0.26 per common share, payable August 14, 2025 to shareholders of record at close of business August 11, 2025.",
+    "sourceName": "Apple Newsroom",
+    "sourceUrl": "https://www.apple.com/newsroom/2025/07/apple-reports-third-quarter-results/",
+    "publishedAt": "2025-07-31T00:00:00Z"
+  },
+  "bundle": {
+    "story": {
+      "assetKey": "stock:AAPL",
+      "holding": { "ticker": "AAPL", "name": "Apple Inc." },
+      "metrics": {
+        "quarterly_revenue_usd_billions": {
+          "label": "Fiscal Q3 2025 revenue (USD billions)",
+          "value": 94.0,
+          "display": "$94.0 billion",
+          "sourceId": "apple_q3_2025_release",
+          "asOf": "2025-06-28T00:00:00Z"
+        },
+        "diluted_eps_usd": {
+          "label": "Fiscal Q3 2025 diluted EPS (USD)",
+          "value": 1.57,
+          "display": "$1.57 per share",
+          "sourceId": "apple_q3_2025_release",
+          "asOf": "2025-06-28T00:00:00Z"
+        },
+        "declared_dividend_usd_per_share": {
+          "label": "Dividend declared July 31, 2025 (USD/share)",
+          "value": 0.26,
+          "display": "$0.26 per share",
+          "sourceId": "apple_q3_2025_release",
+          "asOf": "2025-07-31T00:00:00Z"
+        }
+      },
+      "series": {},
+      "events": [
+        {
+          "id": "apple_fy2025_q3_results",
+          "date": "2025-07-31",
+          "label": "Apple announced fiscal 2025 third-quarter results for the quarter ended June 28, 2025",
+          "sourceId": "apple_q3_2025_release"
+        }
+      ],
+      "sources": {
+        "apple_q3_2025_release": {
+          "label": "Apple reports third quarter results",
+          "url": "https://www.apple.com/newsroom/2025/07/apple-reports-third-quarter-results/",
+          "publishedAt": "2025-07-31T00:00:00Z",
+          "accessedAt": "2026-09-27T00:59:46Z"
+        }
+      }
+    }
+  }
+}

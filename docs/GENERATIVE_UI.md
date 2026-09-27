@@ -15,7 +15,7 @@ Three things make <5s possible:
 
 1. Everything the model needs is precomputed during ingestion (summaries, key numbers, embedded filing chunks). Nothing is fetched from EDGAR or news APIs at click time.
 2. The spec streams as JSONL patches, so slide 1 renders while later slides are still generating.
-3. The theme lives in our component registry, not the prompt, so the model emits no styling tokens.
+3. The theme comes from [`DESIGN.md`](./DESIGN.md) and lives in our component registry, not the prompt, so the model emits no styling tokens.
 
 ## json-render primer
 
@@ -26,7 +26,7 @@ The pieces we use:
 | Concept | What it is | Our use |
 | --- | --- | --- |
 | [Catalog](https://json-render.dev/docs) | Components with Zod-typed props + descriptions, plus actions with typed params. The contract with the model. | \~12 Wrapped slide components + 3 actions |
-| [Registry](https://json-render.dev/docs/registry) | `defineRegistry(catalog, {components, actions})` maps catalog types to real React components and action handlers. | Where the theme, animations and data fetching live |
+| [Registry](https://json-render.dev/docs/registry) | `defineRegistry(catalog, {components, actions})` maps catalog types to real React components and action handlers. | Where the `DESIGN.md` theme, restrained transitions and data fetching live |
 | [Spec](https://json-render.dev/docs) | Flat JSON: `root` id + `elements` map, each with `type`, `props`, `children`. | One spec per deep dive |
 | [SpecStream](https://json-render.dev/docs/api/core) | JSONL, one RFC 6902 patch per line (`add`, `replace`, `remove`…). `createSpecStreamCompiler` builds the spec incrementally. | Slide 1 renders before slide 4 exists |
 | [AI SDK integration](https://json-render.dev/docs/ai-sdk) | Server: `catalog.prompt()` as system prompt + `streamText`. Client: `useUIStream({ api })` returns `{ spec, isStreaming, error, send }`. | Our `/api/deepdive` route |
@@ -59,7 +59,7 @@ Go wide on components: the richer the catalog, the more impressive each generate
 | `Deck` | `title` | Root, story mode. Children are slides; swipe + progress bar. |
 | `Dashboard` | `title`, `columns: 1-4` | Root, dashboard mode. Responsive grid of sections. |
 | `Section` | `title`, `span: 1-4` | Grid cell grouping charts/cards. |
-| `StorySlide` | `kicker`, `title`, `tone` | One full-screen card; tone drives the gradient. |
+| `StorySlide` | `kicker`, `title` | One editorial story page with a fixed monochrome layout. |
 | `Summary` | `text`, `expandedText?` | Collapsed/expanded prose. |
 | `BigNumber` | `label`, `metricRef`, `compareRef?` | Hero stat. |
 | `KPIGrid` | `metricRefs[]` | 3-8 small stats with sparkline + delta. |
@@ -82,7 +82,7 @@ Go wide on components: the richer the catalog, the more impressive each generate
 | `SourceChips` | `sourceIds[]` | Sources for a slide or section. |
 | `AskFollowup` | `suggestions: string[]` | Suggested next questions. |
 
-Render charts with Recharts (or Tremor on top of it) inside the registry, themed once. Every chart gets hover tooltips and the same `Anchorable` wrapper, so users can click a bar or a point and ask about it.
+Render charts with Recharts (or Tremor on top of it) inside the registry, themed once from `DESIGN.md`. Every chart gets a square, bordered tooltip and the same `Anchorable` wrapper, so users can click a bar or a point and ask about it. Use monochrome series differentiated by line style, weight, labels or markers, not color alone.
 
 ```ts
 // lib/catalog.ts
@@ -97,9 +97,8 @@ export const catalog = defineCatalog(schema, {
     StorySlide: { props: z.object({
         kicker: z.string().max(40),
         title: z.string().max(70),
-        tone: z.enum(["positive", "negative", "neutral"]),
       }), slots: ["default"],
-      description: "One full-screen card. Max 3 children plus SourceChips last." },
+      description: "One editorial story page. Max 3 children plus SourceChips last." },
     BigNumber: { props: z.object({
         label: z.string().max(40),
         metricRef: z.string(),
@@ -131,7 +130,14 @@ Design rules baked into the catalog:
 
 ### A2. Registry (where the theme lives)
 
-The registry maps each type to a real component. All visual consistency is here: one theme file, one set of Framer Motion transitions, one gradient system keyed by `tone`. The model never sees a color.
+The registry maps each type to a real component. Implement [`DESIGN.md`](./DESIGN.md) as the single visual source of truth; the model chooses content and composition, never colors, gradients, radii, fonts or animation styles. In particular:
+
+- **Surfaces and shape:** white/light-gray grounds, charcoal text, 1px hairline dividers and borders, no shadows, blur, gradients or rounded corners. Reserve inverted matte-black surfaces for occasional executive briefing or hero-metric moments, not every slide. Use the concrete colors and spacing tokens in `DESIGN.md` rather than inventing a separate palette.
+- **Type and hierarchy:** Playfair Display for editorial headlines and narrative section titles; Inter for body copy, labels, inputs, charts and numbers. Use uppercase tracked `label-caps` for kickers, sources and metric captions; use tabular lining figures for every numeric display and aligned chart/table values.
+- **Decks:** a swipeable sequence of editorial pages, not colorful full-bleed cards. Each page uses a clear kicker, a large serif conclusion, then a sparse evidence block (metric, chart, quote or timeline) separated by hairlines. Keep a fixed-position progress indicator and breadcrumbs in the same restrained ledger language. Mobile pages stack evidence vertically with generous margins.
+- **Dashboards:** use the 12/8/4-column responsive grid and margins defined in `DESIGN.md`. `Dashboard.columns` and `Section.span` describe content placement, not a new design grid; on mobile, complex tables collapse to key-value summaries. Grid sections and source citations use the same flat cards and dividers as the rest of the product.
+- **Charts and states:** axes, gridlines, legends and tooltips use Inter and structural grays; label series or vary strokes/markers to distinguish them without saturated performance colors. Express positive/negative changes with explicit `+`/`-`, arrows and text, not hue alone. `RiskFlag.severity` controls copy and typographic emphasis, never a red/yellow pill. Source chips are rectangular, bordered and labeled.
+- **Interaction and motion:** hover uses subtle fill or border changes; keyboard focus stays clearly visible using a high-contrast border or underline, without glow. Swipe/progress transitions may use short planar movement or opacity, but no bounce, parallax or ambient effects; respect `prefers-reduced-motion`. Preserve chart-point targets and click-to-explain behavior on touch as well as hover.
 
 ```tsx
 // lib/registry.tsx
@@ -142,7 +148,7 @@ export const { registry, handlers } = defineRegistry(catalog, {
   components: {
     StorySlide: ({ props, children, element }) => (
       <Anchorable element={element}>
-        <motion.section className={slideCls(props.tone)} {...slideIn}>
+        <motion.section className="story-slide" {...editorialSlideTransition}>
           <p className="kicker">{props.kicker}</p>
           <h2>{props.title}</h2>
           {children}
@@ -179,6 +185,7 @@ const system = catalog.prompt({
     "Numbers in prose are fine if they appear in the context; don't invent figures.",
     "Add a Callout to point out the most interesting thing in each chart.",
     "Plain language. Assume the reader is a smart non-expert.",
+    "Choose content and layout only. Do not output visual styling; the registry applies DESIGN.md.",
   ],
 });
 
@@ -307,13 +314,7 @@ Lists via `repeat`:
 { "type": "TimelineItem", "props": { "date": { "$item": "date" }, "label": { "$item": "label" } } }
 ```
 
-Conditional tone via `$cond`:
-
-```json
-{ "tone": { "$cond": { "$state": "/story/metrics/ipo.first_day_return/value", "gt": 0 }, "$then": "positive", "$else": "negative" } }
-```
-
-Conditional visibility via `visible`, e.g. only show a lock-up `RiskFlag` if the event exists. Expand/collapse on `Summary` is local UI state in the component, not model output.
+Use `visible` only when the underlying data warrants an element, e.g. show a lock-up `RiskFlag` only if the event exists. Expand/collapse on `Summary` is local UI state in the component, not model output. Never bind financial performance to a visual theme or gradient.
 
 If `$template` proves unreliable with a small model, fall back to the simpler contract: the model only emits `metricRef` props and `BigNumber` reads `bundle.metrics[ref].display` itself. Test both in the first hour of Part B.
 
@@ -407,7 +408,7 @@ For the demo, prewarm the spec cache for the exact anchors you plan to click. Li
 
 Get one generated view on screen fast, then pile on components and data; each new chart type makes every future generation look better.
 
-1. Catalog + registry with the theme and 3-4 core components; render a hand-written spec.
+1. Catalog + registry using `DESIGN.md` tokens and 3-4 core components; render a hand-written spec on desktop and mobile.
 2. `/api/deepdive` streaming with `catalog.prompt()` + `useUIStream`. First live generation.
 3. Financials ingestion (B3b) for the demo holdings + `/api/series`.
 4. Chart components: `LineChart`, `BarChart`, `KPIGrid`, `DataTable`, `Waterfall`, `Donut`.
@@ -415,7 +416,7 @@ Get one generated view on screen fast, then pile on components and data; each ne
 6. `Anchorable` everywhere: click any chart point, card or header to ask about it.
 7. Story deck mode with `PriceChart`, `FilingExcerpt`, `Timeline`.
 8. More visuals as time allows: `ScatterChart` vs peers, `Heatmap`, portfolio-level series, `Callout` annotations.
-9. Polish: transitions, breadcrumbs, spec cache for the demo path.
+9. Polish: restrained, reduced-motion-safe transitions, breadcrumbs, spec cache for the demo path.
 
 Lowest priority if time runs short:
 

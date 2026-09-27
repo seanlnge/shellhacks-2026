@@ -1,6 +1,7 @@
 import { relations } from "drizzle-orm";
 import { index, pgTableCreator, primaryKey } from "drizzle-orm/pg-core";
-import { type AdapterAccount } from "next-auth/adapters";
+import type { AdapterAccount } from "next-auth/adapters";
+import type { StoryBundle } from "~/server/data/story-bundle";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -68,6 +69,16 @@ export const stories = createTable(
   }),
   (t) => [index("story_asset_date_idx").on(t.assetKey, t.publishedAt)],
 );
+
+// Pre-ingested, sourced chart and metric data for a single story.
+export const storyData = createTable("story_data", (d) => ({
+  storyId: d
+    .integer()
+    .primaryKey()
+    .references(() => stories.id, { onDelete: "cascade" }),
+  bundle: d.jsonb().$type<StoryBundle>().notNull(),
+  importedAt: d.timestamp({ withTimezone: true }).defaultNow().notNull(),
+}));
 
 export const users = createTable("user", (d) => ({
   id: d
