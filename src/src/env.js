@@ -15,6 +15,7 @@ export const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string().min(1),
     DATABASE_URL: z.string().url(),
     AI_GATEWAY_API_KEY: z.string().optional(),
+    JEV_API_KEY: z.string().optional(),
     BRIEFING_MODEL: z.string().optional(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
@@ -42,6 +43,7 @@ export const env = createEnv({
       process.env.GOOGLE_CLIENT_SECRET || process.env.google_client_secret,
     DATABASE_URL: process.env.DATABASE_URL,
     AI_GATEWAY_API_KEY: process.env.AI_GATEWAY_API_KEY,
+    JEV_API_KEY: process.env.JEV_API_KEY,
     BRIEFING_MODEL: process.env.BRIEFING_MODEL,
     NODE_ENV: process.env.NODE_ENV,
   },

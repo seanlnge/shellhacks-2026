@@ -37,6 +37,7 @@ export function Dashboard({ userName }: { userName: string }) {
   const [view, setView] = useState<{
     storyId: number;
     question: string;
+    scope: "story" | "portfolio";
   } | null>(null);
   const [globalQuestion, setGlobalQuestion] = useState("");
 
@@ -214,6 +215,7 @@ export function Dashboard({ userName }: { userName: string }) {
                     setView({
                       storyId: stories[0].id,
                       question: globalQuestion.trim(),
+                      scope: "portfolio",
                     });
                     setGlobalQuestion("");
                   }
@@ -287,6 +289,7 @@ export function Dashboard({ userName }: { userName: string }) {
                             setView({
                               storyId: story.id,
                               question: "What matters most about this story?",
+                              scope: "story",
                             });
                           }}
                         >
@@ -302,6 +305,7 @@ export function Dashboard({ userName }: { userName: string }) {
                               setView({
                                 storyId: story.id,
                                 question: question.trim(),
+                                scope: "story",
                               });
                           }}
                         >
@@ -479,6 +483,7 @@ export function Dashboard({ userName }: { userName: string }) {
           portfolioId={active.id}
           storyId={view.storyId}
           question={view.question}
+          scope={view.scope}
           onClose={() => setView(null)}
         />
       )}

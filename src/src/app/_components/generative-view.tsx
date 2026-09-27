@@ -61,11 +61,13 @@ type Anchor = {
 };
 type ViewContext = {
   bundle: Bundle | null;
+  evidenceSources: Record<string, Source>;
   spec: Spec | null;
   ask: (question: string, anchor?: Anchor) => void;
 };
 const View = createContext<ViewContext>({
   bundle: null,
+  evidenceSources: {},
   spec: null,
   ask: () => undefined,
 });
@@ -75,7 +77,8 @@ function EmptyData() {
   return <p className="gen-empty">No sourced data available for this view.</p>;
 }
 function SourceLink({ sourceId }: { sourceId: string }) {
-  const source = useContext(View).bundle?.story.sources[sourceId];
+  const { bundle, evidenceSources } = useContext(View);
+  const source = bundle?.story.sources[sourceId] ?? evidenceSources[sourceId];
   return source && /^https:\/\//i.test(source.url) ? (
     <a
       className="gen-source"
@@ -552,20 +555,31 @@ export function GenerativeView({
   portfolioId,
   storyId,
   question,
+  scope,
   onClose,
 }: {
   portfolioId: number;
   storyId: number;
   question: string;
+  scope: "story" | "portfolio";
   onClose: () => void;
 }) {
   const [spec, setSpec] = useState<Spec | null>(null);
   const [bundle, setBundle] = useState<Bundle | null>(null);
+  const [evidenceSources, setEvidenceSources] = useState<
+    Record<string, Source>
+  >({});
+  const [evidenceMode, setEvidenceMode] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [askText, setAskText] = useState("");
   const [history, setHistory] = useState<
-    { spec: Spec; bundle: Bundle | null; question: string }[]
+    {
+      spec: Spec;
+      bundle: Bundle | null;
+      evidenceSources: Record<string, Source>;
+      evidenceMode: string;
+    }[]
   >([]);
   const abort = useRef<AbortController | null>(null);
 
@@ -574,9 +588,14 @@ export function GenerativeView({
     const controller = new AbortController();
     abort.current = controller;
     if (push && spec)
-      setHistory((prev) => [...prev, { spec, bundle, question }]);
+      setHistory((prev) => [
+        ...prev,
+        { spec, bundle, evidenceSources, evidenceMode },
+      ]);
     setSpec(null);
     setBundle(null);
+    setEvidenceSources({});
+    setEvidenceMode("");
     setError("");
     setLoading(true);
     const query = new URLSearchParams({
@@ -609,16 +628,36 @@ export function GenerativeView({
         body: JSON.stringify({
           portfolioId,
           storyId,
+          scope,
           question: nextQuestion,
           ...(anchor ? { anchor } : {}),
         }),
         signal: controller.signal,
       });
-      if (!response.ok || !response.body)
-        throw new Error(
-          (await response.text()).slice(0, 250) ||
-            "Unable to generate the briefing.",
-        );
+      if (!response.ok || !response.body) {
+        const failure: unknown = await response.json().catch(() => null);
+        const message =
+          failure &&
+          typeof failure === "object" &&
+          "error" in failure &&
+          typeof failure.error === "string"
+            ? failure.error
+            : "Unable to generate the briefing.";
+        throw new Error(message);
+      }
+      const encodedSources = response.headers.get("X-Evidence-Sources");
+      if (encodedSources) {
+        try {
+          const sources: unknown = JSON.parse(
+            decodeURIComponent(encodedSources),
+          );
+          if (sources && typeof sources === "object" && !Array.isArray(sources))
+            setEvidenceSources(sources as Record<string, Source>);
+        } catch {
+          // The view can still render its story's own sources.
+        }
+      }
+      setEvidenceMode(response.headers.get("X-Evidence-Mode") ?? "");
       const compiler = createSpecStreamCompiler<Spec>({
         root: "",
         elements: {},
@@ -660,7 +699,7 @@ export function GenerativeView({
   useEffect(() => {
     void generateRef.current(question, undefined, false);
     return () => abort.current?.abort();
-  }, [portfolioId, storyId, question]);
+  }, [portfolioId, storyId, question, scope]);
   function goBack() {
     abort.current?.abort();
     const previous = history.at(-1);
@@ -668,6 +707,8 @@ export function GenerativeView({
     setHistory((items) => items.slice(0, -1));
     setSpec(previous.spec);
     setBundle(previous.bundle);
+    setEvidenceSources(previous.evidenceSources);
+    setEvidenceMode(previous.evidenceMode);
     setError("");
     setLoading(false);
   }
@@ -691,7 +732,11 @@ export function GenerativeView({
             ← Back {history.length ? `(${history.length})` : ""}
           </button>
           <span className="eyebrow">
-            {history.length ? "FOLLOW-UP RESEARCH" : "PERSONAL DEEP DIVE"}
+            {evidenceMode
+              ? `EVIDENCE / ${evidenceMode.toUpperCase()}`
+              : history.length
+                ? "FOLLOW-UP RESEARCH"
+                : "PERSONAL DEEP DIVE"}
           </span>
         </nav>
         <button onClick={onClose} aria-label="Close briefing">
@@ -703,6 +748,7 @@ export function GenerativeView({
           <View.Provider
             value={{
               bundle,
+              evidenceSources,
               spec,
               ask: (text, anchor) => void generate(text, anchor),
             }}
@@ -740,7 +786,9 @@ export function GenerativeView({
         }}
       >
         <label htmlFor="gen-ask-input" className="eyebrow">
-          ASK ANYTHING ABOUT THIS STORY
+          {scope === "portfolio"
+            ? "ASK ABOUT YOUR PORTFOLIO"
+            : "ASK ANYTHING ABOUT THIS STORY"}
         </label>
         <div>
           <input

@@ -1,0 +1,110 @@
+import { sql } from "drizzle-orm";
+
+import { db } from "~/server/db";
+
+export type EvidenceCandidate = {
+  id: string;
+  assetKey: string;
+  title: string;
+  text: string;
+  sourceUrl: string;
+  sourceType: string;
+  publishedAt: string;
+  score: number;
+};
+
+type SearchRow = Omit<EvidenceCandidate, "publishedAt" | "score"> & {
+  publishedAt: Date;
+  score: number;
+};
+
+export async function retrieveEvidence({
+  assetKeys,
+  query,
+  limit = 32,
+}: {
+  assetKeys: string[];
+  query: string;
+  limit?: number;
+}): Promise<EvidenceCandidate[]> {
+  const keys = [...new Set(assetKeys)].filter((key) =>
+    /^(stock|alternative):[A-Za-z0-9._-]{1,32}$/.test(key),
+  );
+  if (!keys.length) return [];
+  const count = Math.max(
+    1,
+    Math.min(40, Math.floor(Number.isFinite(limit) ? limit : 32)),
+  );
+  const terms = (query.toLowerCase().match(/[a-z0-9]{3,}/g) ?? [])
+    .filter(
+      (term) =>
+        !/^(what|which|when|where|with|from|this|that|about|show|tell|explain|across|portfolio|holdings|changed)$/.test(
+          term,
+        ),
+    )
+    .slice(0, 8);
+  const search = terms.join(" OR ");
+  // A lexical match is preferred, but fill the shortlist with recent, varied sources
+  // when the question has no matching vocabulary (or is empty).
+  const result = await db.execute<SearchRow>(sql`
+    WITH matched AS (
+      SELECT id, "assetKey", title, text, "sourceUrl", "sourceType", "publishedAt",
+        ts_rank_cd(to_tsvector('english', title || ' ' || text), websearch_to_tsquery('english', ${search})) AS score
+      FROM src_evidence
+      WHERE "assetKey" IN ${sql`(${sql.join(
+        keys.map((key) => sql`${key}`),
+        sql`, `,
+      )})`}
+        AND to_tsvector('english', title || ' ' || text) @@ websearch_to_tsquery('english', ${search})
+      ORDER BY score DESC, "publishedAt" DESC LIMIT ${count * 4}
+    ), recent AS (
+      SELECT id, "assetKey", title, text, "sourceUrl", "sourceType", "publishedAt", 0::real AS score
+      FROM (
+        SELECT *, row_number() OVER (PARTITION BY "assetKey", "sourceType" ORDER BY "publishedAt" DESC, id) AS recency_rank
+        FROM src_evidence WHERE "assetKey" IN ${sql`(${sql.join(
+          keys.map((key) => sql`${key}`),
+          sql`, `,
+        )})`}
+      ) recent_rows WHERE recency_rank <= ${Math.max(8, Math.ceil(count / 2))}
+    ), ranked AS (
+      SELECT *, row_number() OVER (PARTITION BY id ORDER BY score DESC) AS duplicate_rank,
+        row_number() OVER (PARTITION BY "assetKey", "sourceType", "sourceUrl" ORDER BY score DESC, "publishedAt" DESC, id) AS source_rank
+      FROM (SELECT * FROM matched UNION ALL SELECT * FROM recent) pool
+    )
+    SELECT id, "assetKey", title, text, "sourceUrl", "sourceType", "publishedAt", score
+    FROM ranked WHERE duplicate_rank = 1 AND source_rank <= 3
+    ORDER BY (CASE WHEN score > 0 THEN 1 ELSE 0 END) DESC, score DESC,
+      "publishedAt" DESC, "assetKey", id
+    LIMIT ${count * (keys.length + 4)}
+  `);
+  const rows = result as unknown as SearchRow[];
+  const picked: SearchRow[] = [];
+  const used = new Set<string>();
+  // First pass spans holdings and source types; second pass uses relevance.
+  for (const key of keys) {
+    for (const sourceType of ["filing", "news"]) {
+      const item = rows.find(
+        (row) =>
+          row.assetKey === key &&
+          row.sourceType === sourceType &&
+          !used.has(row.id),
+      );
+      if (item && picked.length < count) {
+        picked.push(item);
+        used.add(item.id);
+      }
+    }
+  }
+  for (const item of rows) {
+    if (picked.length >= count) break;
+    if (!used.has(item.id)) {
+      picked.push(item);
+      used.add(item.id);
+    }
+  }
+  return picked.map((row) => ({
+    ...row,
+    publishedAt: new Date(row.publishedAt).toISOString(),
+    score: Number(row.score),
+  }));
+}

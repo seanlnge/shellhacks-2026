@@ -11,6 +11,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "data:import": "tsx src/server/data/import-fixture.ts",
+    "evidence:import": "tsx src/server/evidence/import-snapshot.ts",
     "dev": "next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",

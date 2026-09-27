@@ -25,7 +25,7 @@ export async function authorizedStory(portfolioId: number, storyId: number) {
     (item) => `${item.kind}:${item.symbol}` === story?.assetKey,
   );
   if (!story || !holding) return { error: 404 as const };
-  return { story, holding };
+  return { story, holding, portfolio };
 }
 
 export function accessError(status: 401 | 404) {

@@ -1,4 +1,4 @@
-import { relations } from "drizzle-orm";
+import { relations, sql } from "drizzle-orm";
 import { index, pgTableCreator, primaryKey } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "next-auth/adapters";
 import type { StoryBundle } from "~/server/data/story-bundle";
@@ -79,6 +79,28 @@ export const storyData = createTable("story_data", (d) => ({
   bundle: d.jsonb().$type<StoryBundle>().notNull(),
   importedAt: d.timestamp({ withTimezone: true }).defaultNow().notNull(),
 }));
+
+// Evidence is independent of generated stories and of any particular portfolio.
+export const evidence = createTable(
+  "evidence",
+  (d) => ({
+    id: d.varchar({ length: 64 }).primaryKey(),
+    assetKey: d.varchar({ length: 128 }).notNull(),
+    title: d.text().notNull(),
+    text: d.text().notNull(),
+    sourceUrl: d.text().notNull(),
+    sourceType: d.varchar({ length: 32 }).notNull(),
+    contentScope: d.varchar({ length: 100 }).notNull(),
+    publishedAt: d.timestamp({ withTimezone: true }).notNull(),
+  }),
+  (t) => [
+    index("evidence_asset_date_idx").on(t.assetKey, t.publishedAt),
+    index("evidence_fts_idx").using(
+      "gin",
+      sql`to_tsvector('english', ${t.title} || ' ' || ${t.text})`,
+    ),
+  ],
+);
 
 export const users = createTable("user", (d) => ({
   id: d
