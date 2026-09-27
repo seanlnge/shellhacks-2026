@@ -157,6 +157,33 @@ test("changed article keeps stable identity and updates content hash", async () 
   );
 });
 
+test("imports numeric Finnhub IDs and preserves RSS provider attribution", async () => {
+  const { root, company, save } = await fixture();
+  await save("companies/AAPL.json", {
+    ...company,
+    news_source: "Google News RSS; Finnhub company news",
+    news: [
+      company.news[0],
+      {
+        title: "Apple expands its product lineup",
+        url: "https://finnhub.io/api/news?id=abc",
+        published_at_utc: "2026-09-24T00:00:00Z",
+        summary:
+          "Apple announced an additional product with details supplied by the publisher.",
+        provider: "Finnhub",
+        provider_id: 142439323,
+      },
+    ],
+  });
+  const snapshot = await loadSnapshot(root);
+  assert.equal(snapshot.documents[0]?.provider, "Google News RSS");
+  assert.equal(snapshot.documents[1]?.providerId, "142439323");
+  assert.equal(
+    snapshot.documents[1]?.contentScope,
+    "headline and publisher abstract",
+  );
+});
+
 test("rejects corrupted SEC text and escaping original paths", async () => {
   const { root, document, entry, save, filename } = await fixture();
   await save(filename, { ...document, text: "corrupt" });

@@ -5,7 +5,7 @@
   },
   "companies": {
     "AAPL": {
-      "news": 1218,
+      "news": 250,
       "filings": 8,
       "financials": true,
       "transcript": false,
@@ -14,7 +14,7 @@
       }
     },
     "GOOGL": {
-      "news": 609,
+      "news": 252,
       "filings": 18,
       "financials": true,
       "transcript": false,
@@ -23,7 +23,7 @@
       }
     },
     "GE": {
-      "news": 294,
+      "news": 177,
       "filings": 2,
       "financials": true,
       "transcript": false,
@@ -32,7 +32,7 @@
       }
     },
     "BRK-B": {
-      "news": 826,
+      "news": 250,
       "filings": 5,
       "financials": true,
       "transcript": false,
@@ -41,7 +41,7 @@
       }
     },
     "AVGO": {
-      "news": 750,
+      "news": 253,
       "filings": 11,
       "financials": true,
       "transcript": false,
@@ -50,7 +50,7 @@
       }
     },
     "NVDA": {
-      "news": 1716,
+      "news": 251,
       "filings": 19,
       "financials": true,
       "transcript": false,
@@ -59,7 +59,7 @@
       }
     },
     "HLT": {
-      "news": 113,
+      "news": 31,
       "filings": 4,
       "financials": true,
       "transcript": false,

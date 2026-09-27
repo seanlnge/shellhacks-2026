@@ -1,10 +1,11 @@
 import tempfile
+import json
 import unittest
 from datetime import UTC, date, datetime
 from pathlib import Path
 from unittest.mock import patch
 
-from data_aggregation.aggregate_companies import news
+from data_aggregation.aggregate_companies import enrich_finnhub, finnhub_news, news, prioritize_news
 from data_aggregation.pipeline import cluster, event, load, normalize, parse_snapshot, save, stories
 from data_aggregation.portfolio_db import connect, portfolio, set_holding
 from data_aggregation.cache_sec_documents import chunks, extract
@@ -13,6 +14,42 @@ from data_aggregation.aggregate_weekly import event_window
 
 
 class PipelineTests(unittest.TestCase):
+    def test_prioritize_news_keeps_summaries_and_small_headline_fallback(self):
+        articles = [
+            {"published_at_utc": f"2026-09-{day:02d}T00:00:00+00:00", "title": str(day)}
+            for day in range(1, 10)
+        ]
+        articles[0]["summary"] = "Detailed reporting"
+        articles[1]["content"] = "Licensed article"
+        kept = prioritize_news(articles, headline_limit=2)
+        self.assertEqual([item["title"] for item in kept], ["9", "8", "2", "1"])
+
+    def test_finnhub_enrichment_retains_existing_news_and_summaries(self):
+        record = {"symbol": "BRK-B", "news_source": "Google News RSS", "news": [
+            {"title": "RSS", "url": "https://example.com/rss", "published_at_utc": "2026-09-25T12:00:00+00:00"},
+        ], "unavailable": {}}
+        article = {"headline": "Finnhub headline", "url": "https://example.com/finnhub",
+                   "datetime": 1789905600, "summary": "Publisher abstract", "id": 42}
+
+        def response(url, _agent):
+            if "company-news" in url:
+                return json.dumps([article]).encode()
+            return b"[]" if "recommendation" in url or "earnings" in url else b'{"metric": {"marketCapitalization": 10}}'
+
+        with patch("data_aggregation.aggregate_companies.fetch", side_effect=response) as request:
+            enrich_finnhub(record, "test-key", date(2026, 9, 1), date(2026, 9, 26))
+            enrich_finnhub(record, "test-key", date(2026, 9, 1), date(2026, 9, 26))
+        self.assertEqual(len(record["news"]), 2)
+        self.assertEqual(record["news"][1]["summary"], "Publisher abstract")
+        self.assertEqual(record["news"][1]["provider_id"], 42)
+        self.assertEqual(record["finnhub"]["basic_financials"]["metric"]["marketCapitalization"], 10)
+        self.assertTrue(all("BRK.B" in call.args[0] for call in request.call_args_list))
+
+    def test_finnhub_news_rejects_error_response(self):
+        with patch("data_aggregation.aggregate_companies.fetch", return_value=b'{"error": "rate limit"}'):
+            with self.assertRaises(ValueError):
+                finnhub_news("AAPL", "test-key", date(2026, 9, 1), date(2026, 9, 26))
+
     def test_news_search_slices_and_retains_full_window(self):
         def rss(url, _agent):
             day = "2026-08-28" if "after%3A2026-08-28" in url else "2026-08-31"
@@ -38,6 +75,18 @@ class PipelineTests(unittest.TestCase):
         result = stories(rows, {"AAPL": 0.4, "NVDA": 0.3}, 5, datetime(2026, 9, 26, tzinfo=UTC))
         self.assertEqual(result[0]["event_count"], 2)
         self.assertEqual(len(result[0]["source_urls"]), 2)
+
+    def test_stories_prioritize_relevant_summaries_over_prices_and_unrelated_news(self):
+        reference = datetime(2026, 9, 27, tzinfo=UTC)
+        rows = [
+            event("AAPL", "price", "2026-09-26T00:00:00+00:00", "https://price", "AAPL rose 2%", price_move_percent=2),
+            event("AAPL", "news", "2026-09-25T12:00:00+00:00", "https://unrelated", "Unrelated chip story", headline="Chip story", abstract="A chip maker announced a partnership", company="Apple"),
+            event("AAPL", "news", "2026-09-24T12:00:00+00:00", "https://apple", "Apple launches new hardware. Apple announced a new product", headline="Apple launches new hardware", abstract="Apple announced a new product", company="Apple"),
+            event("AAPL", "news", "2026-09-26T12:00:00+00:00", "https://headline", "Apple stock changed", headline="Apple stock changed", company="Apple"),
+        ]
+        result = stories(rows, {"AAPL": 1}, 10, reference)
+        self.assertEqual([row["headline"] for row in result], ["Apple launches new hardware"])
+        self.assertEqual(result[0]["summary_3_lines"], ["Apple announced a new product"])
 
     def test_normalize_existing_snapshot(self):
         snapshot = Path(__file__).resolve().parent / "data" / "2026-09-19_to_2026-09-25"

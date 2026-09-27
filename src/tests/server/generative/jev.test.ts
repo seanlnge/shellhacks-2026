@@ -112,6 +112,45 @@ void test("missing key returns bounded lexical candidates without calling Jev", 
   }
 });
 
+void test("lexical selection favors distinct source URLs before extra passages", async () => {
+  const originals = Array.from({ length: 12 }, (_, i) => ({
+    ...candidate(String(i)),
+    sourceUrl: `https://example.com/document-${Math.floor(i / 3)}`,
+  }));
+  const result = await selectEvidence("Apple revenue", originals);
+  assert.equal(result.selected.length, 8);
+  assert.deepEqual(
+    result.selected.slice(0, 4).map((item) => item.id),
+    ["0", "3", "6", "9"],
+  );
+  assert.equal(new Set(result.selected.map((item) => item.sourceUrl)).size, 4);
+});
+
+void test("Jev selection keeps four independent relevant sources in its budget", async () => {
+  const originals = Array.from({ length: 12 }, (_, i) => ({
+    ...candidate(String(i)),
+    sourceUrl: `https://example.com/document-${Math.floor(i / 3)}`,
+  }));
+  const previousFetch = globalThis.fetch;
+  globalThis.fetch = async () => Response.json(answers());
+  try {
+    const result = await selectEvidence("Apple revenue", originals, {
+      apiKey: "test-key",
+    });
+    assert.equal(result.mode, "jev");
+    assert.equal(
+      new Set(result.selected.map((item) => item.sourceUrl)).size,
+      4,
+    );
+    assert.deepEqual(
+      result.selected.slice(0, 4).map((item) => item.id),
+      ["0", "3", "6", "9"],
+    );
+  } finally {
+    globalThis.fetch = previousFetch;
+  }
+});
+
 void test("bad or unavailable Jev responses fall back instead of claiming Jev", async () => {
   const original = candidate("keep");
   const previousFetch = globalThis.fetch;

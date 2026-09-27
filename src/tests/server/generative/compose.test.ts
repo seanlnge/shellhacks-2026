@@ -3,7 +3,10 @@ import test from "node:test";
 
 import { experimental_composeSpec } from "@json-render/core";
 
-import { compositionCandidates } from "../../../src/server/generative/compose";
+import {
+  compositionCandidates,
+  visualSpec,
+} from "../../../src/server/generative/compose";
 import {
   signSeed,
   verifySeed,
@@ -115,6 +118,31 @@ void test("date-only evidence is not offered as a highlighted fact", () => {
   );
 });
 
+void test("four distinct evidence URLs offer a combined citations recipe", () => {
+  const candidates = compositionCandidates({
+    story,
+    bundle: null,
+    evidence: [
+      ...Array.from({ length: 4 }, (_, index) => ({
+        ...evidence[0]!,
+        id: `source_${index}`,
+        sourceUrl: `https://example.com/source-${index}`,
+      })),
+      {
+        ...evidence[0]!,
+        id: "same_document",
+        sourceUrl: "https://example.com/source-0",
+      },
+    ],
+    scope: "story",
+  });
+  assert.deepEqual(
+    candidates.find((item) => item.id === "sources_overview")?.element.props
+      .sourceIds,
+    ["source_0", "source_1", "source_2", "source_3"],
+  );
+});
+
 void test("question-relevant metrics and series outrank bundle insertion order", () => {
   const metrics = Object.fromEntries(
     Array.from({ length: 14 }, (_, i) => [
@@ -165,6 +193,60 @@ void test("numeric highlights include their immediate sentence context", () => {
     (candidate) => candidate.element.type === "HighlightFact",
   );
   assert.equal(fact?.element.props.highlight, "opened at $273.10");
+});
+
+void test("visual follow-ups render a standalone sourced chart instead of a slide", () => {
+  const seriesBundle: StoryBundle = {
+    story: {
+      ...bundle.story,
+      series: {
+        revenue: {
+          label: "Revenue trend",
+          unit: "USD",
+          sourceId: "filing",
+          asOf: "2026-02-01T00:00:00Z",
+          points: [
+            { date: "2026-01-01", value: 10 },
+            { date: "2026-02-01", value: 12 },
+          ],
+        },
+      },
+    },
+  };
+  const candidates = compositionCandidates({
+    story,
+    bundle: seriesBundle,
+    evidence: [],
+    scope: "story",
+    question: "Make me a visual",
+  });
+  const spec = visualSpec(candidates);
+  assert.ok(spec);
+  assert.equal(catalog.validate(spec).success, true);
+  assert.equal(spec.elements[spec.root]?.type, "Dashboard");
+  assert.equal(spec.elements.visual_chart?.type, "LineChart");
+  assert.deepEqual(spec.elements.visual_chart?.props.seriesRefs, ["revenue"]);
+});
+
+void test("visual follow-ups fall back to an authorized market chart", () => {
+  const candidates = compositionCandidates({
+    story,
+    bundle,
+    evidence: [],
+    scope: "story",
+  });
+  const spec = visualSpec(candidates, {
+    elementProps: { assetKey: "stock:TEST" },
+  });
+  assert.ok(spec);
+  assert.equal(catalog.validate(spec).success, true);
+  assert.equal(spec.elements.visual_chart?.type, "MarketChart");
+  assert.equal(spec.elements.visual_chart?.props.assetKey, "stock:TEST");
+  assert.equal(spec.elements.visual_chart?.props.range, "1mo");
+  assert.equal(
+    visualSpec(candidates.filter((item) => item.element.type === "BigNumber")),
+    null,
+  );
 });
 
 void test("pinned experimental composer emits a valid full spec from prepared recipes", async () => {

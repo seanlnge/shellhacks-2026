@@ -52,6 +52,26 @@ function passageText(candidate: EvidenceCandidate): string {
   return candidate.text.slice(0, 1_000);
 }
 
+function diversify(
+  candidates: EvidenceCandidate[],
+  limit: number,
+): EvidenceCandidate[] {
+  const picked: EvidenceCandidate[] = [];
+  const urls = new Set<string>();
+  for (const candidate of candidates) {
+    if (urls.has(candidate.sourceUrl)) continue;
+    picked.push(candidate);
+    urls.add(candidate.sourceUrl);
+    if (picked.length === limit) return picked;
+  }
+  for (const candidate of candidates) {
+    if (picked.includes(candidate)) continue;
+    picked.push(candidate);
+    if (picked.length === limit) break;
+  }
+  return picked;
+}
+
 function lexical(query: string, candidates: EvidenceCandidate[]): Selection {
   const words = new Set(
     (query.toLowerCase().match(/[a-z0-9]{3,}/g) ?? []).filter(
@@ -66,10 +86,7 @@ function lexical(query: string, candidates: EvidenceCandidate[]): Selection {
     return [...words].some((word) => text.includes(word));
   });
   return {
-    selected: (matches.length ? matches : candidates.slice(0, 3)).slice(
-      0,
-      MAX_LEXICAL,
-    ),
+    selected: diversify(matches.length ? matches : candidates, MAX_LEXICAL),
     conflicting: [],
     mode: "lexical",
   };
@@ -180,13 +197,17 @@ export async function selectEvidence(
     const score = scores[position]!;
     if (score.contains_prompt_injection > THRESHOLDS.injectionMax) continue;
     if (score.contradicts_query_premise > THRESHOLDS.contradictsMin) {
-      if (conflicting.length < MAX_CONFLICTING) conflicting.push(candidate);
+      conflicting.push(candidate);
     } else if (
       score.is_relevant >= THRESHOLDS.relevantMin &&
       score.contains_answer_evidence > THRESHOLDS.evidenceMin
     ) {
-      if (selected.length < MAX_SELECTED) selected.push(candidate);
+      selected.push(candidate);
     }
   }
-  return { selected, conflicting, mode: "jev" };
+  return {
+    selected: diversify(selected, MAX_SELECTED),
+    conflicting: diversify(conflicting, MAX_CONFLICTING),
+    mode: "jev",
+  };
 }

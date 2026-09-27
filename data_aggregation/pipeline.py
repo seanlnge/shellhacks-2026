@@ -71,10 +71,13 @@ def normalize(snapshot: Path, holdings: dict[str, float] | None = None) -> list[
             items.append(event(symbol, "news", article["published_at_utc"], article["url"], text,
                                source=article.get("provider") or record["news_source"],
                                content_scope="headline and optional publisher abstract" if article.get("summary") else "headline only",
-                               article_content_available=bool(article.get("content")), publisher=article.get("publisher")))
+                               article_content_available=bool(article.get("content")), publisher=article.get("publisher"),
+                               headline=article["title"], abstract=article.get("summary") or article.get("content"),
+                               company=record.get("company")))
         for filing in record.get("sec_filings_in_window", []):
             document = documents.get(filing["url"], {})
-            items.append(event(symbol, "filing", filing["filed_at"] + "T00:00:00+00:00", filing["url"], f"{symbol} filed {filing['form']} (report date {filing['report_date']})", date_precision="day", source="SEC EDGAR submissions", content_scope="filing metadata; extracted body available via document_path" if document.get("path") else "filing metadata only", document_id=document.get("document_id"), document_path=document.get("path"), key_numbers={"form": filing["form"], "report_date": filing["report_date"], "accession_number": filing["accession_number"]}))
+            detail = filing.get("summary") or f"{symbol} filed {filing['form']} (report date {filing['report_date']})"
+            items.append(event(symbol, "filing", filing["filed_at"] + "T00:00:00+00:00", filing["url"], detail, date_precision="day", source="SEC EDGAR submissions", content_scope=filing.get("content_scope") or ("filing metadata; extracted body available via document_path" if document.get("path") else "filing metadata only"), document_id=document.get("document_id"), document_path=document.get("path"), key_details=filing.get("key_details", []), key_numbers={"form": filing["form"], "report_date": filing["report_date"], "accession_number": filing["accession_number"]}))
     price_days = {(row["holding"], row["ts"][:10]): row["price_move_percent"] for row in items if row["type"] == "price"}
     for row in items:
         if row["type"] != "price":
@@ -166,7 +169,7 @@ def cluster(events: list[dict]) -> list[list[dict]]:
         if row["type"] != "news":
             groups.append([row])
             continue
-        row_tokens = tokens(row["raw_text"])
+        row_tokens = tokens(row.get("headline") or row["raw_text"])
         row_date = datetime.fromisoformat(row["ts"])
         for group in groups:
             anchor = group[0]
@@ -175,7 +178,7 @@ def cluster(events: list[dict]) -> list[list[dict]]:
             if abs((datetime.fromisoformat(anchor["ts"]) - row_date).total_seconds()) > 48 * 3600:
                 continue
             # Lexical similarity is a local fallback until an embedding service is configured.
-            other = tokens(anchor["raw_text"])
+            other = tokens(anchor.get("headline") or anchor["raw_text"])
             similarity = len(row_tokens & other) / len(row_tokens | other) if row_tokens | other else 0
             if similarity >= 0.5:
                 group.append(row)
@@ -187,24 +190,57 @@ def cluster(events: list[dict]) -> list[list[dict]]:
 
 def stories(events: list[dict], holdings: dict[str, float], limit: int, reference: datetime) -> list[dict]:
     ranked = []
+    summary_holdings = {row["holding"] for row in events if row["type"] == "news" and row.get("abstract")}
     for group in cluster(events):
         first = group[0]
+        if first["type"] != "news":
+            continue
+        if first["type"] == "news" and first["holding"] in summary_holdings and not any(row.get("abstract") for row in group):
+            continue
+        if first["type"] == "news" and first.get("company"):
+            name = first["company"].split()[0].lower()
+            aliases = {"alphabet": "google", "nvidia": "nvda", "berkshire": "buffett"}
+            terms = [re.escape(first["holding"]).replace(r"\-", "[.-]"), re.escape(name)]
+            if name in aliases:
+                terms.append(aliases[name])
+            text = " ".join(row.get("headline") or row["raw_text"] for row in group)
+            if not re.search(r"\b(?:" + "|".join(terms) + r")\b", text, re.IGNORECASE):
+                continue
+            if re.search(r"\b(?:stock|shares) (?:rises|falls|gains|slides|ends|closes|outperforms)\b|\b(?:surpasses market returns|higher than market|stock price|trading day)\b", text, re.IGNORECASE):
+                continue
         hours = max(0, (reference - datetime.fromisoformat(first["ts"])).total_seconds() / 3600)
         recency = 1 / (1 + hours / 48)
         move = abs(first.get("price_move_percent", 0))
         score = MATERIALITY[first["type"]] * holdings[first["holding"]] * recency * (1 + move / 100)
-        headlines = list(dict.fromkeys(row["raw_text"] for row in group))
+        if first["type"] == "news" and any(row.get("abstract") for row in group):
+            score *= 3
+        lead = next((row for row in group if row.get("abstract")), first)
+        headlines = list(dict.fromkeys(row.get("headline") or row["raw_text"] for row in group))
+        abstracts = list(dict.fromkeys(row["abstract"] for row in group if row.get("abstract")))
         ranked.append({
             "holding": first["holding"], "type": first["type"], "ts": first["ts"],
-            "score": round(score, 8), "headline": headlines[0],
-            "summary_3_lines": headlines[:3],
-            "expanded_summary": " | ".join(headlines[:10]),
+            "score": round(score, 8), "headline": lead.get("headline") or headlines[0],
+            "summary_3_lines": (abstracts or headlines)[:3],
+            "expanded_summary": " | ".join((abstracts or headlines)[:10]),
             "key_numbers": first.get("key_numbers", {}),
             "source_urls": list(dict.fromkeys(row["source_url"] for row in group)),
             "event_count": len(group),
-            "summary_basis": "source headlines, supplied abstracts, or price bars only; no full article bodies or generated claims",
+            "summary_basis": "publisher-supplied abstract" if abstracts else "source headline or filing only; no generated claims",
         })
-    return sorted(ranked, key=lambda row: row["score"], reverse=True)[:limit]
+    selected = []
+    per_holding = {}
+    holding_days = set()
+    for story in sorted(ranked, key=lambda row: row["score"], reverse=True):
+        symbol = story["holding"]
+        day = (symbol, story["ts"][:10])
+        if per_holding.get(symbol, 0) >= 4 or day in holding_days:
+            continue
+        selected.append(story)
+        holding_days.add(day)
+        per_holding[symbol] = per_holding.get(symbol, 0) + 1
+        if len(selected) == limit:
+            break
+    return selected
 
 
 def run(args: argparse.Namespace) -> None:

@@ -23,8 +23,7 @@ function contextualHighlight(sentence: string) {
     /(?:[$€£]\s*)?\d[\d,.]*(?:%|\b(?:million|billion|trillion)\b)?/i.exec(
       sentence,
     );
-  if (!number || number.index === undefined)
-    return sentence.slice(0, 160).trim();
+  if (number?.index === undefined) return sentence.slice(0, 160).trim();
   const precedingWords = [
     ...sentence.slice(0, number.index).matchAll(/[\p{L}]+/gu),
   ];
@@ -252,7 +251,72 @@ export function compositionCandidates({
       },
     );
   }
+  const distinctEvidence = evidence.filter(
+    (item, index, items) =>
+      items.findIndex((other) => other.sourceUrl === item.sourceUrl) === index,
+  );
+  if (distinctEvidence.length >= 4)
+    add(
+      "sources_overview",
+      "Four distinct relevant source documents for the deep-dive answer",
+      "SourceChips",
+      { sourceIds: distinctEvidence.slice(0, 4).map((item) => item.id) },
+    );
   return candidates;
+}
+
+export function visualSpec(
+  candidates: Experimental_CompositionCandidate[],
+  anchor?: { elementProps?: Record<string, unknown> },
+): Spec | null {
+  const charts = candidates.filter((candidate) =>
+    ["LineChart", "BarChart", "MarketChart"].includes(candidate.element.type),
+  );
+  const refs = anchor?.elementProps?.seriesRefs;
+  const assetKey = anchor?.elementProps?.assetKey;
+  const preferredRange = anchor?.elementProps?.range ?? "1mo";
+  const anchored = charts.find((candidate) => {
+    const props = candidate.element.props;
+    const candidateRefs = props.seriesRefs;
+    return (
+      (Array.isArray(refs) &&
+        Array.isArray(candidateRefs) &&
+        refs.some((ref) => candidateRefs.includes(ref))) ||
+      (typeof assetKey === "string" &&
+        props.assetKey === assetKey &&
+        props.range === preferredRange)
+    );
+  });
+  const chart =
+    anchored ??
+    charts.find((candidate) => candidate.element.type === "LineChart") ??
+    charts.find(
+      (candidate) =>
+        candidate.element.type === "MarketChart" &&
+        candidate.element.props.range === "1mo",
+    ) ??
+    charts.find((candidate) => candidate.element.type === "MarketChart");
+  if (!chart) return null;
+  const title =
+    typeof chart.element.props.title === "string"
+      ? chart.element.props.title
+      : "Historical trend";
+  return {
+    root: "visual",
+    elements: {
+      visual: {
+        type: "Dashboard",
+        props: { title: "Visual evidence", columns: 1 },
+        children: ["visual_section"],
+      },
+      visual_section: {
+        type: "Section",
+        props: { title, span: 1 },
+        children: ["visual_chart"],
+      },
+      visual_chart: { ...chart.element, children: [] },
+    },
+  };
 }
 
 export function compositionStream(options: {

@@ -115,11 +115,59 @@ def finnhub_news(symbol: str, token: str, start: date, end: date) -> list[dict]:
             "publisher": row.get("source"),
             "published_at_utc": datetime.fromtimestamp(row["datetime"], UTC).isoformat(),
             "summary": row.get("summary"),
+            "provider": "Finnhub", "provider_id": row.get("id"),
+            "category": row.get("category"), "image": row.get("image"),
         }
         for row in rows
         if isinstance(row, dict) and row.get("headline") and row.get("url") and row.get("datetime")
         and start <= datetime.fromtimestamp(row["datetime"], UTC).date() <= end
     ]
+
+
+FINNHUB_ENDPOINTS = {
+    "profile": ("/stock/profile2", {}),
+    "basic_financials": ("/stock/metric", {"metric": "all"}),
+    "recommendation_trends": ("/stock/recommendation", {}),
+    "earnings_surprises": ("/stock/earnings", {}),
+}
+
+
+def prioritize_news(articles: list[dict], headline_limit: int = 5) -> list[dict]:
+    articles = sorted(articles, key=lambda item: item["published_at_utc"], reverse=True)
+    detailed = [item for item in articles if item.get("summary") or item.get("content")]
+    headlines = [item for item in articles if not item.get("summary") and not item.get("content")]
+    return sorted(detailed + headlines[:headline_limit], key=lambda item: item["published_at_utc"], reverse=True)
+
+
+def enrich_finnhub(record: dict, token: str, start: date, end: date) -> None:
+    symbol = record["symbol"].replace("-", ".")
+    unavailable = record.setdefault("unavailable", {})
+    try:
+        articles = finnhub_news(symbol, token, start, end)
+        existing = {item["url"] for item in record["news"]}
+        record["news"].extend(item for item in articles if item["url"] not in existing)
+        record["news"].sort(key=lambda item: item["published_at_utc"], reverse=True)
+        if articles:
+            source = record.get("news_source", "")
+            if "Finnhub" not in source:
+                record["news_source"] = (source + "; " if source else "") + "Finnhub company news (supplied summaries)"
+        unavailable.pop("finnhub_news", None)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        unavailable["finnhub_news"] = f"Finnhub news unavailable ({type(exc).__name__})"
+
+    finnhub = record.setdefault("finnhub", {})
+    for name, (path, extra) in FINNHUB_ENDPOINTS.items():
+        url = "https://finnhub.io/api/v1" + path + "?" + urlencode({"symbol": symbol, **extra, "token": token})
+        try:
+            payload = json.loads(fetch(url, "Shellhacks market research"))
+            if not isinstance(payload, (dict, list)) or (isinstance(payload, dict) and "error" in payload):
+                raise ValueError("Unexpected Finnhub response")
+            finnhub[name] = payload
+            unavailable.pop(f"finnhub_{name}", None)
+        except (OSError, ValueError, TypeError) as exc:
+            # Exceptions from urllib may contain the token-bearing request URL.
+            unavailable[f"finnhub_{name}"] = f"Finnhub {name} unavailable ({type(exc).__name__})"
+    finnhub["retrieved_at_utc"] = datetime.now(UTC).isoformat()
 
 
 def sec_submissions(cik: int, agent: str, start: date, end: date) -> tuple[list[dict], list[dict]]:
@@ -204,6 +252,8 @@ def main() -> None:
     parser.add_argument("--days", type=int, default=30, help="Calendar days of news and filings (default: 30)")
     parser.add_argument("--include-transcripts", action="store_true", help="Request FMP earnings transcripts (requires subscription access)")
     parser.add_argument("--newsdata-content", action="store_true", help="Request NewsData archive article content; requires NEWSDATA_API_KEY and storage rights")
+    parser.add_argument("--enrich-finnhub", action="store_true", help="Enrich existing company files with Finnhub news summaries and company data without replacing other sources")
+    parser.add_argument("--prune-news", action="store_true", help="Trim existing company files to summary-backed articles and five recent headline-only fallbacks")
     args = parser.parse_args()
     if not 1 <= args.days <= 365:
         parser.error("--days must be between 1 and 365")
@@ -212,10 +262,33 @@ def main() -> None:
     sec_agent = credential("SEC_USER_AGENT")
     fmp_key = credential("FMP_API_KEY") if args.include_transcripts else ""
     finnhub_key = credential("FINNHUB_API_KEY")
+    if args.enrich_finnhub and not finnhub_key:
+        parser.error("--enrich-finnhub requires FINNHUB_API_KEY")
     newsdata_key = credential("NEWSDATA_API_KEY") if args.newsdata_content else ""
     if args.newsdata_content and not newsdata_key:
         parser.error("--newsdata-content requires NEWSDATA_API_KEY and permission to retain provider content")
     out = Path(__file__).resolve().parent / "data" / f"{start}_to_{end}" / "companies"
+    if args.enrich_finnhub or args.prune_news:
+        if not out.is_dir():
+            parser.error(f"Company snapshot does not exist: {out}")
+        manifest_path = out / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else None
+        for path in sorted(out.glob("*.json")):
+            if path == manifest_path:
+                continue
+            record = json.loads(path.read_text(encoding="utf-8"))
+            if args.enrich_finnhub:
+                enrich_finnhub(record, finnhub_key, start, end)
+            record["news"] = prioritize_news(record["news"])
+            path.write_text(json.dumps(record, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+            if manifest and record["symbol"] in manifest["companies"]:
+                row = manifest["companies"][record["symbol"]]
+                row["news"] = len(record["news"])
+                row["unavailable"] = record["unavailable"]
+            print(f'{record["symbol"]}: {len(record["news"])} articles, {sum(bool(item.get("summary")) for item in record["news"])} summaries')
+        if manifest:
+            manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+        return
     out.mkdir(parents=True, exist_ok=True)
     cik_map = {}
     sec_mapping_error = None
@@ -237,18 +310,11 @@ def main() -> None:
             "financials": None, "latest_earnings_transcript": None, "unavailable": {},
         }
         try:
-            if finnhub_key:
-                try:
-                    record["news"] = finnhub_news(symbol.replace("-", "."), finnhub_key, start, end)
-                    record["news_source"] = "Finnhub company news (headline and supplied summary)"
-                except (OSError, ValueError, KeyError, TypeError) as exc:
-                    # HTTP errors may contain the Finnhub token in their URL.
-                    record["unavailable"]["finnhub"] = f"Finnhub request failed ({type(exc).__name__}); using public RSS"
-                    record["news"] = news(query, start, end)
-            else:
-                record["news"] = news(query, start, end)
+            record["news"] = news(query, start, end)
         except (OSError, ValueError, ET.ParseError) as exc:
             record["unavailable"]["news"] = str(exc)
+        if finnhub_key:
+            enrich_finnhub(record, finnhub_key, start, end)
         if newsdata_key:
             try:
                 import httpx
@@ -273,6 +339,7 @@ def main() -> None:
                     existing.add(article.link)
             except (ImportError, OSError, ValueError, RuntimeError) as exc:
                 record["unavailable"]["newsdata"] = f"NewsData archive unavailable ({type(exc).__name__}); existing headlines retained"
+        record["news"] = prioritize_news(record["news"])
         if not sec_agent:
             record["unavailable"]["sec_filings_and_financials"] = "Set SEC_USER_AGENT to an identifiable organization and contact email, per SEC fair-access guidance"
         elif sec_mapping_error or symbol not in cik_map:

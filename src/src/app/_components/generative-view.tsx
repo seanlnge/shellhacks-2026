@@ -619,57 +619,93 @@ function MarketChart({
   const first = series.points[0]!;
   const last = series.points[series.points.length - 1]!;
   const change = first.value > 0 ? (last.value / first.value - 1) * 100 : null;
+  const rising = last.value >= first.value;
+  const chartColor = rising ? "#287a5b" : "#b64b43";
+  const coordinates = series.points.map((point, index) => ({
+    x: 64 + (index / (series.points.length - 1)) * 568,
+    y: 164 - ((point.value - min) / span) * 122,
+  }));
+  const linePoints = coordinates.map(({ x, y }) => `${x},${y}`).join(" ");
+  const areaPath = `M ${coordinates[0]!.x},174 L ${linePoints.replaceAll(
+    " ",
+    " L ",
+  )} L ${coordinates.at(-1)!.x},174 Z`;
+  const gradientId = `market-fill-${assetKey.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
   return (
     <figure className="gen-chart gen-market-chart">
-      <figcaption>
-        <span className="eyebrow">{title ?? series.label}</span>
-        {stale && <span>Stale imported data; last close {last.date}</span>}
-        {change !== null && (
-          <strong>
-            {change >= 0 ? "+" : ""}
-            {change.toFixed(2)}% close-to-close{" "}
-            <SourceLink sourceId={sourceId} superscript />
-          </strong>
-        )}
-      </figcaption>
+      <header className="gen-market-heading">
+        <div>
+          <span className="eyebrow">{title ?? series.label}</span>
+          <strong className="gen-market-price">${formatCents(last.value)}</strong>
+          <span className="gen-market-caption">Latest close · {last.date}</span>
+        </div>
+        <div className="gen-market-summary">
+          {change !== null && (
+            <span
+              className={`gen-market-change${rising ? " is-up" : " is-down"}`}
+            >
+              <span aria-hidden="true">{rising ? "↗" : "↘"}</span>{" "}
+              {change >= 0 ? "+" : ""}
+              {change.toFixed(2)}%
+            </span>
+          )}
+          <span className="gen-market-period">{first.date} — {last.date}</span>
+          {stale && <span className="gen-market-stale">Delayed data</span>}
+        </div>
+      </header>
       <svg
-        viewBox="0 0 660 205"
+        className="gen-market-plot"
+        viewBox="0 0 660 220"
         role="img"
         aria-label={`${series.label}, ${first.date} to ${last.date}`}
       >
-        <line x1="58" y1="30" x2="58" y2="175" className="gen-axis" />
-        <line x1="58" y1="175" x2="632" y2="175" className="gen-axis" />
-        <text x="52" y="36" textAnchor="end">
-          ${formatCents(max)}
-        </text>
-        <text x="52" y="175" textAnchor="end">
-          ${formatCents(min)}
-        </text>
-        <line x1="58" y1="100" x2="632" y2="100" className="gen-gridline" />
+        <defs>
+          <linearGradient id={gradientId} x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stopColor={chartColor} stopOpacity=".2" />
+            <stop offset="100%" stopColor={chartColor} stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        {[38, 78, 118, 158].map((y, index) => {
+          const value = max - ((max - min) * index) / 3;
+          return (
+            <g key={y}>
+              <line
+                x1="70"
+                y1={y}
+                x2="638"
+                y2={y}
+                className="gen-market-gridline"
+              />
+              <text x="62" y={y + 4} textAnchor="end">
+                ${formatCents(value)}
+              </text>
+            </g>
+          );
+        })}
+        <path d={areaPath} fill={`url(#${gradientId})`} />
         <polyline
           fill="none"
-          stroke="currentColor"
+          stroke={chartColor}
           strokeWidth="2.5"
-          points={series.points
-            .map(
-              (point, index) =>
-                `${58 + (index / (series.points.length - 1)) * 574},${165 - ((point.value - min) / span) * 130}`,
-            )
-            .join(" ")}
+          points={linePoints}
         />
-        <text x="58" y="194">
+        <circle
+          cx={coordinates.at(-1)!.x}
+          cy={coordinates.at(-1)!.y}
+          r="4"
+          fill={chartColor}
+        />
+        <text x="70" y="202">
           {first.date}
         </text>
-        <text x="632" y="194" textAnchor="end">
+        <text x="638" y="202" textAnchor="end">
           {last.date}
         </text>
       </svg>
-      <div className="gen-legend">
-        <span>
-          {series.unit} / {series.points.length} observed trading days
-        </span>
+      <div className="gen-market-footer">
+        <span>{series.points.length} trading sessions</span>
+        <SourceLink sourceId={sourceId} />
       </div>
-      <SourceLink sourceId={sourceId} />
     </figure>
   );
 }
@@ -758,20 +794,12 @@ const { registry: baseRegistry } = defineRegistry(catalog, {
         </div>
       </DashboardColumns.Provider>
     ),
-    Section: ({ props, children }) => {
-      const columns = useContext(DashboardColumns);
-      return (
-        <section
-          className="gen-section"
-          style={{
-            gridColumn: `span ${Math.min(12, (12 / columns) * (props.span ?? 1))}`,
-          }}
-        >
-          <h3>{props.title}</h3>
-          {children}
-        </section>
-      );
-    },
+    Section: ({ props, children }) => (
+      <section className="gen-section">
+        <h3>{props.title}</h3>
+        {children}
+      </section>
+    ),
     StorySlide: ({ props, children }) => (
       <section className="gen-slide">
         <p className="eyebrow">{props.kicker}</p>
@@ -934,6 +962,7 @@ function Anchorable({
   children: ReactNode;
 }) {
   const { ask, explore, spec, bundle, evidenceSources } = useContext(View);
+  const columns = useContext(DashboardColumns);
   const [prompting, setPrompting] = useState(false);
   const [question, setQuestion] = useState("");
   const [actionsOpen, setActionsOpen] = useState(false);
@@ -955,6 +984,7 @@ function Anchorable({
     page && entry && spec ? referencedSources(spec, entry[0], bundle) : [];
   const primaryId = ids.find((id) => sourceFor(id, bundle, evidenceSources));
   const props = element.props;
+  const span = typeof props.span === "number" ? props.span : 1;
   const seriesRef = Array.isArray(props.seriesRefs)
     ? String(props.seriesRefs[0])
     : undefined;
@@ -963,9 +993,27 @@ function Anchorable({
   const previewId =
     primaryId ??
     (metricRef ? bundle?.story.metrics[metricRef]?.sourceId : undefined);
+  const submitQuestion = (text: string) => {
+    const prompt = text.trim();
+    if (!prompt) return;
+    ask(prompt, {
+      ...anchor,
+      selectedText: window.getSelection()?.toString().trim() ?? undefined,
+      userPrompt: prompt,
+    });
+    setPrompting(false);
+    setQuestion("");
+  };
   return (
     <div
       className={`gen-anchor${page ? "gen-page" : ""}`}
+      style={
+        element.type === "Section"
+          ? {
+              gridColumn: `span ${Math.min(12, (12 / columns) * Math.min(columns, span))}`,
+            }
+          : undefined
+      }
       onClick={(event) => {
         if ((event.target as HTMLElement).closest("button,a,input,textarea"))
           return;
@@ -982,7 +1030,7 @@ function Anchorable({
     >
       {children}
       <div
-        className={`gen-anchor-actions${actionsOpen ? "is-open" : ""}`}
+        className={`gen-anchor-actions${actionsOpen ? "is-open" : ""}${prompting ? "is-prompting" : ""}`}
         aria-hidden={!actionsOpen}
       >
         <span className="gen-explore-wrap">
@@ -1015,16 +1063,7 @@ function Anchorable({
           className="gen-anchor-form"
           onSubmit={(event) => {
             event.preventDefault();
-            if (question.trim()) {
-              ask(question.trim(), {
-                ...anchor,
-                selectedText:
-                  window.getSelection()?.toString().trim() ?? undefined,
-                userPrompt: question.trim(),
-              });
-              setPrompting(false);
-              setQuestion("");
-            }
+            submitQuestion(question);
           }}
         >
           <div className="gen-ask-presets" aria-label="Suggested questions">
@@ -1036,8 +1075,7 @@ function Anchorable({
               <button
                 key={preset}
                 type="button"
-                aria-pressed={question === preset}
-                onClick={() => setQuestion(preset)}
+                onClick={() => submitQuestion(preset)}
               >
                 {preset}
               </button>
@@ -1101,13 +1139,11 @@ export function GenerativeView({
     "initial" | "explore" | "expand" | null
   >(null);
   const [error, setError] = useState("");
-  const [askText, setAskText] = useState("");
   const [retryRequest, setRetryRequest] = useState<{
     question: string;
     anchor?: Anchor;
     kind: "initial" | "explore";
   } | null>(null);
-  const [asking, setAsking] = useState(false);
   const [pageTitle, setPageTitle] = useState(storyTitle);
   const [history, setHistory] = useState<
     {
@@ -1198,6 +1234,9 @@ export function GenerativeView({
           scope,
           question: nextQuestion,
           mode,
+          ...(nextQuestion.trim().toLowerCase() === "make me a visual"
+            ? { intent: "visual" }
+            : {}),
           ...(kind === "expand" && spec && seedToken
             ? { initialSpec: spec, seedToken }
             : {}),
@@ -1389,32 +1428,6 @@ export function GenerativeView({
       anchor,
     );
   };
-  const expand = () => {
-    if (!spec || !seedToken || loading) return;
-    const childId =
-      spec.elements[spec.root]?.children?.[currentPageIndex.current];
-    const page =
-      spec.elements[spec.root]?.type === "Deck" && childId
-        ? spec.elements[childId]
-        : undefined;
-    const anchor = page
-      ? {
-          elementId: childId,
-          elementType: page.type,
-          elementProps: page.props,
-        }
-      : undefined;
-    const title =
-      page && typeof page.props.title === "string"
-        ? page.props.title
-        : pageTitle;
-    void generate(
-      `Expand the current page, ${title}, with further sourced detail`,
-      anchor,
-      "expand",
-    );
-  };
-
   return (
     <div
       className="gen-overlay"
@@ -1554,59 +1567,6 @@ export function GenerativeView({
           </div>
         )}
         {!loading && !spec && !error && <EmptyData />}
-      </div>
-      <div className="gen-bottom">
-        <div className="gen-bottom-actions">
-          <button
-            type="button"
-            onClick={expand}
-            disabled={loading || !spec || !seedToken}
-            title={
-              !seedToken ? "Expand requires a verified Jev snapshot" : undefined
-            }
-          >
-            Expand +
-          </button>
-          <button
-            type="button"
-            onClick={() => setAsking((value) => !value)}
-            aria-expanded={asking}
-            aria-controls="gen-ask-form"
-          >
-            Ask {asking ? "−" : "+"}
-          </button>
-        </div>
-        {asking && (
-          <form
-            id="gen-ask-form"
-            className="gen-ask"
-            onSubmit={(event) => {
-              event.preventDefault();
-              if (askText.trim()) {
-                void generate(askText.trim());
-                setAskText("");
-              }
-            }}
-          >
-            <label htmlFor="gen-ask-input" className="eyebrow">
-              {scope === "portfolio"
-                ? "ASK ABOUT THIS PORTFOLIO PAGE"
-                : "ASK ABOUT THIS PAGE"}
-            </label>
-            <div>
-              <input
-                id="gen-ask-input"
-                placeholder="What should I understand next?"
-                autoFocus
-                value={askText}
-                onChange={(event) => setAskText(event.target.value)}
-                maxLength={500}
-                required
-              />
-              <button disabled={loading}>Ask ↗</button>
-            </div>
-          </form>
-        )}
       </div>
     </div>
   );

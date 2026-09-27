@@ -22,10 +22,12 @@ type SearchRow = Omit<EvidenceCandidate, "publishedAt" | "score"> & {
 export async function retrieveEvidence({
   assetKeys,
   query,
+  topic = "",
   limit = 32,
 }: {
   assetKeys: string[];
   query: string;
+  topic?: string;
   limit?: number;
 }): Promise<EvidenceCandidate[]> {
   const keys = [...new Set(assetKeys)].filter((key) =>
@@ -36,14 +38,19 @@ export async function retrieveEvidence({
     1,
     Math.min(40, Math.floor(Number.isFinite(limit) ? limit : 32)),
   );
-  const terms = (query.toLowerCase().match(/[a-z0-9]{3,}/g) ?? [])
-    .filter(
+  const meaningful = (text: string) =>
+    (text.toLowerCase().match(/[a-z0-9]{3,}/g) ?? []).filter(
       (term) =>
-        !/^(what|which|when|where|with|from|this|that|about|show|tell|explain|across|portfolio|holdings|changed)$/.test(
+        !/^(what|which|when|where|with|from|this|that|about|show|tell|explain|across|portfolio|holdings|changed|stock|shares|company)$/.test(
           term,
         ),
-    )
-    .slice(0, 8);
+    );
+  const terms = [
+    ...new Set([
+      ...meaningful(query).slice(0, 6),
+      ...meaningful(topic).slice(0, 8),
+    ]),
+  ].slice(0, 12);
   const search = terms.join(" OR ");
   // A lexical match is preferred, but fill the shortlist with recent, varied sources
   // when the question has no matching vocabulary (or is empty).
@@ -71,11 +78,17 @@ export async function retrieveEvidence({
         sql`, `,
       )})`}
         AND NOT EXISTS (SELECT 1 FROM src_document_chunk c WHERE c."documentId" = d.id)
-    ), matched AS (
+    ), matched_scored AS (
       SELECT id, "assetKey", title, text, "sourceUrl", "sourceType", "contentScope", "publishedAt",
         ts_rank_cd(to_tsvector('english', title || ' ' || text), websearch_to_tsquery('english', ${search})) AS score
       FROM corpus
       WHERE to_tsvector('english', title || ' ' || text) @@ websearch_to_tsquery('english', ${search})
+    ), matched_ranked AS (
+      SELECT *, row_number() OVER (PARTITION BY "assetKey", "sourceUrl" ORDER BY score DESC, "publishedAt" DESC, id) AS document_rank
+      FROM matched_scored
+    ), matched AS (
+      SELECT id, "assetKey", title, text, "sourceUrl", "sourceType", "contentScope", "publishedAt", score
+      FROM matched_ranked WHERE document_rank <= 2
       ORDER BY score DESC, "publishedAt" DESC LIMIT ${count * 4}
     ), recent AS (
       SELECT id, "assetKey", title, text, "sourceUrl", "sourceType", "contentScope", "publishedAt", 0::real AS score
@@ -97,19 +110,24 @@ export async function retrieveEvidence({
   const rows = result as unknown as SearchRow[];
   const picked: SearchRow[] = [];
   const used = new Set<string>();
-  // First pass spans holdings and source types; second pass uses relevance.
+  const usedUrls = new Set<string>();
+  // Represent each holding before spending the remaining budget on distinct URLs.
   for (const key of keys) {
-    for (const sourceType of ["filing", "news", "sec_filing", "news_article"]) {
-      const item = rows.find(
-        (row) =>
-          row.assetKey === key &&
-          row.sourceType === sourceType &&
-          !used.has(row.id),
-      );
-      if (item && picked.length < count) {
-        picked.push(item);
-        used.add(item.id);
-      }
+    const item = rows.find((row) => row.assetKey === key && row.score > 0);
+    if (item && picked.length < count) {
+      picked.push(item);
+      used.add(item.id);
+      usedUrls.add(item.sourceUrl);
+    }
+  }
+  // Spend the remaining budget on independent documents before extra chunks
+  // of documents already represented in the result.
+  for (const item of rows) {
+    if (picked.length >= count) break;
+    if (!used.has(item.id) && !usedUrls.has(item.sourceUrl)) {
+      picked.push(item);
+      used.add(item.id);
+      usedUrls.add(item.sourceUrl);
     }
   }
   for (const item of rows) {

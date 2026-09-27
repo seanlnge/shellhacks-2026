@@ -992,6 +992,12 @@ a {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 2.5rem;
 }
+.gen-dashboard-grid > .gen-anchor:not(.gen-page) {
+  grid-column: 1 / -1;
+}
+.gen-evidence > .gen-anchor:has(> .gen-dashboard) {
+  grid-column: 1 / -1;
+}
 .gen-section {
   min-width: 0;
   padding: 8px 0;
@@ -1027,9 +1033,9 @@ a {
   top: 8px;
   right: 8px;
   display: flex;
-  gap: 14px;
+  gap: 6px;
   align-items: center;
-  padding: 5px 10px;
+  padding: 6px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--surface);
@@ -1045,8 +1051,27 @@ a {
   pointer-events: auto;
 }
 .gen-anchor-actions .gen-anchor-trigger {
-  padding: 4px 0;
+  min-height: 32px;
+  padding: 6px 12px;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  background: var(--surface);
   color: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.gen-anchor-actions .gen-anchor-trigger:hover,
+.gen-anchor-actions .gen-anchor-trigger:focus-visible {
+  background: var(--ink);
+  color: var(--surface);
+}
+.gen-anchor-actions.is-prompting .gen-anchor-trigger {
+  min-height: 26px;
+  padding: 3px 8px;
+  font-size: 10px;
 }
 .gen-anchor-form {
   position: absolute;
@@ -1075,10 +1100,6 @@ a {
   color: var(--ink);
   font-size: 12px;
 }
-.gen-ask-presets button[aria-pressed="true"] {
-  border-color: var(--ink);
-  background: #f1f1ef;
-}
 .gen-anchor-form label {
   color: var(--muted);
   font-size: 11px;
@@ -1102,7 +1123,7 @@ a {
 .gen-anchor-question {
   display: block;
 }
-.gen-anchor-form button,
+.gen-anchor-form > button,
 .gen-ask button {
   min-height: 44px;
   padding: 0 22px;
@@ -1186,6 +1207,86 @@ a {
   margin-bottom: 16px;
   font-size: 15px;
   font-weight: 600;
+}
+.gen-market-chart {
+  padding: 22px 24px 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.gen-market-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.gen-market-heading > div:first-child,
+.gen-market-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.gen-market-price {
+  margin-top: 5px;
+  color: var(--ink);
+  font-size: clamp(30px, 4vw, 42px);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+.gen-market-caption,
+.gen-market-period,
+.gen-market-stale {
+  color: var(--muted);
+  font-size: 11px;
+}
+.gen-market-summary {
+  align-items: flex-end;
+  gap: 5px;
+  padding-top: 2px;
+  text-align: right;
+}
+.gen-market-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 9px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.gen-market-change.is-up {
+  background: #eaf4ee;
+  color: #246b4f;
+}
+.gen-market-change.is-down {
+  background: #fbefed;
+  color: #a4423b;
+}
+.gen-market-stale {
+  color: #8a5a1f;
+}
+.gen-market-plot {
+  margin-top: 12px;
+}
+.gen-market-plot text {
+  font-variant-numeric: tabular-nums;
+}
+.gen-market-gridline {
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+}
+.gen-market-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
 }
 .gen-chart svg {
   display: block;
@@ -1414,7 +1515,7 @@ a {
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 1.5rem;
   }
-  .gen-section {
+  .gen-dashboard-grid > .gen-anchor {
     grid-column: span 4 !important;
   }
   .gen-toolbar,
@@ -1441,6 +1542,18 @@ a {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  .gen-market-chart {
+    padding: 16px 12px 12px;
+  }
+  .gen-market-heading {
+    gap: 8px;
+  }
+  .gen-market-summary {
+    max-width: 42%;
+  }
+  .gen-market-period {
+    font-size: 10px;
+  }
   .gen-slide {
     min-height: 0;
     padding-top: 35px;
@@ -1458,8 +1571,10 @@ a {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1rem;
   }
-  .gen-section {
+  .gen-dashboard-grid > .gen-anchor {
     grid-column: 1 / -1 !important;
+  }
+  .gen-section {
     padding: 18px;
   }
   .gen-timeline li {
@@ -1630,42 +1745,6 @@ a {
 .gen-citation:hover {
   background: #eed777;
 }
-.gen-bottom {
-  flex: none;
-  border-top: 1px solid var(--ink);
-  background: var(--surface);
-}
-.gen-bottom-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 4rem;
-}
-.gen-bottom-actions button {
-  min-width: 110px;
-  min-height: 42px;
-  padding: 8px 20px;
-  border: 1px solid var(--ink);
-  border-radius: 0;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.gen-bottom-actions button:first-child,
-.gen-bottom-actions button:hover {
-  background: var(--ink);
-  color: var(--surface);
-}
-.gen-bottom-actions button:disabled {
-  background: var(--line);
-  color: var(--muted);
-}
-.gen-bottom .gen-ask {
-  border-top: 1px solid var(--line);
-}
 .gen-retry {
   padding: 8px 0;
   border: 0;
@@ -1682,12 +1761,6 @@ a {
   }
   .gen-subpage-header > .eyebrow {
     margin-top: 18px;
-  }
-  .gen-bottom-actions {
-    padding: 10px 1.25rem;
-  }
-  .gen-bottom-actions button {
-    flex: 1;
   }
   .gen-fact-preview {
     left: auto;

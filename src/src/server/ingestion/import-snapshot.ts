@@ -206,10 +206,17 @@ export async function loadSnapshot(
         title = string(item.title);
       const provider =
         optional(item.provider) ??
-        (string(company.news_source).includes("Finnhub")
-          ? "Finnhub"
-          : "Google News RSS");
-      const providerId = optional(item.provider_id) ?? sourceUrl;
+        (new URL(sourceUrl).hostname === "news.google.com"
+          ? "Google News RSS"
+          : string(company.news_source).includes("Finnhub")
+            ? "Finnhub"
+            : "Google News RSS");
+      const providerId =
+        (typeof item.provider_id === "number" &&
+        Number.isSafeInteger(item.provider_id) &&
+        item.provider_id >= 0
+          ? String(item.provider_id)
+          : optional(item.provider_id)) ?? sourceUrl;
       const content = optional(item.content)?.trim() ?? "";
       const summary = optional(item.summary)?.trim() ?? "";
       const retained = !!content && !!options.allowArticleContent;
